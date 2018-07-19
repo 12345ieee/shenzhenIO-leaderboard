@@ -1,0 +1,104 @@
+[name] Top solution Power - pseudonym404
+[puzzle] Sz001
+[production-cost] 1400
+[power-usage] 78
+[lines-of-code] 18
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....95554............
+.....A1415555541C.....
+.....A..14955D4.2.....
+.....A94156143494.....
+.....A354..9414A8.....
+.....3C1C..A9556A.....
+......2.2..221556.....
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 2
+
+[chip] 
+[type] NOT
+[x] 6
+[y] 3
+
+[chip] 
+[type] UC4
+[x] 8
+[y] 3
+[code] 
+@ slp 8
+  mov 111 x0
+  slp 1
+  mov 100 x0
+  slp 9
+
+[chip] 
+[type] OR
+[x] 12
+[y] 3
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 16
+[y] 4
+
+[chip] 
+[type] DX3
+[x] 7
+[y] 5
+
+[chip] 
+[type] NOT
+[x] 10
+[y] 5
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 5
+
+[chip] 
+[type] NOT
+[x] 14
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 6
+[code] 
+  mov 10 x3
+  slp 1
+  slp x3
+  mov 10 x3
+  slp 1
+  slp x3
+  mov 10 x3
+  slp 1
+  slp x3
+  mov 110 x3
+  slp 1
+  mov 101 x3
+  slp 3
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 6
+
+[chip] 
+[type] AND
+[x] 14
+[y] 6
+
