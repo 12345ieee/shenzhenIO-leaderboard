@@ -1,0 +1,60 @@
+[name] Top solution Lines
+[puzzle] Sz023
+[production-cost] 600
+[power-usage] 274
+[lines-of-code] 15
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+............94.1555C..
+............A......2..
+.....154.14.A.........
+......94.1556.........
+......A...1555555554..
+......35555555555554..
+......................
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 4
+
+[chip] 
+[type] RADIO
+[x] 3
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 7
+[y] 5
+[code] 
+  teq acc -999
+l:- mov acc x1
+- teq x1 acc  
+- slp 2
++ gen p1 x0 0
++ gen p0 x0 1
++ mov x0 acc
+
+[chip] 
+[type] UC4
+[x] 13
+[y] 7
+[code] 
+  mov 50 p1
+  slx x0
+  tcp acc x0
+  mov acc x0  
+- gen p1 1 0
+- add 1
++ gen p1 0 1
++ sub 1
+
