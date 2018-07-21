@@ -1,0 +1,59 @@
+[name] Top solution Power - andersk
+[puzzle] Sz003
+[production-cost] 800
+[power-usage] 258
+[lines-of-code] 14
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+.....9414.............
+.....34...............
+.........14.15554.....
+.....8.1554...........
+.....355554...........
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 3
+[code] 
+  teq x0 0
++ mov p0 acc
++ mul 4
++ sub 150
++ mov acc p1
+- mov p0 p1
+  slp 1
++ mov p0 acc
++ mul 4
++ sub 150
++ mov acc p1
++ slp x1
+- mov p0 p1
+- slp x0
+
+[chip] 
+[type] DX3
+[x] 6
+[y] 4
+[rotated] true
+
+[chip] 
+[type] DX3
+[x] 8
+[y] 5
+[rotated] true
+
+[chip] 
+[type] NOT
+[x] 6
+[y] 7
+
