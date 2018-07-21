@@ -1,0 +1,74 @@
+[name] Top solution Lines - steelgarden & rabidherring
+[puzzle] Sz005
+[production-cost] 900
+[power-usage] 290
+[lines-of-code] 6
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+....955555C...........
+....A.14.17555C.......
+....2.14.1554.A.......
+......94.14...3414....
+......34.....1D4......
+...........1416.......
+......................
+......................
+
+[chip] 
+[type] RTC
+[x] 7
+[y] 2
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] DX3
+[x] 10
+[y] 2
+
+[chip] 
+[type] NOT
+[x] 12
+[y] 2
+[rotated] true
+
+[chip] 
+[type] DX3
+[x] 12
+[y] 3
+
+[chip] 
+[type] AND
+[x] 15
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 4
+[code] 
+  teq p0 x0
+- teq p0 x1
++ mov x2 x3
+  tlt p1 20
+- mov 100 p1
+  slp 1
+
+[chip] 
+[type] DIAL2
+[x] 5
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL1
+[x] 5
+[y] 6
+[is-puzzle-provided] true
+
