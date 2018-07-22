@@ -1,0 +1,74 @@
+[name] Top solution Cost
+[puzzle] Sz009
+[production-cost] 900
+[power-usage] 454
+[lines-of-code] 23
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.......9555554........
+....1556...95555554...
+...154154.16.14.15C...
+...154....15554...A...
+...154.......94...2...
+.............355554...
+......................
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 5
+[y] 4
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 14
+[y] 4
+[code] 
+  mov x0 acc
+l:slx x1
+  sub x1
+  tlt acc 1
+  mov acc x1  
+- jmp l
+5:tlt acc -4
++ gen p1 1 1
++ add 5
++ jmp 5
+1:tlt acc 0
++ gen p0 1 1
++ add 1
++ jmp 1
+
+[chip] 
+[type] UC4
+[x] 8
+[y] 5
+[code] 
+  mov 5 acc  
+  tcp x0 10
+- mov x0 acc
++ mov 12 acc
+  tgt acc 0  
++ mov acc x1  
++ tlt x1 1
++ gen p1 4 0
+  slp 1
+
+[chip] 
+[type] BRIDGE
+[x] 13
+[y] 6
+
+[chip] 
+[type] DIAL3
+[x] 3
+[y] 7
+[is-puzzle-provided] true
+
