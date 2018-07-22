@@ -1,0 +1,87 @@
+[name] Top solution Cost
+[puzzle] Sz010
+[production-cost] 600
+[power-usage] 232
+[lines-of-code] 12
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+....1D4.155555C.......
+.....A..1C....34......
+.....A...2...954......
+.....34.15555694......
+.....94.14..956.......
+.....35555556.........
+......................
+......................
+
+[chip] 
+[type] UC4
+[x] 6
+[y] 3
+[code] 
+  slx x1
+  mov x1 p1
+  mov x0 p0 #H
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 3
+
+[chip] 
+[type] LEDRGBV
+[x] 15
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] RADIO
+[x] 2
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 6
+[y] 6
+[code] 
+  slp 1 #Abuse1
+  mov x0 acc
+  tcp acc -999
++ mov x0 x1
++ mov acc p1
++ mov x0 acc
++ tlt acc 999
++ slp acc #Abuse2
++ mov p1 x1 #H
+
+[chip] 
+[type] NOTE
+[x] 3
+[y] 8
+[code] 
+Abuse fact that
+first cycle is
+always zero
+
+[chip] 
+[type] NOTE
+[x] 6
+[y] 8
+[code] 
+MASSIVELY ABUSE
+fact that pulses
+are of 2 kinds:
+2-4: which always
+end naturally and
+999: which are
+always interrupted
+but run for at
+least 6 cycles
+
