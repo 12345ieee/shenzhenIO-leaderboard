@@ -1,0 +1,91 @@
+[name] Top solution Power
+[puzzle] Sz011
+[production-cost] 800
+[power-usage] 98
+[lines-of-code] 9
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.............14.......
+.......15555554.......
+......154954.8........
+......154A1556........
+.....9554A1554........
+.....A...A....15C.....
+.....21556....142.....
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 4
+[code] 
+@ slp 1
+  teq x0 -1
+- slp 1 #AA
+  mov p0 x1
+  mov p1 x1
+  mov x2 x3
+  mov x1 x1 #ROWO
+  slp 4 # Abuse
+- mov x0 null #AA
+
+[chip] 
+[type] RADIO
+[x] 4
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 13
+[y] 6
+
+[chip] 
+[type] NOTE
+[x] 4
+[y] 7
+[code] 
+Uses fact that
+ROM data is RO
+and tx is WO
+to combine 2
+xbuses in
+`mov x1 x1`
+
+[chip] 
+[type] BANK
+[x] 14
+[y] 7
+[rom] 
+0,1,0,0,0,0,0,0,0,0,2,3,0,0
+
+[chip] 
+[type] NOTE
+[x] 8
+[y] 8
+[code] 
+Abuses fact that
+calls are spaced
+> 4 cycles
+
+Delay -1 cleanup.
+abusing that there
+is at most 1 cycle
+of delay
+
