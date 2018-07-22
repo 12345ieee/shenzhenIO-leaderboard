@@ -1,0 +1,107 @@
+[name] Top solution Power - pseudonym404
+[puzzle] Sz007EZ
+[production-cost] 1300
+[power-usage] 61
+[lines-of-code] 14
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....1555414141555C...
+.....15555C954.14.34..
+...1C1C.142A94154154..
+..14A175555634155554..
+..156....8155C154154..
+..94.....35543554.94..
+..35555555555555556...
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 3
+[code] 
+  slx x0
+  tcp x0 2
+  mov 100 p1
+  slp 1
+  mov 100 x1
+  slp 1
+  mov 110 x1
++ slp 1
+- slp 1
+  mov 10 x1
+  slp 1
++ slp 1
+  slp x1
+  gen p0 3 p1
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 3
+
+[chip] 
+[type] AND
+[x] 16
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 4
+
+[chip] 
+[type] AND
+[x] 13
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 5
+
+[chip] 
+[type] DX3
+[x] 4
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 6
+
+[chip] 
+[type] NOT
+[x] 13
+[y] 6
+
+[chip] 
+[type] OR
+[x] 16
+[y] 6
+
+[chip] 
+[type] OR
+[x] 9
+[y] 7
+
+[chip] 
+[type] AND
+[x] 13
+[y] 7
+
+[chip] 
+[type] NOT
+[x] 11
+[y] 8
+
