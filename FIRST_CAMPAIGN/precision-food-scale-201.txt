@@ -1,0 +1,167 @@
+[name] Top solution Power - 12345ieee
+[puzzle] Sz012
+[production-cost] 1500
+[power-usage] 162
+[lines-of-code] 42
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..95555D5555C.........
+..2...16...17C........
+...15C15549542........
+..954A..94A95554......
+..A..A15616A14........
+..35C355555614........
+....3555554...........
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 1
+[code] 
+A6:
+MASSIVELY ABUSE
+fact that the
+tare is set only
+ONCE per run and
+reset to 0 only
+ONCE
+(avoid `- jmp wm`)
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 2
+[code] 
+@ slp 2 #A0
+  teq p0 100
+- slp 1
++ mov p1 x1 #A2
++ slp 3 #A3
++ mov p1 x1 #A5
++ slp 1
++ mov p1 x1 #A5
++ slp 1
++ mov p1 x1 #A5
++ mov 1 x0
++ slx x0
++ mov x0 x1
++ slp 6 #A1
+
+[chip] 
+[type] LCDN
+[x] 15
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 13
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 5
+[code] 
+@ slx x3
+@ mov x3 dat
+@ slp 4 #A4
+@ mov p1 acc
+@ sub dat
+@ mov acc x1
+@ slp 1
+  mov p1 acc
+  sub dat
+  mov acc x1
+  slp 1
+  teq p0 100
++ mov 0 x3
++ slp 999 #A6
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 5
+[code] 
+@ teq 1 1
++ slx x3
++ slp x3 #A5
+  mov p1 x2
+  slp 1
+start: tcp p0 0
++ teq p1 0  #A2
+- mov 0 x2
+- mov p1 x1
+- slx x1
+- mov x1 x2 #A4
+- slp 3 #A4
+- tcp p0 0 #A6
++ mov -999 x3
+
+[chip] 
+[type] NOTE
+[x] 3
+[y] 8
+[code] 
+Initial sleep abus
+
+Abuse that "off"
+periods are >=6
+
+Abuse that scale
+turns off always
+when weight==0 and
+has to go back to0
+
+[chip] 
+[type] NOTE
+[x] 6
+[y] 8
+[code] 
+3: Abuse that 0 at
+return from off
+are branched and
+long >=3 cycles
+
+Also avoid a
+`+ jmp start`, as
+the 0 branch is 
+always taken after
+
+[chip] 
+[type] NOTE
+[x] 9
+[y] 8
+[code] 
+4: Abuse '0'
+after tare set
+(4-6 cycles, then
+need to compute)
+
+4: Abuse `0` after
+tare reset
+(3 cycles, then
+need testing)
+
+[chip] 
+[type] NOTE
+[x] 12
+[y] 8
+[code] 
+5: Abuse fact that
+tare isn't set
+after off for 7
+cycles
+
