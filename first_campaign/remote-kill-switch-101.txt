@@ -1,0 +1,53 @@
+[name] Top solution Cost
+[puzzle] Sz016
+[production-cost] 600
+[power-usage] 527
+[lines-of-code] 14
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+.............95554....
+.............A........
+............16.154....
+.......1554.15415C....
+.................2....
+......................
+......................
+......................
+
+[chip] 
+[type] RADIO
+[x] 5
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 3
+[code] 
+  mov x1 dat
+  teq dat -999
+- dst x1 dat
++ sub 100
++ tlt acc 200
++ mov 0 acc
+  tlt acc 200
++ mov 0 p1  
++ tgt acc 99
++ mov 100 p1
+  mov acc x3
+  teq dat -999
+- dst 2 6
+  slp 1
+
+[chip] 
+[type] DX3
+[x] 14
+[y] 4
+
