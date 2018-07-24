@@ -1,0 +1,67 @@
+[name] Top solution Power - hersmunch
+[puzzle] Sz004
+[production-cost] 1100
+[power-usage] 225
+[lines-of-code] 16
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+.......1555555541C....
+.......15555C....A....
+....94.1C..17555C2....
+....A...34.154..A.....
+....3555555554.16.....
+......................
+......................
+......................
+
+[chip] 
+[type] UC4
+[x] 13
+[y] 3
+[code] 
+@ mov 4 x0
+@ mov p0 x1
+
+[chip] 
+[type] RAM
+[x] 9
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 5
+[code] 
+@ mov -350 acc
+@ add p0
+@ slp 1
+@ mov p0 x3
+@ add p0
+@ slp 1
+@ mov p0 x3
+@ add p0
+@ slp 1
+  mov p0 x3
+  add p0
+  mov acc p1
+  slp 1
+  sub x2
+
+[chip] 
+[type] NOT
+[x] 15
+[y] 7
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 8
+[code] 
+Sum_8 >= 400
+
