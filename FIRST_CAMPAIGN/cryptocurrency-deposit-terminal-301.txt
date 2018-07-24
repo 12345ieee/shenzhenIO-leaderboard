@@ -1,0 +1,69 @@
+[name] Top solution Cost - Catalecticant
+[puzzle] Sz013
+[production-cost] 1300
+[power-usage] 611
+[lines-of-code] 12
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..955554..1554........
+..2..9554...94........
+.....A.8....A.........
+..14.A.35C9575555554..
+..1416...A34..9555C...
+..14.....354.16..16...
+.............154......
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 2
+[code] 
+lp: tlt -9 x0
+- mov acc x0
+- mov 0 acc
++ teq dat -1
+- add x0
+- slp 1
+- mov x1 dat
++ mov x3 x0
+end: -tlt dat 0
+- mov dat x2
+
+[chip] 
+[type] RAM
+[x] 15
+[y] 2
+
+[chip] 
+[type] DX3
+[x] 3
+[y] 3
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 6
+
+[chip] 
+[type] UC4X
+[x] 8
+[y] 7
+[code] 
+  mov x1 x3
+  slp 1
+
+[chip] 
+[type] BANK
+[x] 13
+[y] 7
+[rom] 
+0,0,20,100,0,0,0,-2,-10,0,0,50,0,0
+

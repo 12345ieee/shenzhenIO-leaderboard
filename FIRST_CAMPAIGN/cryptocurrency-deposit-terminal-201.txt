@@ -1,0 +1,110 @@
+[name] Top solution Power - pseudonym404
+[puzzle] Sz013
+[production-cost] 2000
+[power-usage] 195
+[lines-of-code] 37
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..9555555555D5554.....
+..2.........A.954.1C..
+............34A...16..
+..1541C..95555614..8..
+..154.34.34....15556..
+..814154154.14........
+..354.......14........
+......................
+......................
+
+[chip] 
+[type] OR
+[x] 4
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 2
+[code] 
+@ teq 0 0
++ slp x2
++ teq x1 0
+a:+ slp 1
++ teq x1 0
++ slp 1
++ teq x1 0
++ jmp a
+  mov x1 x3
+  add x2
+  slp 2
+  teq x1 0
++ mov acc x0
++ mov 0 acc
+
+[chip] 
+[type] BANK
+[x] 13
+[y] 2
+[rom] 
+2,0,100,6,0,0,0,0,0,0,50,5,20,5
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 3
+
+[chip] 
+[type] DX3
+[x] 7
+[y] 3
+[rotated] true
+
+[chip] 
+[type] OR
+[x] 4
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 4
+[code] 
+@ teq 0 0
++ slx x1
++ mov x1 acc
+  slp 1
+  teq x0 -1
++ mov x3 x2
++ mov x3 x2
++ mov x3 x2
++ mov x3 x2
++ mov x3 x2
++ mov x3 x2
++ mov x3 x2
++ mov x3 x2
++ mov acc x2
+
+[chip] 
+[type] RAM
+[x] 16
+[y] 5
+
+[chip] 
+[type] UC4X
+[x] 16
+[y] 7
+[code] 
+  slx x1
+  mov x0 x2
+  mov x0 x2
+  mov x0 x2
+  mov x0 x2
+  mov x0 x2
+  mov x0 x2
+  mov x0 x2
+  mov x0 x2
+
