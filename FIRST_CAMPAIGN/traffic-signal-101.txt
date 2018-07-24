@@ -1,0 +1,65 @@
+[name] Top solution Cost
+[puzzle] Sz026
+[production-cost] 600
+[power-usage] 334
+[lines-of-code] 14
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+..........14......8...
+..........14.14..16...
+...155555554.155414...
+.................1C...
+..................2...
+......................
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 16
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 5
+[code] 
+  tcp dat 10
+  mov 1 dat
+  mov x3 acc
++ mov 10 dat
++ mov x1 acc
+- mov 100 dat
+- mov x0 acc
+a:teq p0 0
+- mov x2 dat
++ mov dat x2
+  slp 1
++ sub 1
++ tgt acc 0
++ jmp a
+
+[chip] 
+[type] DIAL5
+[x] 9
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL6
+[x] 14
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL4
+[x] 9
+[y] 7
+[is-puzzle-provided] true
+
