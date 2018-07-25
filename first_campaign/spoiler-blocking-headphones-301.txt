@@ -1,0 +1,62 @@
+[name] Top solution Lines
+[puzzle] Sz019
+[production-cost] 800
+[power-usage] 393
+[lines-of-code] 10
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+......15C.............
+......1CA.............
+.......234.155555C....
+...1541554.14....2....
+.......154.14.........
+......................
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 5
+[y] 2
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 3
+[code] 
+  mov x0 acc
+  mov x0 dat
++ jmp c
+  mov dat x3
+  sub dat
+  teq acc x2
++ mov 50 p1
+- mov p0 p1
+c:slp 1
++ teq x1 0
+
+[chip] 
+[type] BANK
+[x] 12
+[y] 3
+[rom] 
+-282,-70,42,42,42,42,335,-205,42,42,42,-5,42,138
+
+[chip] 
+[type] NLP
+[x] 4
+[y] 6
+[is-puzzle-provided] true
+
