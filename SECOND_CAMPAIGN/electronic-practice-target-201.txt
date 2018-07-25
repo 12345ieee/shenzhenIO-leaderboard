@@ -1,0 +1,161 @@
+[name] Top solution Power - 12345ieee
+[puzzle] Sz041
+[production-cost] 2500
+[power-usage] 583
+[lines-of-code] 59
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+........14....954.....
+..15555555C1C.A1C954..
+..95555C143434A.AA1C..
+..2..143549554A16A.2..
+..8..14.156154B54B54..
+..35554.1555556..A1C..
+.................216..
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 1
+[code] 
+  0- 99 -> 4
+100-399 -> 2
+400-899 -> 1
+900-999 -> -2
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 3
+[code] 
+  slx x3
+  mov p0 acc
+  sub x3 #50
+  mul acc
+  mov acc dat
+  mov p1 acc
+  sub 50
+  mul acc
+  add dat
+  dgt 2
+  mov acc x1
+  mov x0 x2
+
+[chip] 
+[type] UC6
+[x] 16
+[y] 3
+[code] 
+  slx x1
+  teq x1 3
+  add x1
+  mov acc x3
+  mov 0 x2
++ mov acc x0
++ slx x0
++ mov x0 dat
++ mov acc x3
++ mov dat x2
++ slp 2
++ mov acc x3
++ mov dat x2
++ mov 0 acc
+
+[chip] 
+[type] BRIDGE
+[x] 19
+[y] 3
+
+[chip] 
+[type] BANK
+[x] 3
+[y] 4
+[rom] 
+4,2,2,2,1,1,1,1,1,-2,0,0,0,0
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 4
+[code] 
+@ teq 1 1
++ slx x1
++ jmp wp
+loop: teq p0 100
++ add 1
++ mov 50 x1
+wp: + mov acc x2
++ slp 1 #A1
++ teq acc 7
+- mov acc x2
+- mov 0 x2
+- slp 1
++ mov 8 x0 #A0
++ mov 0 acc
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 6
+
+[chip] 
+[type] UC6
+[x] 16
+[y] 6
+[code] 
+@ teq 1 1
++ slx x1
++ mov x1 dat
+  slp 1
+  teq x0 7
+  add x0
+  mov dat x3
+  mov acc x2
++ slp 2
++ mov dat x3
++ mov acc x2
++ slp 2
++ mov acc x1
++ mov 0 acc
+
+[chip] 
+[type] UC4
+[x] 9
+[y] 7
+[code] 
+init:
+  teq p0 100
+- slp 1
++ mov 50 x0
++ slx x1
++ slp x1
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 8
+[code] 
+Minimum tests
+separation
+
+Abuse that shots
+are separated by
+>=1 cycle
+
