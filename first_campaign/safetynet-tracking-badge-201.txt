@@ -1,0 +1,208 @@
+[name] Top solution Power
+[puzzle] Sz027
+[production-cost] 2400
+[power-usage] 205
+[lines-of-code] 47
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...........154.1555C..
+...15C14....15C14.1E..
+..814A15C.15C.A94..A..
+..354A.8A.94A.AA...2..
+...14A.A34A.2.A34.....
+...156.A1561556954....
+.......354.1555614....
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 4
+[y] 1
+[code] 
+Zones from center
+for ping
+80-100
+51-79
+0-50
+Sync is 0 at top
+and goes clockwise
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 2
+[code] 
+start: slx x3
+  tgt p0 x3
+wp: + mov 100 x2
++ slx x3
++ tgt p0 x3
++ jmp wp
+  teq x0 1
++ mov 600 x2
++ jmp start
+  tlt p0 51
++ mov 700 x2
+- mov x0 x1
+- mov x2 x2 #ROWO
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 16
+[y] 2
+
+[chip] 
+[type] RADIO
+[x] 17
+[y] 2
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] BANK
+[x] 4
+[y] 3
+[rom] 
+0,6,5,4,3,2,1,0,0,0,0,0,0,0
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 5
+[code] 
+  tgt p0 x0 #A2
+- slp 1
++ mov p0 p1
++ mov x1 x3
++ slp x0
++ mov 0 x1
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 5
+
+[chip] 
+[type] BANK
+[x] 8
+[y] 5
+[rom] 
+0,600,200,201,202,203,204,0,0,0,0,0,0,0
+
+[chip] 
+[type] UC6
+[x] 16
+[y] 5
+[code] 
+@ slx x0
+@ teq x0 0
+wp: + mov x1 p1
++ slp 1
++ mov x1 p1
++ slp 1
++ mov x1 p1
++ slp 1
+@ jmp wp #AA4
+  mov x1 p1
+  slp 1
+@ jmp wp #AA4
+  teq p1 50  
++ slp 999 #AA4
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 6
+[code] 
+  mov 50 p1 #init
+  slp 1 #A1
+start: tcp x2 1
+- slp 1
+- tcp x2 1 #AAA3
++ teq x2 x0
++ mov 79 x1
++ slp 3 #Abuse1 
++ jmp start
+- slp 3 #Abuse1
+- jmp start
+  mov x2 acc
+  mov p1 x3 #H
+  slp acc
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 8
+[code] 
+Count using a ROM
+
+Good old sleep
+abuse
+
+Abuse fact that
+pings are always
+higher than 6
+
+[chip] 
+[type] NOTE
+[x] 4
+[y] 8
+[code] 
+Abuse that 2
+consecutive `-999`
+only happen at end
+test, where we can
+safely fall to
+the `- slp 3`
+
+[chip] 
+[type] NOTE
+[x] 7
+[y] 8
+[code] 
+Use address
+duplication to
+read without
+resetting the
+address
+
+Thanks to RO-WO
+stacking
+
+[chip] 
+[type] ID
+[x] 10
+[y] 8
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 8
+[code] 
+4: MASSIVELY ABUSE
+fact that `1` is
+sent just once
+per test.
+
+Also abuse fact
+that song is
+long >=10 cycles
+(tight)
+

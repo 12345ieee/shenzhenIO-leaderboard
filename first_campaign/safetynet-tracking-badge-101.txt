@@ -1,0 +1,70 @@
+[name] Top solution Cost
+[puzzle] Sz027
+[production-cost] 800
+[power-usage] 475
+[lines-of-code] 23
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..955555C.............
+..2....1695555554.....
+..8.14.156954..94.....
+..3554.15561C.16...8..
+............35555556..
+......................
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 5
+[code] 
+  tcp p0 0
++ mov 700 acc
++ tgt p0 79
++ sub 500
+- teq p1 0
++ sub 100
+- tlt p0 51
+- mov p1 acc
+- mul 5
+- dgt 2
+- add 199
+  teq x2 x1
++ mov acc x3
+  slp 1
+
+[chip] 
+[type] UC4
+[x] 12
+[y] 5
+[code] 
+  mov x1 null
+  mov x1 x0
+x:mov x1 acc
+  teq acc -999
+- mov acc p0
++ mov 50 p0
+  slp 1
+- mov -999 x0
+- jmp x
+
+[chip] 
+[type] ID
+[x] 3
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] RADIO
+[x] 16
+[y] 6
+[rotated] true
+[is-puzzle-provided] true
+
