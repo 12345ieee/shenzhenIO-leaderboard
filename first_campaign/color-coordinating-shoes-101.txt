@@ -1,0 +1,74 @@
+[name] Top solution Cost
+[puzzle] Sz018
+[production-cost] 1400
+[power-usage] 1198
+[lines-of-code] 28
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....9555555C..........
+..816954...34.15555C..
+..A..A154.154.154..2..
+..354A154..1C.154.....
+.....A......35555554..
+..1556................
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 5
+[code] 
+  tgt p1 29
++ mov p1 acc
++ dst 0 8
+- mov 38 acc
+  teq p0 100
++ mov acc dat
++ mov dat x3
++ mov 1 acc
++ add x2
++ mov dat x3
++ mov acc x2
++ mov acc x2
+  slp 1
++ mov p0 x0
+
+[chip] 
+[type] RAM
+[x] 8
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 5
+[code] 
+  teq acc 0
++ mov x2 p1
++ mov x2 p0
++ mov -1 dat  
++ mov -42 acc
+wait:+ slx x0
++ teq x0 100
++ jmp wait
+l:tlt acc -28
++ tgt x1 dat
++ mov acc x3
++ mov x1 dat
+- mov 0 x1
+  add 2
+
+[chip] 
+[type] BANK
+[x] 16
+[y] 5
+[rom] 
+50,50,5,5,75,85,50,5,15,80,95,5,5,60
+
