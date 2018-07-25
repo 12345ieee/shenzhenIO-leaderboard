@@ -1,0 +1,89 @@
+[name] Top solution Lines - pseudonym404
+[puzzle] Sz038
+[production-cost] 2200
+[power-usage] 553
+[lines-of-code] 23
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+..........955C........
+....955554A1C3555554..
+....A...14A.34.15554..
+....34..156....14.14..
+....14.154............
+.......154............
+......................
+......................
+
+[chip] 
+[type] RADIO
+[x] 2
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 2
+[code] 
+s:slp 1
+  tcp x1 1
+- jmp s
++ mov x1 dat
+l:mov x3 acc
+  teq x2 dat
+- jmp l
+  mov acc x3
+  teq dat 0
++ mov x1 x2
+- mov 0 x2
+  mov dat x0
+- mov 0 dat
+
+[chip] 
+[type] RAM
+[x] 9
+[y] 2
+
+[chip] 
+[type] PGA
+[x] 16
+[y] 2
+[array-switch] True
+[array-data] 
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 3
+
+[chip] 
+[type] PGA
+[x] 13
+[y] 3
+[array-switch] True
+[array-data] 
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 4
+[code] 
+  mov 50 p0
+- gen p1 1 1
+  slx x0
+  teq x0 0
++ gen p1 1 1
+  gen p0 x1 0
+  mov 50 p0
+  gen p1 1 1
+  gen p0 0 x1
+  mov 0 x1
+
