@@ -1,0 +1,85 @@
+[name] Top solution Cost
+[puzzle] Sz043
+[production-cost] 1200
+[power-usage] 672
+[lines-of-code] 32
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.........9554.155554..
+.........A....1C...8..
+.........A.....35556..
+.........34.15555554..
+............14.15554..
+...............14.14..
+......................
+......................
+......................
+
+[chip] 
+[type] UC4
+[x] 16
+[y] 2
+[code] 
+  mov 50 p1
+  slx x0
+  tgt x0 1
+  slp 2
++ gen p1 0 1
+- gen p1 1 0
+
+[chip] 
+[type] UC4
+[x] 13
+[y] 3
+[code] 
+  mov 50 p1
+  slx x0
+  mov x0 acc
+  slp 2
+  tgt acc 2
++ gen p1 0 1
++ sub 2
+- gen p1 1 0
+  mov acc x1
+
+[chip] 
+[type] UC4
+[x] 10
+[y] 4
+[code] 
+  mov 50 p1
+  slx x0
+  mov x0 acc
+  tgt acc 4
+  slp 2
++ gen p1 0 1
++ sub 4
+- gen p1 1 0
+  mov acc x1
+
+[chip] 
+[type] RADIO
+[x] 16
+[y] 6
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 12
+[y] 7
+[code] 
+  mov x1 acc
+  tcp acc -999
++ gen p1 1 0
++ mov acc x1
++ mov 30 p1
+  slp 1
++ gen p1 0 1
++ mov x1 x0
+
