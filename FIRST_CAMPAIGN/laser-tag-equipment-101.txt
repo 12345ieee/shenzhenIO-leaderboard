@@ -1,8 +1,8 @@
 [name] Top solution Cost
 [puzzle] Sz048
 [production-cost] 600
-[power-usage] 482
-[lines-of-code] 13
+[power-usage] 278
+[lines-of-code] 9
 
 [traces] 
 ......................
@@ -10,48 +10,55 @@
 ......................
 ......................
 ......................
-..95555555555555555C..
-..A...............16..
-..2.....14.154....14..
-..1C.......155555414..
-..17555554...8........
-.............3555554..
+......................
+..................1C..
+..15555C...........2..
+..1554.A........1414..
+..15D41E....14.1555C..
+....3417555554.14..2..
 ......................
 ......................
 ......................
 
 [chip] 
-[type] UC6
-[x] 9
-[y] 4
+[type] NOT
+[x] 5
+[y] 3
+[rotated] true
+
+[chip] 
+[type] UC4
+[x] 13
+[y] 3
 [code] 
-  teq x3 100
-+ mov 0 dat
-  teq dat 0
-+ mov p0 dat
-  mov dat p0
-  teq x3 1
+@ mov 100 p0
+  teq x1 1
 + mov x0 acc
-  teq x3 10
-+ teq dat 100
-+ tgt acc 0
-- slp 1
-+ gen p1 1 0
-+ sub 1
+  teq p0 100
+- tlt x1 99
+- sub 1
+- tlt acc 0
+- gen p1 1 0
+  slp 1
 
 [chip] 
 [type] BRIDGE
-[x] 13
+[x] 16
+[y] 3
+
+[chip] 
+[type] OR
+[x] 5
 [y] 4
+
+[chip] 
+[type] DIAL7
+[x] 11
+[y] 4
+[is-puzzle-provided] true
 
 [chip] 
 [type] DX3
 [x] 17
 [y] 5
-
-[chip] 
-[type] DIAL7
-[x] 7
-[y] 6
-[is-puzzle-provided] true
 
