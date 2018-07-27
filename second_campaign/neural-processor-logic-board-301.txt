@@ -1,0 +1,117 @@
+[name] Top solution Lines - csaboka
+[puzzle] Sz047
+[production-cost] 2200
+[power-usage] 3906
+[lines-of-code] 42
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..14..................
+..94954...94..15555C..
+..A.A1C..96.......16..
+..34A16.969555554954..
+..156154A.2....94A1C..
+......156154..16.A16..
+.........14......354..
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 2
+[code] 
+  mov x3 dat
+  teq dat -999
+  mov dat x2
++ mov x1 dat
++ mov dat x2
++ teq dat -999
+- mov dat x0
+- add dat
+- mov acc x0
+- mul -1
++ mov 0 acc
++ slp 1
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 2
+
+[chip] 
+[type] NP2
+[x] 11
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] BANK
+[x] 16
+[y] 2
+[rom] 
+0,2,0,4,0,6,0,8,100,0,0,0,0,0
+
+[chip] 
+[type] UC4X
+[x] 3
+[y] 4
+[code] 
+  slx x2
+  mov x2 acc
+  teq x1 12
+- mov x2 null
+- dst 1 x2
+- mov x2 null
+  mov acc x3
++ teq x2 x3
++ mov 0 x0
+
+[chip] 
+[type] UC6
+[x] 16
+[y] 4
+[code] 
+  slx x1
+  teq x1 -999
+- mov 8 acc
++ mov acc x3
++ mov x2 p0
++ mov x2 acc
++ tgt x1 -999
++ mov 8 dat
+- mov dat x3
+- mov x2 p1
+- mov x2 dat
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 6
+[code] 
+  slx x1
+  mov x2 dat
+  dst 0 dat
+  mov acc x0
+  mov dat acc
+  dgt 1
+  mov acc x0
+  teq x3 12
++ mov x2 x0
++ mov x1 x3
+
+[chip] 
+[type] RAM
+[x] 6
+[y] 6
+
+[chip] 
+[type] NP1
+[x] 11
+[y] 6
+[is-puzzle-provided] true
+
