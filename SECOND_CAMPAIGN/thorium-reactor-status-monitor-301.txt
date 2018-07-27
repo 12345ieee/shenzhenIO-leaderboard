@@ -1,0 +1,85 @@
+[name] Top solution Lines - csaboka
+[puzzle] Sz044
+[production-cost] 1400
+[power-usage] 7215
+[lines-of-code] 14
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..8.1555C.............
+..35555C34.95C........
+..15414A154A.A........
+..15554A154A.34.......
+....1416...A..........
+......94.156..........
+..15556...............
+......................
+......................
+
+[chip] 
+[type] LCDR
+[x] 14
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] BANK
+[x] 2
+[y] 3
+[rom] 
+11,12,13,14,0,21,0,22,0,23,0,24,0,42
+
+[chip] 
+[type] UC4
+[x] 7
+[y] 3
+[code] 
+  mov x1 acc
+  teq p0 x1
++ mul -1
+  mov acc x1
+  slx x0
+  mov x0 x1
+
+[chip] 
+[type] BANK
+[x] 10
+[y] 3
+[rom] 
+10,42,32,42,-30,100,33,100,31,0,-34,0,20,42
+
+[chip] 
+[type] BRIDGE
+[x] 5
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 5
+[code] 
+  tgt x3 3
+- mov p1 dat
++ mov p0 dat
++ gen p1 x1 x2
+  mov x1 acc
+  tgt dat x2
+- mul -1
+  mov acc x0
+
+[chip] 
+[type] BANK
+[x] 10
+[y] 5
+[rom] 
+19,39,59,79,0,19,0,39,0,59,0,79,1,999
+
+[chip] 
+[type] BRIDGE
+[x] 4
+[y] 6
+
