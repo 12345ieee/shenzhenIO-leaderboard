@@ -1,0 +1,143 @@
+[name] Top solution Power - ShadowCluster
+[puzzle] Sz045
+[production-cost] 2600
+[power-usage] 1078
+[lines-of-code] 44
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..14...........15C....
+..14....14.14..94A14..
+..1414.15C.14..A.A14..
+....94.14A.....A.A.8..
+..14A..1C2...156.A.A..
+..1434..3555554.16.A..
+..14.....155554.1556..
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 3
+[y] 2
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 14
+[y] 2
+[code] 
+T:slx x1
+  teq p0 100
++ mov -1 x3
++ add x1
++ mov acc x0
+- mov x1 acc
+- teq acc 4
+- teq acc 16
+- teq acc 32
+- teq acc 8
+- teq acc 2
+- teq acc 1
+- mov -1 x3
+- mov acc x0
+
+[chip] 
+[type] BANK
+[x] 17
+[y] 2
+[rom] 
+16,8,4,2,1,999,999,999,999,999,999,999,999,32
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 4
+[code] 
+  teq x0 0
+- mov x0 x3
+- mov x3 acc
+- mul 8
+  teq x1 0
+- mov x1 x3
+- add x3
++ teq acc 0
+- mov acc x2
+  slp p1
+- mov 100 p1
+- mov 0 acc
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 19
+[y] 5
+
+[chip] 
+[type] DX3
+[x] 3
+[y] 6
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 6
+[code] 
+@ mov 1 p0
+  slx x1
+  mov x1 x3
+  mov x2 x1
+
+[chip] 
+[type] BANK
+[x] 12
+[y] 6
+[rom] 
+-999,4,1,5,-999,-999,-999,-999,-999,-999,2,6,3,7
+
+[chip] 
+[type] UC6
+[x] 16
+[y] 6
+[code] 
+S:slx x1
+  mov x1 acc
+POS:sub x3
+  tcp acc 0
+NEG:-add x3
+- tcp acc 0
++ mov x0 x2
++ sub x3
++ tcp acc 0
+- add x3
+- tcp acc 0
+- jmp NEG
+  mov x0 x2
++ jmp POS
+
+[chip] 
+[type] NOTE
+[x] 5
+[y] 7
+[code] 
+@ teq 0 0
++ slx x3
++ mov -1 x1
++ mov x3 acc
+  teq acc x2
++ mov x1 x3
+
