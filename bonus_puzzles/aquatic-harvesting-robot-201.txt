@@ -1,0 +1,139 @@
+[name] Top solution Power - csaboka
+[puzzle] Sz042
+[production-cost] 2600
+[power-usage] 5916
+[lines-of-code] 54
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..954955554.15555C....
+..A14A14954......A....
+..B54A15615C14...A14..
+..A1C354954355554A14..
+..A16.14A15554954A14..
+..354.15755555615694..
+......1555555555556...
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 2
+[code] 
+  slx x3
+  mov p1 acc
+  tlt x3 99
+  sub 2
++ mov acc x1
++ mov x0 x2
++ mov x0 x3
+  teq p1 1
+l:-mov x1 acc
+- teq x0 -999
+- jmp l
+  mov acc x1
+
+[chip] 
+[type] UC4
+[x] 16
+[y] 3
+[code] 
+  mov 50 p1
+  slx x1
+  tcp acc x0
+- add 1
++ sub 1
+  mov acc p0
+- gen p1 1 0
++ gen p1 0 1
+
+[chip] 
+[type] BRIDGE
+[x] 19
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 4
+[code] 
+@ teq 0 0
++ slx x2
+l:mov x2 acc
+- tlt acc dat
++ mov x1 p0
++ mov acc dat
+  tlt x1 2
++ mov dat x3
++ mov dat p0
+
+[chip] 
+[type] BRIDGE
+[x] 13
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 5
+
+[chip] 
+[type] RAM
+[x] 4
+[y] 5
+
+[chip] 
+[type] UC4
+[x] 16
+[y] 5
+[code] 
+  mov 50 p1
+  slx x1
+  tcp acc x1
+- add 1
++ sub 1
+  mov acc p0
+- gen p1 1 0
++ gen p1 0 1
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 6
+[code] 
+  teq x0 0
++ slp 1
+  mov p0 acc
+  sub x1
+  dst 2 0
+  mov acc dat
+  mov x1 acc
+  sub p1
+  dst 2 0
+  tgt acc dat
++ mov acc x2
+- mov dat x2
+
+[chip] 
+[type] UC4X
+[x] 4
+[y] 7
+[code] 
+@ teq 0 42
+  mov x2 x1
+  mov x2 x1
+- teq x0 0
++ slp 1
+
+[chip] 
+[type] RADIO
+[x] 7
+[y] 7
+[rotated] true
+[is-puzzle-provided] true
+
