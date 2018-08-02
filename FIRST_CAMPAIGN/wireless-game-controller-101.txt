@@ -1,8 +1,8 @@
 [name] Top solution Cost
 [puzzle] Sz011
 [production-cost] 600
-[power-usage] 238
-[lines-of-code] 10
+[power-usage] 197
+[lines-of-code] 9
 
 [traces] 
 ......................
@@ -10,46 +10,45 @@
 ......................
 ......................
 ......................
-....955555555C........
-....A9555555C34.......
-....A34.1C..354.......
-....354..2............
-.....94.155554........
-.....A...8....15C.....
-.....21556....142.....
+......................
+........155555415C....
+.......955555C.94A....
+......1614954A.A.A....
+......1554A1574A.A....
+.....95554A1554A.A....
+.....215556....216....
 ......................
 ......................
-
-[chip] 
-[type] DX3
-[x] 13
-[y] 2
-
-[chip] 
-[type] BRIDGE
-[x] 9
-[y] 3
 
 [chip] 
 [type] UC6
-[x] 6
-[y] 4
+[x] 9
+[y] 3
 [code] 
-  teq x0 -999
-+ jmp b
-  mov p0 x1
-  mov p1 x1
-  tgt x2 9
-+ mov -8 acc
-+ add x2
-+ mov acc x1
-- mov x2 x1
-b:slp 1
+  slp 1
+  tcp x2 -999
++ mov p0 x3
++ mov p1 x3
++ mov x0 acc
++ tgt acc 9
++ sub 8
++ mov acc x3
+- mov acc x3
 
 [chip] 
 [type] RADIO
 [x] 14
-[y] 6
+[y] 3
 [rotated] true
 [is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 5
+
+[chip] 
+[type] DX3
+[x] 14
+[y] 6
 
