@@ -1,0 +1,52 @@
+[name] Top solution Cost->Lines
+[puzzle] Sz011
+[production-cost] 600
+[power-usage] 203
+[lines-of-code] 8
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+......................
+......154.1C..........
+......154..2..........
+.....9554.155415C.....
+.....A.....8..1CA.....
+.....2155556...22.....
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 3
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 4
+[code] 
+  slp 1
+  teq x0 -1
++ mov p0 x1
++ mov p1 x1
++ mov x2 acc
++ mul 12 #terrific
++ dgt 1  #hack
++ mov acc x1
+
+[chip] 
+[type] RADIO
+[x] 4
+[y] 5
+[is-puzzle-provided] true
+
