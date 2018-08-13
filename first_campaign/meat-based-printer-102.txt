@@ -1,8 +1,8 @@
 [name] Top solution Cost->Lines
 [puzzle] Sz022
 [production-cost] 800
-[power-usage] 213
-[lines-of-code] 12
+[power-usage] 191
+[lines-of-code] 10
 
 [traces] 
 ......................
@@ -11,62 +11,45 @@
 ......................
 ......................
 ......................
-...........155555554..
-.........955555C......
-..9555554A14...34154..
-..A....156154....154..
-..2.......154....154..
+..............155554..
+..........955555C.....
+..........34.14.3414..
+..9555555554.14...14..
+..2..........14...14..
 ......................
 ......................
 ......................
-
-[chip] 
-[type] NOTE
-[x] 12
-[y] 1
-[code] 
-value > 0:
-send value
-to extender
-value <= 0:
-send 0 to extender
-
-either case:
-next instruction
-at value%14
 
 [chip] 
 [type] UC6
-[x] 8
+[x] 11
 [y] 3
 [code] 
-- slx x0
-- mov 100 p1
-- mov x0 x3
+- slx x1
+- mov x1 x3
 - mov 7 acc
-l: mov x2 dat
-  tgt dat 0
-+ mov dat x1
-  slp 1
-  sub 1
-  tgt acc x1
-+ mov dat x3  
-- mov 0 p1
++ mov 100 p1
++ mov x2 x0
++ mov x2 x3
++ slp 1
+  tgt acc p1
++ sub 1
+- sub x0
 
 [chip] 
 [type] BANK
-[x] 12
+[x] 14
 [y] 3
 [rom] 
-0,117,-4,17,30,-8,105,-6,107,-13,60,0,0,0
+0,536,0,11,101,6,0,105,9,0,1,10,40,2
 
 [chip] 
 [type] DX3
-[x] 16
+[x] 17
 [y] 3
 
 [chip] 
 [type] BRIDGE
-[x] 11
+[x] 14
 [y] 5
 
