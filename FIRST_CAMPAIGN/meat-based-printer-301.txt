@@ -1,7 +1,7 @@
 [name] Top solution Lines
 [puzzle] Sz022
-[production-cost] 2000
-[power-usage] 508
+[production-cost] 1200
+[power-usage] 206
 [lines-of-code] 7
 
 [traces] 
@@ -10,75 +10,57 @@
 ......................
 ......................
 ......................
+...............9555C..
+..94.155555D555741C2..
+..A.954....A.1554.3C..
+..A.A94....2.15541C2..
+..A.A34.155541494.34..
+..2.354....155574154..
+..............154.....
 ......................
-..94.155555555D55554..
-..A..14.......B54.....
-..A.9555555414A14.14..
-..A.A.8.....14A14.14..
-..2.34354...14A15414..
-.......14.....3554....
 ......................
-......................
-
-[chip] 
-[type] NOTE
-[x] 11
-[y] 1
-[code] 
-value=
-pattern to emit
-
-_next_ value%14=
-address of next
-instruction
-
-[chip] 
-[type] UC4X
-[x] 5
-[y] 2
-[code] 
-  nop
-  mov x2 x0
-  slp 1
-  mov x2 x3
-
-[chip] 
-[type] BANK
-[x] 8
-[y] 2
-[rom] 
-0,111,4,66,3,103,6,105,8,1,10,40,10,2
-
-[chip] 
-[type] AND
-[x] 17
-[y] 2
-
-[chip] 
-[type] DX3
-[x] 11
-[y] 3
-
-[chip] 
-[type] PGA
-[x] 13
-[y] 3
-[array-switch] False
-[array-data] 
-1,1,1,0,0,0,1,0,1,1,0,0,1,1,0,0,0,0,0,0,0,1,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,1,1,0,0,0,0,1,1,0,0,1,1,0,0,0,0
 
 [chip] 
 [type] BRIDGE
+[x] 14
+[y] 2
+
+[chip] 
+[type] AND
+[x] 16
+[y] 2
+
+[chip] 
+[type] UC4X
 [x] 6
+[y] 3
+[code] 
+  slp 1
+  mov x0 x1
+  nop
+  mov x0 x3
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 3
+
+[chip] 
+[type] DX3
+[x] 12
 [y] 4
 
 [chip] 
-[type] PGA
+[type] AND
 [x] 16
 [y] 4
-[array-switch] False
-[array-data] 
-0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0
+
+[chip] 
+[type] BANK
+[x] 6
+[y] 5
+[rom] 
+0,536,0,11,101,6,0,105,9,0,1,10,40,2
 
 [chip] 
 [type] UC4
@@ -88,4 +70,9 @@ instruction
   slx x0
   mov x0 x1
   gen p1 7 0
+
+[chip] 
+[type] AND
+[x] 16
+[y] 6
 
