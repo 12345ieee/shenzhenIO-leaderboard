@@ -1,8 +1,8 @@
 [name] Top solution Lines
 [puzzle] Sz031
 [production-cost] 700
-[power-usage] 296
-[lines-of-code] 11
+[power-usage] 230
+[lines-of-code] 10
 
 [traces] 
 ......................
@@ -28,13 +28,12 @@
 st: slx x0
   mov 0 x3
 lp: tlt x3 10
-  mul x2
-+ add x0
++ dst x2 x0
 + jmp lp
-end:  teq p0 x2
+end:  teq p0 0
 - mov acc dat
 + teq acc dat
-- teq acc 657
+- teq acc 999
 + gen p1 6 0
 
 [chip] 
@@ -42,5 +41,5 @@ end:  teq p0 x2
 [x] 14
 [y] 2
 [rom] 
-0,4,3,2,1,2,1,1,1,1,1,0,0,0
+-1,-1,-1,-1,-1,-1,2,0,-1,1,0,0,0,0
 
