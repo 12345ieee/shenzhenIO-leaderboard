@@ -1,7 +1,7 @@
 [name] Top solution Lines->Cost
 [puzzle] Sz004
 [production-cost] 500
-[power-usage] -1
+[power-usage] 412
 [lines-of-code] 7
 
 [traces] 
