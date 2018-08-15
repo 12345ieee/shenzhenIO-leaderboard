@@ -1,8 +1,8 @@
-[name] Top solution Cost->Power
+[name] Top solution Cost
 [puzzle] Sz022
 [production-cost] 800
-[power-usage] 173
-[lines-of-code] 13
+[power-usage] 162
+[lines-of-code] 10
 
 [traces] 
 ......................
@@ -11,14 +11,37 @@
 ......................
 ......................
 ......................
-...................8..
-............14.15556..
-............14.15414..
-...............1C.14..
-..155555555555556.14..
+..............155554..
+..........955555C.....
+..........34.14.3414..
+..9555555554.14...14..
+..2..........14...14..
 ......................
 ......................
 ......................
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 3
+[code] 
+@ teq 0 1
+- slx x1
+- mov x1 x3
+- mov 100 p1
++ mov x2 x0
++ mov x2 x3
++ slp 1
+  tlt acc 7
++ add 1
+- dst x0 p1 #HH
+
+[chip] 
+[type] BANK
+[x] 14
+[y] 3
+[rom] 
+0,536,0,11,101,6,0,105,9,0,1,10,40,2
 
 [chip] 
 [type] DX3
@@ -26,28 +49,7 @@
 [y] 3
 
 [chip] 
-[type] UC6
-[x] 13
-[y] 4
-[code] 
-a:mov x3 x1
-  mov 7 acc
-  slx x2
-  tcp x2 2
-+ mov 11 x3
-+ gen p1 7 0
-+ jmp a
-- mov 7 x1
-- mov 0 acc
-b:mov x0 x3
-  gen p1 1 0
-  teq acc x1
-- jmp b
-
-[chip] 
-[type] BANK
-[x] 10
+[type] BRIDGE
+[x] 14
 [y] 5
-[rom] 
-0,10,10,0,10,10,0,111,0,101,0,101,0,111
 
