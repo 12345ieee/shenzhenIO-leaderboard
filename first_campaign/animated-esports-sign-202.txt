@@ -1,0 +1,111 @@
+[name] Top solution Power - 837951602
+[puzzle] Sz001
+[production-cost] 1600
+[power-usage] 75
+[lines-of-code] 18
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.........155541C......
+.....954155D54.A......
+.....A.954.A9416......
+.....A.A14.A3415C.....
+....56961C175414A.....
+......A..A155D416.....
+.....161435482........
+......................
+......................
+
+[chip] 
+[type] NOT
+[x] 6
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 2
+
+[chip] 
+[type] UC4
+[x] 4
+[y] 3
+[code] 
+@ slp 7
+  slp x0
+  mov 10 x0
+  slp 1
+  mov 100 x0
+  slp 8
+
+[chip] 
+[type] OR
+[x] 9
+[y] 3
+[rotated] true
+
+[chip] 
+[type] NOT
+[x] 14
+[y] 3
+[rotated] true
+
+[chip] 
+[type] OR
+[x] 13
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 4
+
+[chip] 
+[type] DX3
+[x] 7
+[y] 5
+
+[chip] 
+[type] NOT
+[x] 9
+[y] 5
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 6
+[code] 
+@ mov 100 x3
+  mov 10 x3
+  slp 1
+  slp x3
+  mov 10 x3
+  slp 1
+  slp x3
+  mov 10 x3
+  slp 1
+  slp x3
+  mov 110 x3
+  slp 4
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 6
+
+[chip] 
+[type] NOT
+[x] 13
+[y] 6
+[rotated] true
+
+[chip] 
+[type] AND
+[x] 13
+[y] 7
+
