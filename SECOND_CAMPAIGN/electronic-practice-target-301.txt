@@ -1,0 +1,99 @@
+[name] Top solution Lines - zenithf
+[puzzle] Sz041
+[production-cost] 1900
+[power-usage] 714
+[lines-of-code] 30
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.......155554.........
+..15555555C15C154.....
+..9C...8..354A154954..
+..23554A..14.354.A1C..
+..8..156..94..14.A.A..
+..34.155556155555E.A..
+.................216..
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 3
+[code] 
+  slx x3
+  mov p1 acc
+  sub 50
+  mul acc
+  mov acc dat
+  mov p0 acc
+  sub 50
+  mul acc
+  add dat
+  dgt x3
+  mov acc x2
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 3
+
+[chip] 
+[type] BANK
+[x] 8
+[y] 4
+[rom] 
+4,2,2,2,1,1,1,1,1,-2,0,0,0,0
+
+[chip] 
+[type] BANK
+[x] 12
+[y] 4
+[rom] 
+2,2,2,2,2,2,2,2,2,2,1,1,1,1
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 16
+[y] 5
+[code] 
+s:slx x0
+  teq x0 100
++ add x3
+  tlt x1 5
++ mov acc dat
++ mov 0 x2
+- mov acc x2
+  mov dat x3
+  teq x1 4
++ mov 6 x1
+- teq x1 13
++ mov 0 acc
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 6
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 6
+[code] 
+  teq p0 100
++ mov x1 x0
+- tlt x2 10
+- slp x1
+  tgt x2 0
++ mov p0 x3
+  slp 1
+
