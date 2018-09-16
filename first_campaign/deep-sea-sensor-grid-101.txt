@@ -1,7 +1,7 @@
 [name] Top solution Cost->Power
 [puzzle] Sz021
 [production-cost] 700
-[power-usage] 444
+[power-usage] 426
 [lines-of-code] 12
 
 [traces] 
@@ -11,10 +11,10 @@
 ......................
 ......................
 ......................
-...15555555555C954....
-.........154.16A......
-.............1574.....
-...155555554.1554.....
+...1555C..............
+.....1435494..........
+.....14.156...........
+...1554.14............
 ......................
 ......................
 ......................
@@ -22,37 +22,37 @@
 
 [chip] 
 [type] UC6
-[x] 11
+[x] 6
 [y] 4
 [code] 
-  mov p1 x0
+s:slp 1
+  mov p0 x0
   teq x2 x3
-- mov p0 x0  
+- mov p1 x0
 - jmp s
-  teq x2 2
-+ mov p0 x0
-  mov -1 x0
-  mov x0 null
-l:teq x0 -1
-- mov x0 x3
+  teq x2 1
++ mov p1 x0
+  mov -999 x0
+  mov x0 x0
+l:mov x0 x3
+  teq x0 -999
 - jmp l
-s: slp 1
 
 [chip] 
 [type] RADIO
-[x] 16
+[x] 9
 [y] 4
 [rotated] true
 [is-puzzle-provided] true
 
 [chip] 
 [type] RAM
-[x] 7
+[x] 3
 [y] 5
 
 [chip] 
 [type] ID
-[x] 17
-[y] 7
+[x] 11
+[y] 6
 [is-puzzle-provided] true
 

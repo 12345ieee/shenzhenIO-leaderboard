@@ -1,0 +1,138 @@
+[name] Top solution Power - hersmunch
+[puzzle] Sz021
+[production-cost] 1800
+[power-usage] 287
+[lines-of-code] 44
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.......95495555C......
+...15C.214A15C17555C..
+.....35555614A1554.A..
+...94.1C15554A141C.A..
+...A..1755554A15C2.A..
+...A.....8.14A143556..
+...355555755435554....
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 2
+[code] 
+@ slp 6
+@ teq x1 x2
++ mov x0 x0
++ mov x2 x3
++ slp 2
++ mov p0 x0
++ mov p1 x0
++ slp 1
+  mov p0 x0
+  mov p1 x0  
+  slp 1
+  teq x1 x2
++ mov x0 x0
+
+[chip] 
+[type] BRIDGE
+[x] 17
+[y] 2
+
+[chip] 
+[type] RAM
+[x] 4
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 3
+
+[chip] 
+[type] ID
+[x] 10
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 4
+
+[chip] 
+[type] UC4
+[x] 4
+[y] 5
+[code] 
+@ slp 1
+@ mov p0 x1
+@ mov p1 x1
+@ slp 1
+@ mov p0 x1
+@ mov p1 x1
+@ slp 1
+@ mov p0 x1
+@ mov p1 x1
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 5
+[code] 
+  slx x2
+  teq x2 1
++ mov x1 null
+  mov x1 x3
+  mov x1 null
+  mov x1 x3
+  mov x1 null
+  mov x1 x3
+  mov x1 null
+  mov x1 x3
+  mov x1 null
+  mov x1 x3
++ mov p1 x3
+- mov p0 x3
+
+[chip] 
+[type] RADIO
+[x] 17
+[y] 5
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 9
+[y] 7
+[code] 
+@ slp 4
+@ mov p0 x0
+@ mov p1 x0
+@ slp 1
+@ mov p0 x0
+@ mov p1 x0
+@ mov x1 x0
+@ mov x1 x0
+
