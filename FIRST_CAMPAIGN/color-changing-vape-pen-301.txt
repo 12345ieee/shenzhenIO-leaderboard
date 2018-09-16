@@ -1,7 +1,7 @@
 [name] Top solution Lines
 [puzzle] Sz010
 [production-cost] 800
-[power-usage] 575
+[power-usage] 365
 [lines-of-code] 11
 
 [traces] 
@@ -11,48 +11,48 @@
 ......................
 ......................
 ......................
-.......95555C.........
-.......2..1C3554......
-....15554..35554......
-.......14.154.14......
 ......................
-......................
+.........9555554......
+....1D4.16155554......
+.....A..1554.154......
+.....A....14954.......
+.....35555556.........
 ......................
 ......................
 
 [chip] 
+[type] UC6
+[x] 6
+[y] 3
+[code] 
+  slp 1
+- sub 1
+  teq acc 1
+- mov x0  dat
+- tcp dat -998
++ mov x0  x3
++ mov dat p1
++ mov x0  acc
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 3
+
+[chip] 
 [type] UC4
-[x] 12
+[x] 11
 [y] 3
 [code] 
   slx x0
-  mov x0 p1
+  mov x1 p1
+  mov x0 p0
 
 [chip] 
 [type] RADIO
 [x] 2
 [y] 4
 [is-puzzle-provided] true
-
-[chip] 
-[type] BRIDGE
-[x] 7
-[y] 4
-
-[chip] 
-[type] UC6
-[x] 8
-[y] 4
-[code] 
-  mov x1 dat
-  teq dat -999
-+ sub 1
-+ tgt acc 0
-- mov dat p0
-- mov x1 p1
-- mov x1 x2
-- mov x1 acc
-  slp 1
 
 [chip] 
 [type] LEDRGBV

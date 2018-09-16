@@ -1,0 +1,92 @@
+[name] Top solution Power - hersmunch
+[puzzle] Sz010
+[production-cost] 1300
+[power-usage] 156
+[lines-of-code] 23
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+....15C15C............
+......A14B555554......
+....14A156155554......
+....14A15554.154......
+......355C14954.......
+.........3556.........
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 3
+[code] 
+@ slp 7
+  mov x2  dat
+  teq -999 dat
+l:- mov dat p1
+- mov x2  x3
+- mov x2  x1
+- slp x1
+- teq x1 5
+- mov p1  x3
+- slp x0
++ slp 1
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 3
+
+[chip] 
+[type] UC4
+[x] 11
+[y] 3
+[code] 
+  slx x0
+  mov x1 p1
+  mov x0 p0
+
+[chip] 
+[type] BANK
+[x] 2
+[y] 4
+[rom] 
+0,0,4,3,2,0,0,0,0,0,0,0,0,0
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 4
+
+[chip] 
+[type] LEDRGBV
+[x] 15
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] RADIO
+[x] 2
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 5
+[y] 6
+[code] 
+@ slp 1
+@ mov x0 p1
+@ mov x0 x1
+@ mov x0 acc
+@ teq acc 999
++ slx x1
++ slp p1
+@ slp acc
+@ mov p1 x1
+
