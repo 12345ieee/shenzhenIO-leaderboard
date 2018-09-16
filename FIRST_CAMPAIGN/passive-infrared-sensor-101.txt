@@ -1,8 +1,8 @@
-[name] Top solution Cost
+[name] Top solution Cost->Power
 [puzzle] Sz005
 [production-cost] 600
-[power-usage] 292
-[lines-of-code] 10
+[power-usage] 230
+[lines-of-code] 12
 
 [traces] 
 ......................
@@ -11,66 +11,55 @@
 ......................
 ......................
 ......................
+.....14.154...........
+.....14...............
+....154.14............
+..........15555554....
 ......................
 ......................
-....15555555C.........
-.......154.16..154....
-.......154.1554.......
-.....15554............
 ......................
 ......................
-
-[chip] 
-[type] RTC
-[x] 3
-[y] 2
-[is-puzzle-provided] true
-
-[chip] 
-[type] UC6
-[x] 9
-[y] 2
-[code] 
-OFF:
-  teq p0 x0
-- slp 1
-- jmp OFF
-ON:
-  tgt p1 19
-+ mov 100 x3
-- mov 0 x3
-  slp 1
-  teq p0 x1
-- jmp ON
-  mov 0 x3
 
 [chip] 
 [type] DX3
-[x] 14
-[y] 2
+[x] 9
+[y] 3
 
 [chip] 
-[type] DIAL2
+[type] UC6
 [x] 6
-[y] 3
-[is-puzzle-provided] true
+[y] 5
+[code] 
+@ mov x1 acc
+@ sub p1
+@ tlt acc 0
++ add 96
+@ slp acc
+  
+  tgt p0 19
++ mov 10 x2
+- mov 0  x2
+  slp 1
+  teq p1 x0
++ mov 0  x2
++ slp 999
 
 [chip] 
 [type] DIAL1
-[x] 6
-[y] 4
+[x] 4
+[y] 6
 [is-puzzle-provided] true
 
 [chip] 
-[type] NOTE
-[x] 16
-[y] 8
-[code] 
-ABUSE 
-fact that
-the davice always
-starts OFF
-and is turned ON
-once, then OFF
-again
+[type] RTC
+[x] 10
+[y] 6
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL2
+[x] 4
+[y] 7
+[is-puzzle-provided] true
 
