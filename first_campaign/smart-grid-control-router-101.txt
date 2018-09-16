@@ -1,8 +1,8 @@
-[name] Top solution Cost
+[name] Top solution Cost->Power
 [puzzle] Sz024
 [production-cost] 500
-[power-usage] 315
-[lines-of-code] 9
+[power-usage] 287
+[lines-of-code] 14
 
 [traces] 
 ......................
@@ -10,34 +10,39 @@
 ......................
 ......................
 ......................
-......15555D5555C.....
-.....1C....A....2.....
-......A....A..........
-.....1E....34..94.....
-......B555554.16......
-.....16.......154.....
+......................
+.....955555554..8.....
+.....A......94.16.....
+.....A......A..14.....
+.....A......B4........
+.....2......35554.....
 ......................
 ......................
 ......................
-
-[chip] 
-[type] UC6
-[x] 12
-[y] 3
-[code] 
-  slx x1
-  mov x1 acc
-  tgt acc 99
-+ mov acc dat
-  tcp dat x0
-- mov acc x2
-+ mov acc x0
-  teq dat x0
-+ mov acc x3
 
 [chip] 
 [type] ID
-[x] 5
-[y] 8
+[x] 13
+[y] 4
 [is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 5
+[code] 
+s:slx x0
+  mov x0 acc
+  tlt acc 100
+n:- mov acc dat
+  tcp dat x1
+- mov acc x1
+- jmp s
+l:+ mov acc x3
++ slx x0
++ mov x0 acc
++ tlt acc 100
++ jmp l
+- jmp n
+  mov acc x2
 
