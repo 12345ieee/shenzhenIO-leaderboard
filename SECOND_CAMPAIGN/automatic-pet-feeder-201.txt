@@ -1,0 +1,169 @@
+[name] Top solution Power - hersmunch
+[puzzle] Sz040
+[production-cost] 2400
+[power-usage] 473
+[lines-of-code] 49
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..94.1C.14.14.........
+..2...A.14.155554.1C..
+...149755495555C...A..
+...14A1555694..A...A..
+...94A15555614.A...2..
+..16.A...14.15574.14..
+.....355554.14........
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 2
+[code] 
+@ slp 1
+  teq p1 0
+- jmp a
+b:teq p0 2
+- slp 1
++ mov x2 x3
++ slp x1
+  jmp b
+  
+a:teq p0 2
+- slp 1
++ mov x2 x0
++ slp x1
+  jmp a
+
+[chip] 
+[type] DIAL12
+[x] 13
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 16
+[y] 2
+[code] 
+  slx x0
+  mov x0 p1
+  slp 1
+  mov 0 p1
+
+[chip] 
+[type] SWITCH16
+[x] 3
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL9
+[x] 8
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 4
+[code] 
+@ slp 1
+  teq p0 0
+- jmp a
+b:teq p1 3
+- slp 1
++ mov x0 x3
++ slp x1
+  jmp b
+  
+a:teq p1 3
+- slp 1
++ mov x0 x2
++ slp x1
+  jmp a
+
+[chip] 
+[type] SWITCH15
+[x] 13
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL10
+[x] 2
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 5
+
+[chip] 
+[type] DIAL13
+[x] 2
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 6
+[code] 
+@ slp 1
+  teq p1 0
++ jmp b
+a:teq p0 1
+- slp 1
++ mov x0 x3
++ slp x1
+  jmp a
+  
+b:teq p0 1
+- slp 1
++ mov x0 x2
++ slp x1
+  jmp b
+
+[chip] 
+[type] UC4
+[x] 16
+[y] 6
+[code] 
+  slx x0
+  mov x0 p1
+  slp 1
+  mov 0 p1
+
+[chip] 
+[type] UC4
+[x] 3
+[y] 7
+[code] 
+  slp 1
+  mov x0 p1
+
+[chip] 
+[type] DIAL8
+[x] 7
+[y] 7
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL11
+[x] 7
+[y] 8
+[is-puzzle-provided] true
+
+[chip] 
+[type] SWITCH14
+[x] 12
+[y] 8
+[is-puzzle-provided] true
+
