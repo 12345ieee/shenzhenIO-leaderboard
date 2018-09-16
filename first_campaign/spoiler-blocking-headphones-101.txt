@@ -1,8 +1,8 @@
-[name] Top solution Cost
+[name] Top solution Cost->Power
 [puzzle] Sz019
 [production-cost] 800
-[power-usage] 393
-[lines-of-code] 10
+[power-usage] 320
+[lines-of-code] 13
 
 [traces] 
 ......................
@@ -11,52 +11,55 @@
 ......................
 ......................
 ......................
-......15C.............
-......1CA.............
-.......234.155555C....
-...1541554.14....2....
-.......154.14.........
+......955C............
+.....16..34.15555C....
+.....14.154.154..A....
+...15554.94.154..2....
+......1556............
 ......................
 ......................
 ......................
-
-[chip] 
-[type] DX3
-[x] 5
-[y] 2
-[rotated] true
 
 [chip] 
 [type] BRIDGE
-[x] 7
+[x] 6
 [y] 3
+
+[chip] 
+[type] DX3
+[x] 7
+[y] 4
+[rotated] true
 
 [chip] 
 [type] UC6
-[x] 9
-[y] 3
+[x] 10
+[y] 4
 [code] 
-  mov x0 acc
-  mov x0 dat
-+ jmp c
-  mov dat x3
-  sub dat
-  teq acc x2
-+ mov 50 p1
+s:mov x0 acc
++ jmp o
+  tgt acc -999
++ mov x0 dat
++ mov dat x3
++ mov x2 x3
++ sub dat
++ teq acc x2
 - mov p0 p1
-c:slp 1
-+ teq x1 0
++ mov 50 p1
++ slp 3
+o:slp 1
++ teq 0 x1
 
 [chip] 
 [type] BANK
-[x] 12
-[y] 3
+[x] 14
+[y] 4
 [rom] 
--282,-70,42,42,42,42,335,-205,42,42,42,-5,42,138
+3,4,138,-282,-70,998,8,9,335,-205,998,12,-5,2
 
 [chip] 
 [type] NLP
-[x] 4
-[y] 6
+[x] 3
+[y] 5
 [is-puzzle-provided] true
 
