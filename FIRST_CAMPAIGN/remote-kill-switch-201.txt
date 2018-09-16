@@ -1,4 +1,4 @@
-[name] Top solution Cost - hersmunch
+[name] Top solution Power - hersmunch
 [puzzle] Sz016
 [production-cost] 600
 [power-usage] 115
