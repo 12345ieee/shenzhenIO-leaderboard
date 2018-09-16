@@ -1,8 +1,8 @@
-[name] Top solution Cost
+[name] Top solution Cost->Cycles
 [puzzle] Sz038
 [production-cost] 1500
-[power-usage] 323
-[lines-of-code] 28
+[power-usage] 291
+[lines-of-code] 36
 
 [traces] 
 ......................
@@ -10,85 +10,79 @@
 ......................
 ......................
 ......................
+...955555555C.........
+...A14...954A155555C..
+...354.156..354....2..
+....94.14.15C14.1554..
+....35555555694..954..
+.............35556....
 ......................
-...........95555555C..
-.....955554A155555C2..
-.....A...14A15555434..
-.....34..15614....1C..
-.....14.154...15C..A..
-........154.....3416..
 ......................
 ......................
 
 [chip] 
+[type] UC4
+[x] 14
+[y] 4
+[code] 
+  slx x0
+  mov x0 acc
+  gen p1 1 0
+  add 1
+  mov 100 p0
+  slp acc
+  gen p1 1 0
+  mov 0 p0
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 5
+[code] 
+s:slp p0
+  tcp 1 x2
++ jmp s
+- mov x2 dat
+l:mov x1 acc
+  teq dat x0
+- jmp l
+  mov acc x1
+  teq dat 0
++ mov x2 x0
+- mov 0 x0
+  mov x1 x3
+  mov dat x3
+- mov 0 dat
+
+[chip] 
 [type] RADIO
-[x] 3
-[y] 2
+[x] 8
+[y] 5
+[rotated] true
 [is-puzzle-provided] true
 
 [chip] 
 [type] UC6
-[x] 6
-[y] 2
+[x] 11
+[y] 5
 [code] 
-s:slp 1
-  tcp x1 1
-- jmp s
-+ mov x1 dat
-  mov 0 x3
-l:mov x3 acc
-  teq x2 dat
-- jmp l
-  mov acc x3
-  teq dat 0
-+ mov x1 x2
-- mov 0 x2
-  mov dat x0
-- mov 0 dat
+  mov 1 p0
+  slp acc
+  mov 50 p1
+  slx x0
+  mov 3 p0
+  mov x0 acc
+  teq x0 0
++ mov acc x2
++ slp 2
+  gen p1 acc 0
+  mov 50 p1
+- mov acc x2
+  slp 2
+  mov p1 x3
 
 [chip] 
 [type] RAM
-[x] 10
-[y] 2
-
-[chip] 
-[type] DX3
-[x] 13
-[y] 2
-
-[chip] 
-[type] NOT
-[x] 17
-[y] 2
-[rotated] true
-
-[chip] 
-[type] BRIDGE
-[x] 9
-[y] 3
-
-[chip] 
-[type] DX3
-[x] 17
-[y] 3
-
-[chip] 
-[type] UC6
-[x] 10
-[y] 4
-[code] 
-  mov 50 p0
-- gen p1 1 0
-- mov x2 x3
-  slx x0
-  teq x0 0
-+ gen p1 1 0
-+ mov x2 x3
-+ slp 1
-  gen p0 x1 0
-  mov 50 p0
-  gen p1 1 0
-  mov x2 x3
-  slp 1
-  gen p0 0 x1
+[x] 2
+[y] 6
 

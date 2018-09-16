@@ -1,0 +1,94 @@
+[name] Top solution Cost
+[puzzle] Sz038
+[production-cost] 1500
+[power-usage] 323
+[lines-of-code] 28
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+...........95555555C..
+.....955554A155555C2..
+.....A...14A15555434..
+.....34..15614....1C..
+.....14.154...15C..A..
+........154.....3416..
+......................
+......................
+
+[chip] 
+[type] RADIO
+[x] 3
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 2
+[code] 
+s:slp 1
+  tcp x1 1
+- jmp s
++ mov x1 dat
+  mov 0 x3
+l:mov x3 acc
+  teq x2 dat
+- jmp l
+  mov acc x3
+  teq dat 0
++ mov x1 x2
+- mov 0 x2
+  mov dat x0
+- mov 0 dat
+
+[chip] 
+[type] RAM
+[x] 10
+[y] 2
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 2
+
+[chip] 
+[type] NOT
+[x] 17
+[y] 2
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 3
+
+[chip] 
+[type] DX3
+[x] 17
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 4
+[code] 
+  mov 50 p0
+- gen p1 1 0
+- mov x2 x3
+  slx x0
+  teq x0 0
++ gen p1 1 0
++ mov x2 x3
++ slp 1
+  gen p0 x1 0
+  mov 50 p0
+  gen p1 1 0
+  mov x2 x3
+  slp 1
+  gen p0 0 x1
+
