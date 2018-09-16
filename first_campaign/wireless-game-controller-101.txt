@@ -1,8 +1,8 @@
 [name] Top solution Cost->Power
 [puzzle] Sz011
 [production-cost] 600
-[power-usage] 197
-[lines-of-code] 9
+[power-usage] 126
+[lines-of-code] 11
 
 [traces] 
 ......................
@@ -11,39 +11,41 @@
 ......................
 ......................
 ......................
-........955555415C....
-........A......94A....
-........34954..A.A....
-..........A1554A.A....
-.....95554A1554A.A....
-.....215556....216....
+......................
+....9555555C..........
+....34954..A..........
+......A14..354........
+....1CA14.....15C.....
+.....22.......142.....
 ......................
 ......................
 
 [chip] 
+[type] DX3
+[x] 13
+[y] 2
+
+[chip] 
 [type] UC6
-[x] 9
+[x] 5
 [y] 3
 [code] 
   slp 1
   tcp x2 -999
 + mov p0 x3
 + mov p1 x3
++ tgt x0 9
 + mov x0 acc
-+ tgt acc 9
 + sub 8
 + mov acc x3
-- mov acc x3
++ slp 3
+- mov x0 x3
+- slp 3
 
 [chip] 
 [type] RADIO
-[x] 14
+[x] 8
 [y] 3
 [rotated] true
 [is-puzzle-provided] true
-
-[chip] 
-[type] DX3
-[x] 14
-[y] 6
 
