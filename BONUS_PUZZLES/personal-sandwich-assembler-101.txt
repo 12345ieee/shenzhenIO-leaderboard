@@ -1,0 +1,65 @@
+[name] Top solution Cost - hersmunch
+[puzzle] Sz007
+[production-cost] 900
+[power-usage] 146
+[lines-of-code] 21
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.........9555555554...
+.........A.9555D5554..
+.........A16...A..14..
+..1555554A154.16.154..
+.......156.15C154154..
+.............3555554..
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 4
+[code] 
+  slx x1
+  mov x1  dat
++ mov 0 acc
+  teq dat 3
++ gen p1 1 0
++ gen p0 1 0
++ mov acc x3
++ dgt 1
++ add 1
++ mov acc x3
+- teq dat -1
+  dst dat -1
+
+[chip] 
+[type] UC4
+[x] 12
+[y] 4
+[code] 
+  slx x0
+  tgt x0 -100
+  mov 010 x1
+  slp x0
+  mov 001 x1
++ slp 1
+- slp 2
+  gen p1 1 x1
+  gen p0 3 0
+
+[chip] 
+[type] DX3
+[x] 16
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 6
+
