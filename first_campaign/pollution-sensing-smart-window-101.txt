@@ -1,7 +1,7 @@
-[name] Top solution Cost
+[name] Top solution Cost->Power
 [puzzle] Sz004
 [production-cost] 500
-[power-usage] 322
+[power-usage] 321
 [lines-of-code] 8
 
 [traces] 
@@ -11,36 +11,36 @@
 ......................
 ......................
 ......................
-.........1C...........
-......94..2...........
-....1C34.155555554....
-.....354.14...........
+......................
+........14.155555C....
+....155554.1C....2....
+........8..16.........
+........34............
 ......................
 ......................
 ......................
-......................
-
-[chip] 
-[type] UC4
-[x] 7
-[y] 4
-[code] 
-  add p0
-  tlt acc 400
-+ mov 100 p1
-- mov 0 p1
-  sub x1
-  mov p0 x0
-  mov x1 x0
-  slp 1
-
-[chip] 
-[type] BRIDGE
-[x] 10
-[y] 4
 
 [chip] 
 [type] RAM
-[x] 7
-[y] 6
+[x] 9
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 4
+
+[chip] 
+[type] UC4
+[x] 9
+[y] 5
+[code] 
+  add p0
+  tgt acc 399
++ mov 0   p1
+- mov 100 p1
+  sub x1
+  mov p0 x0
+  slp 1
+  mov x0 x1
 
