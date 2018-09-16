@@ -1,8 +1,8 @@
-[name] Top solution Cost->Power
+[name] Top solution Cost
 [puzzle] Sz030
 [production-cost] 300
-[power-usage] 226
-[lines-of-code] 7
+[power-usage] 240
+[lines-of-code] 4
 
 [traces] 
 ......................
@@ -12,8 +12,8 @@
 ......................
 ......................
 ......................
-.......8...15C........
-.......354...2........
+.......1C..1C.........
+........34..34........
 ......................
 ......................
 ......................
@@ -25,11 +25,8 @@
 [x] 9
 [y] 5
 [code] 
-@ mov 50 p1
-  tcp p0 25
-+ mov 100 p1
-- mov 0 p1
+  mov p0 acc
+  add acc
+  mov acc p1
   slp 1
-+ mov 50 p1
-- mov 50 p1
 
