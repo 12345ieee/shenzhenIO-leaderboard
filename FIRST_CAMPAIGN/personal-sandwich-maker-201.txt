@@ -1,8 +1,8 @@
-[name] Top solution Power - pseudonym404
+[name] Top solution Power - Hersmunch
 [puzzle] Sz007EZ
-[production-cost] 1300
-[power-usage] 61
-[lines-of-code] 14
+[production-cost] 1600
+[power-usage] 58
+[lines-of-code] 15
 
 [traces] 
 ......................
@@ -11,11 +11,11 @@
 ......................
 ......................
 .....1555414141555C...
-.....15555C954.14.34..
-...1C1C.142A94154154..
-..14A175555634155554..
-..156....8155C154154..
-..94.....35543554.94..
+.....15555C154.14.34..
+...1C1C.1C35D4154154..
+..14A175C29434155554..
+..156...35695C154154..
+..94.....156.3554.94..
 ..35555555555555556...
 ......................
 ......................
@@ -25,24 +25,31 @@
 [x] 3
 [y] 3
 [code] 
-  slx x0
+@ slx x0
   tcp x0 2
   mov 100 p1
   slp 1
-  mov 100 x1
+  mov 010 x1
   slp 1
   mov 110 x1
 + slp 1
 - slp 1
-  mov 10 x1
+  mov 100 x1
   slp 1
 + slp 1
   slp x1
-  gen p0 3 p1
+  gen p0 p1 4
+
+[chip] 
+[type] UC4
+[x] 6
+[y] 3
+[code] 
+@ mov 3 p1
 
 [chip] 
 [type] BRIDGE
-[x] 12
+[x] 9
 [y] 3
 
 [chip] 
@@ -51,19 +58,14 @@
 [y] 3
 
 [chip] 
-[type] BRIDGE
-[x] 9
-[y] 4
-
-[chip] 
-[type] BRIDGE
-[x] 10
-[y] 4
-
-[chip] 
 [type] AND
 [x] 13
 [y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 5
 
 [chip] 
 [type] BRIDGE
