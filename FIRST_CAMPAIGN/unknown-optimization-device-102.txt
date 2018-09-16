@@ -1,8 +1,8 @@
-[name] Top solution Cost->Power
+[name] Top solution Cost->Lines
 [puzzle] Sz015
 [production-cost] 600
-[power-usage] 647
-[lines-of-code] 14
+[power-usage] 664
+[lines-of-code] 13
 
 [traces] 
 ......................
@@ -43,11 +43,10 @@
 [x] 13
 [y] 5
 [code] 
+  mov x0 acc
   tlt p0 60
 + tgt p0 19
-+ mov x0 acc
 + sub 30
-+ mov acc p1
-- mov x0 p1
+  mov acc p1
   slp 1
 

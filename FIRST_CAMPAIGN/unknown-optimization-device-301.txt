@@ -1,4 +1,4 @@
-[name] Top solution Lines
+[name] Top solution Lines->Cost
 [puzzle] Sz015
 [production-cost] 1000
 [power-usage] 656
