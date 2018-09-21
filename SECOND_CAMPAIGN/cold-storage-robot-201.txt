@@ -1,8 +1,8 @@
 [name] Top solution Power - 12345ieee
 [puzzle] Sz038
-[production-cost] 2300
-[power-usage] 195
-[lines-of-code] 43
+[production-cost] 2200
+[power-usage] 194
+[lines-of-code] 44
 
 [traces] 
 ......................
@@ -10,50 +10,51 @@
 ......................
 ......................
 ......................
-...954..9555C.........
-...A1C.16154A155555C..
-...A.A9555D4354....2..
-...A16A..8A.954.1554..
-...A156156A.A1541414..
-...A...1C.34354.14....
-...355556.............
+...954..955C..........
+...A1C.1614A155555DC..
+...A.A9555C354....22..
+...A16A..8A954.15554..
+...A156156AA15414.88..
+...A...1C16354.1556A..
+...355556.......1416..
 ......................
 ......................
 
 [chip] 
-[type] NOTE
-[x] 5
-[y] 1
-[code] 
-Optimal sleep
-would be 5+2*ADDR
-6+1*A is good
-enough
+[type] BRIDGE
+[x] 16
+[y] 2
+
+[chip] 
+[type] NOT
+[x] 17
+[y] 2
 
 [chip] 
 [type] UC6
 [x] 5
 [y] 3
 [code] 
-start:
-  slx x3
-  mov x2 dat
+@ slx x3
+@ mov x2 dat
 loop:
   mov x1 acc
   teq x0 dat
-- jmp loop
 clean:
-  mov acc x1
-  mov x3 x0 #0,HHs
++ mov acc x1
++ mov x3 x0 #0,HHs
+start:
++ slx x3
++ mov x2 dat
 
 [chip] 
 [type] UC4X
-[x] 11
+[x] 10
 [y] 3
 [code] 
   mov 010 x3
   slx x2
-g: mov x2 x3 #100
+g: mov x2 x3 #110
   slp 1
 # mov 000 x3
   slp x3 #HH
@@ -63,14 +64,8 @@ l: mov 100 x3
 
 [chip] 
 [type] DX3
-[x] 15
+[x] 14
 [y] 3
-
-[chip] 
-[type] NOT
-[x] 17
-[y] 3
-[rotated] true
 
 [chip] 
 [type] RAM
@@ -78,8 +73,8 @@ l: mov 100 x3
 [y] 4
 
 [chip] 
-[type] NOT
-[x] 17
+[type] BRIDGE
+[x] 18
 [y] 4
 
 [chip] 
@@ -89,7 +84,7 @@ l: mov 100 x3
 
 [chip] 
 [type] UC6
-[x] 11
+[x] 10
 [y] 5
 [code] 
   mov 50 p1
@@ -135,7 +130,7 @@ slp: slp 6 #A1
 
 [chip] 
 [type] NOTE
-[x] 10
+[x] 9
 [y] 8
 [code] 
  1 -> mov   0 addr
@@ -143,14 +138,17 @@ slp: slp 6 #A1
 
 ---------------
 
-Abuse timings
+Optimal sleep
+would be 5+2*ADDR
+6+1*A is good
+enough
 
 [chip] 
 [type] NOTE
 [x] 15
 [y] 8
 [code] 
-Use NOTs to cut
+Use NOT to cut
 instructions
 in slp/mov
 
