@@ -1,8 +1,8 @@
-[name] Top solution Cost->Power - 12345ieee
+[name] Top solution Cost->Lines - 12345ieee
 [puzzle] Sz018
 [production-cost] 1400
-[power-usage] 813
-[lines-of-code] 27
+[power-usage] 836
+[lines-of-code] 26
 
 [traces] 
 ......................
@@ -11,10 +11,10 @@
 ......................
 ......................
 .....1555555555554....
-..1555555C......955C..
-....1415C34.....A142..
-....1554A154.154A15C..
-.....954A154.154A142..
+..1555555C.954..955C..
+....1415C34A14..A142..
+....1554A1575554A15C..
+.....954A1555554A142..
 ..1556..A.....15694...
 ........3555555556....
 ......................
@@ -22,7 +22,7 @@
 
 [chip] 
 [type] NOTE
-[x] 1
+[x] 2
 [y] 1
 [code] 
 in   ->  t  -> RAM
@@ -51,18 +51,18 @@ RAM addr to 0
 [x] 15
 [y] 3
 [code] 
-lz: mov x1 x0
-  teq x1 12
+lz: mov x0 x1
+  teq x0 0
 - jmp lz
   mov x3 p0
   mov x3 p1
   slx x2
-lm: mov x0 dat
+  mov x2 x0 #0
+lm: mov x1 dat
 - tgt dat acc #H-
 + mov dat acc
-  teq x0 11 #D2
+  teq x1 13 #D2
 - jmp lm
-  mov x2 x1 #0 #p
   mov acc x2
 
 [chip] 
@@ -71,11 +71,8 @@ lm: mov x0 dat
 [y] 4
 [code] 
 @ mov 12 x1
-  slp 1
+  slp 1 #A0
   tcp p1 x3
-- mov 0 x0
-- mov x0 x1
-- mov 0 x3
 + mov p0 acc
 + sub 30
 + dst 0 8
@@ -84,10 +81,12 @@ lm: mov x0 dat
 + add 14
 + mov acc x3
 + mov acc x2
+- mov 0 x0
+- mov x0 x1
 
 [chip] 
-[type] RAM
-[x] 11
+[type] BRIDGE
+[x] 12
 [y] 4
 
 [chip] 
@@ -105,6 +104,11 @@ lm: mov x0 dat
 [chip] 
 [type] BRIDGE
 [x] 5
+[y] 6
+
+[chip] 
+[type] RAM
+[x] 13
 [y] 6
 
 [chip] 
