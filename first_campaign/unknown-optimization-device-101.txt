@@ -1,7 +1,7 @@
 [name] Top solution Cost->Power
 [puzzle] Sz015
 [production-cost] 600
-[power-usage] 647
+[power-usage] 630
 [lines-of-code] 14
 
 [traces] 
@@ -11,43 +11,46 @@
 ......................
 ......................
 ......................
-......................
-....15555C.154.154....
-........175554........
-....154.1554..........
-......................
+.........15555555C....
+....1554.15C.....2....
+....955555CA..........
+....2.8..16A..........
+......34.156..........
 ......................
 ......................
 ......................
 
 [chip] 
 [type] UC4
-[x] 6
-[y] 4
+[x] 7
+[y] 3
 [code] 
+start:
   tgt p0 39
++ tlt p0 80
 + tgt p1 39
 + tlt p1 80
-+ tlt p0 80
-+ mov 80 x1
-- mov 30 x1
++ mov 50 x1
+- mov 0 x1
   slp 1
 
 [chip] 
 [type] BRIDGE
-[x] 11
+[x] 6
 [y] 4
 
 [chip] 
 [type] UC4
-[x] 13
-[y] 5
+[x] 7
+[y] 6
 [code] 
+start:
   tlt p0 60
 + tgt p0 19
-+ mov x0 acc
-+ sub 30
-+ mov acc p1
-- mov x0 p1
+- mov x1 acc
+- add 30
+- mov acc p1
++ mov x1 p1
+sleep: 
   slp 1
 
