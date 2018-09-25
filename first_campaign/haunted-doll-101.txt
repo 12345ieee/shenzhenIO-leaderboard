@@ -1,8 +1,8 @@
-[name] Top solution Cost->Power
+[name] Top solution Cost
 [puzzle] Sz008
-[production-cost] 900
-[power-usage] 192
-[lines-of-code] 13
+[production-cost] 700
+[power-usage] 269
+[lines-of-code] 8
 
 [traces] 
 ......................
@@ -13,49 +13,60 @@
 ......................
 ......................
 ......................
-.......154.155554.....
-.......154.154........
-........94.154........
-......156.............
+........154.15554.....
+.........94.1C........
+.........A...34.......
+........16............
 ......................
 ......................
 
 [chip] 
 [type] RND
-[x] 5
+[x] 7
 [y] 2
 [is-puzzle-provided] true
 
 [chip] 
-[type] UC6
-[x] 9
-[y] 3
-[code] 
-@ mov 50 p1
-start: slp 1
-  tcp p0 2
-- teq p0 0
-+ jmp start
-  teq p0 2
-tp: + mov x2 p1
-tm: - mov x0 p1
-  slp 1
-  tcp x3 x1 #HHH
-+ jmp tp
-- jmp tm
-  slp 3 #Abuse
-
-[chip] 
 [type] BANK
-[x] 13
+[x] 14
 [y] 3
 [rom] 
-16,36,42,14,10,58,100,76,26,28,70,80,42,50
+50,16,36,42,14,10,58,100,76,26,28,70,80,42
 
 [chip] 
 [type] BANK
-[x] 5
+[x] 6
 [y] 4
 [rom] 
-100,80,41,14,14,41,69,74,54,27,19,40,75,50
+27,100,41,19,80,69,40,41,74,75,14,54,50,14
+
+[chip] 
+[type] UC4
+[x] 10
+[y] 4
+[code] 
+  mov x1 p1
+- mov x0 p1
+- mov x0 null
+  teq x0 27
+wait:
+  slp 1
++ mov p0 acc
+  tcp acc 2
++ jmp wait
+
+[chip] 
+[type] NOTE
+[x] 6
+[y] 7
+[code] 
+Left ROM is the
+counter.
+
+It's pulled 1x/3x
+each song loop, so
+that it can both
+output and test.
+3 is the min, as
+MCD(3,14) = 1
 
