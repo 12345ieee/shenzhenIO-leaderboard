@@ -1,8 +1,8 @@
 [name] Top solution Cost
 [puzzle] Sz012
 [production-cost] 300
-[power-usage] 313
-[lines-of-code] 9
+[power-usage] 309
+[lines-of-code] 8
 
 [traces] 
 ......................
@@ -32,12 +32,11 @@
 [y] 5
 [code] 
 @ mov -999 acc
-  add p1  
+  slp 1
+  add p1
   tcp p0 0
-+ teq acc 0
-- mov 0 acc
-+ mov -999 acc
++ not
++ mul -10
   mov acc x1
   sub p1
-  slp 1
 
