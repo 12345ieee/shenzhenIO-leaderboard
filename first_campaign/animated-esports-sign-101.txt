@@ -1,8 +1,8 @@
-[name] Top solution Cost
+[name] Top solution Cost->Power
 [puzzle] Sz001
 [production-cost] 500
-[power-usage] 284
-[lines-of-code] 8
+[power-usage] 125
+[lines-of-code] 9
 
 [traces] 
 ......................
@@ -10,42 +10,44 @@
 ......................
 ......................
 ......................
-...........154........
-...........155C.......
-.....955554948A.......
-.....34.1C.A96A.......
-.....94..A.AA96.......
-.....B41D6.AAA........
-.....34.2..222........
+.......14.............
+....94.154155C........
+....355C8.15CA........
+.......AA.1CAA........
+.......A355EAA........
+....9417C..AAA........
+....354.2..222........
 ......................
 ......................
 
 [chip] 
 [type] NOT
-[x] 6
+[x] 5
 [y] 3
-
-[chip] 
-[type] UC4
-[x] 6
-[y] 4
-[code] 
-  mov p1 p0
-  add 10
-  mov 100 x0
-  tcp acc 70
-- mov 1 x0
-+ mov acc x0
-+ dst 2 0
-s:  slp 1
+[rotated] true
 
 [chip] 
 [type] DX3
-[x] 10
-[y] 6
+[x] 9
+[y] 5
 
 [chip] 
 [type] BRIDGE
-[x] 13
+[x] 8
 [y] 6
+
+[chip] 
+[type] UC4
+[x] 5
+[y] 7
+[code] 
+  teq p1 0
+- mov 10 x1
++ mov 1 x1
+  slp 1
+- mov 100 x1
+  gen p0 1 1
++ gen p0 1 1
+- mov 10 x1
+  gen p0 1 0
 
