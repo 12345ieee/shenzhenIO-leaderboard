@@ -1,4 +1,4 @@
-[name] Top solution Cost - dominic.baggott
+[name] Top solution Power - dominic.baggott
 [puzzle] Sz031
 [production-cost] 500
 [power-usage] 90
