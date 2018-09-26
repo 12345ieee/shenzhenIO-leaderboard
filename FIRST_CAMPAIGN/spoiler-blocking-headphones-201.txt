@@ -1,0 +1,118 @@
+[name] Top solution Power - dominic.baggott
+[puzzle] Sz019
+[production-cost] 2000
+[power-usage] 228
+[lines-of-code] 35
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....954.....155C......
+....A.9555555C.A......
+....34A1555543435C....
+....15615C...94..A....
+...154.94B554A1556....
+.....15616954A14......
+........15615614......
+......................
+......................
+
+[chip] 
+[type] UC4X
+[x] 6
+[y] 2
+[code] 
+@ slx x0
++ slx x0
+  teq x2 -999
++ mov x0 x3
+
+[chip] 
+[type] NLP
+[x] 9
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 2
+[code] 
+  mov x1 acc
+  tcp acc -999
++ mov x1 dat
++ mov dat x3
++ sub dat
++ teq acc x2
++ mov 0 p1
++ mov 6 x0
++ slx x0
++ mov x0 null
+- mov p0 p1
+- slp 1
+  mov p0 p1
+  slp 1
+
+[chip] 
+[type] BANK
+[x] 15
+[y] 2
+[rom] 
+-282,-70,0,0,0,0,335,-205,0,0,0,-5,0,138
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 4
+[code] 
+@ slx x3
+@ mov 50 p1
+@ slp x3
+- slx x3
+- mov 50 p1
+- slp x3
+  tcp p0 0
++ tgt x0 p1
++ mov 1 x1
++ slp 999
+- mov 1 x2
+  slp 1
+
+[chip] 
+[type] UC4
+[x] 14
+[y] 5
+[code] 
+@ slx x0
+@ mov p0 p1
+@ slp x0 #eat
+  mov p0 p1
+  slp 1
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 6
+
+[chip] 
+[type] BANK
+[x] 3
+[y] 7
+[rom] 
+0,0,1,0,0,0,0,0,0,0,0,0,0,0
+
+[chip] 
+[type] NOTE
+[x] 17
+[y] 8
+[code] 
+711 573
+495 160
+575 645
+712 917
+356 361
+138 420
+
