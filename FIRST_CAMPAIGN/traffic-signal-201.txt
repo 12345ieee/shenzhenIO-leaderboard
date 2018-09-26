@@ -1,0 +1,133 @@
+[name] Top solution Lines - dominic.baggott
+[puzzle] Sz026
+[production-cost] 1900
+[power-usage] 123
+[lines-of-code] 25
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...9555555D5415541C...
+...A..15C16.15554.2...
+...B41C.A154141541C...
+...34174A1C.15554.2...
+....14..3C34.8.141C...
+....14.14354.3554.2...
+.......14.............
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 2
+[code] 
+@ mov 100 x3
+@ mov x0 acc
+@ sub 2
+@ mov acc x3
+@ mov 001 x3
+@ mov x1 acc
+@ sub 2
+@ mov acc x3
+@ mov 010 x3
+@ mov x2 acc
+@ sub 2
+@ mov acc x3
+
+[chip] 
+[type] DIAL6
+[x] 8
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL5
+[x] 3
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] RAM
+[x] 8
+[y] 3
+
+[chip] 
+[type] AND
+[x] 16
+[y] 3
+
+[chip] 
+[type] DIAL4
+[x] 3
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 13
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 4
+
+[chip] 
+[type] NOT
+[x] 4
+[y] 5
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 5
+[code] 
+@ mov 100 p0
+@ teq p1 100
++ slp 1
++ jmp wait
+- mov x2 x3
+- slp 2
+- teq p0 0
+- slp x2
+- teq x0 6
+- teq p0 0
+reset: + mov 0 x0
++ mov 100 p0
+wait: + teq p1 100
+
+[chip] 
+[type] DX3
+[x] 11
+[y] 5
+
+[chip] 
+[type] AND
+[x] 16
+[y] 5
+
+[chip] 
+[type] NOT
+[x] 4
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 6
+
+[chip] 
+[type] AND
+[x] 16
+[y] 7
+
+[chip] 
+[type] NOT
+[x] 12
+[y] 8
+
