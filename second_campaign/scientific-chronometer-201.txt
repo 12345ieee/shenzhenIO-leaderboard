@@ -1,4 +1,4 @@
-[name] Top solution Cost - andersk
+[name] Top solution Power - andersk
 [puzzle] Sz039
 [production-cost] 500
 [power-usage] 155
