@@ -1,8 +1,8 @@
-[name] Top solution Power - hersmunch
+[name] Top solution Lines - llamadeus
 [puzzle] Sz004
 [production-cost] 1100
-[power-usage] 225
-[lines-of-code] 16
+[power-usage] 224
+[lines-of-code] 20
 
 [traces] 
 ......................
@@ -11,11 +11,11 @@
 ......................
 ......................
 ......................
-.......1555555541C....
-.......15555C....A....
-....94.1C..17555C2....
-....A...34.154..A.....
-....3555555554.16.....
+........141555C.......
+........15555C355C....
+....1D4.1C..1755C2....
+.....355C34.14..A.....
+........355554.16.....
 ......................
 ......................
 ......................
@@ -25,43 +25,40 @@
 [x] 13
 [y] 3
 [code] 
-@ mov 4 x0
 @ mov p0 x1
+@ slp 1
+@ mov p0 x1
+@ slp 1
+@ mov p0 x1
+@ mov 11 x0
 
 [chip] 
 [type] RAM
-[x] 9
+[x] 10
 [y] 4
 
 [chip] 
 [type] UC6
-[x] 5
+[x] 6
 [y] 5
 [code] 
-@ mov -350 acc
+@ slp 3
+@ sub 350
+@ add x2
+@ add x2
+@ add x2
 @ add p0
+@ mov p0 x2
+@ mov acc p1
 @ slp 1
-@ mov p0 x3
-@ add p0
-@ slp 1
-@ mov p0 x3
-@ add p0
-@ slp 1
-  mov p0 x3
+  mov p0 x2
   add p0
   mov acc p1
   slp 1
-  sub x2
+  sub x3
 
 [chip] 
 [type] NOT
-[x] 15
+[x] 9
 [y] 7
-
-[chip] 
-[type] NOTE
-[x] 1
-[y] 8
-[code] 
-Sum_8 >= 400
 
