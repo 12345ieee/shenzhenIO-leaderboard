@@ -1,4 +1,4 @@
-[name] Top solution Lines - dominic.baggott
+[name] Top solution Power - dominic.baggott
 [puzzle] Sz026
 [production-cost] 1900
 [power-usage] 123
