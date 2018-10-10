@@ -1,0 +1,116 @@
+[name] Top solution Power - fistbag
+[puzzle] Sz009
+[production-cost] 2100
+[power-usage] 177
+[lines-of-code] 30
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....14.155C...........
+.......15C355541414...
+...14941CA154.1555C...
+...1CA..AA954.14..A...
+...8A34162A15C14..2...
+...A354..16..355554...
+...3554..154..........
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 6
+[y] 2
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 2
+
+[chip] 
+[type] BANK
+[x] 10
+[y] 2
+[rom] 
+3,1,12,5,3,9,7,5,3,3,7,5,3,3
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 4
+[code] 
+x: slx x0
+  mov x0 x3
+  mov x3 x1
+  tlt x3 10
++ tgt x3 0
++ gen p1 1 1
++ tlt x3 5
++ gen p1 1 1
+  tgt x2 p1
+b: +mov 100 p0
++ slp 1
++ tgt x2 p0
++ slp 1
++ jmp b
+
+[chip] 
+[type] BANK
+[x] 15
+[y] 4
+[rom] 
+0,0,0,1,0,1,1,1,1,0,1,1,1,1
+
+[chip] 
+[type] OR
+[x] 4
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 5
+[code] 
+@ tgt 1 3
+- mov p1 acc
+- slp x0
+x: - tgt x1 0
+- slp 1
+- tgt x1 0
+- slp 1
+s: + mov x1 x2
++ sub x0
++ tgt acc 0
++ slp 2
+- mov acc x3
+- mov 100 p1
+- slp 4
+
+[chip] 
+[type] UC4
+[x] 5
+[y] 7
+[code] 
+@ mov x0 p1
+@ mov x1 acc
+
+[chip] 
+[type] NOT
+[x] 14
+[y] 7
+
+[chip] 
+[type] NOT
+[x] 16
+[y] 7
+
+[chip] 
+[type] DIAL3
+[x] 3
+[y] 8
+[is-puzzle-provided] true
+
