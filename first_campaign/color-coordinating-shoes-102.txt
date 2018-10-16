@@ -1,8 +1,8 @@
 [name] 837951602
 [puzzle] Sz018
 [production-cost] 1400
-[power-usage] 1076
-[lines-of-code] 25
+[power-usage] 1141
+[lines-of-code] 24
 
 [traces] 
 ......................
@@ -55,11 +55,10 @@
   mov x2 p0
 r:mov x0 x1
   teq x0 0
-- jmp r
-s:slp 1
-  mov 1 x3
-  mov 0 x0
-  teq x3 1
+s:+slp 1
++ mov 1 x3
++ mov 0 x0
++ teq x3 1
 + jmp s
 
 [chip] 
@@ -67,7 +66,7 @@ s:slp 1
 [x] 16
 [y] 5
 [rom] 
-5,5,75,85,50,5,15,80,95,5,5,60,50,50
+75,85,50,5,15,80,95,5,5,60,50,50,5,5
 
 [chip] 
 [type] BRIDGE
