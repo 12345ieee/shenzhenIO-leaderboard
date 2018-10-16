@@ -1,4 +1,4 @@
-[name] Top solution Cost - 837951602
+[name] Top solution Lines - 837951602
 [puzzle] Sz018
 [production-cost] 1400
 [power-usage] 735
