@@ -1,8 +1,8 @@
 [name] 837951602
 [puzzle] Sz018
 [production-cost] 1400
-[power-usage] 1141
-[lines-of-code] 24
+[power-usage] 881
+[lines-of-code] 21
 
 [traces] 
 ......................
@@ -12,13 +12,18 @@
 ......................
 ....155555555554......
 ..15555C9554.155555C..
-....8..AA954.1554..2..
-...16.16AA15C1554.....
-......156A..35555554..
-..154.1556............
+....8..AA95495414..2..
+...16.16AA1CA1554.....
+...15C156A.A29555554..
+..154A1556.356........
+.....35555554.........
 ......................
 ......................
-......................
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 2
 
 [chip] 
 [type] UC6
@@ -28,17 +33,17 @@
   slp 1
   tcp p1 x3
 - mov dat x0
-- mov 0 dat
-+ mov p0 acc
+- mov 0 x1
+  mov p0 acc
 + sub 30
-+ dst 0 8
++ dst 0 9
 + mov acc x3
 + mov x2 acc
-+ add 14
++ sub 14
 + mov acc x3
 + mov acc x2
 + tgt acc dat
-+ mov acc dat
+- mov acc dat
 
 [chip] 
 [type] RAM
@@ -50,23 +55,20 @@
 [x] 11
 [y] 5
 [code] 
-@ mov 12 x3
   mov x2 p1
   mov x2 p0
 r:mov x0 x1
   teq x0 0
-s:+slp 1
-+ mov 1 x3
-+ mov 0 x0
-+ teq x3 1
-+ jmp s
+s:+slx x3
++ mov x3 x0
++ mov x2 null
 
 [chip] 
 [type] BANK
 [x] 16
 [y] 5
 [rom] 
-75,85,50,5,15,80,95,5,5,60,50,50,5,5
+5,5,75,85,50,5,15,80,95,5,5,60,50,50
 
 [chip] 
 [type] BRIDGE
