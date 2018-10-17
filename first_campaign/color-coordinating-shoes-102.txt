@@ -1,8 +1,8 @@
-[name] 837951602
+[name] 837951602 (Copy)
 [puzzle] Sz018
 [production-cost] 1400
-[power-usage] 881
-[lines-of-code] 21
+[power-usage] 876
+[lines-of-code] 20
 
 [traces] 
 ......................
@@ -55,20 +55,20 @@
 [x] 11
 [y] 5
 [code] 
-  mov x2 p1
   mov x2 p0
 r:mov x0 x1
   teq x0 0
 s:+slx x3
 + mov x3 x0
-+ mov x2 null
+  mov x2 p1
+  
 
 [chip] 
 [type] BANK
 [x] 16
 [y] 5
 [rom] 
-5,5,75,85,50,5,15,80,95,5,5,60,50,50
+5,75,85,50,5,15,80,95,5,5,60,50,50,5
 
 [chip] 
 [type] BRIDGE
