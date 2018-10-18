@@ -1,7 +1,7 @@
 [name] 837951602 (Copy)
 [puzzle] Sz018
 [production-cost] 1400
-[power-usage] 875
+[power-usage] 735
 [lines-of-code] 20
 
 [traces] 
@@ -82,7 +82,7 @@ init ->  x  -> 13*
 [y] 5
 [code] 
 r:mov x0 x1
-  teq x0 0
+  teq x1 x0
 s:+ slx x3
 + mov x3 x0 #0
   mov x2 p1
