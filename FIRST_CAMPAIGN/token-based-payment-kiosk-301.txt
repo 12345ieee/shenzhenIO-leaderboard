@@ -1,8 +1,8 @@
-[name] Top solution Power - hersmunch
+[name] Top solution Lines - 837951602
 [puzzle] Sz009
-[production-cost] 2000
-[power-usage] 485
-[lines-of-code] 14
+[production-cost] 2300
+[power-usage] 676
+[lines-of-code] 12
 
 [traces] 
 ......................
@@ -11,12 +11,12 @@
 ......................
 ......................
 .....14.15555C........
-.....14954...B41414...
+.....14954...A15554...
 ...1494A954.16........
-...1CA.A215C14........
-...823434.9E1415554...
-...3554.14B6..15554...
-....154.156...14......
+...1CA.A215C14..954...
+...82343414A1414A14...
+...3554.14.A..14A14...
+....154.1556..156.....
 ......................
 ......................
 
@@ -58,15 +58,17 @@
 [y] 2
 
 [chip] 
-[type] NOT
-[x] 15
-[y] 2
-[rotated] true
-
-[chip] 
 [type] BRIDGE
 [x] 8
 [y] 3
+
+[chip] 
+[type] PGA
+[x] 15
+[y] 3
+[array-switch] False
+[array-data] 
+0,1,0,0,0,0,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 
 [chip] 
 [type] UC6
@@ -74,12 +76,11 @@
 [y] 4
 [code] 
   mov x3 p1
-  teq 0 x0
-- mov x1 x2
-  slp 1
-- slp x2
+  mov x1 x2
+  gen p0 1 0
+  slp x2
+ 
   mov x1 x0
-+ mov x2 x2
 
 [chip] 
 [type] OR
@@ -106,19 +107,14 @@
   sub x0
 
 [chip] 
+[type] OR
+[x] 13
+[y] 6
+
+[chip] 
 [type] BANK
 [x] 3
 [y] 7
 [rom] 
 0,1,4,5,4,0,0,0,0,0,12,4,0,0
-
-[chip] 
-[type] NOT
-[x] 14
-[y] 7
-
-[chip] 
-[type] NOT
-[x] 16
-[y] 7
 
