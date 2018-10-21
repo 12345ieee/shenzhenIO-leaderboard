@@ -1,7 +1,7 @@
 [name] Top solution line (Copy)
 [puzzle] Sz009
 [production-cost] 2300
-[power-usage] 840
+[power-usage] 676
 [lines-of-code] 12
 
 [traces] 
@@ -78,7 +78,8 @@
   mov x3 p1
   mov x1 x2
   gen p0 1 0
-  gen p0 x2 0
+  slp x2
+ 
   mov x1 x0
 
 [chip] 
