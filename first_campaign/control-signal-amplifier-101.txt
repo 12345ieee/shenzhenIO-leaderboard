@@ -2,7 +2,7 @@
 [puzzle] Sz030
 [production-cost] 300
 [power-usage] 195
-[lines-of-code] 8
+[lines-of-code] 5
 
 [traces] 
 ......................
@@ -12,8 +12,8 @@
 ......................
 ......................
 ......................
-.......8...15C........
-.......354...2........
+.......155D4..........
+..........3554........
 ......................
 ......................
 ......................
@@ -21,16 +21,31 @@
 ......................
 
 [chip] 
+[type] NOTE
+[x] 7
+[y] 4
+[code] 
+(Ab)uses the fact
+that input values
+are only 0/25/50.
+
+Higher output on
+the shared p0 pin
+overrides input
+value.
+
+[chip] 
 [type] UC4
-[x] 9
-[y] 5
+[x] 11
+[y] 6
 [code] 
   tcp p0 25
-- mov 0 p1
-a: - slp 1
-- tcp p0 25
-- jmp a
-  mov 50 p1
-+ mov 100 p1
+# in=0,   out=0
+- jmp sleep
+# in=25,  out=50
+  mov  50 p0
+# in=50,  out=100
++ mov 100 p0
+sleep:
   slp 1
 
