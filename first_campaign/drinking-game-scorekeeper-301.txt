@@ -1,7 +1,7 @@
 [name] Top solution Lines
 [puzzle] Sz028
 [production-cost] 600
-[power-usage] 303
+[power-usage] 225
 [lines-of-code] 5
 
 [traces] 
@@ -10,12 +10,12 @@
 ......................
 ......................
 ......................
-.......154.155C.......
-.......154.1C.A.......
-.....8....156.A.......
-.....35554....34......
-.....95554............
-.....2................
+......................
+........154.15C.......
+.....8..154.1CA.......
+.....A.155555634......
+.....34...............
+.....14...............
 ......................
 ......................
 ......................
@@ -28,25 +28,55 @@
 
 [chip] 
 [type] DX3
-[x] 9
-[y] 4
+[x] 6
+[y] 3
 [rotated] true
 
 [chip] 
+[type] NOTE
+[x] 8
+[y] 3
+[code] 
+ROM contains
+microcode program
+
+Zero = Finished
+Display Result
+Sleep next value
+
+Non-zero= Continue
+Add next value
+
+[chip] 
+[type] NOTE
+[x] 11
+[y] 3
+[code] 
+Init = location 0
+Sleep 1
+
+Foul = 100 = loc 2
+Add -2, Add -999
+Add 999, Sleep 2
+
+Point= location 10
+Add 1, Sleep 2
+
+[chip] 
 [type] BANK
-[x] 5
-[y] 7
+[x] 6
+[y] 6
 [rom] 
-0,0,1,-2,1,-999,1,999,0,0,1,1,0,0
+0,1,111,-2,222,-999,222,999,0,2,111,1,0,2
 
 [chip] 
 [type] UC4X
-[x] 9
-[y] 7
+[x] 10
+[y] 6
 [code] 
   teq x0 0
 + mov acc x3
-+ slp 1
++ slp x0
 + mov x2 x1
 - add x0
 
