@@ -1,8 +1,8 @@
 [name] Top solution Cost->Power
 [puzzle] Sz022
 [production-cost] 800
-[power-usage] 125
-[lines-of-code] 14
+[power-usage] 87
+[lines-of-code] 11
 
 [traces] 
 ......................
@@ -10,45 +10,60 @@
 ......................
 ......................
 ......................
-......................
-...................8..
-.....154.15555555556..
-.....154.15415555554..
-.........1C.15555554..
-..155555556.15555554..
+............15C1555C..
+..955555555554A14..2..
+..A...........A14.....
+..A...........355414..
+..A...............14..
+..2...............14..
 ......................
 ......................
 ......................
 
 [chip] 
+[type] NOTE
+[x] 13
+[y] 3
+[code] 
+ROM contains meat
+instructions for
+1 = Steak and
+2 = Cutlet.
+
+Non-negative value
+for loc=0, loc=1
+cause the loop to
+end.
+
+[chip] 
 [type] DX3
-[x] 11
+[x] 17
 [y] 3
 
 [chip] 
 [type] UC6
-[x] 7
-[y] 4
+[x] 13
+[y] 6
 [code] 
-  slx x2
-  mov 100 p1
-  tcp x2 2
-+ mov 11 x3
-+ slp 7
-+ jmp d
-  mov 7 x1
-- mov 0 x1
-a: mov x0 x3
-  slp 1
-  teq x1 7
-- teq x1 0
-- jmp a
-d: mov p1 x3
+@ tgt p1 x0  #init
+- slx x1 #keypress
+- mov 100 p1#extru
+- mov x1 x3#opt1-3
+  
+- tlt x3 3 #bacon?
+- mov 11 x0# is
+- slp 7    #easy!
+  
++ mov x2 x0#output
++ slp 1
++ tgt x3 x2#done?
+  
+- mov p1 x0 #end
 
 [chip] 
 [type] BANK
-[x] 3
-[y] 5
+[x] 16
+[y] 6
 [rom] 
-111,0,101,0,101,0,111,0,10,10,0,10,10,0
+0,111,0,0,-10,-101,-10,0,0,-101,-10,0,-10,-111
 
