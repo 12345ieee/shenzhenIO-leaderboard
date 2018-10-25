@@ -1,8 +1,8 @@
-[name] Top solution Cost->Power
+[name] Top solution Cost->Lines
 [puzzle] Sz048
 [production-cost] 600
-[power-usage] 216
-[lines-of-code] 9
+[power-usage] 305
+[lines-of-code] 7
 
 [traces] 
 ......................
@@ -12,8 +12,8 @@
 ......................
 ......................
 ................154...
-..1555C..........154..
-..154.A.......954.14..
+..1555C..........954..
+..154.A.......941614..
 ..1D41E.......34.15C..
 ...3417555555554.1C2..
 .................16...
@@ -38,13 +38,11 @@
 [y] 3
 [code] 
 @ mov 100 p0 #init
-  tlt x0 100
+  tlt x0 2
 - mov x1 acc#rload
-- slp 1
-+ tgt x0 p0#triggr
-+ tgt acc 0 #+ammo
-+ gen p1 1 1#=fire
-+ sub 1 #decrement
++ tgt acc p0#ammo?
++ sub x0#decrement
++ gen p1 x0 1#fire
 - slp 1
 
 [chip] 
@@ -54,7 +52,7 @@
 
 [chip] 
 [type] DX3
-[x] 16
+[x] 15
 [y] 5
 
 [chip] 
