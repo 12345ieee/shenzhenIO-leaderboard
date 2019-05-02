@@ -1,8 +1,8 @@
-[name] Top solution Cost->Power
+[name] Top solution Cost->Lines
 [puzzle] Sz043
 [production-cost] 1200
-[power-usage] 618
-[lines-of-code] 34
+[power-usage] 672
+[lines-of-code] 32
 
 [traces] 
 ......................
@@ -10,10 +10,10 @@
 ......................
 ......................
 ......................
-.........94.15555554..
-.........2..1D555554..
-.......1555556........
-.........14.15555554..
+.........9554.155554..
+.........A....1C...8..
+.........A.....35556..
+.........34.15555554..
 ............14.15554..
 ...............14.14..
 ......................
@@ -29,9 +29,8 @@
   slx x0
   tgt x0 1
   slp 2
-+ mov 0 p1
-- mov 100 p1
-  slp 1
++ gen p1 0 1
+- gen p1 1 0
 
 [chip] 
 [type] UC4
@@ -41,10 +40,10 @@
   mov 50 p1
   slx x0
   mov x0 acc
-  tgt acc 2
-+ sub 2
   slp 2
+  tgt acc 2
 + gen p1 0 1
++ sub 2
 - gen p1 1 0
   mov acc x1
 
@@ -57,35 +56,30 @@
   slx x0
   mov x0 acc
   tgt acc 4
-+ sub 4
   slp 2
 + gen p1 0 1
++ sub 4
 - gen p1 1 0
   mov acc x1
 
 [chip] 
 [type] RADIO
-[x] 5
-[y] 5
+[x] 16
+[y] 6
+[rotated] true
 [is-puzzle-provided] true
 
 [chip] 
-[type] BRIDGE
-[x] 9
-[y] 5
-
-[chip] 
 [type] UC4
-[x] 10
+[x] 12
 [y] 7
 [code] 
   mov x1 acc
-  tgt acc -999
-+ gen p1 1 0#rice1
-+ mov 30 p1 #rice2
-+ mov acc x1 #fish
-+ slp 1
-+ mov 0 p1  #rice3
-sleep: slp 1
-+ mov x1 x0 #gates
+  tcp acc -999
++ gen p1 1 0
++ mov acc x1
++ mov 30 p1
+  slp 1
++ gen p1 0 1
++ mov x1 x0
 
