@@ -1,7 +1,7 @@
-[name] Top solution Cost->Power
+[name] CPL
 [puzzle] Sz030
 [production-cost] 300
-[power-usage] 195
+[power-usage] 193
 [lines-of-code] 5
 
 [traces] 
@@ -12,40 +12,22 @@
 ......................
 ......................
 ......................
-.......155D4..........
-..........3554........
+.......1555C..........
+...........354........
 ......................
 ......................
 ......................
 ......................
 ......................
-
-[chip] 
-[type] NOTE
-[x] 7
-[y] 4
-[code] 
-(Ab)uses the fact
-that input values
-are only 0/25/50.
-
-Higher output on
-the shared p0 pin
-overrides input
-value.
 
 [chip] 
 [type] UC4
 [x] 11
 [y] 6
 [code] 
-  tcp p0 25
-# in=0,   out=0
-- jmp sleep
-# in=25,  out=50
-  mov  50 p0
-# in=50,  out=100
+  teq p0 50
 + mov 100 p0
-sleep:
+- teq p0 0
+- mov 50 p0
   slp 1
 
