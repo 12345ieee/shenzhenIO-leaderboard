@@ -1,0 +1,100 @@
+[name] Top solution Cost - 837951602
+[puzzle] Sz018
+[production-cost] 1400
+[power-usage] 676
+[lines-of-code] 23
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....155555555554......
+..15555C9554.155555C..
+....8..AA95495414..2..
+...16.16AA1CA1554.....
+...15C156A.A29555554..
+..154A1556.356........
+.....35555554.........
+......................
+......................
+
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 3
+[code] 
+  slp 1
+  tcp p1 x3
+- mov dat x0
+- mov 0 x1
+  mov p0 acc
++ sub 30
++ dst 0 8
++ mov acc x3
++ mov x2 acc
++ sub 14
++ mov acc x3
++ mov acc x2
++ tgt acc dat
+- mov acc dat
+
+[chip] 
+[type] RAM
+[x] 7
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 5
+[code] 
+@ mov 2 x0
+@ mov 50 p0
+@ mov 50 p1
+s:
++ slx x3
++ mov x3 x0 #0
++ mov x2 p1
++ mov x2 p0
+r:mov x0 x1
+  teq x1 x0
+
+[chip] 
+[type] BANK
+[x] 16
+[y] 5
+[rom] 
+5,5,75,85,50,5,15,80,95,5,5,60,50,50
+
+[chip] 
+[type] BRIDGE
+[x] 4
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 6
+
+[chip] 
+[type] NOTE
+[x] 17
+[y] 8
+[code] 
+in    -> (k,n)
+init  -> 50,50
+20-39 -> 95, 5
+40-49 -> 50, 5
+50-59 ->  5, 5
+60-69 ->  5,60
+70-79 -> 15,80
+80-89 -> 75,85
+
