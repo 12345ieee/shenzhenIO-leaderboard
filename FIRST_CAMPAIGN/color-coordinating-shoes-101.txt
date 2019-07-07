@@ -1,8 +1,8 @@
-[name] Top solution Cost - 837951602
+[name] Top solution Cost->Power - 837951602
 [puzzle] Sz018
 [production-cost] 1400
-[power-usage] 735
-[lines-of-code] 20
+[power-usage] 676
+[lines-of-code] 23
 
 [traces] 
 ......................
@@ -20,31 +20,6 @@
 ......................
 ......................
 
-[chip] 
-[type] NOTE
-[x] 4
-[y] 1
-[code] 
-The tcp handles
-the 3 states,
-the transition
-is made by
-resetting the
-RAM addr to 0
-
-[chip] 
-[type] NOTE
-[x] 17
-[y] 1
-[code] 
-in   ->  t  -> RAM
-2,3  ->  8  ->  8
-4    -> 18  ->  4
-5    -> 28  ->  0
-6    -> 38  -> 10
-7    -> 48  ->  6
-8    -> 58  ->  2
-init ->  x  -> 12*
 
 [chip] 
 [type] BRIDGE
@@ -81,19 +56,23 @@ init ->  x  -> 12*
 [x] 11
 [y] 5
 [code] 
+@ mov 2 x0
+@ mov 50 p0
+@ mov 50 p1
+s:
++ slx x3
++ mov x3 x0 #0
++ mov x2 p1
++ mov x2 p0
 r:mov x0 x1
   teq x1 x0
-s:+ slx x3
-+ mov x3 x0 #0
-  mov x2 p1
-  mov x2 p0
 
 [chip] 
 [type] BANK
 [x] 16
 [y] 5
 [rom] 
-75,85,50,5,15,80,95,5,5,60,50,50,5,5
+5,5,75,85,50,5,15,80,95,5,5,60,50,50
 
 [chip] 
 [type] BRIDGE
