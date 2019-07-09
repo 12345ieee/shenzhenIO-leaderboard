@@ -1,0 +1,117 @@
+[name] Top solution Lines->Power - 837951602
+[puzzle] Sz017
+[production-cost] 2300
+[power-usage] 555
+[lines-of-code] 6
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..............14......
+........15C14.14......
+....14.954A15414......
+...95416..3C1414......
+...A.154.1434.14......
+..16.....14...14......
+.....155554...........
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 7
+[y] 1
+[code] 
+Latch(
+  Lock=BTN'|GEN,
+  Input=ORA'
+), ORA', ORA
+
+BTN  = button(in)
+GEN  = generated,
+  starts at 2 and
+  stops at 4
+
+[chip] 
+[type] NOTE
+[x] 12
+[y] 1
+[code] 
+ORA  = oracle(in)
+BTN' = BTN with
+  1 cycle delay
+ORA' = ORA with
+  1 cycle delay
+
+[chip] 
+[type] PGA
+[x] 3
+[y] 2
+[array-switch] True
+[array-data] 
+1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+
+[chip] 
+[type] DX3
+[x] 10
+[y] 2
+[rotated] true
+
+[chip] 
+[type] PGA
+[x] 7
+[y] 3
+[array-switch] True
+[array-data] 
+0,0,0,0,0,1,1,1,1,1,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,0,0,1,0,0,1,0,1,0,0,1,0,0,0,1,1,0,0,0,0
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 3
+
+[chip] 
+[type] LCDH
+[x] 15
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] ORACLE
+[x] 2
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 5
+
+[chip] 
+[type] PGA
+[x] 5
+[y] 6
+[array-switch] True
+[array-data] 
+0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 6
+[code] 
+  teq p0 100
+  slp 1
++ mov x1 acc
++ gen p0 2 1
++ mov x1 x2
++ mov acc x3
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 6
+
