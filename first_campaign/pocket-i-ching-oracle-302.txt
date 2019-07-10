@@ -1,0 +1,104 @@
+[name] Top solution Lines -> Cost - 837951602
+[puzzle] Sz017
+[production-cost] 2000
+[power-usage] 558
+[lines-of-code] 6
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....14..15C...14......
+....94....A14.14......
+..95695554A15414......
+..A15615543C1414......
+..354.1495434.14......
+...94.95614...14......
+...34161414...........
+......................
+......................
+
+[chip] 
+[type] NOT
+[x] 4
+[y] 2
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 2
+
+[chip] 
+[type] NOT
+[x] 8
+[y] 2
+
+[chip] 
+[type] DX3
+[x] 10
+[y] 2
+[rotated] true
+
+[chip] 
+[type] PGA
+[x] 4
+[y] 3
+[array-switch] True
+[array-data] 
+0,0,1,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 3
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 3
+
+[chip] 
+[type] LCDH
+[x] 15
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 5
+
+[chip] 
+[type] PGA
+[x] 5
+[y] 6
+[array-switch] False
+[array-data] 
+0,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 6
+[code] 
+  teq p0 100
+  slp 1
++ mov x0 acc
++ gen p0 2 1
++ mov x0 x2
++ mov acc x3
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 6
+
+[chip] 
+[type] ORACLE
+[x] 2
+[y] 7
+[is-puzzle-provided] true
+
