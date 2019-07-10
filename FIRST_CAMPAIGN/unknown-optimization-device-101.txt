@@ -1,8 +1,8 @@
 [name] Top solution Cost->Power
 [puzzle] Sz015
 [production-cost] 600
-[power-usage] 630
-[lines-of-code] 14
+[power-usage] 622
+[lines-of-code] 15
 
 [traces] 
 ......................
@@ -47,10 +47,10 @@ start:
 start:
   tlt p0 60
 + tgt p0 19
-- mov x1 acc
-- add 30
-- mov acc p1
 + mov x1 p1
-sleep: 
-  slp 1
++ jmp sleep
+  teq x1 50
++ mov 80 p1
+- mov 30 p1
+sleep: slp 1
 
