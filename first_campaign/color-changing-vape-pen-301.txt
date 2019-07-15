@@ -1,8 +1,8 @@
-[name] Top solution Lines
+[name] Top solution Lines - 837951602
 [puzzle] Sz010
-[production-cost] 800
-[power-usage] 365
-[lines-of-code] 11
+[production-cost] 1000
+[power-usage] 298
+[lines-of-code] 10
 
 [traces] 
 ......................
@@ -10,53 +10,56 @@
 ......................
 ......................
 ......................
+..95C.................
+..A.A.9555555555C.....
+..356.A15C155554A.....
+..154.A94A14..156.....
+..95C.AA.A14..94......
+..A.A.A34A15556.......
+..356.354354..........
 ......................
 ......................
-.........9555554......
-....1D4.16155554......
-.....A..1554.154......
-.....A....14954.......
-.....35555556.........
-......................
-......................
-
-[chip] 
-[type] UC6
-[x] 6
-[y] 3
-[code] 
-  slp 1
-- sub 1
-  teq acc 1
-- mov x0  dat
-- tcp dat -998
-+ mov x0  x3
-+ mov dat p1
-+ mov x0  acc
-
-[chip] 
-[type] BRIDGE
-[x] 10
-[y] 3
 
 [chip] 
 [type] UC4
-[x] 11
-[y] 3
+[x] 8
+[y] 2
 [code] 
   slx x0
   mov x1 p1
   mov x0 p0
 
 [chip] 
-[type] RADIO
-[x] 2
+[type] UC6
+[x] 8
 [y] 4
-[is-puzzle-provided] true
+[code] 
+  slp 1
+  mov x0 dat
+  tlt dat x2
+- mov x0 x1
+- mov dat p1
+- mov x0 x3
+- mov x2 x3
+
+
+
+[chip] 
+[type] BANK
+[x] 11
+[y] 4
+[rom] 
+-14,-999,-14,-1,-2,-12,-12,-12,-12,-12,-12,-12,-12,-12
 
 [chip] 
 [type] LEDRGBV
 [x] 15
 [y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] RADIO
+[x] 5
+[y] 5
 [is-puzzle-provided] true
 
