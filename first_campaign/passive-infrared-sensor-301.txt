@@ -1,8 +1,8 @@
-[name] Top solution Lines - steelgarden & rabidherring
+[name] Top solution Lines - 837951602
 [puzzle] Sz005
-[production-cost] 900
-[power-usage] 290
-[lines-of-code] 6
+[production-cost] 2300
+[power-usage] 3060
+[lines-of-code] 5
 
 [traces] 
 ......................
@@ -10,65 +10,94 @@
 ......................
 ......................
 ......................
-......................
-....955555C...........
-....A.14.17555C.......
-....2.14.1554.A.......
-......94.14...3414....
-......34.....1D4......
-...........1416.......
+..........14..........
+.....1554.15554.......
+....95554.15555C......
+....2815C154...34.....
+....1614A154.14.1C....
+......14A1C..14..2....
+......156.35554.......
 ......................
 ......................
 
 [chip] 
-[type] RTC
-[x] 7
-[y] 2
-[rotated] true
-[is-puzzle-provided] true
-
-[chip] 
-[type] DX3
+[type] NOTE
 [x] 10
-[y] 2
-
-[chip] 
-[type] NOT
-[x] 12
-[y] 2
-[rotated] true
+[y] 1
+[code] 
+eq1c
+rst
+var
 
 [chip] 
 [type] DX3
-[x] 12
-[y] 3
-
-[chip] 
-[type] AND
-[x] 15
-[y] 3
-
-[chip] 
-[type] UC6
-[x] 7
-[y] 4
-[code] 
-  teq p0 x0
-- teq p0 x1
-+ mov x2 x3
-  tlt p1 20
-- mov 100 p1
-  slp 1
-
-[chip] 
-[type] DIAL2
 [x] 5
+[y] 2
+
+[chip] 
+[type] PGA
+[x] 14
+[y] 2
+[array-switch] True
+[array-data] 
+0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+
+[chip] 
+[type] PGA
+[x] 7
+[y] 3
+[array-switch] False
+[array-data] 
+0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0
+
+[chip] 
+[type] PGA
+[x] 11
+[y] 3
+[array-switch] True
+[array-data] 
+0,0,0,1,0,0,1,1,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,1,1,0,0,0,0
+
+[chip] 
+[type] BRIDGE
+[x] 5
+[y] 5
+
+[chip] 
+[type] DIAL1
+[x] 16
 [y] 5
 [is-puzzle-provided] true
 
 [chip] 
-[type] DIAL1
-[x] 5
+[type] UC6
+[x] 8
+[y] 6
+[code] 
+  tlt p0 x3
+- slp x3
+- mov x3 x1
+  
+  teq p1 x2
++ mov 10 x1
+
+[chip] 
+[type] DIAL2
+[x] 15
 [y] 6
 [is-puzzle-provided] true
+
+[chip] 
+[type] RTC
+[x] 11
+[y] 7
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] BANK
+[x] 14
+[y] 7
+[rom] 
+990,999,999,999,999,999,999,999,20,-1,-100,999,-1,1
 
