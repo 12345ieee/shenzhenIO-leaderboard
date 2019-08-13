@@ -1,7 +1,7 @@
 [name] Top solution Lines - csaboka
 [puzzle] Sz047
 [production-cost] 2200
-[power-usage] 3906
+[power-usage] 3905
 [lines-of-code] 42
 
 [traces] 
@@ -61,7 +61,6 @@
 [x] 3
 [y] 4
 [code] 
-  slx x2
   mov x2 acc
   teq x1 12
 - mov x2 null
@@ -70,6 +69,7 @@
   mov acc x3
 + teq x2 x3
 + mov 0 x0
+  slx x2
 
 [chip] 
 [type] UC6
