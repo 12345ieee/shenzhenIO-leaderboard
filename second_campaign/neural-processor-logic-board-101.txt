@@ -1,8 +1,8 @@
-[name] Top solution Cost - csaboka
+[name] Top solution Cost - 837951602
 [puzzle] Sz047
 [production-cost] 2100
-[power-usage] 4509
-[lines-of-code] 49
+[power-usage] 3765
+[lines-of-code] 44
 
 [traces] 
 ......................
@@ -10,51 +10,40 @@
 ......................
 ......................
 ......................
-..8....954.....14.....
-..34.14A9494..154.....
-..949556A96....8......
-..2969556A95555E......
-..169615562....34.....
-..14A154.154..154.....
-....354..14...........
+..154....9C.......1C..
+..954954.A34..1415CA..
+..A..A1C.A.....154A2..
+..A15E16.A9555554.34..
+..A94A14962....15C14..
+..36.A156154..1416....
+..1556...14...........
 ......................
 ......................
 
 [chip] 
-[type] UC6
+[type] RAM
 [x] 3
 [y] 2
-[code] 
-  slx x3
-  dst 1 x3
-  mov x3 null
-  dst 0 x3
-  mov x3 null
-  mov acc x0
-  teq x2 12
-+ mov -1 x0
-+ mov x3 x0
-+ teq x3 0
-+ mov 0 x1
 
 [chip] 
 [type] UC6
 [x] 7
 [y] 2
 [code] 
-  mov x0 dat
-  teq dat -999
-  mov dat x2
-- mov x3 x2
-+ mov x3 dat
-+ mov dat x2
-+ teq dat -999
-- mov dat x1
-- add dat
-- mov acc x1
-- mul -1
-+ mov 0 acc
-+ slp 1
+a:mov x1 dat
+  tgt dat -999
++ mov 1 x2
++ jmp y
+b:mov x3 dat
+  tgt dat -999
++ mov 2 x2
+- mov 0 x2
+- slp 1
+y:+ mov dat x0
++ add dat
++ mul -1
++ mov acc x0
++ mov x0 acc
 
 [chip] 
 [type] BRIDGE
@@ -68,38 +57,69 @@
 [is-puzzle-provided] true
 
 [chip] 
-[type] BRIDGE
-[x] 2
+[type] NOT
+[x] 15
 [y] 3
+[rotated] true
+
+[chip] 
+[type] UC4X
+[x] 4
+[y] 4
+[code] 
+  slx x2
+  teq x1 12
+  mov x2 acc
+- mov x2 x2
+- dst 1 x2
+- mov x2 x2
+  mov acc x0
++ mov x2 x3
++ mov 0 x2
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 4
 
 [chip] 
 [type] UC4
 [x] 16
-[y] 3
+[y] 4
 [code] 
+  mov acc x1
+  teq p0 0
++ dst 2 5
+  teq p1 0
++ dst 1 5
+  sub 110
   slx x0
-  mov 0 p0
-  teq x0 -999
-- mov -4 acc
-+ sub 1
-+ teq acc -5
-+ mov 100 p0
-+ mov 0 acc
+  dst x0 1
 
 [chip] 
-[type] UC4X
-[x] 3
+[type] BRIDGE
+[x] 19
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 4
 [y] 6
 [code] 
-  slx x1
-  mov x3 acc
-  teq acc -1
-- dgt 1
-- mov acc x0
-  dst 0 x2
-- mov acc x0
+  slx x2
+  teq x2 x3
+r:+ mov x3 dat
++ dst 0 dat
++ mov acc x0
++ mov dat acc
++ dgt 1
++ mov acc x0
++ tlt x1 12
++ jmp r
+  teq x1 12
 + mov x3 x0
-+ mov x1 x2
++ mov 0 x3
+  
 
 [chip] 
 [type] NP1
@@ -108,26 +128,14 @@
 [is-puzzle-provided] true
 
 [chip] 
-[type] BRIDGE
-[x] 15
+[type] DX3
+[x] 17
 [y] 6
+[rotated] true
 
 [chip] 
-[type] RAM
-[x] 6
+[type] NOT
+[x] 15
 [y] 7
-
-[chip] 
-[type] UC4
-[x] 16
-[y] 7
-[code] 
-  slx x0
-  teq x0 -999
-  mov 0 p0
-- mov -4 acc
-+ sub 1
-+ teq acc -5
-+ mov 100 p0
-+ mov 0 acc
+[rotated] true
 
