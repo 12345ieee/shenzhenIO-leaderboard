@@ -1,7 +1,7 @@
 [name] Top solution Cost - 837951602
 [puzzle] Sz047
 [production-cost] 2000
-[power-usage] 4244
+[power-usage] 4242
 [lines-of-code] 48
 
 [traces] 
@@ -76,8 +76,6 @@ y:+ mov dat x0
 [x] 16
 [y] 4
 [code] 
-  mov acc dat
-  dgt p0
   teq acc p1
 + mov 100 p1
   mov dat acc
@@ -88,6 +86,8 @@ y:+ mov dat x0
   slx x1
   sub 101
   dst x1 1
+  mov acc dat
+  dgt p0
 
 [chip] 
 [type] UC6
