@@ -1,7 +1,7 @@
 [name] Top solution Lines - csaboka
 [puzzle] Sz044
 [production-cost] 1400
-[power-usage] 7215
+[power-usage] 7210
 [lines-of-code] 14
 
 [traces] 
@@ -38,12 +38,12 @@
 [x] 7
 [y] 3
 [code] 
+  mov x0 x1
   mov x1 acc
   teq p0 x1
 + mul -1
   mov acc x1
   slx x0
-  mov x0 x1
 
 [chip] 
 [type] BANK
