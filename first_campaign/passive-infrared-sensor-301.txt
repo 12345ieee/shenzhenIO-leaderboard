@@ -1,8 +1,8 @@
-[name] Top solution Lines - steelgarden & rabidherring
+[name] Top solution Lines - 837951602
 [puzzle] Sz005
-[production-cost] 900
-[power-usage] 290
-[lines-of-code] 6
+[production-cost] 1900
+[power-usage] 2575
+[lines-of-code] 5
 
 [traces] 
 ......................
@@ -10,65 +10,94 @@
 ......................
 ......................
 ......................
-......................
-....955555C...........
-....A.14.17555C.......
-....2.14.1554.A.......
-......94.14...3414....
-......34.....1D4......
-...........1416.......
+.....95554.14.........
+.....34154.15554......
+....955554............
+....2954...1C1C.......
+...156...154A.B55C....
+.....154.154A.A..2....
+.....154.155616.......
 ......................
 ......................
 
 [chip] 
-[type] RTC
+[type] NOTE
+[x] 14
+[y] 1
+[code] 
+eq1c
+rst
+var
+
+[chip] 
+[type] DX3
+[x] 4
+[y] 2
+
+[chip] 
+[type] PGA
 [x] 7
 [y] 2
+[array-switch] False
+[array-data] 
+0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+
+[chip] 
+[type] PGA
+[x] 11
+[y] 2
+[array-switch] True
+[array-data] 
+0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 5
+
+[chip] 
+[type] OR
+[x] 12
+[y] 5
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 6
+[code] 
+  
+  teq p1 x0
++ mov 1 x1
+  
+  tlt p0 x3
+- slp x3
+- mov x3 x1
+  
+
+[chip] 
+[type] DIAL1
+[x] 4
+[y] 7
+[is-puzzle-provided] true
+
+[chip] 
+[type] RTC
+[x] 12
+[y] 7
 [rotated] true
 [is-puzzle-provided] true
 
 [chip] 
-[type] DX3
-[x] 10
-[y] 2
-
-[chip] 
-[type] NOT
-[x] 12
-[y] 2
-[rotated] true
-
-[chip] 
-[type] DX3
-[x] 12
-[y] 3
-
-[chip] 
-[type] AND
+[type] BANK
 [x] 15
-[y] 3
-
-[chip] 
-[type] UC6
-[x] 7
-[y] 4
-[code] 
-  teq p0 x0
-- teq p0 x1
-+ mov x2 x3
-  tlt p1 20
-- mov 100 p1
-  slp 1
+[y] 7
+[rom] 
+999,999,999,999,999,999,999,20,-1,-810,800,-1,1,899
 
 [chip] 
 [type] DIAL2
 [x] 5
-[y] 5
-[is-puzzle-provided] true
-
-[chip] 
-[type] DIAL1
-[x] 5
-[y] 6
+[y] 8
 [is-puzzle-provided] true
 
