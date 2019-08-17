@@ -1,7 +1,7 @@
-[name] Top solution Lines - csaboka
+[name] Top solution Lines - Thineboot
 [puzzle] Sz040
 [production-cost] 1200
-[power-usage] 982
+[power-usage] 975
 [lines-of-code] 21
 
 [traces] 
@@ -10,112 +10,111 @@
 ......................
 ......................
 ......................
-..9555555555555C......
-..2.....14.155CA......
-........14.14.AA......
-........14.155EA......
-........14.14.AA.954..
-........14.155E34A14..
-........14.14.3556....
+.....154.1555C........
+..8..154.154.A........
+..A..154.1555E........
+..A..154.154.B55555C..
+..A..154.1555E..15C2..
+..A..154.154.34.1C34..
+..3555555555555556....
 ......................
 ......................
 
 [chip] 
 [type] SWITCH16
-[x] 7
-[y] 2
-[is-puzzle-provided] true
-
-[chip] 
-[type] UC4
-[x] 9
-[y] 2
-[code] 
-  teq p1 3
-+ mov p0 p1
-+ mov x1 p1
-+ gen p0 x0 p1
-- gen p0 1 0
-
-[chip] 
-[type] DIAL13
-[x] 12
-[y] 2
-[is-puzzle-provided] true
-
-[chip] 
-[type] UC4
-[x] 16
-[y] 2
-[code] 
-  mov x0 p0
-  gen p1 0 0
-  teq p0 100
-- mov p0 p0
-+ mov p0 p1
-  slp 1
-
-[chip] 
-[type] DIAL10
-[x] 7
+[x] 4
 [y] 3
 [is-puzzle-provided] true
 
 [chip] 
-[type] SWITCH15
+[type] UC4
 [x] 7
-[y] 4
+[y] 3
+[code] 
+  teq p1 3
++ mov p0 p1
++ mov x0 p1
++ gen p0 x1 p1
+- gen p0 1 0
+
+[chip] 
+[type] DIAL10
+[x] 11
+[y] 3
 [is-puzzle-provided] true
 
 [chip] 
 [type] UC4
-[x] 9
-[y] 4
+[x] 14
+[y] 3
 [code] 
-  teq p1 2
-+ mov p0 p1
-+ mov x1 p1
-+ gen p0 x0 p1
-- gen p0 1 0
+  slp 1
+  mov x1 p0
+  gen p1 0 0
+  teq p0 0
++ mov p0 p0
+- mov p0 p1
 
 [chip] 
-[type] DIAL12
-[x] 12
+[type] DIAL13
+[x] 4
 [y] 4
 [is-puzzle-provided] true
 
 [chip] 
-[type] DIAL9
-[x] 7
+[type] SWITCH15
+[x] 4
 [y] 5
 [is-puzzle-provided] true
 
 [chip] 
-[type] SWITCH14
+[type] UC4
 [x] 7
+[y] 5
+[code] 
+  teq p1 2
++ mov p0 p1
++ mov x0 p1
++ gen p0 x1 p1
+- gen p0 1 0
+
+[chip] 
+[type] DIAL9
+[x] 11
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL12
+[x] 4
 [y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] SWITCH14
+[x] 4
+[y] 7
 [is-puzzle-provided] true
 
 [chip] 
 [type] UC4
-[x] 9
-[y] 6
+[x] 7
+[y] 7
 [code] 
   teq p1 1
 + mov p0 p1
-+ mov x1 p1
-+ gen p0 x0 p1
++ mov x0 p1
++ gen p0 x1 p1
 - gen p0 1 0
 
 [chip] 
-[type] DIAL11
-[x] 12
-[y] 6
-[is-puzzle-provided] true
-
-[chip] 
 [type] DIAL8
-[x] 7
+[x] 11
 [y] 7
 [is-puzzle-provided] true
 
+[chip] 
+[type] DIAL11
+[x] 4
+[y] 8
+[is-puzzle-provided] true
