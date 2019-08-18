@@ -1,8 +1,8 @@
-[name] Top solution Power - ShadowCluster
+[name] Top solution Power - ShadowCluster/12345ieee
 [puzzle] Sz045
 [production-cost] 2600
-[power-usage] 1078
-[lines-of-code] 44
+[power-usage] 1056
+[lines-of-code] 43
 
 [traces] 
 ......................
@@ -21,6 +21,21 @@
 ......................
 
 [chip] 
+[type] NOTE
+[x] 5
+[y] 1
+[code] 
+DXA ROM VAL  COMP
+000   0   X 
+001   1   4      4
+010  10   2    2
+011  11   6    2 4
+100   2   1  1
+101   3   5  1   4
+110  12   3  1 2
+111  13   7  1 2 4
+
+[chip] 
 [type] DX3
 [x] 3
 [y] 2
@@ -37,17 +52,16 @@
 [y] 2
 [code] 
 T:slx x1
-  teq p0 100
-+ mov -1 x3
+  teq p0 2
 + add x1
++ mov -1 x3
 + mov acc x0
 - mov x1 acc
-- teq acc 4
+- tlt acc 3 #1,2
 - teq acc 16
-- teq acc 32
+- teq acc 4
 - teq acc 8
-- teq acc 2
-- teq acc 1
+- teq acc 32
 - mov -1 x3
 - mov acc x0
 
@@ -73,7 +87,7 @@ T:slx x1
 + teq acc 0
 - mov acc x2
   slp p1
-- mov 100 p1
+- mov 2 p1
 - mov 0 acc
 
 [chip] 
