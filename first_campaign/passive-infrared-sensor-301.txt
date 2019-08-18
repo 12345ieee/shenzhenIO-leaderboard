@@ -1,7 +1,7 @@
 [name] Top solution Lines - 837951602
 [puzzle] Sz005
 [production-cost] 1900
-[power-usage] 2575
+[power-usage] 2474
 [lines-of-code] 5
 
 [traces] 
@@ -10,33 +10,24 @@
 ......................
 ......................
 ......................
-.....95554.14.........
-.....34154.15554......
+......1D54.14.........
+......1614.15554......
 ....955554............
-....2954...1C1C.......
-...156...154A.B55C....
-.....154.154A.A..2....
-.....154.155616.......
+....2..94..1C1D55C....
+.....156..14A.A..2....
+.......14.14A.A.......
+.......14.15616.......
 ......................
 ......................
-
-[chip] 
-[type] NOTE
-[x] 14
-[y] 1
-[code] 
-eq1c
-rst
-var
 
 [chip] 
 [type] DX3
-[x] 4
+[x] 6
 [y] 2
 
 [chip] 
 [type] PGA
-[x] 7
+[x] 8
 [y] 2
 [array-switch] False
 [array-data] 
@@ -48,11 +39,26 @@ var
 [y] 2
 [array-switch] True
 [array-data] 
-0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0
+0,0,0,1,0,0,1,1,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0
+
+[chip] 
+[type] NOTE
+[x] 15
+[y] 2
+[code] 
+PGA commands:
+x11 next tick
+x10 high input
+x01 arm switch
+First encodes and
+leave only one x01
+Second stores
+arm state and
+gate store output
 
 [chip] 
 [type] BRIDGE
-[x] 7
+[x] 8
 [y] 5
 
 [chip] 
@@ -62,22 +68,31 @@ var
 [rotated] true
 
 [chip] 
+[type] NOTE
+[x] 15
+[y] 5
+[code] 
+Removing it will
+make the
+simulation fail.
+Same to the one
+below.
+
+[chip] 
 [type] UC6
 [x] 9
 [y] 6
 [code] 
-  
-  teq p1 x0
-+ mov 1 x1
-  
   tlt p0 x3
 - slp x3
 - mov x3 x1
   
+  teq p1 x0
++ mov 1 x1
 
 [chip] 
 [type] DIAL1
-[x] 4
+[x] 5
 [y] 7
 [is-puzzle-provided] true
 
@@ -93,7 +108,7 @@ var
 [x] 15
 [y] 7
 [rom] 
-999,999,999,999,999,999,999,20,-1,-810,800,-1,1,899
+20,-1,-810,800,20,-1,-810,800,-1,1,899,999,999,999
 
 [chip] 
 [type] DIAL2
