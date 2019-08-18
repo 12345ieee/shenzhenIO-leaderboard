@@ -1,7 +1,7 @@
-[name] Top solution Lines->Power - 837951602
+[name] Top solution Lines->Power - 837951602/Thineboot
 [puzzle] Sz040
 [production-cost] 1300
-[power-usage] 802
+[power-usage] 798
 [lines-of-code] 21
 
 [traces] 
@@ -117,12 +117,12 @@
 [x] 16
 [y] 6
 [code] 
+  slp 1
   mov x0 p0
   mov p1 x1
   teq p0 100
 + mov p0 p0
 - mov p0 p1
-  slp 1
 
 [chip] 
 [type] DIAL8
