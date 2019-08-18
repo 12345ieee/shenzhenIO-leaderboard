@@ -46,7 +46,15 @@
 [x] 15
 [y] 2
 [code] 
-This, too.
+PGA commands:
+x11 next tick
+x10 high input
+x01 arm switch
+First encodes and
+leave only one x01
+Second stores
+arm state and
+gate store output
 
 [chip] 
 [type] BRIDGE
@@ -67,6 +75,8 @@ This, too.
 Removing it will
 make the
 simulation fail.
+Same to the one
+below.
 
 [chip] 
 [type] UC6
