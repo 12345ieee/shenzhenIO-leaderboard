@@ -1,7 +1,7 @@
 [name] Top solution Lines - csaboka
 [puzzle] Sz042EZ
 [production-cost] 2000
-[power-usage] 4296
+[power-usage] 4161
 [lines-of-code] 45
 
 [traces] 
@@ -82,7 +82,7 @@ l:mov x1 acc
 [y] 6
 [code] 
   gen p0 1 0
-  gen p0 0 0
+  mov x1 x1
   teq p1 dat
 - jmp x
   teq x1 x2
