@@ -1,8 +1,8 @@
 [name] Top solution Cost - 837951602
 [puzzle] Sz047
 [production-cost] 2000
-[power-usage] 4242
-[lines-of-code] 48
+[power-usage] 4130
+[lines-of-code] 45
 
 [traces] 
 ......................
@@ -10,40 +10,35 @@
 ......................
 ......................
 ......................
-..154....9C...........
-..954954.A34..15555C..
-..A..A1C.A........16..
-..A15E16.A9555554.....
-..A94A14962....94.....
-..36.A156154..16......
-..1556...14...........
+..14..................
+..94954...94..15555C..
+..A.A1C..96.......16..
+..34A16.969555554.....
+..156154A.2....94.....
+......156154..16......
+.........14...........
 ......................
 ......................
-
-[chip] 
-[type] RAM
-[x] 3
-[y] 2
 
 [chip] 
 [type] UC6
 [x] 7
 [y] 2
 [code] 
-a:mov x1 dat
-  tgt dat -999
-+ mov 0 x2
-+ jmp y
-b:mov x3 dat
-  tgt dat -999
-+ mov 2 x2
-- mov 9 x2
-- slp 1
-y:+ mov dat x0
-+ add dat
-+ mul -1
-+ mov acc x0
-+ mov x0 acc
+  mov x3 dat
+  teq dat -999
+- mov 2 x2
+- jmp r
++ mov x1 dat
++ teq dat -999
+- mov 0 x2
+r:- mov dat x0
+- add dat
+- mov acc x0
+- mul -1
++ mov 0 acc
++ mov 9 x2
++ slp 1
 
 [chip] 
 [type] BRIDGE
@@ -58,18 +53,18 @@ y:+ mov dat x0
 
 [chip] 
 [type] UC4X
-[x] 4
+[x] 3
 [y] 4
 [code] 
   slx x2
-  teq x1 12
   mov x2 acc
-- mov x2 x2
+  teq x1 12
+- mov x2 null
 - dst 1 x2
-- mov x2 x2
-  mov acc x0
-+ mov x2 x3
-+ mov 0 x2
+- mov x2 null
+  mov acc x3
++ teq x2 x3
++ mov 0 x0
 
 [chip] 
 [type] UC6
@@ -91,22 +86,24 @@ y:+ mov dat x0
 
 [chip] 
 [type] UC6
-[x] 4
+[x] 3
 [y] 6
 [code] 
-  slx x2
-  teq x2 x3
-r:+ mov x3 dat
-+ dst 0 dat
-+ mov acc x0
-+ mov dat acc
-+ dgt 1
-+ mov acc x0
-+ tlt x1 12
-+ jmp r
-  teq x1 12
-+ mov x3 x0
-+ mov 0 x3
+  slx x1
+  mov x2 dat
+  dst 0 dat
+  mov acc x0
+  mov dat acc
+  dgt 1
+  mov acc x0
+  teq x3 12
++ mov x2 x0
++ mov x1 x3
+
+[chip] 
+[type] RAM
+[x] 6
+[y] 6
 
 [chip] 
 [type] NP1
