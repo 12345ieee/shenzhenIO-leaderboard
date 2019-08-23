@@ -1,4 +1,4 @@
-[name] Top solution Lines - csaboka
+[name] Top solution Lines - 837951602
 [puzzle] Sz047
 [production-cost] 2100
 [power-usage] 3653
