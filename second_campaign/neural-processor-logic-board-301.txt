@@ -1,8 +1,8 @@
 [name] Top solution Lines - csaboka
 [puzzle] Sz047
-[production-cost] 2200
-[power-usage] 3905
-[lines-of-code] 42
+[production-cost] 2100
+[power-usage] 3653
+[lines-of-code] 41
 
 [traces] 
 ......................
@@ -10,13 +10,13 @@
 ......................
 ......................
 ......................
-..14..................
-..94954...94..15555C..
-..A.A1C..96.......16..
-..34A16.969555554954..
-..156154A.2....94A1C..
-......156154..16.A16..
-.........14......354..
+..14..............1C..
+..94954...94..1415CA..
+..A.A1C..96....15CA2..
+..34A16.969555554A34..
+..156154A.2....94A14..
+......156154..1E.A....
+.........14....3434...
 ......................
 ......................
 
@@ -27,15 +27,17 @@
 [code] 
   mov x3 dat
   teq dat -999
-  mov dat x2
+- mov 2 x2
+- jmp r
 + mov x1 dat
-+ mov dat x2
 + teq dat -999
-- mov dat x0
+- mov 1 x2
+r:- mov dat x0
 - add dat
 - mov acc x0
 - mul -1
 + mov 0 acc
++ mov 9 x2
 + slp 1
 
 [chip] 
@@ -50,11 +52,10 @@
 [is-puzzle-provided] true
 
 [chip] 
-[type] BANK
+[type] NOT
 [x] 16
 [y] 2
-[rom] 
-0,2,0,4,0,6,0,8,100,0,0,0,0,0
+[rotated] true
 
 [chip] 
 [type] UC4X
@@ -72,23 +73,23 @@
 + mov 0 x0
 
 [chip] 
-[type] UC6
+[type] UC4
 [x] 16
 [y] 4
 [code] 
-  teq x1 -999
-- mov 8 acc
-+ mov acc x3
-+ mov x2 p0
-+ mov x2 acc
-+ tgt x1 -999
-+ mov 8 dat
-- mov dat x3
-- mov x2 p1
-- mov x2 dat
-  
-  slx x1
-  
+  mov acc x1
+  tgt p0 0
++ dst 2 5
+  teq p1 0
++ dst 1 5
+  sub 110
+  slx x0
+  dst x0 1
+
+[chip] 
+[type] BRIDGE
+[x] 19
+[y] 4
 
 [chip] 
 [type] UC6
@@ -116,4 +117,16 @@
 [x] 11
 [y] 6
 [is-puzzle-provided] true
+
+[chip] 
+[type] DX3
+[x] 17
+[y] 6
+[rotated] true
+
+[chip] 
+[type] NOT
+[x] 15
+[y] 7
+[rotated] true
 
