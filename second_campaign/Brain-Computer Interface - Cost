@@ -1,7 +1,7 @@
 [name] Brain-Computer Interface - Cost
 [puzzle] Sz045
 [production-cost] 1400
-[power-usage] 1472
+[power-usage] 1469
 [lines-of-code] 27
 
 [traces] 
@@ -62,7 +62,7 @@ o:mov acc dat
   add x1
   teq acc 100
 - teq acc 10
-- tlt acc 2
+- teq acc 1
 + teq dat 0
 - teq acc 0
   add x0
