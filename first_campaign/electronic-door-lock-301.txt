@@ -1,8 +1,8 @@
 [name] Top solution Lines
 [puzzle] Sz031
 [production-cost] 700
-[power-usage] 168
-[lines-of-code] 10
+[power-usage] 554
+[lines-of-code] 9
 
 [traces] 
 ......................
@@ -11,12 +11,12 @@
 ......................
 ......................
 ......................
-......................
-..1555C...............
+...955C.14............
+..16..A...............
 ......3555C...........
 ..155555C.34.1555554..
-........35C..14.......
-..........34.14.......
+........3C...14.......
+.........354.14.......
 ......................
 ......................
 
@@ -26,31 +26,18 @@
 [y] 2
 [code] 
 st: slx x0
-  mov x0 null
-lp: dst x2 x0
-  teq x2 0
-+ jmp lp
-  
-  
-  teq x0 9
-- teq acc dat
+lp: tlt x3 10
+  mul x2
++ add x0
+end:  teq p0 0
+- mov acc dat
++ teq acc dat
+- teq acc 927
 + gen p1 6 0
-  tgt p0 x0
-+ mov acc dat
 
 [chip] 
 [type] BANK
 [x] 14
 [y] 2
 [rom] 
-0,0,0,0,0,0,0,0,0,0,2,0,1,1
-
-[chip] 
-[type] NOTE
-[x] 11
-[y] 5
-[code] 
-card: abcdefghij
-hash: ghf
-root: i == 9
-
+0,2,3,1,2,1,2,1,1,2,0,0,0,0
