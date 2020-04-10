@@ -1,8 +1,8 @@
-[name] Top solution Lines - csaboka
+[name] Top solution Lines - darkgiggs
 [puzzle] Sz042EZ
-[production-cost] 2000
-[power-usage] 4161
-[lines-of-code] 45
+[production-cost] 1800
+[power-usage] 4948
+[lines-of-code] 39
 
 [traces] 
 ......................
@@ -10,61 +10,59 @@
 ......................
 ......................
 ......................
-...15C155555494.15C...
-...14A1555555E.954A...
-...14A141C..8A.A..34..
-...14A154A15634A1554..
-...156154A1555435494..
-.......94354154...A...
-.......355555555556...
+.............14.15C...
+...............9543C..
+.......14955554A15C2..
+.......1561555435434..
+.......14.14.14.1554..
+..........14.14.14....
 ......................
 ......................
+......................
+
+[chip] 
+[type] UC6
+[x] 14
+[y] 2
+[code] 
+  teq x1 0
++ slx x3
++ mov x3 acc
++ dst 0 x3
+  mov x1 dat
+  teq x0 acc
++ mov dat x1
++ mov 0 x0 
++ gen p1 1 0
 
 [chip] 
 [type] UC6
 [x] 8
 [y] 3
 [code] 
-  slp 1
+  tgt acc 0
++ mov dat x3
++ mov acc p1
++ dgt 0
++ mov acc x0
+- teq x3 dat
++ slp 1
++ mov x1 acc
++ tgt acc -999
++ dst 1 x1
++ mov acc x2
++ mov x3 dat
   mov x2 acc
-  teq acc -999
-- dst 1 x2
-- mov acc x0
-  mov p0 x3
-  mov x1 dat
-l:mov x1 acc
-  teq x0 p1
-+ mov acc x1
-+ mov 0 x0
-+ mov 100 p0
-  teq x1 dat
-- jmp l
-
-[chip] 
-[type] BRIDGE
-[x] 12
-[y] 3
-
-[chip] 
-[type] UC6
-[x] 14
-[y] 3
-[code] 
-  mov 50 p1
-  slx x0
-  dst 0 -10
-  tcp acc x0
-- add 10
-+ sub 10
-  dst x1 x3
-  mov acc p0
-+ gen p1 1 0
-- gen p1 0 1
 
 [chip] 
 [type] RAM
-[x] 4
-[y] 4
+[x] 11
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 17
+[y] 3
 
 [chip] 
 [type] BRIDGE
@@ -72,39 +70,30 @@ l:mov x1 acc
 [y] 4
 
 [chip] 
-[type] BRIDGE
-[x] 3
+[type] UC4
+[x] 14
 [y] 5
-
-[chip] 
-[type] UC6
-[x] 4
-[y] 6
 [code] 
-  gen p0 1 0
-  mov x1 x1
-  teq p1 dat
-- jmp x
-  teq x1 x2
-l:-mov x0 dat
-- tgt dat 0
-- jmp l
-x:mov dat acc
-  dgt 0
-  mov acc x3
-  sub dat
-  mov acc x3
+  mov 50 p1
+  slx x0 #VW
+  dst 0 p0
+  tcp acc p0
+- add 10
++ sub 10
+  mov acc x1
+- gen p1 1 0
++ gen p1 0 1
 
 [chip] 
 [type] RADIO
-[x] 9
+[x] 8
 [y] 6
 [rotated] true
 [is-puzzle-provided] true
 
 [chip] 
 [type] BRIDGE
-[x] 12
+[x] 13
 [y] 6
 
 [chip] 
@@ -113,11 +102,11 @@ x:mov dat acc
 [y] 7
 [code] 
   mov 50 p1
-  slx x0
-  tcp acc x0
-- add 1
-+ sub 1
+  slx x1 #VW
+  tcp x0 acc
++ add 1
+- sub 1
   mov acc x1
-- gen p1 1 0
-+ gen p1 0 1
++ gen p1 1 0
+- gen p1 0 1
 
