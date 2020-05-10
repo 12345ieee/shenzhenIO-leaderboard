@@ -1,7 +1,7 @@
-[name] Top solution Lines - csaboka
+[name] Top solution Lines - csaboka/darkgiggs
 [puzzle] Sz042
 [production-cost] 2600
-[power-usage] 5974
+[power-usage] 5920
 [lines-of-code] 52
 
 [traces] 
@@ -25,17 +25,18 @@
 [x] 4
 [y] 2
 [code] 
-  tlt p1 2
-- mov x1 acc
-- teq x0 -999
-+ mov acc x1
-+ slp 1
-+ mov -2 acc
-+ tlt x3 99
-  add p1
-+ mov acc x1
-+ mov x0 x2
-+ mov x0 x3
+  tgt dat 1
++ mov x1 acc
++ tgt x0 -999
+- slp 1
+- mov acc x1
+- mov x3 dat
+- tgt dat 9
+- mov p1 acc
+- sub 2
+- mov acc x1
+- mov x0 x2
+- mov x0 x3
 
 [chip] 
 [type] UC4
@@ -63,7 +64,6 @@
 [code] 
   teq x1 0
 + mov dat x3
-+ mov dat p0
 + slx x2
   mov x2 acc
 - tlt acc dat
