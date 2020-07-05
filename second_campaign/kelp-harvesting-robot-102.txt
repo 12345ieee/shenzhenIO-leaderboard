@@ -1,8 +1,8 @@
-[name] Top solution Cost->Power - darkgiggs
+[name] Top Solution Cost->Lines - darkgiggs
 [puzzle] Sz042EZ
 [production-cost] 1800
-[power-usage] 2791
-[lines-of-code] 45
+[power-usage] 4948
+[lines-of-code] 39
 
 [traces] 
 ......................
@@ -25,27 +25,22 @@
 [x] 14
 [y] 2
 [code] 
-  teq x1 dat
+  teq x1 0
 + slx x3
 + mov x3 acc
 + dst 0 x3
+  mov x1 dat
   teq x0 acc
-+ mov x1 acc
-+ sub 1
-+ mov acc x1
-+ mov 100 p1
-+ slp 1
-+ mov p1 x0 #H
-  mov x0 null
-+ mov x1 dat
++ mov dat x1
++ mov 0 x0 
++ gen p1 1 0
 
 [chip] 
 [type] UC6
 [x] 8
 [y] 3
 [code] 
-  mov x2 acc
-  tgt acc x2 #0
+  tgt acc 0
 + mov dat x3
 + mov acc p1
 + dgt 0
@@ -56,8 +51,8 @@
 + tgt acc -999
 + dst 1 x1
 + mov acc x2
-+ mov x2 null
 + mov x3 dat
+  mov x2 acc
 
 [chip] 
 [type] RAM
@@ -112,7 +107,6 @@
 + add 1
 - sub 1
   mov acc x1
-+ mov 100 p1
-- mov 0 p1
-  slp 1
++ gen p1 1 0
+- gen p1 0 1
 

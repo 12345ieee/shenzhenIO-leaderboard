@@ -2,7 +2,7 @@
 [puzzle] Sz005
 [production-cost] 600
 [power-usage] 230
-[lines-of-code] 12
+[lines-of-code] 11
 
 [traces] 
 ......................
@@ -41,8 +41,7 @@
 - mov 0  x2
   slp 1
   teq p1 x0
-+ mov 0  x2
-+ slp 999
++ gen p0 999 x2
 
 [chip] 
 [type] DIAL1

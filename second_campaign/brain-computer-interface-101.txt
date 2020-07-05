@@ -1,8 +1,8 @@
-[name] Top solution Cost
+[name] Top solution Cost - saroj1am
 [puzzle] Sz045
-[production-cost] 1500
-[power-usage] 2482
-[lines-of-code] 29
+[production-cost] 1400
+[power-usage] 1469
+[lines-of-code] 27
 
 [traces] 
 ......................
@@ -10,23 +10,15 @@
 ......................
 ......................
 ......................
-..14....15C...........
-..14....94A14.........
-..141C..A.A14....954..
-.....34.3435555556....
-..14154.14............
 ..14..................
 ..14..................
+..14154............8..
+.....94.15D5C......A..
+..1416..14A.34.....A..
+..14....156154.....A..
+..14.......155555556..
 ......................
 ......................
-
-[chip] 
-[type] NOTE
-[x] 9
-[y] 1
-[code] 
-^ Convert to
-binary and reverse
 
 [chip] 
 [type] DX3
@@ -35,62 +27,53 @@ binary and reverse
 [rotated] true
 
 [chip] 
-[type] UC4X
+[type] UC6
 [x] 9
-[y] 3
+[y] 2
 [code] 
   slx x0
   mov x0 acc
-  mul 4
-  tgt acc 399
-+ sub 399
-  tgt acc 39
-+ sub 38
-  mov acc x0
+o:mov acc dat
+  dgt x3
+  tgt acc 1
+- mov x3 null
++ mov x3 x2
+  mov dat acc
++ sub x3
+- add x3
+  teq x1 1
+- jmp o
+  tgt acc 199
++ mov 5 x2
 
 [chip] 
-[type] UC4X
+[type] BANK
+[x] 13
+[y] 3
+[rom] 
+0,0,1,1,1,10,2,2,100,0,3,2,1,4
+
+[chip] 
+[type] UC6
 [x] 6
 [y] 4
 [code] 
-  mov x0 x2
-  dst 1 x2
-  mov x1 x2
-  dst 0 x2
-  mov acc x3
-  mov acc x3
+  mov x0 acc
+  add x1
+  teq acc 100
+- teq acc 10
+- teq acc 1
++ teq dat 0
+- teq acc 0
+  add x0
+s:+ mov acc dat
+- add dat
+- mov acc x2
   slp 1
+- mov 0 x3
 
 [chip] 
 [type] DX3
 [x] 3
 [y] 6
 [rotated] true
-
-[chip] 
-[type] UC6
-[x] 9
-[y] 6
-[code] 
-  slx x1
-  add x1
-  teq x1 0
-+ mov 0 acc
-  mov -1 x3
-l:tcp acc x2
-- jmp l
-+ mov -1 x3
-l2:+mov x2 dat
-+ tlt acc dat
-- mov x3 x0
-- sub dat
-- tgt acc 0
-+ jmp l2
-
-[chip] 
-[type] BANK
-[x] 12
-[y] 6
-[rom] 
-20,10,4,2,1,0,0,0,0,0,0,0,0,40
-

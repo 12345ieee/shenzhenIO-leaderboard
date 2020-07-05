@@ -1,8 +1,8 @@
-[name] Top solution Lines
+[name] Top solution Lines - Catalecticant
 [puzzle] Sz031
 [production-cost] 700
-[power-usage] 168
-[lines-of-code] 10
+[power-usage] 498
+[lines-of-code] 9
 
 [traces] 
 ......................
@@ -12,45 +12,33 @@
 ......................
 ......................
 ......................
-..1555C...............
-......3555C...........
-..155555C.34.1555554..
-........35C..14.......
-..........34.14.......
+..15554.15555555555C..
+........14.........A..
+..15554.14.........2..
+......................
+......................
 ......................
 ......................
 
 [chip] 
 [type] UC6
-[x] 11
-[y] 2
+[x] 6
+[y] 4
 [code] 
-st: slx x0
-  mov x0 null
-lp: dst x2 x0
-  teq x2 0
-+ jmp lp
-  
-  
-  teq x0 9
-- teq acc dat
-+ gen p1 6 0
-  tgt p0 x0
-+ mov acc dat
+lp: tcp x3 3
+- slx x0
+  mul x2
++ add x0
+end: teq p0 0
+- mov acc dat
++ teq acc dat
+- teq acc 927
++ gen p1 6 x2 #0
 
 [chip] 
 [type] BANK
-[x] 14
-[y] 2
+[x] 9
+[y] 4
 [rom] 
-0,0,0,0,0,0,0,0,0,0,2,0,1,1
-
-[chip] 
-[type] NOTE
-[x] 11
-[y] 5
-[code] 
-card: abcdefghij
-hash: ghf
-root: i == 9
+0,0,0,0,0,2,3,1,2,1,2,1,1,2
 

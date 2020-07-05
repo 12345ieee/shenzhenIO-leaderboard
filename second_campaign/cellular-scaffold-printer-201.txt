@@ -1,8 +1,8 @@
-[name] Top solution Power - kat/12345ieee
+[name] Top solution Power - darkgiggs/12345ieee
 [puzzle] Sz046
-[production-cost] 3800
-[power-usage] 431
-[lines-of-code] 101
+[production-cost] 2800
+[power-usage] 323
+[lines-of-code] 76
 
 [traces] 
 ......................
@@ -10,13 +10,13 @@
 ......................
 ......................
 ......................
-...15C1555554.15555C..
-...14A..95555C14.1C2..
-...1CA14A155435C..34..
-..14AA..A...95C35554..
-...16A1561556.A15554..
-...15615554.14354.14..
-......................
+..1C95555C....95555C..
+...AA1554354..A155C2..
+...AA.154.1554A...34..
+..16B5415C.8156.9554..
+....A.14.34355556954..
+....A154.15555554A14..
+....3554..15555556....
 ......................
 ......................
 
@@ -37,167 +37,137 @@
 
 [chip] 
 [type] UC6
-[x] 4
+[x] 7
 [y] 2
 [code] 
-st: slx x1
-  mov x1 dat
-  not
-  teq dat 1
-+ gen p1 6 0
-+ jmp st
-  dgt 2
-  teq dat 7
-- mov dat x3
-- mov acc x3
-  mov dat x0
-+ teq acc 0
-+ mov 4 x0
-- mov acc x0
+s: slx x0 #!012x8
+  mov x0 dat
+  dst 0 dat
+  teq acc 6 #x6
+- mov dat x1
+- teq acc 4 #x4
++ mov dat x3
++ jmp s
+  teq dat 3
++ slp 1
+- teq dat 13
++ gen p1 1 1
++ gen p1 1 1
++ gen p1 1 0
 
 [chip] 
-[type] UC6
+[type] BRIDGE
 [x] 10
 [y] 2
-[code] 
-st: slx x1 #!17
-  mov x1 acc
-  teq acc 4
-- teq acc 6
-+ mov x1 x0
-+ jmp st
-  mov acc x3
-  teq acc 8
-- mov x1 x3
-- jmp st
-  teq x1 1
-+ mov 4 x3
-- mov 1 x3
-
-[chip] 
-[type] UC6
-[x] 13
-[y] 2
-[code] 
-st: slx x1 #02358
-  mov x1 acc
-  mov x1 dat
-  teq acc 3
-+ slp dat
-+ gen p1 1 1
-+ gen p1 1 1
-+ jmp fp
-  teq acc 2
-+ gen p1 6 0
-  teq acc 8
-+ slp dat
-fp: + gen p1 1 0
 
 [chip] 
 [type] UC4
 [x] 16
 [y] 2
 [code] 
-  slx x0 #46
-  teq x0 1
-- gen p1 1 1
-  gen p1 1 2
+  slx x0 #x4 x6
+  tgt x0 8
 + gen p1 1 1
+  gen p1 1 2
+- gen p1 1 1
+  mov 100 p1
+  slp 1
+  mov 0 p1
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 3
+[code] 
+s:slx x2 #x3x4x5x7
+  mov x2 acc
+  teq acc 3
+- slp 1 #!3
+- teq acc 13 #!3
++ gen p1 1 1 #x3
++ gen p1 1 1
+- tcp acc 7 #!x3
+- gen p1 2 1 #45
++ teq acc 17 #!457
++ slp 3 #17
   mov 100 p1
   slp 1
   mov 0 p1
 
 [chip] 
 [type] BRIDGE
-[x] 3
-[y] 5
-
-[chip] 
-[type] UC4X
-[x] 4
-[y] 5
-[code] 
-st: slx x0 #!1
-  mov x0 acc
-  mov acc x3
-  teq acc 3
-- mov x0 x3
-- jmp st
-  teq x0 1
-+ mov 0 x3
-- mov 1 x3
+[x] 6
+[y] 4
 
 [chip] 
 [type] UC6
-[x] 7
+[x] 8
 [y] 5
 [code] 
-st: slx x1 #!1
-  mov x1 acc
-  mov x1 dat
-  teq acc 3
-+ slp dat
-+ gen p1 1 1
-+ gen p1 1 1
-+ jmp fp
-  teq acc 4
-- teq acc 5
-+ mov dat x3
-  teq acc 7
-+ slp dat
-fp: + gen p1 1 0
+s:slx x0 #in/in+10
+  mov x0 dat
+  mov dat x3
+  teq dat 8
++ slp 3
+- teq dat 18 #!8
++ slp 1 #x8
++ gen p0 1 0
+- tcp 2 dat #!x8
+- mov dat x1
++ teq dat 1 #<2 x8
++ gen p1 6 0 #1
+  teq dat 2 #all
++ gen p0 6 0
 
 [chip] 
-[type] UC4
-[x] 12
+[type] BRIDGE
+[x] 11
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 13
 [y] 5
 [code] 
-  slx x0 #45
-  teq x0 1
-  slp 1
-- gen p1 1 1
-  gen p1 2 1
-+ gen p1 1 1
+@ mov 50 p0
+  mov 50 p1
+  slx x1
+  teq x1 -1
+- not
+- mov acc p0
+- slp 5
+- mov 50 p0
+- mov 100 p1
+- slp 1
++ mov 0 p1
++ slp 6
 
 [chip] 
-[type] UC4
-[x] 15
+[type] UC6
+[x] 3
 [y] 6
 [code] 
-  mov 50 p1
-  slx x0
-  teq x0 1
-+ mov 100 p1
-+ slp 1
-- mov 0 p1
+  slx x0 #input
+  mov x0 x3
++ slx x0 #end
+- slx x0 #end
+  slp 6
+  mov x0 acc
+  tgt acc 2
++ add 10
+  mov acc x3
++ tgt acc 13
++ tlt acc 16
++ slp 3 #1415
++ gen p1 2 1
 - slp 6
 
 [chip] 
-[type] UC4X
-[x] 4
-[y] 7
+[type] NOTE
+[x] 18
+[y] 8
 [code] 
-@ teq 1 1
-+ slx x1
-  mov 1 x3
-  mov x1 x0
-  teq acc 5
-- add 1
-- slp 6
-+ slx x1
-+ mov x1 x3
-
-[chip] 
-[type] UC4
-[x] 12
-[y] 7
-[code] 
-st:  mov 50 p1
-  slx x0
-  teq x0 1
-+ not
-+ mov acc p1
-+ slp 5
-+ mov 1 x1
-- mov -1 x1
+TR 68: 144335: 323
+TR 20: 444577: 318
+TR 78: 443666: 318
 
