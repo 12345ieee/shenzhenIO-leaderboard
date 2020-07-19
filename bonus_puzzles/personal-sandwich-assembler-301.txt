@@ -1,8 +1,8 @@
-[name] Top solution Lines - hersmunch
+[name] Top solution Lines - saroj1am
 [puzzle] Sz007
-[production-cost] 1600
-[power-usage] 135
-[lines-of-code] 17
+[production-cost] 1500
+[power-usage] 267
+[lines-of-code] 14
 
 [traces] 
 ......................
@@ -10,87 +10,66 @@
 ......................
 ......................
 ......................
-.....95555495555554...
-..954A155D56...95554..
-..A..A15CA15C15E.154..
-..295694234.3416.154..
-...A14A155C154.14154..
-...A15614.3555555554..
-...354.155555554......
+......955555554.154...
+......A....9554.1554..
+..9554A15556814.1C14..
+..2954A155C.3555C354..
+...A156954A154..3554..
+...A155694354....954..
+...354..3555555556....
 ......................
 ......................
-
-[chip] 
-[type] UC6
-[x] 5
-[y] 2
-[code] 
-  slx x3
-  mov x3 x1
-  mov 010 x2
-  slp x0
-  mov 001 x2
-  slp x0
-  gen p0 1 x2
-  gen p1 3 4
-
-[chip] 
-[type] BRIDGE
-[x] 15
-[y] 2
 
 [chip] 
 [type] BANK
 [x] 2
-[y] 3
+[y] 2
 [rom] 
-1,1,1,2,0,0,0,0,0,0,0,1,0,2
+3,2,1,0,4,2,2,1,1,0,3,1,2,0
 
 [chip] 
-[type] BRIDGE
-[x] 8
+[type] UC4
+[x] 9
 [y] 3
-
-[chip] 
-[type] OR
-[x] 10
-[y] 4
-
-[chip] 
-[type] AND
-[x] 13
-[y] 4
-
-[chip] 
-[type] DX3
-[x] 16
-[y] 4
+[code] 
+  slx x1
+  gen p1 2 x1
+  gen p0 3 0
 
 [chip] 
 [type] UC6
-[x] 4
-[y] 5
+[x] 5
+[y] 4
 [code] 
   slx x0
   mov x0 dat
   teq dat 3
-+ gen p0 1 0
++ mov acc x1
++ mov x2 x3
++ gen p1 1 x2
++ gen p0 x2 0
 + gen p1 1 0
-+ mov acc x3
 - teq dat -1
 + mov 0 acc
-  dst dat 1
+- dst dat 2
 
 [chip] 
 [type] BRIDGE
-[x] 10
+[x] 13
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 12
 [y] 6
 
 [chip] 
-[type] OR
-[x] 12
+[type] PGA
+[x] 14
 [y] 6
-[rotated] true
+[array-switch] False
+[array-data] 
+0,0,1,0,0,0,1,0,0,1,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
 
 [chip] 
 [type] BRIDGE
