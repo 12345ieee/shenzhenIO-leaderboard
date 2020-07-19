@@ -1,4 +1,4 @@
-[name] Top solution Lines
+[name] Top solution Lines - Catalecticant
 [puzzle] Sz021
 [production-cost] 700
 [power-usage] 535
