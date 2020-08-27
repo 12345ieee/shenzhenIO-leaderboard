@@ -1,8 +1,8 @@
-[name] Cost optimized
+[name] Top solution Cost - saroj1am
 [puzzle] Sz038
-[production-cost] 1400
-[power-usage] 462
-[lines-of-code] 30
+[production-cost] 1300
+[power-usage] 397
+[lines-of-code] 27
 
 [traces] 
 ......................
@@ -10,13 +10,13 @@
 ......................
 ......................
 ......................
-....14.9555C..95C.....
-....155E954A156.355C..
-.....8.AA94354154142..
-.....34AA35D555C.954..
-....154A34.A.1435694..
-.....94354.A1555556...
-.....355555614........
+...954.9555C..........
+...A155E954A1555555C..
+...A...AA94354.....2..
+...3554AA35D55555554..
+....154A34.A.......8..
+.....94354.A15555556..
+.....3555556..........
 ......................
 ......................
 
@@ -26,19 +26,9 @@
 [y] 2
 [code] 
 s:slp 1
-  tcp p0 100
-- teq x1 10
-+ nop
-+ teq x1 110
-- jmp s
-+ gen p0 1 0
-  not
-  mov acc p1
-
-[chip] 
-[type] BRIDGE
-[x] 13
-[y] 2
+  teq p0 100
++ not
++ mov acc p1
 
 [chip] 
 [type] RADIO
@@ -63,28 +53,8 @@ o:mov x2 acc
 + gen p0 1 1
 + mov x1 x0
 - mov 0 x0
-  mov 0 x3
+  mov dat x3
 - mov 0 dat
-
-[chip] 
-[type] BRIDGE
-[x] 14
-[y] 4
-
-[chip] 
-[type] BRIDGE
-[x] 18
-[y] 4
-
-[chip] 
-[type] DX3
-[x] 16
-[y] 5
-
-[chip] 
-[type] BRIDGE
-[x] 5
-[y] 6
 
 [chip] 
 [type] UC4
@@ -92,8 +62,10 @@ o:mov x2 acc
 [y] 6
 [code] 
   mov 50 p1
+- gen p0 1 0
   slx x0
-  gen p1 x1 x0
+  teq x0 0
+  gen p1 x1 0
   mov 50 p1
   gen p0 1 1
   gen p1 0 x1
@@ -103,3 +75,4 @@ o:mov x2 acc
 [type] RAM
 [x] 2
 [y] 7
+
