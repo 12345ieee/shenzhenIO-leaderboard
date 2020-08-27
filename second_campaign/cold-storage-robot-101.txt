@@ -1,8 +1,8 @@
-[name] Top solution Cost->Cycles
+[name] Top solution Cost - saroj1am
 [puzzle] Sz038
-[production-cost] 1500
-[power-usage] 291
-[lines-of-code] 36
+[production-cost] 1300
+[power-usage] 397
+[lines-of-code] 27
 
 [traces] 
 ......................
@@ -10,79 +10,69 @@
 ......................
 ......................
 ......................
-...955555555C.........
-...A14...954A155555C..
-...354.156..354....2..
-....94.14.15C14.1554..
-....35555555694..954..
-.............35556....
-......................
+...954.9555C..........
+...A155E954A1555555C..
+...A...AA94354.....2..
+...3554AA35D55555554..
+....154A34.A.......8..
+.....94354.A15555556..
+.....3555556..........
 ......................
 ......................
 
 [chip] 
 [type] UC4
-[x] 14
-[y] 4
+[x] 10
+[y] 2
 [code] 
-  slx x0
-  mov x0 acc
-  gen p1 1 0
-  add 1
-  mov 100 p0
-  slp acc
-  gen p1 1 0
-  mov 0 p0
-
-[chip] 
-[type] UC6
-[x] 5
-[y] 5
-[code] 
-s:slp p0
-  tcp 1 x2
-+ jmp s
-- mov x2 dat
-l:mov x1 acc
-  teq dat x0
-- jmp l
-  mov acc x1
-  teq dat 0
-+ mov x2 x0
-- mov 0 x0
-  mov x1 x3
-  mov dat x3
-- mov 0 dat
+s:slp 1
+  teq p0 100
++ not
++ mov acc p1
 
 [chip] 
 [type] RADIO
-[x] 8
-[y] 5
-[rotated] true
+[x] 2
+[y] 3
 [is-puzzle-provided] true
 
 [chip] 
 [type] UC6
-[x] 11
-[y] 5
+[x] 6
+[y] 3
 [code] 
-  mov 1 p0
-  slp acc
+s:slp 1
+  tcp x1 1
+- jmp s
++ mov x1 dat
+o:mov x2 acc
+  teq dat x0
+- jmp o
+  mov acc x2
+  teq dat 0
++ gen p0 1 1
++ mov x1 x0
+- mov 0 x0
+  mov dat x3
+- mov 0 dat
+
+[chip] 
+[type] UC4
+[x] 10
+[y] 6
+[code] 
   mov 50 p1
+- gen p0 1 0
   slx x0
-  mov 3 p0
-  mov x0 acc
   teq x0 0
-+ mov acc x2
-+ slp 2
-  gen p1 acc 0
+  gen p1 x1 0
   mov 50 p1
-- mov acc x2
-  slp 2
-  mov p1 x3
+  gen p0 1 1
+  gen p1 0 x1
+  mov 0 x1
 
 [chip] 
 [type] RAM
 [x] 2
-[y] 6
+[y] 7
 

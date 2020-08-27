@@ -1,8 +1,8 @@
-[name] Top solution Power - 12345ieee
+[name] Top solution Power - llamadeus/12345ieee
 [puzzle] Sz038
-[production-cost] 2200
-[power-usage] 194
-[lines-of-code] 44
+[production-cost] 2500
+[power-usage] 192
+[lines-of-code] 53
 
 [traces] 
 ......................
@@ -10,15 +10,64 @@
 ......................
 ......................
 ......................
-...954..955C..........
-...A1C.1614A155555DC..
-...A.A9555C354....22..
-...A16A..8A954.15554..
-...A156156AA15414.88..
-...A...1C16354.1556A..
-...355556.......1416..
+....9555C.............
+..14A.94A.94.155555C..
+..15616.35E.954...16..
+..8..1C.1CA.A..15554..
+..34..35C234A..14.88..
+.....15C3554A141556A..
+.....14354..354.1416..
 ......................
 ......................
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 2
+[code] 
+@ slp 1
+a:tcp x2 1
+- slp 1
+- tcp x2 1
+- slp 1
+- tcp x2 1
+- slp 1
+- jmp a
++ mov x2 x0
++ slp 7
++ jmp a
+  mov x2 x3
+  slp 7
+
+[chip] 
+[type] RADIO
+[x] 6
+[y] 2
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 2
+[code] 
+  mov 10 x3
+  slx x1
+  tlt x1 50
+- mov 100 x2
+- slp x0
+  mov 110 x3
+  slp 1
+  slp x3 #HH
++ mov 100 x2
+  slp x0
+  mov 100 x3
+  slp 1
 
 [chip] 
 [type] BRIDGE
@@ -31,46 +80,9 @@
 [y] 2
 
 [chip] 
-[type] UC6
-[x] 5
-[y] 3
-[code] 
-@ slx x3
-@ mov x2 dat
-loop:
-  mov x1 acc
-  teq x0 dat
-clean:
-+ mov acc x1
-+ mov x3 x0 #0,HHs
-start:
-+ slx x3
-+ mov x2 dat
-
-[chip] 
-[type] UC4X
-[x] 10
-[y] 3
-[code] 
-  mov 010 x3
-  slx x2
-g: mov x2 x3 #110
-  slp 1
-# mov 000 x3
-  slp x3 #HH
-c: slp x1
-l: mov 100 x3
-  slp 1
-
-[chip] 
 [type] DX3
 [x] 14
 [y] 3
-
-[chip] 
-[type] RAM
-[x] 2
-[y] 4
 
 [chip] 
 [type] BRIDGE
@@ -79,82 +91,57 @@ l: mov 100 x3
 
 [chip] 
 [type] BRIDGE
-[x] 9
+[x] 2
 [y] 5
 
 [chip] 
 [type] UC6
-[x] 10
+[x] 3
 [y] 5
 [code] 
-  mov 50 p1
-  slx x3
-  mov 0 x1
-  teq x3 1
-+ mov 110 x2
-+ slp 2
-- mov 0 x0 #HHs
-f: mov 100 p1
-  slp x1
-  mov 50 p1
-- mov 110 x2
-c: slp 2
-b: mov 0 p1
-  slp x1
+@ slx x0
+@ mov 0 x1
+@ mov x0 acc
+  mov x1 dat
+  teq x3 acc
++ mov dat x1
++ mov 0 x3
++ mov 100 x2
++ slx x0
++ mov 0 x1
++ mov x0 acc
 
 [chip] 
-[type] UC6
-[x] 5
+[type] UC4X
+[x] 6
+[y] 5
+[code] 
+@ teq 1 1
+@ slx x2
++ mov x2 x0
++ mov 0 x1
+s: + slx x2
++ mov 0 x3
+  mov x3 acc
+  teq x0 0
++ mov acc x3
+
+[chip] 
+[type] UC4
+[x] 11
 [y] 6
 [code] 
-  tcp x0 1
-sl1: - slp 1
-- tcp x0 1
-- jmp sl1
-+ mov 2 x3
-+ jmp slp
-  mov 1 x3
-loop: mov x2 acc
-  tgt x1 0
-+ jmp loop
-slp: slp 6 #A1
-  slp x2 #A2
-- mov acc x2
-- mov x0 x1
+  mov 50 p1
+  slx x1
+  mov x1 p1
+  slp x0
+  mov 50 p1
+  slp 2
+  mov 0 p1
+  slp x0
 
 [chip] 
-[type] RADIO
-[x] 2
+[type] RAM
+[x] 7
 [y] 7
-[is-puzzle-provided] true
-
-[chip] 
-[type] NOTE
-[x] 9
-[y] 8
-[code] 
- 1 -> mov   0 addr
- 2 -> mov &rx    0
-
----------------
-
-Optimal sleep
-would be 5+2*ADDR
-6+1*A is good
-enough
-
-[chip] 
-[type] NOTE
-[x] 15
-[y] 8
-[code] 
-Use NOT to cut
-instructions
-in slp/mov
-
-HHs: Use value at
-last point, so
-address is already
-updated when
-control returns
 
