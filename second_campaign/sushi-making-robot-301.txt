@@ -1,4 +1,4 @@
-[name] Top solution LineS (Copy)
+[name] Top solution Lines
 [puzzle] Sz043
 [production-cost] 2400
 [power-usage] 670
