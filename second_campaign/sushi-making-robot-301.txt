@@ -1,8 +1,8 @@
-[name] Top solution Lines - 12345ieee
+[name] Top solution Lines
 [puzzle] Sz043
 [production-cost] 2400
-[power-usage] 546
-[lines-of-code] 28
+[power-usage] 670
+[lines-of-code] 26
 
 [traces] 
 ......................
@@ -10,13 +10,13 @@
 ......................
 ......................
 ......................
-....14.1555494.15554..
-....14.155556..15554..
-.......14..1555555C...
-....14.1555555555C34..
-....14.14..15555C354..
-.......154.14...3554..
-...........14.........
+....14954...94.15554..
+...954A155556..15554..
+...A14A.1555555555C...
+..16.1695554.1555434..
+.....156.....14...14..
+..15C14...94.14..154..
+....355555755555554...
 ......................
 ......................
 
@@ -35,48 +35,52 @@
 8 000
 
 [chip] 
-[type] UC6
-[x] 9
+[type] BRIDGE
+[x] 18
 [y] 2
-[code] 
-  mov 50 p1
-  slx x1
-  mov x1 x3
-  slp 2
-  mov x2 p1
-  slp 1
-
-[chip] 
-[type] BANK
-[x] 12
-[y] 2
-[rom] 
--1,-1,-1,100,0,100,0,100,0,100,0,-1,-1,-1
 
 [chip] 
 [type] UC6
-[x] 5
+[x] 3
 [y] 3
 [code] 
-  mov 50 p1
-  slx x3
-  mov x3 x1
-  slp 2
-  mov x0 p1
+- mov x0 x3
+  mov 50 p0
+- slp 2
+- mov x2 p0
   slp 1
-  mov x1 x2
+  teq p1 50
 
 [chip] 
 [type] BANK
-[x] 2
-[y] 4
+[x] 6
+[y] 3
 [rom] 
 -1,-1,100,100,0,0,100,100,0,0,-1,-1,-1,-1
 
 [chip] 
+[type] UC6
+[x] 11
+[y] 3
+[code] 
+- mov x0 x3
+  mov 50 p1
+- slp 2
+- mov x2 p1
+  teq p0 50
+  slp 1
+
+[chip] 
+[type] BANK
+[x] 14
+[y] 3
+[rom] 
+-1,-1,-1,100,0,100,0,100,0,100,0,-1,-1,-1
+
+[chip] 
 [type] BRIDGE
-[x] 8
-[y] 4
+[x] 17
+[y] 3
 
 [chip] 
 [type] UC6
@@ -88,12 +92,11 @@
   mov x3 x1
   slp 2
   mov x0 p1
-  slp 1
-  mov x1 x2
+  gen p0 1 0
 
 [chip] 
 [type] BRIDGE
-[x] 11
+[x] 8
 [y] 6
 
 [chip] 
@@ -122,4 +125,3 @@
   slp 1
 - gen p1 0 1
 - mov x1 x0
-
