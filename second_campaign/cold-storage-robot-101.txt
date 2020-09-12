@@ -75,3 +75,4 @@ o:mov x2 acc
 [type] RAM
 [x] 2
 [y] 7
+
