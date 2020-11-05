@@ -1,8 +1,8 @@
-[name] Top solution Cost->Power
+[name] cost 6 power 621 record?
 [puzzle] Sz015
 [production-cost] 600
-[power-usage] 622
-[lines-of-code] 15
+[power-usage] 621
+[lines-of-code] 14
 
 [traces] 
 ......................
@@ -11,46 +11,43 @@
 ......................
 ......................
 ......................
-.........15555555C....
-....1554.15C.....2....
-....955555CA..........
-....2.8..16A..........
-......34.156..........
+......................
+....15555C9554.154....
+........16A.94........
+....154.156.A.........
+.........1556.........
 ......................
 ......................
 ......................
 
 [chip] 
-[type] UC4
-[x] 7
+[type] BRIDGE
+[x] 9
 [y] 3
+
+[chip] 
+[type] UC4
+[x] 6
+[y] 4
 [code] 
-start:
-  tgt p0 39
-+ tlt p0 80
-+ tgt p1 39
-+ tlt p1 80
+  tgt p0 39 #x>39
++ tgt p1 39 #y>39
++ tlt p1 80 #x<80
++ tlt p0 80 #y<80
 + mov 50 x1
 - mov 0 x1
   slp 1
 
 [chip] 
-[type] BRIDGE
-[x] 6
-[y] 4
-
-[chip] 
 [type] UC4
-[x] 7
-[y] 6
+[x] 13
+[y] 5
 [code] 
-start:
-  tlt p0 60
-+ tgt p0 19
-+ mov x1 p1
-+ jmp sleep
-  teq x1 50
-+ mov 80 p1
-- mov 30 p1
-sleep: slp 1
+  tgt p0 59
+- tlt p0 20
++ mov x0 acc
++ add 30
++ mov acc p1
+- mov x0 p1
+  slp 1
 
