@@ -1,8 +1,8 @@
 [name] Top solution Lines - 837951602
 [puzzle] Sz005
-[production-cost] 1900
-[power-usage] 2474
-[lines-of-code] 5
+[production-cost] 2300
+[power-usage] 3190
+[lines-of-code] 4
 
 [traces] 
 ......................
@@ -10,109 +10,92 @@
 ......................
 ......................
 ......................
-......1D54.14.........
-......1614.15554......
-....955554............
-....2..94..1C1D55C....
-.....156..14A.A..2....
-.......14.14A.A.......
-.......14.15616.......
+....94.94.............
+....34.35555C15C1C....
+....15C.....34.A.A....
+....14A14149554A.A....
+......A.954A154A.2....
+.....16.A156...A......
+........3555554354....
 ......................
 ......................
 
 [chip] 
-[type] DX3
-[x] 6
+[type] BANK
+[x] 3
 [y] 2
+[rom] 
+-90,-90,-90,-90,-90,-90,-90,-90,-90,-90,20,200,-220,-99
 
 [chip] 
 [type] PGA
-[x] 8
+[x] 14
 [y] 2
 [array-switch] False
 [array-data] 
-0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0
+
+[chip] 
+[type] DX3
+[x] 8
+[y] 3
 
 [chip] 
 [type] PGA
-[x] 11
-[y] 2
+[x] 10
+[y] 4
 [array-switch] True
 [array-data] 
-0,0,0,1,0,0,1,1,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,0
-
-[chip] 
-[type] NOTE
-[x] 15
-[y] 2
-[code] 
-PGA commands:
-x11 next tick
-x10 high input
-x01 arm switch
-First encodes and
-leave only one x01
-Second stores
-arm state and
-gate store output
-
-[chip] 
-[type] BRIDGE
-[x] 8
-[y] 5
-
-[chip] 
-[type] OR
-[x] 12
-[y] 5
-[rotated] true
-
-[chip] 
-[type] NOTE
-[x] 15
-[y] 5
-[code] 
-Removing it will
-make the
-simulation fail.
-Same to the one
-below.
+1,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 
 [chip] 
 [type] UC6
-[x] 9
-[y] 6
+[x] 5
+[y] 5
 [code] 
-  tlt p0 x3
-- slp x3
-- mov x3 x1
-  
-  teq p1 x0
-+ mov 1 x1
+  tlt p0 x1
+- teq p1 x0
++ mov x1 x2
++ slp x2
+
+[chip] 
+[type] PGA
+[x] 14
+[y] 5
+[array-switch] True
+[array-data] 
+0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+
+[chip] 
+[type] RTC
+[x] 8
+[y] 7
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL2
+[x] 3
+[y] 8
+[is-puzzle-provided] true
 
 [chip] 
 [type] DIAL1
 [x] 5
-[y] 7
-[is-puzzle-provided] true
-
-[chip] 
-[type] RTC
-[x] 12
-[y] 7
-[rotated] true
-[is-puzzle-provided] true
-
-[chip] 
-[type] BANK
-[x] 15
-[y] 7
-[rom] 
-20,-1,-810,800,20,-1,-810,800,-1,1,899,999,999,999
-
-[chip] 
-[type] DIAL2
-[x] 5
 [y] 8
 [is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 9
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 4
+[y] 9
+[code] 
+
 
