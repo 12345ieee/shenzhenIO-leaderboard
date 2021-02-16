@@ -1,7 +1,7 @@
 [name] Top solution Cost->Lines
 [puzzle] Sz035
 [production-cost] 300
-[power-usage] 186
+[power-usage] 179
 [lines-of-code] 4
 
 [traces] 
@@ -31,8 +31,8 @@
 [x] 11
 [y] 4
 [code] 
+@ mov -1 acc
   tlt x0 0
-- sub 1
 - mul -1
   gen p1 acc 1
 
