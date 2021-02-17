@@ -1,7 +1,7 @@
 [name] Top solution Lines
 [puzzle] Sz007
 [production-cost] 2200
-[power-usage] 443
+[power-usage] 440
 [lines-of-code] 11
 
 [traces] 
@@ -52,7 +52,7 @@
 + gen p0 3 0
 - teq dat -1
 + mov 0 acc
-  dst dat 1
+- dst dat 1
 
 [chip] 
 [type] PGA
