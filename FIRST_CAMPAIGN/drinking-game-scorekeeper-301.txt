@@ -1,8 +1,8 @@
-[name] Top solution Lines
+[name] Top solution Lines - 837951602
 [puzzle] Sz028
 [production-cost] 600
-[power-usage] 225
-[lines-of-code] 5
+[power-usage] 661
+[lines-of-code] 4
 
 [traces] 
 ......................
@@ -11,14 +11,21 @@
 ......................
 ......................
 ......................
-........154.15C.......
-.....8..154.1CA.......
-.....A.155555634......
-.....34...............
-.....14...............
+......................
+.....8................
+.....35541554.14......
+...........1C.........
+.....1554...34........
 ......................
 ......................
 ......................
+
+[chip] 
+[type] BANK
+[x] 10
+[y] 2
+[rom] 
+1,-1,2,100,2,-9,100,999,-9,100,-999,2,0,0
 
 [chip] 
 [type] LCDN
@@ -28,55 +35,17 @@
 
 [chip] 
 [type] DX3
-[x] 6
+[x] 8
 [y] 3
 [rotated] true
 
 [chip] 
-[type] NOTE
-[x] 8
-[y] 3
-[code] 
-ROM contains
-microcode program
-
-Zero = Finished
-Display Result
-Sleep next value
-
-Non-zero= Continue
-Add next value
-
-[chip] 
-[type] NOTE
-[x] 11
-[y] 3
-[code] 
-Init = location 0
-Sleep 1
-
-Foul = 100 = loc 2
-Add -2, Add -999
-Add 999, Sleep 2
-
-Point= location 10
-Add 1, Sleep 2
-
-[chip] 
-[type] BANK
-[x] 6
-[y] 6
-[rom] 
-0,1,111,-2,222,-999,222,999,0,2,111,1,0,2
-
-[chip] 
 [type] UC4X
-[x] 10
-[y] 6
+[x] 12
+[y] 4
 [code] 
-  teq x0 0
+  teq x0 x1
++ sub x1
 + mov acc x3
-+ slp x0
-+ mov x2 x1
-- add x0
++ slp x1
 
