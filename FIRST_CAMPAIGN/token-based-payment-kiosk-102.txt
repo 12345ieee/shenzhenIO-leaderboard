@@ -1,8 +1,8 @@
 [name] Top solution Cost->Lines
 [puzzle] Sz009
 [production-cost] 900
-[power-usage] 280
-[lines-of-code] 21
+[power-usage] 296
+[lines-of-code] 20
 
 [traces] 
 ......................
@@ -36,23 +36,21 @@
 [x] 14
 [y] 4
 [code] 
-1:tlt acc 0
-+ gen p0  1 1
-+ add 1
-- slx x0
-- mov x0  acc
-5:- tgt acc -5
-- add 5
-- gen p1  1 1
-- jmp 5
+  teq acc 0
++ slx x0
++ mov x0  acc
+  tlt acc -4
++ add 5
++ gen p1  1 1
+- add 1
+- gen p0  1 1
 
 [chip] 
 [type] UC6
 [x] 10
 [y] 5
 [code] 
-@ mov x0 acc
-  
+  mov x0 acc
 s:slp 1
   teq x1 000
 + jmp s
@@ -60,10 +58,10 @@ s:slp 1
 + add 7
 - add 11
   sub 12
-  tgt acc 0
+  tcp acc 0
++ jmp s
 - mov acc x2  
-- gen p1  4 2
-- mov x0  acc
+  gen p1 4 2
 
 [chip] 
 [type] DIAL3
