@@ -1,8 +1,8 @@
-[name] Top solution Cost->Power
+[name] Top solution Cost - 837951602
 [puzzle] Sz005
-[production-cost] 600
-[power-usage] 230
-[lines-of-code] 11
+[production-cost] 400
+[power-usage] 1666
+[lines-of-code] 9
 
 [traces] 
 ......................
@@ -11,54 +11,230 @@
 ......................
 ......................
 ......................
-.....14.154...........
-.....14...............
-....154.14............
-..........15555554....
 ......................
+......................
+....8.154.14..........
+....35554.15554154....
+......14..............
 ......................
 ......................
 ......................
 
 [chip] 
-[type] DX3
-[x] 9
-[y] 3
-
-[chip] 
-[type] UC6
+[type] NOTE
 [x] 6
-[y] 5
+[y] 1
 [code] 
-@ mov x1 acc
-@ sub p1
-@ tlt acc 0
-+ add 96
-@ slp acc
-  
-  tgt p0 19
-+ mov 10 x2
-- mov 0  x2
-  slp 1
-  teq p1 x0
-+ gen p0 999 x2
+
 
 [chip] 
-[type] DIAL1
-[x] 4
-[y] 6
+[type] NOTE
+[x] 9
+[y] 1
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 12
+[y] 1
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 15
+[y] 1
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 1
+[code] 
+
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 2
+
+[chip] 
+[type] DIAL2
+[x] 5
+[y] 3
 [is-puzzle-provided] true
 
 [chip] 
+[type] BRIDGE
+[x] 7
+[y] 3
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 3
+[code] 
+
+
+[chip] 
+[type] BRIDGE
+[x] 4
+[y] 4
+
+[chip] 
+[type] UC4
+[x] 8
+[y] 4
+[code] 
+s:teq x0 p1
++ add 5
+- tgt acc 50
+- add 10
+- jmp s
+  tgt p0 19
+  dgt x1
++ mov acc x1
+  slp 1
+
+[chip] 
 [type] RTC
-[x] 10
-[y] 6
+[x] 11
+[y] 4
 [rotated] true
 [is-puzzle-provided] true
 
 [chip] 
-[type] DIAL2
+[type] DX3
+[x] 14
+[y] 4
+
+[chip] 
+[type] DIAL1
+[x] 5
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 5
+[code] 
+
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 6
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 7
+[code] 
+
+
+[chip] 
+[type] NOTE
 [x] 4
 [y] 7
-[is-puzzle-provided] true
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 7
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 9
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 4
+[y] 9
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 7
+[y] 9
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 10
+[y] 9
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 13
+[y] 9
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 16
+[y] 9
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 3
+[y] 11
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 6
+[y] 11
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 9
+[y] 11
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 12
+[y] 11
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 15
+[y] 11
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 11
+[code] 
+
 
