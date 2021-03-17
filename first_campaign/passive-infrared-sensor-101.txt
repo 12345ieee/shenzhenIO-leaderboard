@@ -1,7 +1,7 @@
 [name] Top solution Cost - 837951602
 [puzzle] Sz005
 [production-cost] 400
-[power-usage] 1666
+[power-usage] 1529
 [lines-of-code] 9
 
 [traces] 
@@ -90,7 +90,7 @@
 [code] 
 s:teq x0 p1
 + add 5
-- tgt acc 50
+- tgt acc 49
 - add 10
 - jmp s
   tgt p0 19
