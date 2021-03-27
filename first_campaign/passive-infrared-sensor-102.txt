@@ -1,0 +1,197 @@
+[name] New design 14 (Copy) (Copy)
+[puzzle] Sz005
+[production-cost] 400
+[power-usage] 1817
+[lines-of-code] 8
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+...........0..........
+......................
+....8.154.14..........
+....35554.15554154....
+......14..............
+......................
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 6
+[y] 1
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 9
+[y] 1
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 12
+[y] 1
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 15
+[y] 1
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 1
+[code] 
+
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 2
+
+[chip] 
+[type] DIAL2
+[x] 5
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 3
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 3
+[code] 
+
+
+[chip] 
+[type] BRIDGE
+[x] 4
+[y] 4
+
+[chip] 
+[type] UC4
+[x] 8
+[y] 4
+[code] 
+s:teq x0 p1
++ add 505
+- add 10
+  tgt p0 19
++ mov acc x1
+  tgt acc 59
++ slp 1
++ dgt x1
+
+[chip] 
+[type] RTC
+[x] 11
+[y] 4
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] DX3
+[x] 14
+[y] 4
+
+[chip] 
+[type] DIAL1
+[x] 5
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 5
+[code] 
+
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 6
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 7
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 7
+[y] 9
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 10
+[y] 9
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 13
+[y] 9
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 16
+[y] 9
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 9
+[y] 11
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 12
+[y] 11
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 15
+[y] 11
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 11
+[code] 
+
+
