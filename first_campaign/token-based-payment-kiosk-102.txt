@@ -1,8 +1,8 @@
 [name] Top solution Cost->Lines
 [puzzle] Sz009
 [production-cost] 900
-[power-usage] 296
-[lines-of-code] 20
+[power-usage] 310
+[lines-of-code] 19
 
 [traces] 
 ......................
@@ -13,17 +13,12 @@
 ......................
 .........14.1555554...
 ...15554154...........
-...14954....154.1C....
-...15694.....94..34...
-....156......355554...
+...15554.94.154.1C....
+...15C...A...94..34...
+.....35556...355554...
 ......................
 ......................
 ......................
-
-[chip] 
-[type] BRIDGE
-[x] 4
-[y] 3
 
 [chip] 
 [type] DX3
@@ -52,12 +47,11 @@
 [code] 
   mov x0 acc
 s:slp 1
-  teq x1 000
-+ jmp s
-  tcp x1 010
-+ add 7
-- add 11
-  sub 12
+  tcp x1 p0
+- sub 12
++ sub 1
++ teq x1 10
++ sub 4
   tcp acc 0
 + jmp s
 - mov acc x2  

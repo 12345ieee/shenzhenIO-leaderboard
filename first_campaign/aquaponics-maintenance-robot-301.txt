@@ -1,8 +1,8 @@
-[name] Top solution Lines
+[name] Top solution Lines - 837951602
 [puzzle] Sz023
-[production-cost] 600
-[power-usage] 274
-[lines-of-code] 15
+[production-cost] 1200
+[power-usage] 230
+[lines-of-code] 13
 
 [traces] 
 ......................
@@ -10,19 +10,32 @@
 ......................
 ......................
 ......................
-............94.1555C..
-............A......2..
-.....154.14.A.........
-......94.1556.........
-......A...1555555554..
+.........15554.1555C..
+........955554.....2..
+.....154A154...1C.....
+........A15555556.....
+......94354155555554..
 ......35555555555554..
 ......................
 ......................
 ......................
 
 [chip] 
+[type] UC6
+[x] 7
+[y] 4
+[code] 
+  teq acc -999
+l:- teq x2 acc  
+- mov acc x3
+- slp 2
++ gen p1 x0 0
++ gen p0 x0 1
++ mov x0 acc
+
+[chip] 
 [type] BRIDGE
-[x] 10
+[x] 11
 [y] 4
 
 [chip] 
@@ -32,29 +45,21 @@
 [is-puzzle-provided] true
 
 [chip] 
-[type] UC4
-[x] 7
-[y] 5
-[code] 
-  teq acc -999
-l:- mov acc x1
-- teq x1 acc  
-- slp 2
-+ gen p1 x0 0
-+ gen p0 x0 1
-+ mov x0 acc
-
-[chip] 
-[type] UC4
+[type] UC6
 [x] 13
-[y] 7
+[y] 6
 [code] 
   mov 50 p1
-  slx x0
-  tcp acc x0
-  mov acc x0  
-- gen p1 1 0
-- add 1
+  slx x2
+  tcp x1 x2
+- gen p1 1 x0
 + gen p1 0 1
-+ sub 1
++ mov x0 x1
+
+[chip] 
+[type] BANK
+[x] 7
+[y] 7
+[rom] 
+0,-14,-13,-12,-11,-10,0,0,0,0,0,0,0,0
 

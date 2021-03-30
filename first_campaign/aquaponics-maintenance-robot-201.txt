@@ -1,6 +1,6 @@
-[name] Top solution Power - pseudonym404
+[name] Top solution Power - pseudonym404/837951602
 [puzzle] Sz023
-[production-cost] 1700
+[production-cost] 1400
 [power-usage] 137
 [lines-of-code] 24
 
@@ -10,36 +10,30 @@
 ......................
 ......................
 ......................
-..........14.155555C..
-..........14.1541416..
-.............1C.......
-..............A.14....
-..........14.16.1554..
-.............1541554..
-................14....
+.....14.15555555555C..
+.....14.15555554...A..
+........1C8........A..
+.........AA.154.1556..
+.....14.162.15555554..
+........15541C155554..
+..........1556........
 ......................
 ......................
 
 [chip] 
-[type] DX3
-[x] 15
+[type] BRIDGE
+[x] 10
 [y] 2
-
-[chip] 
-[type] NOT
-[x] 17
-[y] 2
-[rotated] true
 
 [chip] 
 [type] RADIO
-[x] 8
+[x] 3
 [y] 3
 [is-puzzle-provided] true
 
 [chip] 
 [type] UC6
-[x] 11
+[x] 6
 [y] 3
 [code] 
 @ mov x3 null
@@ -50,8 +44,18 @@
 - slx x3
 - mov x3 x2
 - slp x1
-- mov 10 x2
+- mov 100 x2
 - slp x1
+
+[chip] 
+[type] DX3
+[x] 11
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 3
 
 [chip] 
 [type] DX3
@@ -59,19 +63,13 @@
 [y] 5
 
 [chip] 
-[type] NOT
-[x] 17
-[y] 5
-[rotated] true
-
-[chip] 
 [type] UC6
-[x] 11
+[x] 6
 [y] 6
 [code] 
 @ mov 50 p1
   teq x1 dat
-+ mov 100 x2
++ mov 10 x2
 + slx x2
 + mov x2 dat
   tcp x1 dat
@@ -85,14 +83,14 @@
 - slp x3
 
 [chip] 
-[type] OR
-[x] 17
+[type] BRIDGE
+[x] 10
 [y] 6
 
 [chip] 
 [type] BANK
-[x] 8
+[x] 3
 [y] 7
 [rom] 
-111,112,113,114,115,116,117,118,119,120,121,122,123,124
+111,112,113,114,115,116,117,118,119,134,121,122,123,124
 
