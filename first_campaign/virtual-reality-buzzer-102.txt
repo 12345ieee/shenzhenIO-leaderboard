@@ -1,7 +1,7 @@
-[name] Top solution Cost->Lines
+[name] Top  solution Cost->Lines
 [puzzle] Sz035
 [production-cost] 300
-[power-usage] 179
+[power-usage] 178
 [lines-of-code] 4
 
 [traces] 
@@ -11,9 +11,9 @@
 ......................
 ......................
 ......................
-......................
-......................
-........1554.154......
+........154.155C......
+.........14....A......
+...............2......
 ......................
 ......................
 ......................
@@ -23,16 +23,16 @@
 [chip] 
 [type] RADIO
 [x] 6
-[y] 4
+[y] 6
 [is-puzzle-provided] true
 
 [chip] 
 [type] UC4
-[x] 11
-[y] 4
+[x] 10
+[y] 6
 [code] 
 @ mov -1 acc
-  tlt x0 0
-- mul -1
-  gen p1 acc 1
+  gen  p1 acc 1
+  tgt x0 -999
++ mul -1
 

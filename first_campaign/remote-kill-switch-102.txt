@@ -1,8 +1,8 @@
-[name] Top solution Cost->Lines - andersk
+[name] Top solution Cost->Lines
 [puzzle] Sz016
 [production-cost] 600
-[power-usage] 168
-[lines-of-code] 12
+[power-usage] 345
+[lines-of-code] 10
 
 [traces] 
 ......................
@@ -11,9 +11,9 @@
 ......................
 ......................
 ......................
-.................8....
-......154.......16....
-..........15555414....
+...........14.155C....
+..............1416....
+................14....
 ................1C....
 .................2....
 ......................
@@ -21,31 +21,29 @@
 ......................
 
 [chip] 
-[type] UC6
-[x] 8
-[y] 4
-[code] 
-  slp 1
-s: mov x0 dat
-  tgt dat -999
-a: + dst x0 dat
-+ mov acc x3
-  slp 2
-+ jmp s
-  mov x0 dat
-  tgt dat -999
-+ jmp a
-  slp 1
-  mov x3 acc
-
-[chip] 
 [type] DX3
 [x] 15
 [y] 4
 
 [chip] 
-[type] RADIO
-[x] 4
+[type] UC6
+[x] 12
 [y] 5
+[code] 
+  slp 1
+  mov x0 dat
+  tgt dat -999
++ dst 2 0
++ add p1
++ dst x0 dat#0-1
++ mov acc x3
+- add 200
+- tlt acc 999
+- mov x3 acc
+
+[chip] 
+[type] RADIO
+[x] 9
+[y] 6
 [is-puzzle-provided] true
 
