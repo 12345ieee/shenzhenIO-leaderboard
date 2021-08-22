@@ -1,7 +1,7 @@
 [name] Top solution Lines - 837951602
 [puzzle] Sz028
 [production-cost] 600
-[power-usage] 661
+[power-usage] 649
 [lines-of-code] 4
 
 [traces] 
@@ -25,7 +25,7 @@
 [x] 10
 [y] 2
 [rom] 
-1,-1,2,100,2,-9,100,999,-9,100,-999,2,0,0
+0,0,1,-1,2,100,2,-9,100,999,-9,100,-999,2
 
 [chip] 
 [type] LCDN
