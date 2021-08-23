@@ -1,8 +1,8 @@
-[name] Top solution Cost->Power
+[name] Top solution Cost->Power - 837951602
 [puzzle] Sz005
-[production-cost] 600
-[power-usage] 230
-[lines-of-code] 11
+[production-cost] 400
+[power-usage] 1520
+[lines-of-code] 9
 
 [traces] 
 ......................
@@ -11,54 +11,123 @@
 ......................
 ......................
 ......................
-.....14.154...........
-.....14...............
-....154.14............
-..........15555554....
+......................
+......1C..............
+....8.174.14..........
+....35554.15554154....
 ......................
 ......................
 ......................
 ......................
 
 [chip] 
-[type] DX3
-[x] 9
+[type] NOTE
+[x] 18
+[y] 1
+[code] 
+
+
+[chip] 
+[type] BRIDGE
+[x] 16
 [y] 3
 
 [chip] 
-[type] UC6
-[x] 6
-[y] 5
-[code] 
-@ mov x1 acc
-@ sub p1
-@ tlt acc 0
-+ add 96
-@ slp acc
-  
-  tgt p0 19
-+ mov 10 x2
-- mov 0  x2
-  slp 1
-  teq p1 x0
-+ gen p0 999 x2
+[type] BRIDGE
+[x] 17
+[y] 3
 
 [chip] 
-[type] DIAL1
-[x] 4
-[y] 6
-[is-puzzle-provided] true
+[type] NOTE
+[x] 18
+[y] 3
+[code] 
+
+
+[chip] 
+[type] UC4
+[x] 8
+[y] 4
+[code] 
+s:teq x0 p1
++ add 5
+- tgt acc 49
+- add 10
+- jmp s
+  tgt p0 19
++ mov acc x1
+  slp 1
+  dgt x1
 
 [chip] 
 [type] RTC
-[x] 10
-[y] 6
+[x] 11
+[y] 4
 [rotated] true
 [is-puzzle-provided] true
 
 [chip] 
-[type] DIAL2
-[x] 4
-[y] 7
+[type] DX3
+[x] 14
+[y] 4
+
+[chip] 
+[type] DIAL1
+[x] 5
+[y] 5
 [is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 5
+[code] 
+
+
+[chip] 
+[type] DIAL2
+[x] 5
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 16
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 17
+[y] 6
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 7
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 9
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 11
+[code] 
+
 
