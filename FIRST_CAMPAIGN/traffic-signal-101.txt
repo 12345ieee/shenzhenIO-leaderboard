@@ -1,8 +1,8 @@
-[name] Top solution Cost
+[name] Top solution Cost 
 [puzzle] Sz026
 [production-cost] 600
-[power-usage] 315
-[lines-of-code] 14
+[power-usage] 306
+[lines-of-code] 13
 
 [traces] 
 ......................
@@ -11,9 +11,9 @@
 ......................
 ......................
 ......................
-..........14......8...
-..........14.14..16...
-...155555554.155414...
+....14............8...
+....14.155555555416...
+...154.14........14...
 .................1C...
 ..................2...
 ......................
@@ -27,39 +27,38 @@
 
 [chip] 
 [type] UC6
-[x] 11
+[x] 5
 [y] 5
 [code] 
-  tcp 010 dat
-  mov x3 acc
-  mov 001 dat
-+ mov x0 acc
-+ mov 100 dat
-- mov x1 acc
-- mov 010 dat
-  mov dat x2
-l:teq p0 0
-- mov x2 dat
+  tcp dat 10
+set2:mov x2 acc
+  mov 1 dat
+set0:-mov x0 acc
+- mov 100 dat
+set1:+mov x1 acc
++ mov 10 dat
+out:mov dat x3
+l:sub 1
+  tcp p0 acc
++ mov x3 dat
   slp 1
-+ tgt acc 1
-+ sub 1
-+ jmp l
-
-[chip] 
-[type] DIAL5
-[x] 9
-[y] 6
-[is-puzzle-provided] true
+- jmp l
 
 [chip] 
 [type] DIAL6
-[x] 14
+[x] 8
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL5
+[x] 3
 [y] 6
 [is-puzzle-provided] true
 
 [chip] 
 [type] DIAL4
-[x] 9
+[x] 3
 [y] 7
 [is-puzzle-provided] true
 
