@@ -1,7 +1,7 @@
-[name] Top solution Power
+[name] Top solution Power - 837951602
 [puzzle] Sz005
-[production-cost] 1600
-[power-usage] 134
+[production-cost] 1400
+[power-usage] 133
 [lines-of-code] 24
 
 [traces] 
@@ -10,41 +10,35 @@
 ......................
 ......................
 ......................
-....14.155555555C.....
-.......94...14.16.....
-....9543495555C14.....
-....29554A155C3554....
-...156154A14.34154....
-.....15556..1C.948....
-.....14......35616....
+........14.155C.......
+......9554.14.A.......
+.....16954..15E.......
+....8..A1555543414....
+....354A15414.1414....
+.....156......1C.8....
+...........1555756....
 ......................
 ......................
 
 [chip] 
 [type] DX3
-[x] 4
+[x] 10
 [y] 2
 
 [chip] 
-[type] NOT
-[x] 6
-[y] 2
-[rotated] true
+[type] RTC
+[x] 3
+[y] 3
+[is-puzzle-provided] true
 
 [chip] 
 [type] DX3
-[x] 11
-[y] 2
+[x] 13
+[y] 3
 
 [chip] 
-[type] NOT
+[type] AND
 [x] 15
-[y] 2
-[rotated] true
-
-[chip] 
-[type] DX3
-[x] 14
 [y] 3
 
 [chip] 
@@ -53,73 +47,60 @@
 [y] 3
 
 [chip] 
-[type] BRIDGE
-[x] 6
-[y] 4
-
-[chip] 
 [type] UC6
-[x] 8
+[x] 6
 [y] 4
 [code] 
 @ slp x0
   tgt p0 19
-+ mov x2 x3
-+ slp x1
++ mov 10 x3
++ slp x2
 + tgt p0 19
-+ slp x1
++ slp x2
 + tgt p0 19
-+ slp x1
++ slp x2
 + tgt p0 19
-+ slp x1
++ slp x2
 - slp x3
 
 [chip] 
 [type] BRIDGE
 [x] 12
+[y] 4
+
+[chip] 
+[type] NOT
+[x] 15
 [y] 5
 
 [chip] 
-[type] UC4
-[x] 13
+[type] UC6
+[x] 9
 [y] 6
 [code] 
-  add x1
-  sub p1
-  tgt p1 x1
+@ mov x0 acc
+@ sub p0
+@ tlt x3 x0
+- jmp s
+t:mov acc x1
+  mov x3 acc
+  sub p0
 + add 96
   slp acc
-  mov 100 p0
-  slp x0
+  gen p1 999 0
+s:tlt acc 0
++ add 96
+  jmp t
 
 [chip] 
 [type] DIAL2
-[x] 16
-[y] 6
-[is-puzzle-provided] true
-
-[chip] 
-[type] UC4
-[x] 5
+[x] 12
 [y] 7
-[code] 
-@ mov x0 acc
-@ sub p1
-@ tgt p1 x0
-+ add 96
-@ mov acc x1
-+ slp 999
-
-[chip] 
-[type] RTC
-[x] 8
-[y] 7
-[rotated] true
 [is-puzzle-provided] true
 
 [chip] 
 [type] DIAL1
-[x] 3
+[x] 7
 [y] 8
 [is-puzzle-provided] true
 
