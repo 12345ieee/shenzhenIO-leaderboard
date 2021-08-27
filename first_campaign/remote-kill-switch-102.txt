@@ -1,7 +1,7 @@
-[name] Top solution Cost->Lines - 837951602
+[name] New design 1
 [puzzle] Sz016
 [production-cost] 600
-[power-usage] 887
+[power-usage] 565
 [lines-of-code] 8
 
 [traces] 
@@ -31,7 +31,7 @@
 [x] 7
 [y] 4
 [rom] 
-1,1,1,1,1,0,0,0,0,0,0,0,0,9
+1,1,1,1,1,0,9,1,1,1,1,1,0,9
 
 [chip] 
 [type] DX3
