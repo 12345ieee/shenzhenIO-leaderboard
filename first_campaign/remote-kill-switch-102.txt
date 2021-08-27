@@ -1,8 +1,8 @@
-[name] Top solution Cost->Lines - andyx002
+[name] Top solution Cost->Lines - 837951602
 [puzzle] Sz016
 [production-cost] 600
-[power-usage] 345
-[lines-of-code] 10
+[power-usage] 887
+[lines-of-code] 8
 
 [traces] 
 ......................
@@ -11,39 +11,44 @@
 ......................
 ......................
 ......................
-...........14.155C....
-..............1416....
-................14....
-................1C....
+.................8....
+......95554.154156....
+......34.14.1C.154....
+............16.15C....
 .................2....
 ......................
 ......................
 ......................
 
 [chip] 
+[type] RADIO
+[x] 10
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] BANK
+[x] 7
+[y] 4
+[rom] 
+1,1,1,1,1,0,0,0,0,0,0,0,0,9
+
+[chip] 
 [type] DX3
-[x] 15
+[x] 14
 [y] 4
 
 [chip] 
-[type] UC6
-[x] 12
+[type] UC4X
+[x] 10
 [y] 5
 [code] 
   slp 1
-  mov x0 dat
-  tgt dat -999
-+ dst 2 0
-+ add p1
-+ dst x0 dat#0-1
-+ mov acc x3
-- add 200
-- tlt acc 999
-- mov x3 acc
-
-[chip] 
-[type] RADIO
-[x] 9
-[y] 6
-[is-puzzle-provided] true
+  mov x2 x0
+  dst x2 x0
+  teq x0 9
+w:-teq x1 9
+- jmp w
+  mul x1
+  mov acc x3
 
