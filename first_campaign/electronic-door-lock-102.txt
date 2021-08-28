@@ -1,4 +1,4 @@
-[name] Top solution Cost
+[name] Top solution Cost - 837951602
 [puzzle] Sz031
 [production-cost] 500
 [power-usage] 118
