@@ -1,7 +1,7 @@
 [name] Top solution Cost
 [puzzle] Sz031
 [production-cost] 500
-[power-usage] 121
+[power-usage] 118
 [lines-of-code] 11
 
 [traces] 
@@ -29,10 +29,10 @@
   dst 0 x0
   dst 1 x0
   dst 2 x0
-  mov x0 null
-  teq acc 999
-+ gen p1 3 0
+  dst 3 x0
   teq acc dat
 + gen p1 6 0
+- tlt acc 999
+- gen p1 3 0
   tgt p0 x0
 + mov acc dat
