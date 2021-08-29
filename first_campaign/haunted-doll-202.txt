@@ -1,0 +1,117 @@
+[name] Top solution Power - 837951602
+[puzzle] Sz008
+[production-cost] 2600
+[power-usage] 120
+[lines-of-code] 34
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......954.....954.....
+......A..954..A.......
+......A14A..14A14.....
+......A..A15C.B54.....
+......35435434A.8.....
+.......14.1554A16.....
+...........1556.......
+......................
+......................
+
+[chip] 
+[type] BANK
+[x] 5
+[y] 2
+[rom] 
+36,42,14,10,58,100,76,26,28,70,80,42,0,999
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 2
+[code] 
+@ slx x3
+@ mov x3 p1
+  slp x0
+  mov x1 p1
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 2
+[code] 
+  mov 50 p0
+  slx x3
+  teq x3 p0
++ mov 100 x0
+- mov 16 x1
+  slp 13
+
+[chip] 
+[type] BRIDGE
+[x] 16
+[y] 4
+
+[chip] 
+[type] BANK
+[x] 5
+[y] 5
+[rom] 
+80,41,14,2,41,74,54,27,1,19,40,75,0,999
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 5
+[code] 
+@ slx x2
+@ mov x2 p1
+  slp 1
+  mov x1 p1
+  slp 1
+  mov x1 p1
+  slp 1
+  mov x1 p1
+  slp x1
+  mov x1 p1
+@ slp 1
+@ mov 69 p1
+
+[chip] 
+[type] RND
+[x] 11
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 6
+[code] 
+@ mov 1 p1
+@ slp 1
+  tgt p0 2
++ slp 1
+- mov p0 x2
+- slp 18
+- tlt p0 3
+- slp 1
+- tlt p0 3
+- slp 2
+- tlt p0 3
+- slp 2
+
+[chip] 
+[type] BANK
+[x] 5
+[y] 7
+[rom] 
+1,1,1,1,1,1,1,1,1,1,1,1,1,999
+
