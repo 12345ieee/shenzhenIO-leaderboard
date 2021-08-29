@@ -1,6 +1,6 @@
 [name] Top solution Power - 837951602
 [puzzle] Sz023
-[production-cost] 1900
+[production-cost] 1700
 [power-usage] 136
 [lines-of-code] 24
 
@@ -10,24 +10,40 @@
 ......................
 ......................
 ......................
-....1415555D5555555C..
-....14.15C.3414955CA..
-.......1C3555416.16A..
-........A.15C.154156..
-....14.16.14A.14..14..
-.......1549435555554..
-.........1615555554...
+....154155555555555C..
+....154954...955C.1E..
+......961554161434.A..
+..94956.15C.15541556..
+..34A...14A.1554..14..
+..156154943555555554..
+.......161555555554...
 ......................
 ......................
 
 [chip] 
+[type] UC6
+[x] 3
+[y] 2
+[code] 
+@ slp x1
+  mov x0 dat
+  tlt dat 0
+- mov dat x1
+- slx x1
+- mov x1 x3
+- slp x0
+- mov 100 x3
+- slp x0
+  slp x3
+
+[chip] 
 [type] NOT
-[x] 8
+[x] 6
 [y] 2
 
 [chip] 
 [type] BRIDGE
-[x] 11
+[x] 9
 [y] 2
 
 [chip] 
@@ -36,85 +52,62 @@
 [y] 2
 
 [chip] 
-[type] RADIO
-[x] 2
+[type] DX3
+[x] 7
 [y] 3
+
+[chip] 
+[type] DX3
+[x] 11
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 4
+
+[chip] 
+[type] RADIO
+[x] 3
+[y] 5
+[rotated] true
 [is-puzzle-provided] true
 
 [chip] 
-[type] UC6
-[x] 5
-[y] 3
-[code] 
-@ slp x3
-  mov x1 dat
-  tlt dat 0
-- mov dat x3
-- slx x3
-- mov x3 x2
-- slp x1
-- mov 100 x2
-- slp x1
-  slp x2
-
-[chip] 
-[type] DX3
-[x] 9
-[y] 3
-
-[chip] 
-[type] DX3
-[x] 13
-[y] 4
-
-[chip] 
-[type] NOT
-[x] 15
-[y] 4
-[rotated] true
-
-[chip] 
 [type] XOR
-[x] 16
+[x] 15
 [y] 5
 [rotated] true
 
 [chip] 
 [type] UC6
-[x] 5
+[x] 6
 [y] 6
 [code] 
   teq x1 dat
-+ mov x3 x2
++ mov x2 x3
 @ mov 50 p1
-+ slx x2
-+ mov x2 dat
++ slx x3
++ mov x3 dat
   tcp x1 dat
 + mov x0 x1
 + mov 0 p1
 + slp 1
 + mov 50 p1
 + slp 1
-- mov x0 x3
+- mov x0 x2
 - slp 1
-- slp x3
+- slp x2
+
+[chip] 
+[type] OR
+[x] 17
+[y] 6
 
 [chip] 
 [type] BANK
 [x] 2
 [y] 7
 [rom] 
-111,112,113,114,115,116,117,118,119,120,121,122,123,124
-
-[chip] 
-[type] NOT
-[x] 12
-[y] 7
-[rotated] true
-
-[chip] 
-[type] NOT
-[x] 14
-[y] 7
-[rotated] true
+111,112,113,114,115,116,117,118,119,134,121,122,123,124
 
