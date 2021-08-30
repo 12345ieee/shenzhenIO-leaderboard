@@ -1,7 +1,7 @@
 [name] Top solution Lines->Power
 [puzzle] Sz048
-[production-cost] 1200
-[power-usage] 198
+[production-cost] 1100
+[power-usage] 159
 [lines-of-code] 5
 
 [traces] 
@@ -10,76 +10,60 @@
 ......................
 ......................
 ......................
-..9494.955555555555C..
-..A1694A9555555415CA..
-..214A.A3414..1C..A2..
-..155E.A9414...3D434..
-..1C.A.A354.14.16.....
-...343C3415415C14..8..
-......354.14..355556..
+..94941555555555555C..
+..A169549541555555CA..
+..294A14A94.......22..
+..8A.3496A..14...154..
+..374..A.A1414.14.8...
+.......A1614.....1E8..
+.......35554......36..
 ......................
 ......................
-
-[chip] 
-[type] AND
-[x] 8
-[y] 2
-
-[chip] 
-[type] BRIDGE
-[x] 10
-[y] 2
-
-[chip] 
-[type] AND
-[x] 11
-[y] 2
-
-[chip] 
-[type] OR
-[x] 4
-[y] 3
-[rotated] true
-
-[chip] 
-[type] UC4
-[x] 13
-[y] 3
-[code] 
-  slp 1
-+ sub 1
-- mov x1 acc
-  mov acc x0
-  tcp p0 p1
-
-[chip] 
-[type] DIAL7
-[x] 16
-[y] 3
-[is-puzzle-provided] true
-
-[chip] 
-[type] BRIDGE
-[x] 3
-[y] 4
 
 [chip] 
 [type] DX3
 [x] 11
-[y] 4
+[y] 2
 [rotated] true
 
 [chip] 
 [type] OR
 [x] 9
-[y] 5
+[y] 3
 [rotated] true
 
 [chip] 
+[type] DX3
+[x] 16
+[y] 3
+
+[chip] 
 [type] OR
-[x] 17
-[y] 5
+[x] 4
+[y] 4
 [rotated] true
+
+[chip] 
+[type] UC4X
+[x] 13
+[y] 4
+[code] 
+- mov x0 acc
+  tcp x1 x2
++ mov acc x1
++ sub x2
+  slp 1
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 4
+
+[chip] 
+[type] DIAL7
+[x] 11
+[y] 5
+[is-puzzle-provided] true
 
 [chip] 
 [type] AND
@@ -87,8 +71,18 @@
 [y] 6
 
 [chip] 
+[type] BRIDGE
+[x] 6
+[y] 6
+
+[chip] 
 [type] AND
-[x] 15
+[x] 7
+[y] 6
+
+[chip] 
+[type] AND
+[x] 10
 [y] 6
 
 [chip] 
