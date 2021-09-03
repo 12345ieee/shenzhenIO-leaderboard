@@ -1,8 +1,8 @@
-[name] Top solution Power - Nbdx
+[name] Top solution Power - Nbdx (Copy)
 [puzzle] Sz021
 [production-cost] 1500
-[power-usage] 269
-[lines-of-code] 25
+[power-usage] 267
+[lines-of-code] 28
 
 [traces] 
 ......................
@@ -78,15 +78,18 @@
 [y] 5
 [code] 
 @ mov x1 dat
+@ mov p1 x2
+@ mov p0 x3
+@ slp 1
+  mov p1 x2
+  mov p0 x3
+  slp 1
   teq x0 dat
 + mov x0 x1
 + slp 2
 + mov p1 x2
 + mov p0 x3
 + slp 1
-  mov p1 x2
-  mov p0 x3
-  slp 1
 
 [chip] 
 [type] UC4X

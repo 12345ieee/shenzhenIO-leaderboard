@@ -1,8 +1,8 @@
-[name] Top solution Lines - Catalecticant
+[name] Top solution Cost - dominic.baggott (Copy) (Copy) (Copy)
 [puzzle] Sz031
-[production-cost] 700
-[power-usage] 498
-[lines-of-code] 9
+[production-cost] 1000
+[power-usage] 576
+[lines-of-code] 8
 
 [traces] 
 ......................
@@ -10,35 +10,51 @@
 ......................
 ......................
 ......................
+.......1C.............
+........2.............
+..15555554.15555555C..
+........14.14......A..
+..15555414.14......2..
 ......................
 ......................
-..15554.15555555555C..
-........14.........A..
-..15554.14.........2..
 ......................
 ......................
-......................
-......................
+
+[chip] 
+[type] NOT
+[x] 7
+[y] 4
 
 [chip] 
 [type] UC6
-[x] 6
+[x] 9
 [y] 4
 [code] 
-lp: tcp x3 3
-- slx x0
-  mul x2
-+ add x0
-end: teq p0 0
+  tlt x3 10
++ slx x0
++ dst x1 x0
+- teq acc x1
+- teq acc dat
++ gen p1 x2 0
+- tgt p0 x2
 - mov acc dat
-+ teq acc dat
-- teq acc 927
-+ gen p1 6 x2 #0
 
 [chip] 
 [type] BANK
-[x] 9
+[x] 12
 [y] 4
 [rom] 
-0,0,0,0,0,2,3,1,2,1,2,1,1,2
+-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,6,-1,-1,-1
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 5
+
+[chip] 
+[type] BANK
+[x] 5
+[y] 7
+[rom] 
+0,0,0,0,0,0,1,2,3,4,999,0,0,0
 

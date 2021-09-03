@@ -1,8 +1,8 @@
-[name] Top solution Lines
+[name] Top solution Lines (Copy)
 [puzzle] Sz027
-[production-cost] 1000
-[power-usage] 569
-[lines-of-code] 16
+[production-cost] 1400
+[power-usage] 1059
+[lines-of-code] 15
 
 [traces] 
 ......................
@@ -11,35 +11,65 @@
 ......................
 ......................
 ..9555C...............
-..2...3495554.1494....
-..154.14A.954.156.....
-......156161C.154..8..
-............35555556..
-......................
-......................
+..215C34.1554.1494....
+..814A1555554.156.....
+..354A15C8.1C.154..8..
+...14A..AA..35555556..
+...156..A34...........
+........354...........
 ......................
 ......................
 
 [chip] 
 [type] BANK
 [x] 7
-[y] 5
+[y] 2
 [rom] 
-600,600,204,700,202,700,200,700,100,-1,203,700,201,700
+700,202,700,200,-1,100,700,203,700,201,600,600,700,204
+
+[chip] 
+[type] BANK
+[x] 4
+[y] 3
+[rom] 
+0,710,50,711,79,999,888,0,888,0,888,0,888,-999
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 5
+[code] 
+  tgt p0 x0
++ mov x0 acc
++ add p1
+- tgt x0 -999
+- mov acc x2
+- slp x3
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 5
 
 [chip] 
 [type] UC6
 [x] 12
 [y] 5
 [code] 
-+ mov x2 x1
+  mov 1 x1
++ mov x2 null
 + teq x2 x3
   mov x2 acc
-  mov 50 p0
 + mov x0 x3
   teq acc -999
++ mov 50 p0
 - mov acc p0
-  gen p1 1 0
+  slp 1
 
 [chip] 
 [type] RADIO
@@ -47,20 +77,6 @@
 [y] 5
 [rotated] true
 [is-puzzle-provided] true
-
-[chip] 
-[type] UC4
-[x] 4
-[y] 6
-[code] 
-  tcp p0 0
-+ tgt p0 79
-+ mov 8 acc
-- mov p1 acc
-- tgt p0 50
-- add 1
-  mov acc x1
-  slp 1
 
 [chip] 
 [type] ID
