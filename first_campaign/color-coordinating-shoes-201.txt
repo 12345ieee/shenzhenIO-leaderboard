@@ -1,8 +1,8 @@
-[name] Top solution Power - hersmunch
+[name] Top solution Power - hersmunch (Copy)
 [puzzle] Sz018
 [production-cost] 2400
 [power-usage] 549
-[lines-of-code] 54
+[lines-of-code] 51
 
 [traces] 
 ......................
@@ -47,18 +47,15 @@
 [code] 
   mov 3 x0
   slx x3
-s:mov x3 dat
-  tgt dat 356
-+ mov dat x2
-+ mov 3 x0
-+ slx x3
-+ jmp s
+  mov x3 dat
+  tlt dat 357
+- jmp s
   mov x1 acc
   tgt acc dat
 + mov acc dat
   tgt x1 dat
 + mov 8 x2
-- mov dat x2
+s:- mov dat x2
 
 [chip] 
 [type] BRIDGE
