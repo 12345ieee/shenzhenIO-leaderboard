@@ -1,7 +1,7 @@
 [name] Top solution Cost->Power
 [puzzle] Sz017
 [production-cost] 800
-[power-usage] 134
+[power-usage] 101
 [lines-of-code] 14
 
 [traces] 
@@ -10,15 +10,38 @@
 ......................
 ......................
 ......................
-..............14......
-......1554....14......
-......14154.1414......
-.........14.1414......
-..............14......
-..............14......
+........15555414......
+.......154954.14......
+........14A14.14......
+........94A15414......
+........A1614.14......
+........354...14......
+........154...........
 ......................
 ......................
-......................
+
+[chip] 
+[type] NOTE
+[x] 3
+[y] 2
+[code] 
+If DX300.p2=0 then
+x3<=11<50, and
+simple pin
+outpputting it
+is regarded as 0
+
+[chip] 
+[type] ORACLE
+[x] 6
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] DX3
+[x] 10
+[y] 2
+[rotated] true
 
 [chip] 
 [type] DX3
@@ -32,41 +55,34 @@
 [is-puzzle-provided] true
 
 [chip] 
-[type] DX3
-[x] 7
-[y] 4
-[rotated] true
-
-[chip] 
 [type] BRIDGE
-[x] 9
-[y] 5
+[x] 12
+[y] 4
 
 [chip] 
 [type] UC6
-[x] 10
+[x] 9
 [y] 5
 [code] 
-+ mov -1 dat
-l:+ dst 0 x1
+  tgt p0 0
++ mov x3 p1
   slp 1
-+ dst 1 x1
++ mov x3 p0
 + slp 1
-+ dst 2 x1
-+ teq dat -1
-+ mov acc dat
++ mov x3 dat
 + slp 1
-+ jmp l
-- mov dat x2
-- mov acc x3
-- slp 4
-  tcp p0 0
++ mov x3 p1
++ slp 1
++ mov x3 p0
++ slp 1
++ mov x3 x1
++ mov dat x2
++ slp 4
 
 [chip] 
-[type] ORACLE
-[x] 4
+[type] BRIDGE
+[x] 8
 [y] 6
-[is-puzzle-provided] true
 
 [chip] 
 [type] DX3

@@ -1,4 +1,4 @@
-[name] Top solution Cost - dominic.baggott (Copy) (Copy) (Copy)
+[name] Top solution Lines - 837951602
 [puzzle] Sz031
 [production-cost] 1000
 [power-usage] 576

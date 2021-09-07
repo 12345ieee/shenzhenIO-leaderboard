@@ -1,4 +1,4 @@
-[name] New design 1 (Copy)
+[name] Top solution Lines
 [puzzle] Sz026
 [production-cost] 1600
 [power-usage] 868

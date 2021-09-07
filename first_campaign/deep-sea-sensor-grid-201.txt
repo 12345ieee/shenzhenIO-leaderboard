@@ -1,4 +1,4 @@
-[name] Top solution Power - Nbdx (Copy)
+[name] Top solution Power - 837951602
 [puzzle] Sz021
 [production-cost] 1500
 [power-usage] 267

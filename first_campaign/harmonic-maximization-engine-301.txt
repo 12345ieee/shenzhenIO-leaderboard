@@ -1,4 +1,4 @@
-[name] New design 6 (Copy) (Copy)
+[name] Top solution Lines - 837951602
 [puzzle] Sz003
 [production-cost] 1000
 [power-usage] 1833

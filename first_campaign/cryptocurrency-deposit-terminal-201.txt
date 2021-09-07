@@ -1,4 +1,4 @@
-[name] Top solution Power - pseudonym404 (Copy)
+[name] Top solution Power - pseudonym404/837951602
 [puzzle] Sz013
 [production-cost] 1900
 [power-usage] 195
