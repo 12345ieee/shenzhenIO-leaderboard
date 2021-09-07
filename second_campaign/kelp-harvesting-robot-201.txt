@@ -1,6 +1,6 @@
-[name] Top solution Power - 12345ieee
+[name] Top solution Power - 12345ieee/837951602
 [puzzle] Sz042EZ
-[production-cost] 2900
+[production-cost] 2800
 [power-usage] 1585
 [lines-of-code] 67
 
@@ -10,13 +10,13 @@
 ......................
 ......................
 ......................
-..15C15C......15C1C...
-..94A14A155555C.A.3C..
-..2.35435554.174A..2..
-..1C.1C.1414.154A154..
-..834.35555C.1556..8..
-..354.1554835D54..96..
-......15556..341416...
+..15C15C.....15C15C...
+..94A14A15555C.A..3C..
+..2.35435554.34A...2..
+..1C.1C.1414.14A1554..
+..834.35555C.156...8..
+..354.1554835D54..16..
+......15556..35554....
 ......................
 ......................
 
@@ -40,13 +40,8 @@ sleep: slp 1
 + sub 1
 
 [chip] 
-[type] NOT
-[x] 14
-[y] 2
-
-[chip] 
-[type] NOT
-[x] 16
+[type] OR
+[x] 17
 [y] 2
 
 [chip] 
@@ -61,7 +56,7 @@ sleep: slp 1
 
 [chip] 
 [type] UC6
-[x] 15
+[x] 14
 [y] 3
 [code] 
   mov 50 p1
@@ -132,7 +127,7 @@ clr: + mov dat x0
 
 [chip] 
 [type] UC6
-[x] 15
+[x] 14
 [y] 6
 [code] 
   mov 50 p1
@@ -182,7 +177,7 @@ from gen (always)
 [chip] 
 [type] NOTE
 [x] 12
-[y] 8
+[y] 9
 [code] 
 2) Do not even
 scan if the main
