@@ -1,7 +1,7 @@
-[name] Top solution Power - dominic.baggott
+[name] Top solution Power - 837951602
 [puzzle] Sz031
-[production-cost] 500
-[power-usage] 90
+[production-cost] 600
+[power-usage] 78
 [lines-of-code] 14
 
 [traces] 
@@ -12,13 +12,18 @@
 ......................
 ......................
 ......................
-..15555554.15555555C..
-...................A..
-..15555554.........2..
+..15555554......1C....
+...........15554.2....
+..155555C.......1554..
+........3555555554....
 ......................
 ......................
 ......................
-......................
+
+[chip] 
+[type] BRIDGE
+[x] 17
+[y] 3
 
 [chip] 
 [type] UC6
@@ -26,19 +31,24 @@
 [y] 4
 [code] 
   slx x0
-  mov x0 acc
-  add x0
-  add x0
-  add x0
-  add x0
-  mul x0
-  add x0
-  add x0
+  mov x0 null
+  mov x0 null
+  mov x0 x3
+  mov x0 null
+  mov x0 null
+  dst 0 x0
+  dst 1 x0
+  dst 2 x0
   teq x0 9
 - teq acc dat
-+ gen p1 6 0
-  tgt p0 x0
++ slp 6
+  tgt x3 x0
 + mov acc dat
+
+[chip] 
+[type] DX3
+[x] 15
+[y] 4
 
 [chip] 
 [type] NOTE
@@ -46,7 +56,8 @@
 [y] 7
 [code] 
 card: abcdefghij
-hash: (a+b+c+d+e)
-      *f+g+h
+hash: fgh
 root: i==9
+
+Abuse that c>0
 
