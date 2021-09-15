@@ -1,7 +1,7 @@
-[name] Top solution Power - ReallyJustAnotherGuy
+[name] Top solution Power - 837951602
 [puzzle] Sz001
-[production-cost] 1100
-[power-usage] 78
+[production-cost] 1600
+[power-usage] 74
 [lines-of-code] 18
 
 [traces] 
@@ -10,26 +10,31 @@
 ......................
 ......................
 ......................
-.......14....15C......
-............954A......
-.......1C1556..A......
-.....141695555434.....
-.....1C15694155C......
-.....83C..A.954A......
-.....3434.342156......
+......14...15555C.....
+.........955554.A.....
+......941695494.A.....
+......34956143416.....
+....1C1561C1555C......
+.....B41C.A1D54A......
+.....34.2.342156......
 ......................
 ......................
 
 [chip] 
-[type] BRIDGE
-[x] 5
+[type] NOT
+[x] 6
 [y] 3
 
 [chip] 
 [type] OR
-[x] 11
+[x] 10
 [y] 3
 [rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 3
 
 [chip] 
 [type] DX3
@@ -39,48 +44,59 @@
 
 [chip] 
 [type] XOR
-[x] 6
+[x] 5
 [y] 4
 [rotated] true
 
 [chip] 
+[type] NOT
+[x] 10
+[y] 5
+[rotated] true
+
+[chip] 
 [type] DX3
-[x] 8
+[x] 7
 [y] 6
 [rotated] true
 
 [chip] 
-[type] UC4X
-[x] 10
-[y] 7
+[type] NOT
+[x] 12
+[y] 6
+
+[chip] 
+[type] UC6
+[x] 14
+[y] 6
 [code] 
-@slp 1
-mov 100 x2
-slp 1
-slp x2
-mov 100 x2
-slp 1
-slp x2
-mov 100 x2
-slp 6
+@ slp 1
+  mov 100 x1
+  slp 1
+  slp x1
+  mov 100 x1
+  slp 1
+  slp x1
+  mov 100 x1
+  slp 5
+  slp x0
 
 [chip] 
 [type] UC4X
-[x] 14
+[x] 9
 [y] 7
 [code] 
-slp 6
-mov 101 x0
-slp 1
-mov 010 x0
-slp 1
-slp x1
-mov 101 x0
-slp 1
-mov 000 x0
+@ slp 6
+  mov 101 x3
+  slp 1
+  mov 010 x3
+  slp 1
+  slp x2
+  mov 101 x3
+  slp 7
 
 [chip] 
 [type] NOT
-[x] 6
+[x] 5
 [y] 8
 
