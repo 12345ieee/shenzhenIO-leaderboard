@@ -2,7 +2,7 @@
 [puzzle] Sz001
 [production-cost] 1400
 [power-usage] 74
-[lines-of-code] 18
+[lines-of-code] 17
 
 [traces] 
 ......................
@@ -69,7 +69,7 @@
 [x] 14
 [y] 6
 [code] 
-@ slp 1
+  slp x0
   mov 100 x1
   slp 1
   slp x1
@@ -78,7 +78,6 @@
   slp x1
   mov 100 x1
   slp 5
-  slp x0
 
 [chip] 
 [type] UC4X
