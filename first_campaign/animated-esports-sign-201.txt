@@ -1,6 +1,6 @@
 [name] Top solution Power - 837951602
 [puzzle] Sz001
-[production-cost] 1400
+[production-cost] 1200
 [power-usage] 74
 [lines-of-code] 17
 
@@ -65,7 +65,7 @@
 [y] 6
 
 [chip] 
-[type] UC6
+[type] UC4
 [x] 14
 [y] 6
 [code] 
