@@ -1,7 +1,7 @@
 [name] Top solution Lines - 837951602
 [puzzle] Sz007EZ
 [production-cost] 1400
-[power-usage] 1261
+[power-usage] 837
 [lines-of-code] 5
 
 [traces] 
@@ -14,7 +14,7 @@
 ...155555554155D4.34..
 ..955C......154A1554..
 ..214A15554.154A1554..
-...94354954.15561554..
+...94354954..1561554..
 ...A..14A.8.......94..
 ...355556.355555556...
 ......................
@@ -33,6 +33,46 @@
 
 [chip] 
 [type] NOTE
+[x] 4
+[y] 1
+[code] 
+map:
+0,1,2,3,7,11,6
+9,10,5,4,8,12,13
+
+[chip] 
+[type] NOTE
+[x] 7
+[y] 1
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 13
+[y] 1
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 16
+[y] 1
+[code] 
+
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 2
+
+[chip] 
+[type] NOTE
 [x] 1
 [y] 3
 [code] 
@@ -44,29 +84,39 @@ out slp next
 4:  2 0 5
 5:  3 0 6
 6:  4 0 11
-7:  2 0 6 
+7:  2 0 6
 
 [chip] 
 [type] UC6
 [x] 4
 [y] 3
 [code] 
-  teq x1 3
+  tgt x1 -25
 + mov x2 x0
 + gen p1 x2 1
 + mov x2 x3
-- mov x3 x3
+  mov x3 x3
 
 [chip] 
 [type] BANK
 [x] 7
 [y] 3
 [rom] 
-3,-672,-672,-472,-77,-20,-107,-78,-73,-50,-705,-172,-8,-1
+3,-994,-994,-987,-901,-50,-76,-24,-905,-87,-998,-90,-995,-300
 
 [chip] 
 [type] BRIDGE
 [x] 10
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 13
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 17
 [y] 3
 
 [chip] 
@@ -86,6 +136,31 @@ out slp next
 [type] DX3
 [x] 11
 [y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 6
 
 [chip] 
 [type] BRIDGE
