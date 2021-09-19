@@ -1,8 +1,8 @@
 [name] Top solution Cost->Power
 [puzzle] Sz022
 [production-cost] 800
-[power-usage] 87
-[lines-of-code] 11
+[power-usage] 85
+[lines-of-code] 14
 
 [traces] 
 ......................
@@ -12,28 +12,14 @@
 ......................
 ............15C1555C..
 ..955555555554A14..2..
-..A...........A14.....
-..A...........355414..
-..A...............14..
-..2...............14..
-......................
+..A.........1CA14.....
+..A..........A355414..
+..A..........A...954..
+..2..........A...A14..
+.............35556....
 ......................
 ......................
 
-[chip] 
-[type] NOTE
-[x] 13
-[y] 3
-[code] 
-ROM contains meat
-instructions for
-1 = Steak and
-2 = Cutlet.
-
-Non-negative value
-for loc=0, loc=1
-cause the loop to
-end.
 
 [chip] 
 [type] DX3
@@ -45,25 +31,24 @@ end.
 [x] 13
 [y] 6
 [code] 
-@ tgt p1 x0  #init
-- slx x1 #keypress
-- mov 100 p1#extru
-- mov x1 x3#opt1-3
-  
-- tlt x3 3 #bacon?
-- mov 11 x0# is
-- slp 7    #easy!
-  
-+ mov x2 x0#output
-+ slp 1
-+ tgt x3 x2#done?
-  
-- mov p1 x0 #end
+  slx x1
+  mov 100 p1
+  tcp x1 2
++ mov 11 x0
++ slp 7
+1:-mov x2 x0
+- slp 1
+- teq x2 1
+- jmp 1
++ jmp 2
+  slp 1
+  gen p0 2 1
+  gen p0 2 1
+2:mov x0 p1
 
 [chip] 
 [type] BANK
 [x] 16
 [y] 6
 [rom] 
-0,111,0,0,-10,-101,-10,0,0,-101,-10,0,-10,-111
-
+111,0,0,0,101,0,0,0,101,0,0,0,111,1
