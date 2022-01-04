@@ -1,8 +1,8 @@
 [name] Top solution Power - 837951602
 [puzzle] Sz048
-[production-cost] 1600
-[power-usage] 119
-[lines-of-code] 15
+[production-cost] 1300
+[power-usage] 117
+[lines-of-code] 13
 
 [traces] 
 ......................
@@ -11,32 +11,24 @@
 ......................
 ......................
 ..9494.14.955555555C..
-..A16141C161555C..16..
-..294154A155554A1C14..
-..96.9416..8954A.348..
-..A.16.....AA1C354.2..
-..34..14.14A34A...14..
-.........14354355554..
+..A16141C16155C...16..
+..294154A95554A15C14..
+..96.9496A9414354348..
+..A.161616A.1C.1C..2..
+..34......A14A.16.14..
+..........3543555554..
 ......................
 ......................
 
 [chip] 
-[type] UC4X
+[type] DX3
 [x] 7
 [y] 2
-[code] 
-@ tlt x0 14
-+ mov x0 x3
-+ mov 10 x2
-+ teq 1 0
-# Abuse AMMO is
-# either 20 where
-# limit never go
-# or 5 or 1
+[rotated] true
 
 [chip] 
 [type] RAM
-[x] 10
+[x] 9
 [y] 2
 
 [chip] 
@@ -51,8 +43,13 @@
 [rotated] true
 
 [chip] 
+[type] BRIDGE
+[x] 12
+[y] 3
+
+[chip] 
 [type] DIAL7
-[x] 5
+[x] 14
 [y] 3
 [is-puzzle-provided] true
 
@@ -62,23 +59,19 @@
 [y] 3
 
 [chip] 
-[type] DX3
-[x] 8
-[y] 4
-[rotated] true
-
-[chip] 
 [type] UC6
-[x] 14
+[x] 13
 [y] 4
 [code] 
-@ mov 10 x0
+@ mov x2 x3
+@ mov x2 x1
+@ mov 1 x0
   tcp p1 p0
 + mov x1 x0
 + slp 2
 + tcp p1 p0
 r:-slp 2
-- mov x0 x2
+- mov x0 x3
 - tcp p1 p0
 + mov x1 x0
   slp 1
