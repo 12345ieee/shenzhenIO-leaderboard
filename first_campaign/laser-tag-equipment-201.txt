@@ -1,8 +1,8 @@
-[name] Top solution Power
+[name] Top solution Power - 837951602
 [puzzle] Sz048
-[production-cost] 1400
-[power-usage] 122
-[lines-of-code] 14
+[production-cost] 1600
+[power-usage] 119
+[lines-of-code] 15
 
 [traces] 
 ......................
@@ -10,85 +10,89 @@
 ......................
 ......................
 ......................
-..9494.955555555555C..
-..A1694A9555555415CA..
-..214A.A3414..1C..A2..
-..155E.A941414.35434..
-..1C.A.A354...........
-...343C3415415C14..8..
-......354.14..355556..
+..9494.14.955555555C..
+..A16141C161555C..16..
+..294154A155554A1C14..
+..96.9416..8954A.348..
+..A.16.....AA1C354.2..
+..34..14.14A34A...14..
+.........14354355554..
 ......................
 ......................
 
 [chip] 
-[type] AND
-[x] 8
+[type] UC4X
+[x] 7
 [y] 2
+[code] 
+@ tlt x0 14
++ mov x0 x3
++ mov 10 x2
++ teq 1 0
+# Abuse AMMO is
+# either 20 where
+# limit never go
+# or 5 or 1
 
 [chip] 
-[type] BRIDGE
+[type] RAM
 [x] 10
 [y] 2
 
 [chip] 
-[type] AND
-[x] 11
+[type] BRIDGE
+[x] 19
 [y] 2
 
 [chip] 
 [type] OR
-[x] 4
+[x] 3
 [y] 3
 [rotated] true
 
 [chip] 
-[type] UC6
-[x] 13
-[y] 3
-[code] 
-@ slp 3  
-  tcp p0 p1
-+ slp 2
-+ sub 1
-+ mov acc x0
-+ tcp p0 p1
-r:- slp 2
-- mov x2 acc
-- mov acc x0
-- tcp p0 p1
-  slp 1
-+ slp 1
-+ sub 1
-+ mov acc x0
-
-[chip] 
 [type] DIAL7
-[x] 16
+[x] 5
 [y] 3
 [is-puzzle-provided] true
 
 [chip] 
 [type] BRIDGE
-[x] 3
-[y] 4
+[x] 18
+[y] 3
 
 [chip] 
 [type] DX3
-[x] 11
+[x] 8
 [y] 4
 [rotated] true
 
 [chip] 
-[type] OR
-[x] 9
-[y] 5
-[rotated] true
+[type] UC6
+[x] 14
+[y] 4
+[code] 
+@ mov 10 x0
+  tcp p1 p0
++ mov x1 x0
++ slp 2
++ tcp p1 p0
+r:-slp 2
+- mov x0 x2
+- tcp p1 p0
++ mov x1 x0
+  slp 1
++ slp 1
 
 [chip] 
-[type] OR
-[x] 17
+[type] BRIDGE
+[x] 6
 [y] 5
-[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 5
 
 [chip] 
 [type] AND
@@ -96,12 +100,22 @@ r:- slp 2
 [y] 6
 
 [chip] 
-[type] AND
-[x] 15
+[type] BRIDGE
+[x] 7
 [y] 6
+
+[chip] 
+[type] AND
+[x] 17
+[y] 6
+[rotated] true
+
+[chip] 
+[type] OR
+[x] 8
+[y] 7
 
 [chip] 
 [type] NOT
 [x] 3
 [y] 8
-
