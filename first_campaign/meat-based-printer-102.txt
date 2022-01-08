@@ -1,7 +1,7 @@
 [name] Top solution Cost->Lines
 [puzzle] Sz022
 [production-cost] 800
-[power-usage] 242
+[power-usage] 234
 [lines-of-code] 8
 
 [traces] 
@@ -25,14 +25,14 @@
 [x] 11
 [y] 3
 [code] 
-- slx x1
-- mov x1 x3
-- mov 7 acc
-+ mov x2 x0
-+ mov x2 x3
-+ gen p1 1 0
   tgt acc x0
 + sub 1
+- slx x1
+- mov x1 x3
+- mov 6 acc
+  mov x2 x0
+  mov x2 x3
+  gen p1 1 0
 
 
 [chip] 
