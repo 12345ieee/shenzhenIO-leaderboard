@@ -1,4 +1,4 @@
-[name] lowcost->lines
+[name] Top Solution Cost->Lines
 [puzzle] Sz002
 [production-cost] 300
 [power-usage] 142

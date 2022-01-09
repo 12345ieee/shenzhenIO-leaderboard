@@ -1,4 +1,4 @@
-[name] Top solution Cost 
+[name] Top solution Cost
 [puzzle] Sz026
 [production-cost] 600
 [power-usage] 306
