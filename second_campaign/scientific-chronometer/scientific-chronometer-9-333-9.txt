@@ -1,7 +1,7 @@
-[name] Test - is soon overwritten
+[name] Top solution Lines - 837951602
 [puzzle] Sz039
 [production-cost] 900
-[power-usage] 2000000000
+[power-usage] 333
 [lines-of-code] 9
 
 [traces] 
@@ -50,7 +50,6 @@
   mov acc x3
   
   slp x3
-
 
 [chip] 
 [type] BANK
