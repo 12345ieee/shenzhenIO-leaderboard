@@ -1,9 +1,11 @@
-## Repository of top scores for SHENZHEN I/O
+# Repository of top scores for SHENZHEN I/O
 
-This is the companion repository for the [reddit wiki](https://www.reddit.com/r/shenzhenIO/wiki/index).
+Machine-readable solutions for SHENZHEN I/O (https://www.zachtronics.com/shenzhen-io)
 
-Files have the following naming convention (if there is a primary metric tie, there are multiple files for each category):
+## What's in here
 
-* Cost records:  `name-name-10X.txt`
-* Power records: `name-name-20X.txt`
-* Lines records: `name-name-30X.txt`
+This is the companion repository for the [reddit wiki](https://www.reddit.com/r/shenzhenIO/wiki/index), hosts the complete wiki state and the [pareto frontier](https://en.wikipedia.org/wiki/Pareto_front) of each level in the form of solution files.
+
+## I have a solution I want to add
+
+The [wiki section of submitting a new record](https://www.reddit.com/r/shenzhenIO/wiki/index) has all the info you need.
