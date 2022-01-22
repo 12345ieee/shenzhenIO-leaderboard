@@ -1,0 +1,95 @@
+[name] loop-slx (4x abuse) (wrap)
+[puzzle] Sz010
+[production-cost] 800
+[power-usage] 196
+[lines-of-code] 15
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+......................
+....154.15555554......
+........1554.154......
+.....94.......94......
+.....3555555556.......
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 4
+[code] 
+  slp 1 #Abuse1
+  mov x0 dat
+  tcp dat -999
++ mov dat p1
++ mov x0 x3
++ mov x0 p0
++ mov x0 acc
++ tlt acc 999
+- slp 5 #Abuse2
++ slp acc #Abuse2
++ mov p0 p1 #2xset
++ mov 0 x3
++ slp 1 #Abuse3
+
+[chip] 
+[type] UC4
+[x] 11
+[y] 4
+[code] 
+  slx x0
+  mov x0 p1
+
+[chip] 
+[type] LEDRGBV
+[x] 15
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] RADIO
+[x] 2
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 3
+[y] 7
+[code] 
+Abuse fact that
+first cycle is
+always zero
+
+[chip] 
+[type] NOTE
+[x] 6
+[y] 7
+[code] 
+MASSIVELY ABUSE
+fact that pulses
+are of 2 kinds:
+2-4: which always
+end naturally and
+999: which are
+always interrupted
+but run for at
+least 6 cycles
+
+[chip] 
+[type] NOTE
+[x] 9
+[y] 7
+[code] 
+Abuse fact that
+there are always
+2 cycles of 0
+after the end
+of a pulse

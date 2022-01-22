@@ -1,0 +1,144 @@
+[name] base
+[puzzle] Sz041
+[production-cost] 2500
+[power-usage] 618
+[lines-of-code] 57
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..........15C.954.....
+..155555C154A.294954..
+..95555C3554A15E.A1C..
+..2..14354..A.834A.2..
+..8..14.15556.354B54..
+..35554..........A1C..
+.................216..
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 1
+[code] 
+  0- 99 -> 4
+100-399 -> 2
+400-899 -> 1
+900-999 -> -2
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 3
+[code] 
+  slx x3
+  mov p0 acc
+  sub x3 #50
+  mul acc
+  mov acc dat
+  mov p1 acc
+  sub 50
+  mul acc
+  add dat
+  dgt 2
+  mov acc x1
+  mov x0 x3
+
+[chip] 
+[type] UC6
+[x] 16
+[y] 3
+[code] 
+  slx x0
+  add x0
+  mov acc x3
+  mov 0 x2
+  teq x0 4
++ mov acc x1
++ slx x1
++ mov x1 dat
++ mov acc x3
++ mov dat x2
++ slp 2
++ mov acc x3
++ mov dat x2
++ mov 0 acc
+
+[chip] 
+[type] BRIDGE
+[x] 19
+[y] 3
+
+[chip] 
+[type] BANK
+[x] 3
+[y] 4
+[rom] 
+4,2,2,2,1,1,1,1,1,-2,0,0,0,0
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 6
+[code] 
+@ teq 1 1
++ slx x1
++ mov x1 acc
+  teq p0 100
++ add 1
++ mov 50 x0
++ mov x0 x2
+- mov 0 x2
+  mov acc x2
+  slp 1
++ teq acc 8
++ mov 8 x1 #A0
+
+[chip] 
+[type] UC6
+[x] 16
+[y] 6
+[code] 
+@ teq 1 1
++ slx x0
++ mov x0 dat
+  slp 1
+  add x1
+  mov dat x3
+  mov acc x2
+  teq x1 8
++ slp 2
++ mov dat x3
++ mov acc x2
++ slp 2
++ mov acc x0
++ mov 0 acc
+
+[chip] 
+[type] UC4
+[x] 7
+[y] 7
+[code] 
+init:
+  teq p0 100
+- slp 1
++ mov 0 x1
++ slx x1
++ slp x1
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 8
+[code] 
+Minimum tests
+separation

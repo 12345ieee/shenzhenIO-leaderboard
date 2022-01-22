@@ -1,0 +1,154 @@
+[name] cond init (abusex4)
+[puzzle] Sz013
+[production-cost] 1800
+[power-usage] 236
+[lines-of-code] 35
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....95C..............
+..15574A.955554.......
+.....94A16..154.155C..
+..14.A.A154..8.....2..
+..14.34A.....A........
+..14154354...A........
+........155556........
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 2
+[code] 
+@ teq 0 1
+- slx x0
+- mov x0 acc
+loop: 
+  tcp x1 001
+- slp 1
+- jmp teq #AA4
++ teq x1 100
++ add 80
+- add 30
+  add 20
+  slp 2 #Abuse2
+teq: - teq x3 -999
+- mov acc x2
+
+[chip] 
+[type] DX3
+[x] 3
+[y] 3
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 5
+[code] 
+  teq x0 -999 #A3
+- mov x0 x2
+- mov x0 x2
+- mov x0 x2
+- mov x0 x2
+- mov x0 x2
+- mov x0 x2
+- mov x0 x2
+- mov 0 x1
+- slx x3 #VW
+- slp 4 #Abuse1
++ slp 2 #Abuse1
+
+[chip] 
+[type] RAM
+[x] 10
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 13
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 14
+[y] 5
+[code] 
+  slx x0
+  mov 0 x3 #Abuse3
+  mov x1 x3
+  mov x1 x3
+  mov x1 x3
+  mov x1 x3
+  mov x1 x3
+  mov x1 x3
+  mov x1 x3
+  mov x0 x3
+
+[chip] 
+[type] NOTE
+[x] 2
+[y] 8
+[code] 
+000-> nothing
+001->  20
+010->  50
+100-> 100
+
+[chip] 
+[type] NOTE
+[x] 8
+[y] 8
+[code] 
+Abuses fact that
+card extraction
+and inserction
+of a new card are
+separated by at
+least 3 cycles.
+Also check for
+card only every
+2 cycles
+
+[chip] 
+[type] NOTE
+[x] 11
+[y] 8
+[code] 
+Abuse fact that
+there is always
+an empty cycle
+after a bill is
+inserted
+
+[chip] 
+[type] NOTE
+[x] 14
+[y] 8
+[code] 
+EVERY CC number
+starts with '0'
+
+ABUSES IT
+HORRIBLY by doing
+a burning
+first comparison
+
+[chip] 
+[type] NOTE
+[x] 17
+[y] 8
+[code] 
+Abuse fact that
+`-1` always
+comes 3-4 cycles
+after last bill
+to go in that
+branch only from
+the `no_bill`
+branch

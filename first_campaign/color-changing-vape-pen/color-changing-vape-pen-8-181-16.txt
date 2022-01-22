@@ -1,0 +1,104 @@
+[name] loop-slx (5 abuse)
+[puzzle] Sz010
+[production-cost] 800
+[power-usage] 181
+[lines-of-code] 16
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+....1D55554.15C.......
+.....A...94...34......
+.....A...2...954......
+.....34.15555694......
+.....94.14..956.......
+.....35555556.........
+......................
+......................
+
+[chip] 
+[type] UC4
+[x] 6
+[y] 3
+[code] 
+  slx x1
+  mov x1 p1
+  mov x0 p0 #H
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 3
+
+[chip] 
+[type] LEDRGBV
+[x] 15
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 5
+[code] 
+  slp 1 #Abuse1
+  mov x0 dat
+  tcp dat -999
++ mov x0 x1
++ mov dat p1
++ mov x0 acc
++ tlt acc 999
+- slp 5 #Abuse2
++ slp acc #Abuse2
++ mov p1 x1 #H
++ mul -1
++ add 5
++ slp acc #Abuse3
+
+[chip] 
+[type] RADIO
+[x] 2
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 3
+[y] 8
+[code] 
+Abuse fact that
+first cycle is
+always zero
+
+[chip] 
+[type] NOTE
+[x] 6
+[y] 8
+[code] 
+MASSIVELY ABUSE
+fact that pulses
+are of 2 kinds:
+2-4: which always
+end naturally and
+999: which are
+always interrupted
+but run for at
+least 6 cycles
+
+[chip] 
+[type] NOTE
+[x] 9
+[y] 8
+[code] 
+Abuse fact that
+there are always
+6 cycles after the
+**start** of a
+pulse before the
+next.
+Do it as:
+6=acc+(-1*acc+5)+1

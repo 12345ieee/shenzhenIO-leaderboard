@@ -1,4 +1,4 @@
-[name] Top solution Power - 12345ieee
+[name] single acctest
 [puzzle] Sz042EZ
 [production-cost] 2900
 [power-usage] 1585
@@ -192,4 +192,3 @@ won't find a match
 
 3) Doubling non
 needed in bneck
-

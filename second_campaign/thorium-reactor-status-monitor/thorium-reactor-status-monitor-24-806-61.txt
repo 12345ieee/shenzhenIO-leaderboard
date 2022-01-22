@@ -1,0 +1,131 @@
+[name] New design 1
+[puzzle] Sz044
+[production-cost] 2400
+[power-usage] 806
+[lines-of-code] 61
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..154.................
+..955C155C............
+..2..3554A14..........
+..8...1557C..94.......
+..354.....B556........
+......94.16...........
+..14.16...............
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 10
+[y] 1
+[code] 
+1: sleep abuse
+
+[chip] 
+[type] UC4
+[x] 3
+[y] 2
+[code] 
+@ mov p0 x1
+@ mov p0 acc
+@ slp 4 #A1
+  teq p0 acc
+- mov p0 x1
+- mov p0 acc
+- slp 4 #A1
++ slp 1
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 2
+[code] 
+  tcp x1 50
++ mov -33 x3
++ mov +30 x3
++ jmp rest
+- mov +34 x3
+- mov +33 x3
+- mov -31 x3
+  mov -30 x3
+- jmp sleep
+  mov +33 x3
+rest: mov -34 x3
+  mov +31 x3
+sleep: slx x1
+
+[chip] 
+[type] LCDR
+[x] 14
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 4
+[code] 
+  tgt p0 19
++ mov +21 x3
+- mov -21 x3
++ tgt p0 39
++ mov +22 x3
+- mov -22 x3
++ tgt p0 59
++ mov +23 x3
+- mov -23 x3
++ tgt p0 79
++ mov +24 x3
+- mov -24 x3
+  slp 1
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 5
+[code] 
+  mov x1 acc
+  tgt acc 19
++ mov +11 x2
+- mov -11 x2
++ tgt acc 39
++ mov +12 x2
+- mov -12 x2
++ tgt acc 59
++ mov +13 x2
+- mov -13 x2
++ tgt acc 79
++ mov +14 x2
+- mov -14 x2
+  slx x1
+
+[chip] 
+[type] UC4
+[x] 8
+[y] 6
+[code] 
+@ mov p0 x1
+@ mov p0 acc
+@ slp 4 #A1
+  teq p0 acc
+- mov p0 x1
+- mov p0 acc
+- slp 4 #A1
++ slp 1
+
+[chip] 
+[type] UC4
+[x] 4
+[y] 7
+[code] 
+@ mov 10 x1
+@ mov 20 x1
+@ mov 32 x1
+  slx x0
+  mov x0 x1

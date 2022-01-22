@@ -1,0 +1,70 @@
+[name] not 350 jmps- bad wiring
+[puzzle] Sz004
+[production-cost] 800
+[power-usage] 229
+[lines-of-code] 10
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+.....955555555C.......
+.....A...155542.......
+....834.1555555414....
+....A...14..148.......
+....354.154.156.......
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 3
+[code] 
+@ mov -5 x0
+@ mov -350 acc
+  mov p0 x2
+  add p0
+@ jmp sleep #1->up
+@ jmp sleep #2->up
+@ jmp sleep #3->up
+  sub x3
+  mov acc p1
+sleep:
+  slp 1
+
+[chip] 
+[type] RAM
+[x] 10
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 13
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 4
+
+[chip] 
+[type] NOT
+[x] 15
+[y] 5
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 8
+[code] 
+Sum_8 >= 400

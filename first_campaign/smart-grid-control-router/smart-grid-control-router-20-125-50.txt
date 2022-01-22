@@ -1,0 +1,112 @@
+[name] master-slaves (abuse35)
+[puzzle] Sz024
+[production-cost] 2000
+[power-usage] 125
+[lines-of-code] 50
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....9555555C.........
+.....B54..94A1554.....
+.....A94.16.A.........
+.....AA..154A..94.....
+.....A34..156156......
+.....354.1C..14.8.....
+..........3555556.....
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 2
+[code] 
+  slx x0
+  mov x0 x3
+  tcp x1 4 #AA1
+- mov 3 x3
+- jmp 3
++ mov 5 x3
++ mov x1 x3
++ jmp 4
+  mov 4 x3
+4: mov x1 x3
+3: mov x1 x3
+2: mov x1 x3
+1: mov x1 x3
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 3
+[code] 
+@ mov x2 x0
+  slx x0
+  mov x0 x3
+  tcp x1 4 #AA1
+- mov 3 x3
+- jmp 3
++ mov 5 x3
++ mov x1 x3
++ jmp 4
+  mov 4 x3
+4: mov x1 x3
+3: mov x1 x3
+2: mov x1 x3
+1: mov x1 x3
+
+[chip] 
+[type] ID
+[x] 14
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 5
+[code] 
+@ mov x2 acc
+  slx x0
+  mov x0 dat
+  tcp dat acc
+- mov dat x1
+- jmp sleep
++ mov dat x3
++ jmp sleep
+  mov dat x2
+sleep: 
+  slp 1
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 6
+[code] 
+  slx x1
+  mov x1 x3
+  tcp x0 4 #AA1
+- mov 3 x3
+- jmp 3
++ mov 5 x3
++ mov x0 x3
++ jmp 4
+  mov 4 x3
+4: mov x0 x3
+3: mov x0 x3
+2: mov x0 x3
+1: mov x0 x3
+
+[chip] 
+[type] NOTE
+[x] 2
+[y] 8
+[code] 
+Abuse that
+packets are long:
+
+3<=L<=5

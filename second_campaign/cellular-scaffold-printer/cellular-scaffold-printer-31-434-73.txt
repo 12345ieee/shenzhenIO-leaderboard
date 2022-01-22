@@ -1,0 +1,177 @@
+[name] jmpless 456
+[puzzle] Sz046
+[production-cost] 3100
+[power-usage] 434
+[lines-of-code] 73
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...14..9555554.1555C..
+...1C.1695554......2..
+...8A955E...155C9554..
+..16AA94A15C15C36.14..
+...16AA.A14A..355414..
+...15634354354....14..
+......14....14........
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 2
+[code] 
+start: slx x0 #3
+  mov x0 dat
+  teq dat 3
+- mov dat x3
+- mov x0 x3
++ dst 0 x0 # <0 5>
++ mov acc x2
+loop: + tlt acc 3
++ mov 100 x1
++ slp 1
++ mov 010 x1
++ slp 1
++ add 1
++ jmp loop
+
+[chip] 
+[type] UC4X
+[x] 7
+[y] 2
+[code] 
+- slx x1 #3b
+- mov x1 acc
+loop: tgt acc 2
++ mov 010 x3
++ slp 1
++ mov 100 x3
++ slp 1
++ sub 1
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 2
+[code] 
+@ teq 1 0
+start:
+- slx x0 #456
+- mov x0 acc #4->-
+- mul 99  #5->001
+- sub 494 #6->100
+loop:
+  mov x2 dat
+  teq dat acc
++ mov 0 x1
+- mov dat x1
+- tgt dat 0
++ slp 1
+
+[chip] 
+[type] BANK
+[x] 13
+[y] 2
+[rom] 
+1,100,100,1,100,1,0,1,100,1,100,100,1,0
+
+[chip] 
+[type] DX3
+[x] 17
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 4
+[code] 
+start: slx x1 #78
+  mov x1 acc
+  mov x1 x3
+  tcp acc 7 #-free
+- mov acc x2
+  mov 100 dat
++ mov 010 dat
++ mov 0 acc
+  teq acc x3
++ slp 4
+- slp 1
+  mov dat x0
+  slp 1
+  mov 000 x0
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 6
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 6
+[code] 
+start: slx x0 #012
+  mov x0 dat
+  mov dat x3
+  tcp dat 1
+- jmp sleep
++ jmp wp
+  mov 100 x2
+wp: + teq dat 2
++ mov 010 x2
+- mov dat x1
+- mov acc x1
+sleep: slp 6
+  mov 000 x2
+  add 35
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 6
+[code] 
+@ mov 50 p1
+  mov 50 p0
+  slx x0
+  teq x0 -1
+- not
+- mov acc p1
+- slp 5
+- mov 50 p1
+- mov 100 p0
+- slp 1
++ mov 0 p0
++ slp 6
+
+[chip] 
+[type] NOTE
+[x] 8
+[y] 8
+[code] 
+0: 000000
+1: 111111
+2: 222222
+3: 121212
+4: 311313
+5: 011010
+6: 300303
+7: 010000
+8: 000020
+
+[chip] 
+[type] NOTE
+[x] 16
+[y] 8
+[code] 
+Worst test:
+78: 443666

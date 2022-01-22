@@ -1,0 +1,102 @@
+[name] New design 1
+[puzzle] Sz043
+[production-cost] 1800
+[power-usage] 528
+[lines-of-code] 37
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....154.155555555554..
+........155555555554..
+........1C............
+.........34.15555554..
+............14.15554..
+...............14.14..
+......................
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 1
+[code] 
+1 111
+2 110
+3 101
+4 100
+5 011
+6 010
+7 001
+8 000
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 2
+[code] 
+  mov 50 p1
+  slx x0
+  mov x0 acc
+  slp 2
+  tgt acc 2
++ mov 0 p1
++ sub 2
+- mov 100 p1
+  slp 1
+  mov acc x3
+
+[chip] 
+[type] UC4
+[x] 16
+[y] 2
+[code] 
+  mov 50 p1
+  slx x0
+  tgt x0 1
+  slp 2
++ mov 0 p1
+- mov 100 p1
+  slp 1
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 3
+[code] 
+  mov 50 p1
+  slx x0
+  mov x0 acc
+  slp 2
+  tgt acc 4
++ mov 0 p1
++ sub 4
+- mov 100 p1
+  slp 1
+  mov acc x3
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 6
+[code] 
+  mov x0 dat
+  teq dat -999
+- mov 100 p1
+- slp 1
+- mov 30 p1
+- mov dat x3
+- slp 1
+- mov 0 p1
+  slp 1
+- mov x0 x2
+
+[chip] 
+[type] RADIO
+[x] 2
+[y] 7
+[is-puzzle-provided] true

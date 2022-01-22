@@ -1,0 +1,72 @@
+[name] gates v1.3
+[puzzle] Sz001
+[production-cost] 900
+[power-usage] 124
+[lines-of-code] 10
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+........141D555C......
+.....94....A9416......
+.....3555C.AA.1C......
+.......1CA.22956......
+........A3555E........
+.....941E..88A........
+.....34.2..222........
+......................
+......................
+
+[chip] 
+[type] NOT
+[x] 6
+[y] 3
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 3
+
+[chip] 
+[type] UC4
+[x] 5
+[y] 4
+[code] 
+start:
+@ slp 1
+  gen p1 1 1
+
+[chip] 
+[type] OR
+[x] 13
+[y] 6
+[rotated] true
+
+[chip] 
+[type] UC4
+[x] 6
+[y] 7
+[code] 
+start:
+  slp 6
+  mov 100 p1
+  slp 1
+  mov 100 p0
+  slp 2
+  mov 0 p0
+  slp 1
+  mov 0 p1
+
+[chip] 
+[type] NOT
+[x] 9
+[y] 8
