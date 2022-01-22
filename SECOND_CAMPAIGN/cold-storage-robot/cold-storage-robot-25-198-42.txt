@@ -1,0 +1,152 @@
+[name] double sleep
+[puzzle] Sz038
+[production-cost] 2500
+[power-usage] 198
+[lines-of-code] 42
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...954..9555C.........
+...A1C.16154A155555C..
+...A.A9555D4354....2..
+...A16A..8A.954.1554..
+...A156156A.A.941414..
+...A...1C.34A16.14....
+...355556...354.......
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 2
+[code] 
+  mov 010 x3
+  slx x2
+g: mov x2 x3 #100
+  slp 1
+# mov 000 x3
+  slp x3 #HH
+c: slp x1
+l: mov 100 x3
+  slp 1
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 3
+[code] 
+start:
+  slx x3
+  mov x2 dat
+loop:
+  mov x1 acc
+  teq x0 dat
+- jmp loop
+clean:
+  mov acc x1
+  mov x3 x0 #0,HHs
+
+[chip] 
+[type] DX3
+[x] 15
+[y] 3
+
+[chip] 
+[type] NOT
+[x] 17
+[y] 3
+[rotated] true
+
+[chip] 
+[type] RAM
+[x] 2
+[y] 4
+
+[chip] 
+[type] NOT
+[x] 17
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 5
+[code] 
+  mov 50 p1
+  slx x3
+  teq x3 -1
+- mov 110 x2
+- slp 2
++ mov 0 x0 #HHs
+f: mov 100 p1
+  slp x1
+  mov 50 p1
++ mov 110 x2
+c: slp 2
+b: mov 0 p1
+  slp x1
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 6
+[code] 
+start: tcp x0 1
+- slp 1
+- jmp start
++ mov -1 x3
++ jmp slp
+loop: mov x2 acc
+  tgt x1 0
++ jmp loop
+  mov 1 x3
+slp: slp 6 #A1
+  slp x2 #A2
+clr: - mov acc x2
+- mov x0 x1
+  mov 0 x2
+
+[chip] 
+[type] RADIO
+[x] 2
+[y] 7
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 10
+[y] 8
+[code] 
+ 1 -> mov   0 addr
+-1 -> mov &rx    0
+
+---------------
+
+Initial sleep
+
+Abuse timings
+
+[chip] 
+[type] NOTE
+[x] 15
+[y] 8
+[code] 
+Use NOTs to cut
+instructions
+in slp/mov
+
+HHs: Use value at
+last point, so
+address is already
+updated when
+control returns

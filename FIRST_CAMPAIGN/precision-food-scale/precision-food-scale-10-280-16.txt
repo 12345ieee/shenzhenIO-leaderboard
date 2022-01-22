@@ -1,0 +1,68 @@
+[name] mcland
+[puzzle] Sz012
+[production-cost] 1000
+[power-usage] 280
+[lines-of-code] 16
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..95555555C...........
+..2...94.16...........
+......2..15C..........
+.....954..8B5554......
+.....A14.16A..........
+..155E...156..........
+.....354..............
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 2
+[code] 
+start:
+  slp 1
+  teq p0 100
++ mov p1 x0
++ slx x0
++ mov x0 x3
+
+[chip] 
+[type] LCDN
+[x] 15
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 5
+[code] 
+@ teq 1 1
++ slx x0
++ mov x0 dat
+- mov p1 dat
+work:
+  mov p1 acc
+  sub dat
+  mov acc x3
+  slp 1
+start:
+  tcp p0 0
++ teq p1 dat
++ mov -999 x0
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 5

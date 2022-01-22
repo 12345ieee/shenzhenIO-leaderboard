@@ -1,0 +1,123 @@
+[name] no store last (teqwrap)
+[puzzle] Sz021
+[production-cost] 1200
+[power-usage] 290
+[lines-of-code] 27
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...9555555C...........
+...2.154.1755554......
+.....154.1555555D4....
+...955D4.1554.14A.....
+...2943C......156.....
+....354355554.1C......
+.....15555555556......
+......................
+......................
+
+[chip] 
+[type] RADIO
+[x] 3
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 3
+[code] 
+  slx x0
+  teq x0 2
++ mov x3 null
+  mov x3 x2
+  mov x3 null
+  mov x3 x2
+  mov x3 null
+  mov x3 x2
+  mov x3 null
+  mov x3 x2
+  mov x3 null
+  mov x3 x2
+- mov p1 x2
++ mov p0 x2
+
+[chip] 
+[type] BRIDGE
+[x] 5
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 5
+[code] 
+@ teq 1 1
+@ slp 1 #Abuse1
++ mov p1 x3 #A2
++ mov p0 x3 #A2
++ slp 1 #A2
+  mov p1 x3
+  mov p0 x3
+  slp 1
+  teq x1 x0 #A3
++ mov x3 x3 #Burn2
++ mov x3 x3 #Burn2
++ mov x1 x2
++ slp 2 #Abuse1
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 5
+
+[chip] 
+[type] RAM
+[x] 17
+[y] 6
+
+[chip] 
+[type] ID
+[x] 4
+[y] 7
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 11
+[y] 8
+[code] 
+Usual work-sleep
+abuse.
+
+Heavy sleep abuse.
+
+Also use fact that
+ID is never 1 or 2
+
+[chip] 
+[type] NOTE
+[x] 14
+[y] 8
+[code] 
+Correct address
+to check is
+A+3+rx
+I burn 2+2 and
+then check to burn
+the last
+
+[chip] 
+[type] NOTE
+[x] 17
+[y] 8
+[code] 
+Destroy pointer
+position at query,
+next query won't
+need values that
+old anyway

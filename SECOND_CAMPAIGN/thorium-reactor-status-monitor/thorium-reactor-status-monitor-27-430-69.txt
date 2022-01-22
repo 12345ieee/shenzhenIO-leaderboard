@@ -152,4 +152,3 @@ sleep: slx x2
 - mov p0 acc
 - slp 4 #A1
 + slp 1
-

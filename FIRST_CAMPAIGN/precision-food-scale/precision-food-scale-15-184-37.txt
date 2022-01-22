@@ -1,0 +1,144 @@
+[name] master-slaves
+[puzzle] Sz012
+[production-cost] 1500
+[power-usage] 184
+[lines-of-code] 37
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..95555D5555C.........
+..2...16...17C........
+...15C15549542........
+..954A..94A95554......
+..A..A15616A14........
+..A..3555556..........
+..355555554...........
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 2
+[code] 
+@ slp 2 #A0
+  teq p0 100
+- slp 1
++ mov p1 x1 #A2
++ slp 3 #A3
++ mov p1 x1 #A5
++ slp 1
++ mov p1 x1 #A5
++ slp 1
++ mov p1 x1 #A5
++ mov 1 x0
++ slx x0
++ mov x0 x1
++ slp 6 #A1
+
+[chip] 
+[type] LCDN
+[x] 15
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 13
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 5
+[code] 
+@ teq 1 1
++ slx x3
++ mov x3 dat
++ mov 0 x1
++ slp 3 #A4
+  teq p0 100
+- mov p1 acc
+- sub dat
+- mov acc x1
+- slp 1
++ mov dat x3
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 5
+[code] 
+@ teq 1 1
++ slx x3
++ slp x3 #A5
+- mov p1 x1
+- slx x1
+- mov x1 dat
+- jmp start
+  mov p1 x2
+  slp 1
+start: tcp p0 0
++ teq p1 dat
++ mov -999 x3
+
+[chip] 
+[type] NOTE
+[x] 3
+[y] 8
+[code] 
+Initial sleep abus
+
+Abuse that "off"
+periods are >=6
+
+Abuse that scale
+is off always
+when weight==0 and
+has to go back to0
+
+[chip] 
+[type] NOTE
+[x] 6
+[y] 8
+[code] 
+Abuse that 0 at
+return from off
+are branched and
+long >=3 cycles
+
+Also avoid a
+`+ jmp start`, as
+the 0 branch is 
+always taken after
+
+[chip] 
+[type] NOTE
+[x] 9
+[y] 8
+[code] 
+Same as A2&3, but
+for the `-` branch
+
+Max length is
+3 cycles then
+test is needed
+
+[chip] 
+[type] NOTE
+[x] 12
+[y] 8
+[code] 
+Abuse fact that
+tare isn't set
+after off for 7
+cycles

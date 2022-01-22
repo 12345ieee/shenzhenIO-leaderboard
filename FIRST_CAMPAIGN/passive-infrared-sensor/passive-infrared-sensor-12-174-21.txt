@@ -1,0 +1,112 @@
+[name] indep off
+[puzzle] Sz005
+[production-cost] 1200
+[power-usage] 174
+[lines-of-code] 21
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...........155C.......
+.......954.14.A.......
+......1E14....A.......
+....8..354.14.341C....
+....A...14....14.2....
+....355554.154........
+..............14......
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 2
+
+[chip] 
+[type] NOT
+[x] 15
+[y] 2
+[rotated] true
+
+[chip] 
+[type] UC4
+[x] 9
+[y] 3
+[code] 
+@ slx x0
+@ mov x0 null
+  tgt p0 19
++ mov 100 x1
++ slp 1
+- slp x1 #mov 000
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 4
+
+[chip] 
+[type] AND
+[x] 15
+[y] 4
+
+[chip] 
+[type] UC4
+[x] 9
+[y] 5
+[code] 
+@ mov x1 acc
+@ sub p0
+@ tlt acc 0
++ add 96 #0-95
+@ slp acc
+@ mov -1 x0
+@ slp 60 #Abuse
+
+[chip] 
+[type] DIAL1
+[x] 12
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] RTC
+[x] 4
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 9
+[y] 7
+[code] 
+@ mov 100 p1
+@ mov x1 acc
+@ sub p0
+@ tlt acc 0
++ add 96 #0-95
+@ slp acc
+@ mov 0 p1
+@ slp 60 #Abuse
+
+[chip] 
+[type] DIAL2
+[x] 12
+[y] 7
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 16
+[y] 8
+[code] 
+ABUSE 
+fact that
+the davice always
+starts OFF
+and is turned ON
+once, then OFF
+again

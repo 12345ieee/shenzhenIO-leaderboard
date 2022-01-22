@@ -1,0 +1,81 @@
+[name] compute slp (abuse)
+[puzzle] Sz005
+[production-cost] 700
+[power-usage] 198
+[lines-of-code] 12
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+......................
+....955555555C........
+....2....14.16........
+.........14.154154....
+......15554...........
+...............14.....
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 14
+[y] 2
+
+[chip] 
+[type] NOT
+[x] 16
+[y] 2
+[rotated] true
+
+[chip] 
+[type] RTC
+[x] 4
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 3
+[code] 
+@ mov x0 acc
+@ sub p0
+@ tlt acc 0
++ add 96 #0-95
+@ slp acc
+  tgt p1 19
++ mov 100 x3
++ slp 1
+- slp x3 #mov 000
+  teq p0 x1
++ mov 000 x3
++ slp 60 #Abuse
+
+[chip] 
+[type] DIAL2
+[x] 8
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL1
+[x] 8
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 16
+[y] 8
+[code] 
+ABUSE 
+fact that
+the davice always
+starts OFF
+and is turned ON
+once, then OFF
+again

@@ -1,0 +1,51 @@
+[name] gen unroll
+[puzzle] Sz035
+[production-cost] 500
+[power-usage] 124
+[lines-of-code] 5
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+......................
+......................
+........14.15554......
+......................
+......................
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 3
+[code] 
+  slp 1 #A0
+  teq x0 1
+wp: + gen p1 1 1
++ teq x0 -999
++ jmp wp
+
+[chip] 
+[type] RADIO
+[x] 6
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 15
+[y] 8
+[code] 
+Use fact that
+1-0 pairs are
+always in the
+correct order
+and never repeated
+
+Initial sleep

@@ -1,0 +1,67 @@
+[name] cascade-rowo
+[puzzle] Sz024
+[production-cost] 1000
+[power-usage] 237
+[lines-of-code] 27
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+.....1C9555555554.....
+......A34.............
+.....1F54.15415D4.....
+......A...154..A......
+.....17555554.168.....
+..............156.....
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 2
+[code] 
+  slx x0
+  mov x0 dat
+  teq dat x3 #R
++ mov dat x3 #W
+- mov dat x2
+  mov x1 acc
++ mov acc x3
+- mov acc x2
+loop: teq dat x3
++ mov x1 x3
+- mov x1 x2
+  teq acc 1
+- sub 1
+- jmp loop
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 4
+[code] 
+start: slx x1
+  mov x1 dat
+  tgt dat x3
++ mov dat x0
+- mov dat x2
+- slp 1
+- jmp start
+  mov x1 acc
+  mov acc x0
+loop:
+  mov x1 x0
+  teq acc 1
+- sub 1
+- jmp loop
+
+[chip] 
+[type] ID
+[x] 12
+[y] 5
+[is-puzzle-provided] true

@@ -1,0 +1,113 @@
+[name] New design 1
+[puzzle] Sz044
+[production-cost] 2100
+[power-usage] 1215
+[lines-of-code] 51
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..155554..............
+..9555C..1C...........
+..2...355C2...........
+..8..155C354.94.......
+..34....A.8..A........
+......94357556........
+..14.16...............
+......................
+......................
+
+[chip] 
+[type] UC4
+[x] 3
+[y] 2
+[code] 
+@ mov p0 x1
+@ mov p0 acc
+  slp 1
+  teq p0 acc
+- mov p0 x1
+- mov p0 acc
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 2
+[code] 
+  tcp x1 50
++ mov -33 x3
++ mov +31 x3
++ mov +30 x3
++ jmp last
+- mov +34 x3
+- mov +33 x3
+- mov -31 x3
+  mov -30 x3
+- jmp sleep
+  mov +31 x3
+  mov +33 x3
+last: mov -34 x3
+sleep: slx x1
+
+[chip] 
+[type] LCDR
+[x] 14
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 4
+[code] 
+  tgt p0 19
++ mov +21 x3
+- mov -21 x3
++ tgt p0 39
++ mov +22 x3
+- mov -22 x3
++ tgt p0 59
++ mov +23 x3
+- mov -23 x3
++ tgt p0 79
++ mov +24 x3
+- mov -24 x3
+  slp 1
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 5
+[code] 
+  tgt p0 19
++ mov +11 x2
+- mov -11 x2
++ tgt p0 39
++ mov +12 x2
+- mov -12 x2
++ tgt p0 59
++ mov +13 x2
+- mov -13 x2
++ tgt p0 79
++ mov +14 x2
+- mov -14 x2
+  slp 1
+
+[chip] 
+[type] UC4X
+[x] 7
+[y] 7
+[code] 
+@ mov 10 x2
+@ mov 20 x2
+@ mov 32 x2
+  slx x0
+  mov x0 x2

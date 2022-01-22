@@ -1,0 +1,85 @@
+[name] magic dxa
+[puzzle] Sz014
+[production-cost] 800
+[power-usage] 115
+[lines-of-code] 13
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+....14.....9555554....
+....8.154.16..........
+....34........1554....
+..........154154......
+.............15414....
+......................
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 12
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 3
+
+[chip] 
+[type] OR
+[x] 15
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 4
+[code] 
+@ mov 100 x2
+  slp 1 #A0
+  tcp x0 001 #1
+wm: - slp 1
+- tcp x0 001 #2
+- add 50
+- slp 1
+- tcp x0 001 #1b
+- jmp wm
++ mov acc x2
++ mov acc p1
++ slp 2 #A1
+  mov 0 acc #HH
+
+[chip] 
+[type] DX3
+[x] 5
+[y] 5
+[rotated] true
+
+[chip] 
+[type] NOTE
+[x] 10
+[y] 8
+[code] 
+Add only every
+other test
+
+Table:
+Laser out DXA
+  0   100 000
+ 50   010 010
+100   000 100
+
+[chip] 
+[type] NOTE
+[x] 13
+[y] 8
+[code] 
+Initial sleep
+
+Abuse wait time
+after set

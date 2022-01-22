@@ -1,0 +1,105 @@
+[name] Top solution Power - 837951602
+[puzzle] Sz005
+[production-cost] 1400
+[power-usage] 134
+[lines-of-code] 23
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+........14.155C.......
+......9554.14.A.......
+.....16954..15E.......
+....8..A1555543414....
+....354A15414.1414....
+.....156......1C.8....
+...........1555756....
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 10
+[y] 2
+
+[chip] 
+[type] RTC
+[x] 3
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 3
+
+[chip] 
+[type] AND
+[x] 15
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 17
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 4
+[code] 
+@ slp x0
+  tgt p0 19
++ mov 10 x3
++ slp x2
++ tgt p0 19
++ slp x2
++ tgt p0 19
++ slp x2
++ tgt p0 19
++ slp x2
+- slp x3
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 4
+
+[chip] 
+[type] NOT
+[x] 15
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 6
+[code] 
+@ mov x0 acc
+@ sub p0
+@ tlt x3 x0
+- jmp s
+t:mov acc x1
+  mov x3 acc
+  sub p0
++ add 96
+  slp acc
+  gen p1 999 0
+s:tlt acc 0
++ add 96
+  jmp t
+
+[chip] 
+[type] DIAL2
+[x] 12
+[y] 7
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL1
+[x] 7
+[y] 8
+[is-puzzle-provided] true

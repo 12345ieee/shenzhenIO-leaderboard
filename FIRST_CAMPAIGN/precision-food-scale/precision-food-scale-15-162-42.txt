@@ -1,4 +1,4 @@
-[name] Top solution Power - 12345ieee
+[name] master-slaves (abuse 1 tare)
 [puzzle] Sz012
 [production-cost] 1500
 [power-usage] 162
@@ -164,4 +164,3 @@ need testing)
 tare isn't set
 after off for 7
 cycles
-

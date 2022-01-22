@@ -1,0 +1,70 @@
+[name] send mul
+[puzzle] Sz023
+[production-cost] 1100
+[power-usage] 166
+[lines-of-code] 26
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+..........954.155554..
+.....154..A...........
+.........16...........
+.........15555554154..
+.................154..
+......................
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 16
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 4
+[code] 
+  slp 1
+  mov x0 dat
+  tcp dat -999
++ sub dat
++ mov acc x3 
++ slx x3
++ mov x3 x2
++ slp x0
++ mov 010 x2
++ slp x0
++ mov 000 x2
++ mov dat acc
+
+[chip] 
+[type] RADIO
+[x] 3
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 5
+[code] 
+@ mov 50 p1
+@ teq 1 1
++ slx x0
++ mov x0 acc
++ mul -100
++ mov acc dat
++ dst 0 0 #abs
+loop: teq acc 0
+- mov dat p1
+- slp 1
+- mov 50 p1
+- slp 1
+- sub 100
++ mov 100 x0

@@ -1,0 +1,63 @@
+[name] gates
+[puzzle] Sz001
+[production-cost] 1200
+[power-usage] 127
+[lines-of-code] 4
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+........15D55555C.....
+..........A....16.....
+..........A94141C.....
+..........A3C9556.....
+.....94...A.AA........
+.....B41C.A.AB4.......
+.....34.2.3422........
+......................
+......................
+
+[chip] 
+[type] NOT
+[x] 6
+[y] 3
+
+[chip] 
+[type] UC4
+[x] 14
+[y] 3
+[code] 
+start:
+@ slp 7
+  gen p0 2 8
+
+[chip] 
+[type] UC4
+[x] 6
+[y] 4
+[code] 
+start:
+  gen p0 1 1
+
+[chip] 
+[type] NOT
+[x] 12
+[y] 6
+[rotated] true
+
+[chip] 
+[type] OR
+[x] 14
+[y] 6
+[rotated] true
+
+[chip] 
+[type] UC4
+[x] 6
+[y] 7
+[code] 
+start:
+  gen p1 6 4

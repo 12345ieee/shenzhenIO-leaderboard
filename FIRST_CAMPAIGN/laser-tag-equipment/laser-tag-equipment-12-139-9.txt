@@ -1,0 +1,127 @@
+[name] good flow dxa
+[puzzle] Sz048
+[production-cost] 1200
+[power-usage] 139
+[lines-of-code] 9
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.......955555555555C..
+.......A..94....1416..
+..14141E..34......14..
+..1414.A.....1541554..
+..94...A.....1C.155C..
+..355556......34..16..
+................14....
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 2
+[y] 1
+[code] 
+Definite state
+SR latch
+
+[chip] 
+[type] DX3
+[x] 15
+[y] 2
+
+[chip] 
+[type] OR
+[x] 17
+[y] 2
+[rotated] true
+
+[chip] 
+[type] OR
+[x] 3
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 4
+[code] 
+  tcp x3 100
++ mov 99 acc
++ add x0
++ slp 2 #A0
++ tcp x3 100 #AA1
+- mov acc x2
+- slp 1
+- sub x2 #AssGen
+  slp 1
+
+[chip] 
+[type] AND
+[x] 5
+[y] 5
+
+[chip] 
+[type] DX3
+[x] 15
+[y] 5
+
+[chip] 
+[type] NOT
+[x] 3
+[y] 6
+
+[chip] 
+[type] AND
+[x] 17
+[y] 6
+[rotated] true
+
+[chip] 
+[type] DIAL7
+[x] 11
+[y] 7
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 9
+[y] 8
+[code] 
+Abuse:
+No need to handle
+anything a cycle
+after reload
+
+No need to handle
+double reloads,
+the `+ jmp wp`
+is not needed
+
+[chip] 
+[type] NOTE
+[x] 12
+[y] 8
+[code] 
+A `+ slp 1` in the
+2nd + branch would
+help, but the
+bottleneck doesn't
+have that path
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 8
+[code] 
+tcp-not trick:
+Put "do nothing"
+state as middle
+one, so tcp is
+simple to write
+tri->000
+noth->100
+reload->101

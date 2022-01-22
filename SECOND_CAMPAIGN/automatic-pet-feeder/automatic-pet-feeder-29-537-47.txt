@@ -1,0 +1,191 @@
+[name] black-hole: flow
+[puzzle] Sz040
+[production-cost] 2900
+[power-usage] 537
+[lines-of-code] 47
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..954...954.14...14...
+..294.15615C14...14...
+...A..15D54A14.9414...
+...A..14215E14.34.1C..
+...A...9554A14.14..2..
+...35556815E14.1C..8..
+.......16..355543556..
+......................
+......................
+
+[chip] 
+[type] UC4X
+[x] 2
+[y] 2
+[code] 
+  slx x3
+  mov x3 null
+
+[chip] 
+[type] UC4X
+[x] 5
+[y] 2
+[code] 
+  slx x2
+  mov x2 null
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 3
+
+[chip] 
+[type] UC4X
+[x] 10
+[y] 3
+[code] 
+@ mov x1 acc
+@ dgt 2
+  slx x0
+  mov acc x1
+  mov x3 x1
+  slp x2
+
+[chip] 
+[type] DIAL10
+[x] 13
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 16
+[y] 3
+[code] 
+@ mov x0 x1
+@ mov x0 x1
+@ mov x0 x1
+  slx x1
+  teq x1 1
++ mov x1 p1
+- mov x1 p0
+  slp 1
++ mov 0 p1
+- mov 0 p0
+
+[chip] 
+[type] UC4X
+[x] 4
+[y] 4
+[code] 
+  slx x3
+  mov x3 null
+
+[chip] 
+[type] DIAL13
+[x] 13
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 5
+
+[chip] 
+[type] UC4X
+[x] 10
+[y] 5
+[code] 
+@ mov x1 acc
+@ dgt 1
+  slx x0
+  mov acc x1
+  mov x3 x1
+  slp x2
+
+[chip] 
+[type] DIAL9
+[x] 13
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 6
+[code] 
+start: 
+  slp 1
+  mov x0 acc
+  tgt acc -999
+- slp 1
+- mov x0 acc
+- tgt acc -999
+- jmp start
++ tcp acc 2
++ mov -1 x1
++ jmp start
+- mov -1 x3
+- jmp start
+  mov -1 x2
+
+[chip] 
+[type] DIAL12
+[x] 13
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] DX3
+[x] 16
+[y] 6
+
+[chip] 
+[type] SWITCH14
+[x] 18
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4X
+[x] 10
+[y] 7
+[code] 
+@ mov x1 acc
+@ dgt 0
+  slx x0
+  mov acc x1
+  mov x3 x1
+  slp x2
+
+[chip] 
+[type] DIAL8
+[x] 13
+[y] 7
+[is-puzzle-provided] true
+
+[chip] 
+[type] SWITCH15
+[x] 18
+[y] 7
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL11
+[x] 13
+[y] 8
+[is-puzzle-provided] true
+
+[chip] 
+[type] SWITCH16
+[x] 18
+[y] 8
+[is-puzzle-provided] true

@@ -1,0 +1,68 @@
+[name] reflow
+[puzzle] Sz035
+[production-cost] 700
+[power-usage] 98
+[lines-of-code] 11
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+......................
+......................
+........14...154......
+...........14.........
+.............14.......
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 3
+[code] 
+  slp x3 #H,A0
+  teq x0 1
+wp: + mov 100 x3
++ slp 1
++ slp x3 #H
++ teq x0 -999
++ mov 100 x3
++ slp 1
++ slp x3 #H
++ teq x0 -999
++ jmp wp
+
+[chip] 
+[type] DX3
+[x] 12
+[y] 3
+
+[chip] 
+[type] NOT
+[x] 14
+[y] 3
+[rotated] true
+
+[chip] 
+[type] RADIO
+[x] 6
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 15
+[y] 8
+[code] 
+Use fact that
+1-0 pairs are
+always in the
+correct order
+and never repeated
+
+Initial sleep

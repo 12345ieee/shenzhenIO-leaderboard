@@ -1,0 +1,88 @@
+[name] dxa-not-2
+[puzzle] Sz001
+[production-cost] 1200
+[power-usage] 95
+[lines-of-code] 9
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+........155D555C......
+......1415CA9416......
+........14A22.1C......
+.......14.35555E......
+........95488..A......
+....941CA14AA..A......
+....35436..22156......
+......................
+......................
+
+[chip] 
+[type] NOT
+[x] 5
+[y] 3
+[rotated] true
+
+[chip] 
+[type] DX3
+[x] 8
+[y] 3
+
+[chip] 
+[type] NOT
+[x] 10
+[y] 3
+[rotated] true
+
+[chip] 
+[type] UC4X
+[x] 5
+[y] 4
+[code] 
+start:
+  slp x3 #AG
+  mov 010 x3
+  slp 1
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 4
+
+[chip] 
+[type] DX3
+[x] 7
+[y] 6
+
+[chip] 
+[type] NOT
+[x] 9
+[y] 6
+[rotated] true
+
+[chip] 
+[type] OR
+[x] 13
+[y] 6
+[rotated] true
+
+[chip] 
+[type] UC4
+[x] 4
+[y] 7
+[code] 
+start:
+  mov 100 x1
+  slp 6
+  slp x1 #AG
+  mov 010 x1
+  slp 2
+  slp x1 #AG
