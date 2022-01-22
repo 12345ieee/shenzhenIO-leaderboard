@@ -1,0 +1,99 @@
+[name] Top solution Power - 837951602
+[puzzle] Sz001
+[production-cost] 1200
+[power-usage] 74
+[lines-of-code] 17
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......14...15555C.....
+.........955554.A.....
+......1C16..1C..A.....
+.....143415543416.....
+.....1C1C1C1555C......
+.....83C34A1D54A......
+.....3434.342156......
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 5
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 3
+
+[chip] 
+[type] OR
+[x] 10
+[y] 3
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 3
+
+[chip] 
+[type] DX3
+[x] 14
+[y] 3
+[rotated] true
+
+[chip] 
+[type] XOR
+[x] 6
+[y] 4
+[rotated] true
+
+[chip] 
+[type] DX3
+[x] 7
+[y] 6
+[rotated] true
+
+[chip] 
+[type] NOT
+[x] 11
+[y] 6
+
+[chip] 
+[type] UC4
+[x] 14
+[y] 6
+[code] 
+  slp x0
+  mov 100 x1
+  slp 1
+  slp x1
+  mov 100 x1
+  slp 1
+  slp x1
+  mov 100 x1
+  slp 5
+
+[chip] 
+[type] UC4X
+[x] 9
+[y] 7
+[code] 
+@ slp 6
+  mov 101 x3
+  slp 1
+  mov 010 x3
+  slp 1
+  slp x2
+  mov 101 x3
+  slp 7
+
+[chip] 
+[type] NOT
+[x] 5
+[y] 8
