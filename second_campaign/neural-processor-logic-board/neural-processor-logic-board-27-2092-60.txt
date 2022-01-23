@@ -1,0 +1,154 @@
+[name] power
+[puzzle] Sz047
+[production-cost] 2700
+[power-usage] 2092
+[lines-of-code] 60
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..14..15C......154....
+..94.15CA154..1555C...
+..2.954AA1C....1416...
+..15E..AA.B555554.....
+..94A.16A.2....1C1C...
+..34A1556154..1C34A...
+..156....14....3556...
+......................
+......................
+
+[chip] 
+[type] UC4X
+[x] 3
+[y] 2
+[code] 
+  slx x3
+  mov x3 acc
+  dst 1 x3
+  mov acc x0
+  mov x1 x3
+  teq x1 12
++ mov 0 x1
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 2
+[code] 
+  mov x3 dat
+  tgt dat -999
+- mov 0 acc
+- slp 1
++ sub dat
++ mov dat x1
++ mov x3 dat
++ mov dat x1
++ add dat
++ teq x1 12
++ mov 1 x2
++ teq acc x3
++ mov acc x0
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 2
+
+[chip] 
+[type] NP2
+[x] 11
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 17
+[y] 2
+[code] 
+@ add 1
+  slp 1
+- mov p0 acc
++ add 1
+  tgt p0 0
++ mov x0 acc
+- tlt acc 4
+- mov 100 p0
+
+[chip] 
+[type] BRIDGE
+[x] 2
+[y] 4
+
+[chip] 
+[type] RAM
+[x] 3
+[y] 4
+
+[chip] 
+[type] DX3
+[x] 16
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 6
+[code] 
+@ slx x3
+  teq x2 12
++ mov x3 x0
++ mov 0 x2
++ slx x3
+- mov x1 dat
+- dst 0 dat
+- mov acc x0
+- mov dat acc
+- dgt 1
+- mov acc x0
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 6
+[code] 
+  mov x3 dat
+  tgt dat -999
+- mov 0 acc
+- slp 1
++ sub dat
++ mov dat x0
++ mov x3 dat
++ mov dat x0
++ add dat
++ teq x0 12
++ mov 100 x2
++ teq acc x3
++ mov acc x1
+
+[chip] 
+[type] NP1
+[x] 11
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 6
+
+[chip] 
+[type] UC4
+[x] 17
+[y] 7
+[code] 
+@ add 1
+  slp 1
+- mov p0 acc
++ add 1
+  tgt p0 0
++ mov x0 acc
+- tlt acc 4
+- mov 100 p0
