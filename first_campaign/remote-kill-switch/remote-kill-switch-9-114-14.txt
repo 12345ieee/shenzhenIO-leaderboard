@@ -1,0 +1,79 @@
+[name] Top solution Power - 837951602
+[puzzle] Sz016
+[production-cost] 900
+[power-usage] 114
+[lines-of-code] 14
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+............15555C....
+......14....1555C2....
+....9554.1541C143C....
+....A....1C..35C96....
+....A.....341542A.....
+....A.......155568....
+....34......155556....
+......................
+......................
+
+[chip] 
+[type] BANK
+[x] 5
+[y] 2
+[rom] 
+1,2,2,2,2,2,2,2,2,2,2,2,2,2
+
+[chip] 
+[type] DX3
+[x] 11
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 5
+[code] 
+s:tcp x0 -1
+- slp x1
+- tcp x0 -1
+- slp 1
+- mov x3  acc
+- slp 1
+- tcp x0 -999
++ mov x0 dat
++ dst dat 1
++ teq acc x2
++ dst dat 0
++ mov acc x3
+- mov acc x3
+  slp 2
+
+[chip] 
+[type] RADIO
+[x] 4
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] DX3
+[x] 11
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 6
