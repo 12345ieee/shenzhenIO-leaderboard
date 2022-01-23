@@ -1,0 +1,96 @@
+[name] (C) CaitSith2
+[puzzle] Sz044
+[production-cost] 1800
+[power-usage] 4243
+[lines-of-code] 45
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..155554..............
+.........155C.........
+..155555C15CA.........
+..1555C.354AA94.......
+......A..156AA........
+......34.95576........
+..14.15556............
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 2
+[code] 
+@ mov 32 x2
+  mov p0 dat
+  mov -30 x2
+  mov 31 x2
+  mov 33 x2
+  mov -34 x2
+  tcp p0 50
++ mov 30 x2
++ mov -33 x2
+- mov -31 x2
+- mov 34 x2
+s: slp 1
+  teq p0 dat
++ jmp s
+
+[chip] 
+[type] LCDR
+[x] 14
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 3
+[code] 
+@ mov 20 dat
+  teq dat 20
++ mov 10 dat
+- mov 20 dat
+  mov dat x3
++ mov p1 acc
+- mov p0 acc
+  mul 5
+  dgt 2
+  add dat
+  mov acc x3
++ mov -14 x3
+- mov -24 x3
+- slp 1
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 5
+[code] 
+  slx x1
+  mov x1 acc
+  mov x1 dat
+A:tlt acc dat
++ add 1
++ mov acc x0
++ jmp A
+  mul -1
+  mov x1 dat
+B:tgt acc dat
++ sub 1
++ mov acc x0
++ jmp B
+
+[chip] 
+[type] UC4
+[x] 7
+[y] 7
+[code] 
+@ mov 10 x1
+@ mov 20 x1
+  slx x0
+  mov x0 x1
