@@ -1,8 +1,8 @@
-[name] Top solution Power
+[name] Top solution Power - 837951602
 [puzzle] Sz008
-[production-cost] 2400
-[power-usage] 122
-[lines-of-code] 52
+[production-cost] 2200
+[power-usage] 120
+[lines-of-code] 46
 
 [traces] 
 ......................
@@ -11,8 +11,8 @@
 ......................
 ......................
 ..............954.....
-.........954..A.......
-.......14A..14A14.....
+..............A.......
+.......1495414A14.....
 .........A15C.B54.....
 .........35434A.8.....
 .......14.1554A16.....
@@ -25,7 +25,7 @@
 [x] 5
 [y] 2
 [rom] 
-36,42,14,10,58,1,100,76,26,28,70,0,999,0
+36,42,14,1,58,100,76,26,1,28,70,80,0,999
 
 [chip] 
 [type] UC6
@@ -40,11 +40,9 @@
   mov x1 p1
   slp 1
   mov x1 p1
-  slp 1
-  mov x1 p1
-  slp 1
-  mov x1 p1
   slp x1
+@ mov 10 p1
+@ slp 1
   mov x1 p1
 
 [chip] 
@@ -62,10 +60,12 @@
   teq x3 p0
 + mov 100 x0
 - mov 16 x1
-  slp 11
+- slp 12
++ slp 10
++ mov 19 p0
++ slp 1
 + mov 40 p0
-- mov 80 p0
-  slp 1
++ slp 1
 + mov 75 p0
 - mov 42 p0
   slp 1
@@ -80,27 +80,21 @@
 [x] 5
 [y] 5
 [rom] 
-80,41,14,14,41,1,69,74,54,27,19,0,999,0
+1,80,41,14,2,41,69,74,1,54,27,0,999,0
 
 [chip] 
-[type] UC6
+[type] UC4
 [x] 8
 [y] 5
 [code] 
-@ slx x2
-@ mov x2 p1
+@ slx x1
+@ mov x1 p1
+  slp x0
+  mov x0 p1
   slp 1
-  mov x1 p1
+  mov x0 p1
   slp 1
-  mov x1 p1
-  slp 1
-  mov x1 p1
-  slp 1
-  mov x1 p1
-  slp 1
-  mov x1 p1
-  slp x1
-  mov x1 p1
+  mov x0 p1
 
 [chip] 
 [type] RND
