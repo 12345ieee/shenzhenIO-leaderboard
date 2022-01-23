@@ -1,0 +1,112 @@
+[name] Top solution Power - 837951602
+[puzzle] Sz023
+[production-cost] 1700
+[power-usage] 136
+[lines-of-code] 24
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....154155555555555C..
+....154954...955C.1E..
+......961554161434.A..
+..94956.15C.15541556..
+..34A...14A.1554..14..
+..156154943555555554..
+.......161555555554...
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 2
+[code] 
+@ slp x1
+  mov x0 dat
+  tlt dat 0
+- mov dat x1
+- slx x1
+- mov x1 x3
+- slp x0
+- mov 100 x3
+- slp x0
+  slp x3
+
+[chip] 
+[type] NOT
+[x] 6
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 2
+
+[chip] 
+[type] DX3
+[x] 7
+[y] 3
+
+[chip] 
+[type] DX3
+[x] 11
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 4
+
+[chip] 
+[type] RADIO
+[x] 3
+[y] 5
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] XOR
+[x] 15
+[y] 5
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 6
+[code] 
+  teq x1 dat
++ mov x2 x3
+@ mov 50 p1
++ slx x3
++ mov x3 dat
+  tcp x1 dat
++ mov x0 x1
++ mov 0 p1
++ slp 1
++ mov 50 p1
++ slp 1
+- mov x0 x2
+- slp 1
+- slp x2
+
+[chip] 
+[type] OR
+[x] 17
+[y] 6
+
+[chip] 
+[type] BANK
+[x] 2
+[y] 7
+[rom] 
+111,112,113,114,115,116,117,118,119,134,121,122,123,124
