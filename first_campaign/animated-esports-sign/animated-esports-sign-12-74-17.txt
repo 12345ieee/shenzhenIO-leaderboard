@@ -10,25 +10,15 @@
 ......................
 ......................
 ......................
-......14...15555C.....
-.........955554.A.....
-......1C16..1C..A.....
-.....143415543416.....
-.....1C1C1C1555C......
-.....83C34A1D54A......
-.....3434.342156......
+.......14.14.155C.....
+............954.A.....
+.....1414155694.A.....
+.....1C1555543416.....
+.....835C1C1555C......
+.....3C.A.A1D54A......
+......2.2.342156......
 ......................
 ......................
-
-[chip] 
-[type] BRIDGE
-[x] 5
-[y] 3
-
-[chip] 
-[type] BRIDGE
-[x] 9
-[y] 3
 
 [chip] 
 [type] OR
@@ -48,40 +38,31 @@
 [rotated] true
 
 [chip] 
+[type] BRIDGE
+[x] 5
+[y] 4
+
+[chip] 
 [type] XOR
 [x] 6
-[y] 4
+[y] 5
 [rotated] true
 
 [chip] 
 [type] DX3
-[x] 7
+[x] 8
 [y] 6
 [rotated] true
 
 [chip] 
 [type] NOT
-[x] 11
-[y] 6
-
-[chip] 
-[type] UC4
 [x] 14
 [y] 6
-[code] 
-  slp x0
-  mov 100 x1
-  slp 1
-  slp x1
-  mov 100 x1
-  slp 1
-  slp x1
-  mov 100 x1
-  slp 5
+[rotated] true
 
 [chip] 
 [type] UC4X
-[x] 9
+[x] 11
 [y] 7
 [code] 
 @ slp 6
@@ -94,6 +75,21 @@
   slp 7
 
 [chip] 
+[type] UC4X
+[x] 14
+[y] 7
+[code] 
+  slp x0
+  mov 100 x1
+  slp 1
+  slp x1
+  mov 100 x1
+  slp 1
+  slp x1
+  mov 100 x1
+  slp 5
+
+[chip] 
 [type] NOT
-[x] 5
+[x] 6
 [y] 8
