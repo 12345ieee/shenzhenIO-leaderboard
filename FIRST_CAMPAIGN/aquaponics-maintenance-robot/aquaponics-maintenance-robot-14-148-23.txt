@@ -1,0 +1,82 @@
+[name] New design 1
+[puzzle] Sz023
+[production-cost] 1400
+[power-usage] 148
+[lines-of-code] 23
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+................1554..
+.............15C14....
+....154........A14....
+........15555556.154..
+........155555554154..
+.................14...
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 16
+[y] 2
+
+[chip] 
+[type] NOT
+[x] 18
+[y] 2
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 3
+[code] 
+  slp x2
+  mov x0  dat
+  tcp dat -999
++ sub dat
++ mov acc x3
++ slx x3
++ mov x3  x2
++ slp x0
++ mov 10  x2
++ slp x0
++ mov dat acc
+
+[chip] 
+[type] RADIO
+[x] 2
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 14
+[y] 5
+[code] 
+@ mov 50 p1
+@ teq 0 0
++ slx x1
++ mov x1 x3
++ mov x2 dat
++ mov x2 x3
+  teq x2 -15
+- mov dat p1
+- slp 1
+- mov 50 p1
+- slp 1
++ mov 100 x1
+  
+  
+
+[chip] 
+[type] BANK
+[x] 17
+[y] 5
+[rom] 
+-15,0,-1,-2,-3,-4,-5,0,0,100,107,108,109,110

@@ -1,0 +1,110 @@
+[name] New design 1
+[puzzle] Sz009
+[production-cost] 1800
+[power-usage] 258
+[lines-of-code] 16
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....155C9555C........
+.....1C.AA0..355554...
+...14.A.AA..954.15C...
+...14.34A34.A94.14A...
+...1415435416A14942...
+.....154.1554354A14...
+.....14........16.....
+......................
+......................
+
+[chip] 
+[type] UC4
+[x] 3
+[y] 2
+[code] 
+@ mov x1 p1
+
+[chip] 
+[type] DIAL3
+[x] 6
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOT
+[x] 14
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 3
+[code] 
+  slp 1
+@ mov p0 acc
+  mov x1 x0
+  sub x3
+  tgt acc 0
+- mov acc x2  
+- gen p1 4 2
+- mov p0 acc
+
+[chip] 
+[type] UC4X
+[x] 12
+[y] 3
+[code] 
+  teq x2 0
++ slx x1
++ mov x1 x2
+  mov x0 x3
+  slp 1
+  slp x3
+  mov x0 x2
+
+[chip] 
+[type] BRIDGE
+[x] 17
+[y] 3
+
+[chip] 
+[type] DX3
+[x] 4
+[y] 4
+[rotated] true
+
+[chip] 
+[type] DX3
+[x] 15
+[y] 4
+
+[chip] 
+[type] BANK
+[x] 11
+[y] 5
+[rom] 
+0,0,0,100,400,401,500,501,600,601,70,11,12,13
+
+[chip] 
+[type] BANK
+[x] 3
+[y] 7
+[rom] 
+0,1,12,0,0,0,0,0,0,0,5,0,0,0
+
+[chip] 
+[type] NOTE
+[x] 7
+[y] 7
+[code] 
+000 = 0
+001 = 1
+010 = 10
+011 = 11
+100 = 2
+101 = 3
+110 = 12
+111 = 13

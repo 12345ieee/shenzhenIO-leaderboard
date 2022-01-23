@@ -1,0 +1,93 @@
+[name] New design 2
+[puzzle] Sz007
+[production-cost] 1400
+[power-usage] 117
+[lines-of-code] 28
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....155D555555555C...
+...94..16.........34..
+...35D414155555D5554..
+..8..3C..1C.15569554..
+..A...2..16.15556954..
+..34.154.15415555694..
+......14..155555556...
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 2
+[code] 
+@ mov 11 acc  
+  slx x1
+  mov x1  dat
+  teq dat 3
+s:+ mov acc x3
+- teq dat -1
++ slx x1
++ mov 11 acc
++ mov x1  dat
++ teq dat 3
++ jmp s
+  teq dat 2  
++ dst 0   2
+- dst 1   0
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 2
+[code] 
+  slx x1
+  mov x1 acc
+  mov 100 p0
+  slp 1
+  mov p0 x3
+  slp 1
+  tlt acc 10
+- mov 010 x3
+- slp 1
+- dgt 0
+  mov 001 x3
+  slp acc
+  gen p0 1 x3
+  gen p1 3 0
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 2
+
+[chip] 
+[type] DX3
+[x] 11
+[y] 3
+
+[chip] 
+[type] OR
+[x] 8
+[y] 5
+[rotated] true
+
+[chip] 
+[type] AND
+[x] 6
+[y] 6
+[rotated] true
+
+[chip] 
+[type] OR
+[x] 4
+[y] 7

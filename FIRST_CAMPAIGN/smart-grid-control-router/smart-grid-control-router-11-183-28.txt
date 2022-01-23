@@ -1,0 +1,73 @@
+[name] New design 1
+[puzzle] Sz024
+[production-cost] 1100
+[power-usage] 183
+[lines-of-code] 28
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...........954.1C.....
+.....8.....A94..2.....
+.....A....16A.94......
+.....B55555D61754.....
+.....A.....A.94.......
+.....2.....A16.14.....
+...........354........
+......................
+......................
+
+[chip] 
+[type] UC4X
+[x] 13
+[y] 2
+[code] 
+  tgt acc 1
++ sub 1
+- slx x0
+- mov x0 x3
+- mov x1 acc
+- mov acc x3
+  mov x1 x3
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 4
+[code] 
+  slx x1
+  mov x1 acc
+  tcp acc x3
++ mov acc x0
+- mov acc x2
+  teq acc x3
+- slp 1
++ mov acc x3
++ mov x1 acc
++ mov acc x3
+l:+ mov x1 x3
++ tgt acc 1
++ sub 1
++ jmp l
+
+[chip] 
+[type] ID
+[x] 15
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4X
+[x] 13
+[y] 7
+[code] 
+  tgt acc 1
++ sub 1
+- slx x0
+- mov x0 x3
+- mov x1 acc
+- mov acc x3
+  mov x1 x3

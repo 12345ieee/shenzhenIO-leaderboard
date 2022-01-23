@@ -1,0 +1,111 @@
+[name] New design 1
+[puzzle] Sz027
+[production-cost] 2200
+[power-usage] 284
+[lines-of-code] 34
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..95555C..14954.......
+..215C16..14A1554.....
+..814A154.14A1C94.....
+..354A.15C..A.A34.14..
+...14A...3556.354.....
+...156............1C..
+..................16..
+......................
+......................
+
+[chip] 
+[type] ID
+[x] 17
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] BANK
+[x] 4
+[y] 3
+[rom] 
+6,0,1,0,3,0,5,0,0,0,2,0,4,0
+
+[chip] 
+[type] UC6
+[x] 16
+[y] 3
+[code] 
+  mov 50 p1
+s:slp 1
+s2:tcp x0 1
++ teq x0 x2
++ mov 79 x1
++ slp 3
++ jmp s2
+- jmp s
+  mov x0 acc
+l:mov x0 p1
+  slp 1
+  teq acc 1
+- sub 1
+- jmp l
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 5
+[code] 
+  tgt p0 0
++ mov p0 x3
++ mov p1 x3
++ mov p1 x1
++ slp x0
+- slp 1
+
+[chip] 
+[type] UC4
+[x] 8
+[y] 5
+[code] 
+  slx x0
+  mov x0 p0
+  mov x0 p1
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 6
+[code] 
+s:slx x2
+  tgt p1 x2
++ mov 100 x3
++ slx x2
++ tgt p1 x2
++ mov 100 x3
++ jmp s
+  tlt p1 51
+  mov p0 x1
+- mov x0 null
+  mov x0 x3
+
+[chip] 
+[type] RADIO
+[x] 16
+[y] 6
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] BANK
+[x] 8
+[y] 7
+[rom] 
+600,600,700,204,700,202,700,200,0,0,700,203,700,201

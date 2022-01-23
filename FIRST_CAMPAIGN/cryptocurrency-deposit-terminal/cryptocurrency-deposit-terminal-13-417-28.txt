@@ -1,0 +1,72 @@
+[name] New design 1
+[puzzle] Sz013
+[production-cost] 1300
+[power-usage] 417
+[lines-of-code] 28
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....955555555555555C..
+..8.34..954........A..
+..3554.1694........A..
+..14...156.........2..
+..1415554.............
+..14..................
+......................
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 3
+[y] 3
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 3
+[code] 
+s:slp 2
+  teq x1 0  
+- jmp i
+o:teq acc 0
+- mov acc x0
+- slp 5
+- mov 0 acc
++ slp 1
+  teq x1 0
++ jmp o
+i:tcp x1 10
++ add 50
+- sub 30
+  add 50
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 5
+[code] 
+s:slp 1
+  tcp x1 -999
+i:+mov x1 x2
++ tlt x3 7
++ jmp i
+- slp 8
+n:- teq x1 -1
+- slp 1
+- jmp n
++ mov 13 x3
+o:+mov x2 x0
++ tlt x3 8
++ jmp o
+- mov 0 x3
+
+[chip] 
+[type] RAM
+[x] 10
+[y] 6

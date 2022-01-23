@@ -1,0 +1,98 @@
+[name] New design 2
+[puzzle] Sz007
+[production-cost] 1600
+[power-usage] 135
+[lines-of-code] 17
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....95555495555554...
+..954A155D56...95554..
+..A..A15CA15C15E.154..
+..295694234.3416.154..
+...A14A155C154.14154..
+...A15614.3555555554..
+...354.155555554......
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 2
+[code] 
+  slx x3
+  mov x3 x1
+  mov 010 x2
+  slp x0
+  mov 001 x2
+  slp x0
+  gen p0 1 x2
+  gen p1 3 4
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 2
+
+[chip] 
+[type] BANK
+[x] 2
+[y] 3
+[rom] 
+1,1,1,2,0,0,0,0,0,0,0,1,0,2
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 3
+
+[chip] 
+[type] OR
+[x] 10
+[y] 4
+
+[chip] 
+[type] AND
+[x] 13
+[y] 4
+
+[chip] 
+[type] DX3
+[x] 16
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 5
+[code] 
+  slx x0
+  mov x0 dat
+  teq dat 3
++ gen p0 1 0
++ gen p1 1 0
++ mov acc x3
+- teq dat -1
++ mov 0 acc
+  dst dat 1
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 6
+
+[chip] 
+[type] OR
+[x] 12
+[y] 6
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 6
