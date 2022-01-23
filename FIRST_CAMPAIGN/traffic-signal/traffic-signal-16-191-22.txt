@@ -1,0 +1,152 @@
+[name] New design 2
+[puzzle] Sz026
+[production-cost] 1600
+[power-usage] 191
+[lines-of-code] 22
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....954.....154954....
+....214.15541556954...
+...9554.....1C14A8....
+...2814.1555C355634...
+....354.14..A..15C....
+.....14.14.16....34...
+.....14....14.........
+......................
+......................
+
+[chip] 
+[type] DIAL5
+[x] 4
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4X
+[x] 6
+[y] 2
+[code] 
+@ mov x0 x3
+@ mov x1 x3
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 2
+[code] 
+@ mov -1 x3
+@ add x1
+@ mov acc x0
+@ mov 1 x3
+@ add x1
+@ mov acc x0
+@ mov 1 x3
+@ add x2
+@ mov acc x0
+@ mov -1 x3
+
+[chip] 
+[type] DIAL6
+[x] 12
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL4
+[x] 4
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 12
+[y] 3
+[code] 
+Phase 0 start is
+stored as -1
+Phase 1/2 start is
+stored as +1
+Phase 2 end is
+stored as -1
+no change is
+stored as 0
+
+[chip] 
+[type] RAM
+[x] 6
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 4
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 5
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 6
+[code] 
+start:teq p0 100
++ mov x3 x1  
++ jmp sleep
+  tcp x0 0
+- mov 1 acc
+- mov 1 x3
+- mov 1 x1
++ mul 10
++ mov acc x3
+sleep:  slp 1
+
+[chip] 
+[type] DX3
+[x] 11
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 17
+[y] 6
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 7
+[code] 
+read emergency
+if 100: initialize
+(= reset pointer)
+read RAM
+(if 0: no change)
+if -1: initialize
+if 1: next phase
+sleep 1
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 8
+[code] 
+1, 10, 100
+each corresponds
+to light-0, 
+light-1, light-2
