@@ -1,0 +1,99 @@
+[name] New design 1
+[puzzle] Sz005
+[production-cost] 1200
+[power-usage] 137
+[lines-of-code] 27
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....14.1555D554......
+.....14.15C.A.........
+.....14.14A16155C.....
+....1555C.3555416.....
+.....8..34...8.154....
+.....355555556.15C....
+................16....
+......................
+......................
+
+[chip] 
+[type] NOT
+[x] 15
+[y] 2
+
+[chip] 
+[type] DX3
+[x] 14
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 5
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 4
+[code] 
+@ slp x0
+t:tgt p0 19
++ mov 010 x3
++ slp 1
+s:+ tgt p0 19
++ slp 1
++ tgt p0 19
++ slp 1
++ tgt p0 19
++ slp 1
++ tgt p0 19
++ slp 1
++ jmp s
+  slp x3
+
+[chip] 
+[type] BRIDGE
+[x] 13
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 6
+[code] 
+@ mov x0 acc
+@ sub p1
+@ tlt acc 0
++ add 96
+@ mov acc x2
+@ tgt x0 x1
+@ add x1
++ add 96
+@ sub x0
+@ slp acc
+@ mov 100 p0
+@ nop
+@ slp x3
+
+[chip] 
+[type] DIAL2
+[x] 4
+[y] 7
+[is-puzzle-provided] true
+
+[chip] 
+[type] RTC
+[x] 15
+[y] 7
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL1
+[x] 4
+[y] 8
+[is-puzzle-provided] true

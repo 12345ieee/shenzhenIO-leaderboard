@@ -1,0 +1,64 @@
+[name] New design 1
+[puzzle] Sz005
+[production-cost] 700
+[power-usage] 290
+[lines-of-code] 7
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+........1C............
+.....14.16............
+....8...154155555C....
+....354.1C.......2....
+........16.14.........
+......................
+......................
+......................
+
+[chip] 
+[type] DIAL1
+[x] 7
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] DX3
+[x] 10
+[y] 3
+
+[chip] 
+[type] NOT
+[x] 12
+[y] 3
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 4
+[code] 
+  teq p1 x0
+- teq p1 x2
++ not
+  
+  tgt p0 19
++ mov acc x3
++ slp 1
+- slp x3
+
+[chip] 
+[type] DIAL2
+[x] 4
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] RTC
+[x] 6
+[y] 7
+[is-puzzle-provided] true

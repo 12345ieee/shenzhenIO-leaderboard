@@ -1,0 +1,115 @@
+[name] New design 1
+[puzzle] Sz009
+[production-cost] 1500
+[power-usage] 211
+[lines-of-code] 28
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....14...............
+.....154.1555555554...
+...15C14.14.....15C...
+...1CA15C1554...14A...
+...8234.A14..814942...
+...3554.35554214A14...
+....154154.....16.....
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 4
+[y] 2
+
+[chip] 
+[type] DX3
+[x] 6
+[y] 2
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 2
+
+[chip] 
+[type] NOT
+[x] 14
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 3
+[code] 
+@ mov x2 p0
+1:tlt acc 0
++ mov 010 x3
++ slp 1
++ slp x3
++ add 1
+- slx x0
+- mov x0  acc
+5:- tgt acc -5
+- mov 100 x3
+- slp 1
+- slp x3
+- add 5
+- jmp 5
+
+[chip] 
+[type] DIAL3
+[x] 15
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 17
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 4
+
+[chip] 
+[type] DX3
+[x] 15
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 5
+[code] 
+s:teq x3 000
++ slp 1
++ jmp s
+  tcp x3 010
+@ mov p0 acc
++ add 7
+- add 11
+  sub 12
+  tgt acc 0
++ slp 2
+- mov acc x0
+- mov acc x2
+- gen p1 4 x1
+- mov p0 acc
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 6
+
+[chip] 
+[type] BANK
+[x] 3
+[y] 7
+[rom] 
+3,10,10,5,3,9,7,5,3,3,7,5,3,3

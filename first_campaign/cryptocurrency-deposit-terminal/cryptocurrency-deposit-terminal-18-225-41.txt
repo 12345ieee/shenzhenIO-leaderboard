@@ -1,0 +1,101 @@
+[name] New design 1
+[puzzle] Sz013
+[production-cost] 1800
+[power-usage] 225
+[lines-of-code] 41
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..95555D555555555C....
+..2....34..955554A....
+..954..15C16..154A14..
+..214..14A1D4....354..
+..154155C34A.......8..
+..14....354354.....A..
+............15555556..
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 2
+[code] 
+@ teq 0 0
++ slx x0
++ mov x0 x3
+l:+ slp 1
++ teq x1 0
++ jmp l
+  tcp x1 10
++ add -50
+- add -80
+  add 100
+  slp 2
+  teq x1 0  
++ mov acc x2
++ mov 0 acc
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 3
+
+[chip] 
+[type] DX3
+[x] 4
+[y] 4
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 19
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 5
+[code] 
+@ slp 1
+  tgt x0 -999
+- slp 1
++ mov x0 x1
++ mov x0 x2
++ mov x0 x2
++ mov x0 x2
++ mov x0 x2
++ mov x0 x2
++ mov x0 x2
++ slx x3
++ mov x3 x0
++ slp 3
+
+[chip] 
+[type] RAM
+[x] 12
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 16
+[y] 5
+[code] 
+@ teq 0 0
++ slx x3
++ mov x3 acc
+  slp 1
+  teq x2 -1
++ mov 0 x2
++ mov x1 x2
++ mov x1 x2
++ mov x1 x2
++ mov x1 x2
++ mov x1 x2
++ mov x1 x2
++ mov x1 x2
++ mov acc x0
