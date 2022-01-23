@@ -1,7 +1,7 @@
-[name] Top solution Power
+[name] Top solution Power - 837951602
 [puzzle] Sz027
 [production-cost] 2400
-[power-usage] 205
+[power-usage] 204
 [lines-of-code] 47
 
 [traces] 
@@ -122,8 +122,8 @@ wp: + mov x1 p1
   mov x1 p1
   slp 1
 @ jmp wp #AA4
-  teq p1 50  
-+ slp 999 #AA4
+  slp p1
+@ tgt 0 0
 
 [chip] 
 [type] UC6
@@ -205,4 +205,3 @@ Also abuse fact
 that song is
 long >=10 cycles
 (tight)
-
