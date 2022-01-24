@@ -1,7 +1,7 @@
-[name] 18/253/36
+[name] 18/251/36
 [puzzle] Sz027
 [production-cost] 1800
-[power-usage] 253
+[power-usage] 251
 [lines-of-code] 36
 
 [traces] 
@@ -90,7 +90,7 @@ b:tcp x0 1
   tcp p0 0
 + tlt p0 80
 - mov 8 x1
-- slp 1
+- slp 2
 + mov p1 x1
 + tlt p0 51
 + mov x0 null
