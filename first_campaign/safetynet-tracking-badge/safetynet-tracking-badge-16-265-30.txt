@@ -1,0 +1,105 @@
+[name] 16/265/30
+[puzzle] Sz027
+[production-cost] 1600
+[power-usage] 265
+[lines-of-code] 30
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...155555C...95415C...
+..155C15CA...A15C.A...
+..814354AA...A15E.A...
+..354.15E34.1694A168..
+........354.156.A14A..
+..............156156..
+.................14...
+......................
+......................
+
+[chip] 
+[type] UC4
+[x] 15
+[y] 2
+[code] 
+  teq acc 0
++ mov 50 p1
++ slx x1
++ mov x1 acc
+  mov x0 p1
+  sub 1
+  slp 1
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 2
+
+[chip] 
+[type] UC4X
+[x] 10
+[y] 4
+[code] 
+  slx x2
+  mov x2 null
+  mov x0 acc
+  mov x1 x3
+  mov acc x0
+
+[chip] 
+[type] UC6
+[x] 15
+[y] 4
+[code] 
+a:tcp x0 1
+- slp 1
+- jmp a
++ jmp b
+  mov x0 acc
+  mov acc x2
+  slp acc
+b:+ teq x0 x3
++ mov 0 x1
++ slp 3
+- slp 3
+
+[chip] 
+[type] UC4
+[x] 4
+[y] 5
+[code] 
+  tcp p0 0
++ tlt p0 80
+- mov 8 x0
++ mov p1 x0
++ tlt p0 51
++ mov x1 null
+  slp 1
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 6
+
+[chip] 
+[type] BANK
+[x] 7
+[y] 7
+[rom] 
+600,600,204,700,202,700,200,700,100,999,203,700,201,700
+
+[chip] 
+[type] RADIO
+[x] 15
+[y] 7
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] ID
+[x] 18
+[y] 8
+[is-puzzle-provided] true
