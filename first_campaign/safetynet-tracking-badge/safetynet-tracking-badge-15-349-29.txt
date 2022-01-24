@@ -1,8 +1,8 @@
 [name] base
 [puzzle] Sz027
 [production-cost] 1500
-[power-usage] 354
-[lines-of-code] 31
+[power-usage] 349
+[lines-of-code] 29
 
 [traces] 
 ......................
@@ -11,7 +11,7 @@
 ......................
 ......................
 ..95555C..............
-..2...16..............
+..2...16....0.........
 ..1D4.1D54..94........
 ...A...A94..34.15554..
 ...A...A34..94..14....
@@ -35,9 +35,9 @@ start:
 + jmp start
   tlt p0 51
 + mov 700 x2
-- mov x1 acc
+#- mov x1 acc
 - mov x0 x2
-- mov acc x1
+#- mov acc x1
 
 [chip] 
 [type] BRIDGE
@@ -76,7 +76,7 @@ sleep: slp 1
 [x] 9
 [y] 5
 [rom] 
-600,0,204,0,202,0,200,0,0,0,203,0,201,0
+600,600,204,204,202,202,200,200,200,0,203,203,201,201
 
 [chip] 
 [type] UC4
@@ -106,6 +106,9 @@ value.
 
 sync after mod:
 0, 6, 12, 4, 10, 2
+
+Abuse frequency
+of refresh
 
 [chip] 
 [type] NOTE
