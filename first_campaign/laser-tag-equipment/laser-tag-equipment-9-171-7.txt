@@ -1,7 +1,7 @@
-[name] New design 1
+[name] New design 4
 [puzzle] Sz048
 [production-cost] 900
-[power-usage] 172
+[power-usage] 171
 [lines-of-code] 7
 
 [traces] 
@@ -11,30 +11,24 @@
 ......................
 ......................
 .......955555555555C..
-..94141E.......15416..
-..2.94.A..14....1414..
-..14A.16..94.1415554..
-..15741C..A.....141C..
-...15556..35555554.2..
+.......A.......15416..
+..14141E..14....1414..
+..1414.A..94.1415554..
+..94...A..A.....8.....
+..355556..A.....3414..
+..........35555554....
 ......................
 ......................
-......................
-
-[chip] 
-[type] BRIDGE
-[x] 3
-[y] 3
 
 [chip] 
 [type] AND
 [x] 17
-[y] 3
+[y] 2
 
 [chip] 
 [type] OR
-[x] 5
+[x] 3
 [y] 4
-[rotated] true
 
 [chip] 
 [type] BRIDGE
@@ -42,16 +36,21 @@
 [y] 4
 
 [chip] 
+[type] AND
+[x] 5
+[y] 5
+
+[chip] 
 [type] UC4
 [x] 11
 [y] 5
 [code] 
-  tcp 100 x1
-- mov x0 acc
-- add 49
-- mov acc p0
-+ mov acc p0
-+ sub 1
+  tcp x1 100
++ mov x0 acc
++ mov 100 p0
+- sub 1
+- tgt acc -1
+- mov 0 p0
   slp 1
 
 [chip] 
@@ -60,8 +59,8 @@
 [y] 5
 
 [chip] 
-[type] AND
-[x] 5
+[type] NOT
+[x] 3
 [y] 6
 
 [chip] 
@@ -75,8 +74,3 @@
 [x] 17
 [y] 6
 [rotated] true
-
-[chip] 
-[type] NOT
-[x] 3
-[y] 7
