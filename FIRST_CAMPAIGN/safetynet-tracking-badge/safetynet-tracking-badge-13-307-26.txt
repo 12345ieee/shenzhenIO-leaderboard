@@ -1,7 +1,7 @@
-[name] 13/322/26
+[name] 13/307/26
 [puzzle] Sz027
 [production-cost] 1300
-[power-usage] 322
+[power-usage] 307
 [lines-of-code] 26
 
 [traces] 
@@ -11,10 +11,10 @@
 ......................
 ......................
 ...155555C...95415C...
-..155C15CA...A15C.2...
-..814354AA...A14A15C..
-..354.15E34.16156142..
-........354.154.......
+..155C15CA...A94..2...
+..814354AA...A34.15C..
+..354.15E34.1694.142..
+........354.156.......
 ......................
 ......................
 ......................
@@ -32,29 +32,24 @@
   mov acc x0
 
 [chip] 
-[type] BRIDGE
-[x] 14
-[y] 4
-
-[chip] 
 [type] UC6
 [x] 15
 [y] 4
 [code] 
 d: mov 50 p1
 a: slp 1
-  tcp x1 1
+  tcp x0 1
 - jmp a
 + jmp c
-  mov x1 acc
+  mov x0 acc
 b: teq acc 0
 - sub 1
-- mov x1 p1
+- mov x0 p1
 - slp 1
 - jmp b
-c:+teq x1 x3
-+ mov 0 x0
-+ slp 1
+c: teq x0 x3
++ mov 0 x1
++ slp 2
 
 [chip] 
 [type] UC4
@@ -63,10 +58,10 @@ c:+teq x1 x3
 [code] 
   tcp p0 0
 + tlt p0 80
-- mov 8 x0
-+ mov p1 x0
+- mov 8 x0 #a
++ mov p1 x0 #a
 + tlt p0 51
-+ mov x1 null
++ mov x1 null #d
   slp 1
 
 [chip] 
