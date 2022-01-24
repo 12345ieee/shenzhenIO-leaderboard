@@ -1,8 +1,8 @@
-[name] 13/334/26
+[name] 13/334/25
 [puzzle] Sz027
 [production-cost] 1300
 [power-usage] 334
-[lines-of-code] 26
+[lines-of-code] 25
 
 [traces] 
 ......................
@@ -52,7 +52,6 @@ b: teq acc 0
 - mov x1 p1
 - slp 1
 - jmp b
-+ jmp d
 c:+teq x1 x3
 + mov 0 x0
 
