@@ -1,7 +1,7 @@
 [name] Top solution Power - 837951602
 [puzzle] Sz017
 [production-cost] 1300
-[power-usage] 98
+[power-usage] 97
 [lines-of-code] 16
 
 [traces] 
@@ -78,8 +78,6 @@ is regarded as 0
 [x] 9
 [y] 5
 [code] 
-  tgt p0 0
-+ mov x3 p1
   slp x0
 + mov x3 p0
 + slp 1
@@ -92,6 +90,8 @@ is regarded as 0
 + mov x3 x1
 + mov dat x2
 + slp 4
+  tgt p0 0
++ mov x3 p1
 
 [chip] 
 [type] BRIDGE
