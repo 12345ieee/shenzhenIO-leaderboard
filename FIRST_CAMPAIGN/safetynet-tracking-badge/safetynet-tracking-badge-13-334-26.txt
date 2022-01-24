@@ -1,0 +1,100 @@
+[name] 13/334/26
+[puzzle] Sz027
+[production-cost] 1300
+[power-usage] 334
+[lines-of-code] 26
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...155555C...95415C...
+..155C15CA...A15C.2...
+..814354AA...A14A15C..
+..354.15E34.16156142..
+........354.154.......
+......................
+......................
+......................
+......................
+
+[chip] 
+[type] UC4X
+[x] 10
+[y] 4
+[code] 
+  slx x2
+  mov x2 null
+  mov x0 acc
+  mov x1 x3
+  mov acc x0
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 15
+[y] 4
+[code] 
+d: mov 50 p1
+a: slp 1
+  tcp x1 1
+- jmp a
++ jmp c
+  mov x1 acc
+b: teq acc 0
+- sub 1
+- mov x1 p1
+- slp 1
+- jmp b
++ jmp d
+c:+teq x1 x3
++ mov 0 x0
+
+[chip] 
+[type] UC4
+[x] 4
+[y] 5
+[code] 
+  tcp p0 0
++ tlt p0 80
+- mov 8 x0
++ mov p1 x0
++ tlt p0 51
++ mov x1 null
+  slp 1
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 6
+
+[chip] 
+[type] BANK
+[x] 7
+[y] 7
+[rom] 
+600,600,204,700,202,700,200,700,100,999,203,700,201,700
+
+[chip] 
+[type] RADIO
+[x] 15
+[y] 7
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] ID
+[x] 18
+[y] 8
+[is-puzzle-provided] true
