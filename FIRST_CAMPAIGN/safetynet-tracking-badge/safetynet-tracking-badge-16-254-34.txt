@@ -1,7 +1,7 @@
-[name] 18/256/34 
+[name] llamadeus b
 [puzzle] Sz027
-[production-cost] 1800
-[power-usage] 256
+[production-cost] 1600
+[power-usage] 254
 [lines-of-code] 34
 
 [traces] 
@@ -12,10 +12,10 @@
 ......................
 ..95555C..95555415C...
 ..2..14354A...94..A...
-..1D554954A...35C.A...
-...A154A..A95554A168..
-...A1556156A....A14A..
-...3554.1556..156156..
+..15554954A...35C.A...
+....154A15695554A168..
+....15561556....A14A..
+..............156156..
 .................14...
 ......................
 ......................
@@ -39,18 +39,6 @@
 [y] 2
 
 [chip] 
-[type] UC6
-[x] 6
-[y] 3
-[code] 
-  slx x2
-  teq p0 x2
-- nop
-  mov x1 acc
-  mov x0 x3
-  mov acc x1
-
-[chip] 
 [type] BANK
 [x] 2
 [y] 4
@@ -58,24 +46,34 @@
 600,600,204,700,202,700,200,700,100,999,203,700,201,700
 
 [chip] 
+[type] UC4X
+[x] 6
+[y] 4
+[code] 
+  slx x2
+  mov x2 null
+  mov x1 acc
+  mov x0 x3
+  mov acc x1
+
+[chip] 
 [type] UC6
 [x] 15
 [y] 4
 [code] 
-a:slp 1
-b:tcp x0 1
+a:  tcp x0 1
 - slp 1
 - tcp x0 1
+- slp 1
 - jmp a
-+ teq x0 x3
-+ mov 0 x1
-- slp 3
-+ slp 3
-- jmp b
 + jmp b
   mov x0 acc
   mov acc x2
   slp acc
+b:+ teq x0 x3
++ mov 0 x1
+- slp 3
++ slp 3
 
 [chip] 
 [type] BRIDGE
@@ -90,9 +88,11 @@ b:tcp x0 1
   tcp p0 0
 + tlt p0 80
 - mov 8 x1
+- slp 2
 + mov p1 x1
 + tlt p0 51
 + mov x0 null
++ slp 1
   slp 1
 
 [chip] 
