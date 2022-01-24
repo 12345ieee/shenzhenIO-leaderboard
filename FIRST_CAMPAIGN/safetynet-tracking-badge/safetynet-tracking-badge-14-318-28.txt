@@ -1,8 +1,8 @@
-[name] 16/320/29
+[name] 14/318/28
 [puzzle] Sz027
-[production-cost] 1600
-[power-usage] 320
-[lines-of-code] 29
+[production-cost] 1400
+[power-usage] 318
+[lines-of-code] 28
 
 [traces] 
 ......................
@@ -12,9 +12,9 @@
 ......................
 ...155555C...95415C...
 ..155C15CA...A15C.A...
-..814354A34..A..A.A...
-..B54.1575541615E168..
-..355555554.1554A14A..
+..814354AA...A..A.A...
+..354.15E34.1615E168..
+........354.1554A14A..
 ..............156156..
 .................14...
 ......................
@@ -39,13 +39,12 @@
 [y] 2
 
 [chip] 
-[type] UC6
+[type] UC4X
 [x] 10
 [y] 4
 [code] 
   slx x2
-  teq p0 x2
-- nop
+  mov x2 null
   mov x0 acc
   mov x1 x3
   mov acc x0
