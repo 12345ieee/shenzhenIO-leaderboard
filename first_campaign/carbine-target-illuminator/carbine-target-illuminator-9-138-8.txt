@@ -1,8 +1,8 @@
-[name] llamadeus a
+[name] llamadeus a 
 [puzzle] Sz014
 [production-cost] 900
 [power-usage] 138
-[lines-of-code] 9
+[lines-of-code] 8
 
 [traces] 
 ......................
@@ -25,7 +25,7 @@
 [x] 7
 [y] 2
 [code] 
-@ slp 1
+  slp 1
 a: tcp x3 p0
 + mov 0 x1
 - mov x0 x2
@@ -33,7 +33,6 @@ a: tcp x3 p0
 - slp 2
 - jmp a
   mov x0 x1
-  slp 1
 
 [chip] 
 [type] DX3
