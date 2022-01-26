@@ -1,8 +1,8 @@
 [name] indep off
 [puzzle] Sz005
-[production-cost] 1300
-[power-usage] 165
-[lines-of-code] 20
+[production-cost] 1200
+[power-usage] 163
+[lines-of-code] 19
 
 [traces] 
 ......................
@@ -10,9 +10,9 @@
 ......................
 ......................
 ......................
-...........15C1C......
-......9554.14A.A......
-......A154...A.A......
+......................
+......94...15C1C......
+......A154.14A.A......
 ....8.3554.14A96......
 ....A..14...163414....
 ....35554.141554......
@@ -37,11 +37,11 @@
 [y] 3
 [code] 
 @ slx x0
-@ mov x0 null
-  tgt p0 19
+@ tgt p0 x0
 + mov 010 x1
 + slp 1
 - slp x1 #mov 000
+  tgt p0 19
 
 [chip] 
 [type] AND
@@ -54,22 +54,34 @@
 [y] 4
 
 [chip] 
-[type] UC4
+[type] UC6
 [x] 9
 [y] 5
 [code] 
-@ mov x1 acc
-@ sub p0
-@ tlt acc 0
-+ add 96 #0-95
-@ slp acc
-@ mov -1 x0
-@ slp 60 #Abuse
+  sub p0
+  add x3
+  tlt acc 0
++ add 96
+  slp acc
+  mov 19 x1
+  mov x2 acc
+  sub p0
+- tgt acc -1
+- add 96
+  slp acc
+  mov 100 p1
+  slp 999
+
+[chip] 
+[type] DIAL2
+[x] 12
+[y] 5
+[is-puzzle-provided] true
 
 [chip] 
 [type] DIAL1
 [x] 12
-[y] 5
+[y] 6
 [is-puzzle-provided] true
 
 [chip] 
@@ -79,28 +91,9 @@
 [is-puzzle-provided] true
 
 [chip] 
-[type] UC4
-[x] 9
-[y] 7
-[code] 
-@ mov x1 acc
-@ sub p0
-@ tlt acc 0
-+ add 96 #0-95
-@ slp acc
-@ mov 100 p1
-@ slp 60 #Abuse
-
-[chip] 
-[type] DIAL2
-[x] 12
-[y] 7
-[is-puzzle-provided] true
-
-[chip] 
 [type] NOT
 [x] 13
-[y] 8
+[y] 7
 
 [chip] 
 [type] NOTE
