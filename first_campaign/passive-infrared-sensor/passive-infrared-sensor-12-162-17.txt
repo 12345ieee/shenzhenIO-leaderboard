@@ -1,8 +1,8 @@
 [name] indep off
 [puzzle] Sz005
 [production-cost] 1200
-[power-usage] 163
-[lines-of-code] 18
+[power-usage] 162
+[lines-of-code] 17
 
 [traces] 
 ......................
@@ -62,10 +62,9 @@
   tlt acc 0
 + add 96
   mov acc x1
-  slp acc
   mov x2 acc
   sub p0
-- tgt acc -1
+  tgt acc -1
 - add 96
   slp acc
   mov 100 p1
