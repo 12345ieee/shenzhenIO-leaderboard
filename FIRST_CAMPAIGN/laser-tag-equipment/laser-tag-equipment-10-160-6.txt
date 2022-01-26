@@ -1,0 +1,84 @@
+[name] mc4000 swap 3
+[puzzle] Sz048
+[production-cost] 1000
+[power-usage] 160
+[lines-of-code] 6
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......9555555555555C..
+......341555555541CA..
+..141494.......1C.A2..
+..1414A.14.14.143428..
+..94..A.94.15414.956..
+..35556.A...1555561C..
+........355555555556..
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 3
+
+[chip] 
+[type] OR
+[x] 3
+[y] 4
+
+[chip] 
+[type] UC4
+[x] 9
+[y] 4
+[code] 
+a:tcp p1 p0
++ mov x0 acc
++ mov acc x1
+  slp 1
+- sub 1
+- mov acc x1
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 4
+
+[chip] 
+[type] OR
+[x] 15
+[y] 4
+
+[chip] 
+[type] AND
+[x] 5
+[y] 5
+
+[chip] 
+[type] DIAL7
+[x] 7
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOT
+[x] 3
+[y] 6
+
+[chip] 
+[type] AND
+[x] 7
+[y] 6
+
+[chip] 
+[type] AND
+[x] 16
+[y] 6
