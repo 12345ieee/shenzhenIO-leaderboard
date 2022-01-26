@@ -2,7 +2,7 @@
 [puzzle] Sz005
 [production-cost] 1200
 [power-usage] 163
-[lines-of-code] 19
+[lines-of-code] 18
 
 [traces] 
 ......................
@@ -36,12 +36,11 @@
 [x] 8
 [y] 3
 [code] 
-@ slx x0
-@ tgt p0 x0
+@ slp x0
+  tgt p0 19
 + mov 010 x1
 + slp 1
 - slp x1 #mov 000
-  tgt p0 19
 
 [chip] 
 [type] AND
@@ -62,8 +61,8 @@
   add x3
   tlt acc 0
 + add 96
+  mov acc x1
   slp acc
-  mov 19 x1
   mov x2 acc
   sub p0
 - tgt acc -1
