@@ -1,7 +1,7 @@
-[name] low lines/cost
+[name] 6/253/10
 [puzzle] Sz005
 [production-cost] 600
-[power-usage] 292
+[power-usage] 253
 [lines-of-code] 10
 
 [traces] 
@@ -12,37 +12,13 @@
 ......................
 ......................
 ......................
+....955555555C........
+....2....14.17554.....
+.........14.154154....
+......15554...........
 ......................
-....15555555C.........
-.......154.16..154....
-.......154.1554.......
-.....15554............
 ......................
 ......................
-
-[chip] 
-[type] RTC
-[x] 3
-[y] 2
-[is-puzzle-provided] true
-
-[chip] 
-[type] UC6
-[x] 9
-[y] 2
-[code] 
-OFF:
-  teq p0 x0
-- slp 1
-- jmp OFF
-ON:
-  tgt p1 19
-+ mov 100 x3
-- mov 0 x3
-  slp 1
-  teq p0 x1
-- jmp ON
-  mov 0 x3
 
 [chip] 
 [type] DX3
@@ -50,15 +26,37 @@ ON:
 [y] 2
 
 [chip] 
-[type] DIAL2
-[x] 6
+[type] RTC
+[x] 4
 [y] 3
 [is-puzzle-provided] true
 
 [chip] 
-[type] DIAL1
-[x] 6
+[type] UC6
+[x] 10
+[y] 3
+[code] 
+@ mov x0 acc
+@ sub p0
+  tlt acc x3
++ add 96 #0-95
+@ slp acc
+  tgt p1 19
++ mov 100 x3
+  slp 1
+  teq p0 x1
++ gen p0 999 x3
+
+[chip] 
+[type] DIAL2
+[x] 8
 [y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL1
+[x] 8
+[y] 5
 [is-puzzle-provided] true
 
 [chip] 
