@@ -1,8 +1,8 @@
-[name] indep off
+[name] 11/162/16
 [puzzle] Sz005
-[production-cost] 1200
+[production-cost] 1100
 [power-usage] 162
-[lines-of-code] 17
+[lines-of-code] 16
 
 [traces] 
 ......................
@@ -16,7 +16,7 @@
 ....8.3554.14A96......
 ....A..14...163414....
 ....35554.141554......
-............14........
+............154.......
 ......................
 ......................
 
@@ -26,10 +26,9 @@
 [y] 2
 
 [chip] 
-[type] NOT
-[x] 13
+[type] BRIDGE
+[x] 14
 [y] 2
-[rotated] true
 
 [chip] 
 [type] UC4
@@ -67,8 +66,7 @@
   tgt acc -1
 - add 96
   slp acc
-  mov 100 p1
-  slp 999
+  gen p1 999 0
 
 [chip] 
 [type] DIAL2
