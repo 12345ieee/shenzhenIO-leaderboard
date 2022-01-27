@@ -1,8 +1,8 @@
-[name] compute slp (abuse)
+[name] 7/198/11
 [puzzle] Sz005
 [production-cost] 700
 [power-usage] 198
-[lines-of-code] 12
+[lines-of-code] 11
 
 [traces] 
 ......................
@@ -52,8 +52,7 @@
 + slp 1
 - slp x3 #mov 000
   teq p0 x1
-+ mov 000 x3
-+ slp 60 #Abuse
++ gen p0 999 x3
 
 [chip] 
 [type] DIAL2
