@@ -1,7 +1,7 @@
-[name] LONGNAMETEST
+[name] New design 2
 [puzzle] Sz028
 [production-cost] 500
-[power-usage] 999999999
+[power-usage] 1289
 [lines-of-code] 5
 
 [traces] 
