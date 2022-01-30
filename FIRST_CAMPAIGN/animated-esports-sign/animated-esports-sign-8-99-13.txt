@@ -1,0 +1,62 @@
+[name] New design 3
+[puzzle] Sz001
+[production-cost] 800
+[power-usage] 99
+[lines-of-code] 13
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+..........155555C.....
+..........15D55CA.....
+.....15C14942..AA.....
+.......35D695416A.....
+......9496.A8.15E.....
+......2.2..221556.....
+......................
+......................
+
+[chip] 
+[type] NOT
+[x] 7
+[y] 3
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 3
+
+[chip] 
+[type] XOR
+[x] 13
+[y] 3
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 5
+[code] 
+  slp 1
+  gen p0 1 1
+  gen p0 1 1
+  gen p0 1 0
+  mov 10 x2
+  slp 1
+  mov 101 x2
+  slp 1
+  mov 100 x2
+  slp 1
+  mov 11 x2
+  slp 1
+  mov 0 x2
+
+[chip] 
+[type] DX3
+[x] 9
+[y] 5
