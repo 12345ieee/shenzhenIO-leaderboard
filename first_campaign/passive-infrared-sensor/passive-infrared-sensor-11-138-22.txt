@@ -1,7 +1,7 @@
-[name] Actually 11/138/22
+[name] Top solution Power - 837951602
 [puzzle] Sz005
-[production-cost] 1150
-[power-usage] 150
+[production-cost] 1100
+[power-usage] 138
 [lines-of-code] 22
 
 [traces] 
