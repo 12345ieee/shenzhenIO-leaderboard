@@ -1,0 +1,88 @@
+[name] 13/397/27
+[puzzle] Sz038
+[production-cost] 1500
+[power-usage] 385
+[lines-of-code] 26
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...954.9555C..........
+...A155E954A1555555C..
+...A...AA943549555C2..
+...3554AA35D556...34..
+....154A34.A..14...8..
+.....94354.A15555556..
+.....3555556154.......
+......................
+......................
+
+[chip] 
+[type] UC4
+[x] 10
+[y] 2
+[code] 
+s:slp 1
+  teq p0 100
++ mov x1 p1
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 2
+
+[chip] 
+[type] RADIO
+[x] 2
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 3
+[code] 
+s:slp 1
+  tcp x1 1
+- jmp s
++ mov x1 dat
+o:mov x2 acc
+  teq dat x0
+- jmp o
+  mov acc x2
+  teq dat 0
++ gen p0 1 1
++ mov x1 x0
+- mov 0 x0
+  mov dat x3
+- mov 0 dat
+
+[chip] 
+[type] BANK
+[x] 15
+[y] 4
+[rom] 
+100,0,100,0,100,0,100,0,100,0,100,0,100,0
+
+[chip] 
+[type] UC4
+[x] 10
+[y] 6
+[code] 
+  mov 50 p1
+- gen p0 1 0
+  slx x0
+  teq x0 0
+  gen p1 x1 0
+  mov 50 p1
+  gen p0 1 1
+  gen p1 0 x1
+  mov 0 x1
+
+[chip] 
+[type] RAM
+[x] 2
+[y] 7
