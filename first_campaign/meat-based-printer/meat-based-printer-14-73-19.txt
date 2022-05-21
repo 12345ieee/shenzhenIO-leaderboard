@@ -1,0 +1,85 @@
+[name] I'll unlikely do that
+[puzzle] Sz022
+[production-cost] 1400
+[power-usage] 73
+[lines-of-code] 19
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.......955555555555C..
+..954.1695555C.....2..
+..2...14A....A..955C..
+...1C.15615C16156942..
+..8.A....14A..14.A14..
+..2.A....156..155754..
+....355555555555554...
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 2
+
+[chip] 
+[type] BANK
+[x] 10
+[y] 3
+[rom] 
+111,101,101,111,0,0,0,0,0,0,111,101,101,111
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 2
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 4
+[code] 
+s:teq x2 0
+  
++ slx x0
++ mov x0 x2
+  mov x3 x1
+  slp 1
+  slp x1
+
+[chip] 
+[type] OR
+[x] 16
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 5
+[code] 
+  slx x0
+  mov 100 p1
+  tcp x0 2
++ mov 011 x2
++ slp 7
++ jmp s
+- mov 10 x3
+- slp 7
+- jmp s
+  slp 1
+  gen p0 2 1
+  gen p0 2 1
+s:mov p1 x2
