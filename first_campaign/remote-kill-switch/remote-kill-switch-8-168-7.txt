@@ -1,7 +1,7 @@
-[name] New design 1
+[name] score_of_the_sol_I've_copied
 [puzzle] Sz016
 [production-cost] 800
-[power-usage] 171
+[power-usage] 168
 [lines-of-code] 7
 
 [traces] 
@@ -25,7 +25,7 @@
 [x] 7
 [y] 4
 [rom] 
-1,-999,2,-999,2,-999,1,0,1,-999,1,-999,2,-999
+1,-999,2,-999,2,-999,2,-999,2,-999,2,-999,1,0
 
 [chip] 
 [type] UC6
@@ -38,7 +38,7 @@
   
 + dst x0 dat
 + mov acc x3
-+ mov 2 x2
++ mov 8 x2
   
 - mov x3 acc
 
