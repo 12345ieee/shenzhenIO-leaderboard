@@ -1,7 +1,7 @@
-[name] Top solution Cost->Lines
+[name] Engineering is hard! Take a break and play a brand-new twist on solitaire.
 [puzzle] Sz017
 [production-cost] 800
-[power-usage] 162
+[power-usage] 161
 [lines-of-code] 12
 
 [traces] 
@@ -64,9 +64,6 @@ is regarded as 0
 [x] 9
 [y] 5
 [code] 
-  tcp p0 0
-+ mov -1 dat
-0:+mov x3 p1
   slp 1
 + mov x3 p0
 + slp 1
@@ -76,6 +73,11 @@ is regarded as 0
 + jmp 0
 - mov x3 x1
 - mov dat x2
+  
+  tcp p0 0
++ mov -1 dat
+0:+mov x3 p1
+  
 
 [chip] 
 [type] BRIDGE
