@@ -1,0 +1,86 @@
+[name] W3B1enpsZV0gU3owMjIKW3Byb2R1Y3Rpb24tY29zdF0gMTIwMApbcG93ZXItdXNhZ2VdIDcyCltsaW5lcy1vZi1jb2RlXSAyMQoKW3RyYWNlc10gCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4KLi4uLi4uLi4uLi4uLi4uLi4uLi4uLgouLi4uLi4uLi4uLi4uLi4uLi4uLi4uCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4KLi4uLi4uLi4uLi4uLi4uLi4uLi4uLgouLi4uLi4uOTU1NTU1NTU1NTU1Qy4uCi4uOTU0LjE2OTU1NTVDLi4uLi4yLi4KLi4yLi4uMTRBMTVDLkEuLjk1NUMuLgouLi4xQy4xNTYxQ0ExNjE1Njk0Mi4uCi4uOC5BLi4uLjE2QS4uMTQuQTE0Li4KLi4yLkEuLi4uMTU2Li4xNTU3NTQuLgouLi4uMzU1NTU1NTU1NTU1NTU0Li4uCi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4KLi4uLi4uLi4uLi4uLi4uLi4uLi4uLgoKW2NoaXBdIApbdHlwZV0gQlJJREdFClt4XSAxNQpbeV0gMgoKW2NoaXBdIApbdHlwZV0gQlJJREdFClt4XSAxOApbeV0gMgoKW2NoaXBdIApbdHlwZV0gQkFOSwpbeF0gMTAKW3ldIDMKW3JvbV0gCjExMSwxMDEsMTAxLDExMSwwLDAsMCwwLDAsMCwxMTEsMTAxLDEwMSwxMTEKCltjaGlwXSAKW3R5cGVdIERYMwpbeF0gMTMKW3ldIDMKCltjaGlwXSAKW3R5cGVdIEJSSURHRQpbeF0gMgpbeV0gNAoKW2NoaXBdIApbdHlwZV0gT1IKW3hdIDE2Clt5XSA0CgpbY2hpcF0gClt0eXBlXSBVQzYKW3hdIDQKW3ldIDUKW2NvZGVdIAogIHNseCB4MAogIG1vdiAxMDAgcDEKICB0Y3AgeDAgMgorIG1vdiAwMTEgeDIKKyBzbHAgNworIGptcCBzCi0gbW92IDEwIHgzCi0gc2xwIDcKLSBqbXAgcwogIHNscCAxCiAgZ2VuIHAwIDIgMQogIGdlbiBwMCAyIDEKczptb3YgcDEgeDIKCltjaGlwXSAKW3R5cGVdIFVDNFgKW3hdIDcKW3ldIDUKW2NvZGVdIApAIHNseCB4MApAIG1vdiB4MCB4MgogIG1vdiB4MyB4MQogIHNscCAxCiAgc2xwIHgxCnM6dGVxIHgyIDAgIAorIHNseCB4MAorIG1vdiB4MCB4MgogIAoK
+[puzzle] Sz022
+[production-cost] 1200
+[power-usage] 72
+[lines-of-code] 21
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.......955555555555C..
+..954.1695555C.....2..
+..2...14A15C.A..955C..
+...1C.1561CA16156942..
+..8.A....16A..14.A14..
+..2.A....156..155754..
+....355555555555554...
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 2
+
+[chip] 
+[type] BANK
+[x] 10
+[y] 3
+[rom] 
+111,101,101,111,0,0,0,0,0,0,111,101,101,111
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 2
+[y] 4
+
+[chip] 
+[type] OR
+[x] 16
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 5
+[code] 
+  slx x0
+  mov 100 p1
+  tcp x0 2
++ mov 011 x2
++ slp 7
++ jmp s
+- mov 10 x3
+- slp 7
+- jmp s
+  slp 1
+  gen p0 2 1
+  gen p0 2 1
+s:mov p1 x2
+
+[chip] 
+[type] UC4X
+[x] 7
+[y] 5
+[code] 
+@ slx x0
+@ mov x0 x2
+  mov x3 x1
+  slp 1
+  slp x1
+s:teq x2 0  
++ slx x0
++ mov x0 x2
