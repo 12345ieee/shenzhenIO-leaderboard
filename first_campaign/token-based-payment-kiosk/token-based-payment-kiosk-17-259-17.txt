@@ -1,0 +1,92 @@
+[name] hersmunch
+[puzzle] Sz009
+[production-cost] 1700
+[power-usage] 259
+[lines-of-code] 17
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....155C9555C........
+.....154A34..355554...
+...14154354.954.15C...
+...14.94.1C.A94.14A...
+...14.A...A16A14942...
+....14A15C354354A14...
+....156..35555556.....
+......................
+......................
+
+[chip] 
+[type] UC4
+[x] 5
+[y] 2
+[code] 
+@ mov x0 p0
+@ mov 100 p1
+
+[chip] 
+[type] DIAL3
+[x] 3
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4X
+[x] 12
+[y] 3
+[code] 
+  teq x2 0
++ slx x1
++ mov x1 x2
+  mov x0 x3
+  slp 1
+  slp x3
+  mov x0 x2
+
+[chip] 
+[type] BRIDGE
+[x] 17
+[y] 3
+
+[chip] 
+[type] DX3
+[x] 4
+[y] 4
+[rotated] true
+
+[chip] 
+[type] DX3
+[x] 15
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 5
+[code] 
+  slp 1
+@ mov p0 acc
+  mov x1 x0
+  sub x3
+  tgt acc 0
+- mov acc x2  
+- gen p1 4 2
+- mov p0 acc
+
+[chip] 
+[type] BANK
+[x] 11
+[y] 5
+[rom] 
+0,0,0,100,400,401,500,501,600,601,70,11,12,13
+
+[chip] 
+[type] BANK
+[x] 3
+[y] 7
+[rom] 
+0,1,12,0,0,0,0,0,0,0,5,0,0,0
