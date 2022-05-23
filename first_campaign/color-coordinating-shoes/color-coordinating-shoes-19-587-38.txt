@@ -1,8 +1,8 @@
-[name] 2022-05-23 A
+[name] 2022-05-23 b
 [puzzle] Sz018
 [production-cost] 1900
-[power-usage] 588
-[lines-of-code] 39
+[power-usage] 587
+[lines-of-code] 38
 
 [traces] 
 ......................
@@ -94,8 +94,7 @@
   mov 8 x1
   mov 10 x1
   mov 12 x1
-  mov 14 x1
-@ mov 2 x1
+  mov 16 x1
   slx x0
   mov x0 x3
   mov x2 p1
@@ -107,4 +106,4 @@
 [x] 16
 [y] 6
 [rom] 
-15,80,75,85,95,5,95,5,50,5,5,5,5,60
+75,85,15,80,95,5,95,5,50,5,5,5,5,60
