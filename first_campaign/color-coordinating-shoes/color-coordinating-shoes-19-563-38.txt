@@ -1,0 +1,114 @@
+[name] pareto 2022-08-27 a
+[puzzle] Sz018
+[production-cost] 1900
+[power-usage] 563
+[lines-of-code] 38
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......15555C.955C.....
+..8955554.16.A14A15C..
+..2A9541C954.A143542..
+..16A14.AA154A15C154..
+..14A154A35556..3554..
+..156.14A154.....954..
+........3555555556....
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 3
+
+[chip] 
+[type] RAM
+[x] 7
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 19
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 2
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 4
+[code] 
+@ slp 2
+  tcp x2 p0
++ mov 3 x1
++ slp 3
++ tcp 1 p0
++ mov 0 x2
+- mov p1 acc
+- dgt 1
+- mov acc x2
+- mov x3 acc
+- add 70
+- mov acc x2
+- mov acc x3
+  slp 1
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 5
+[code] 
+@ teq 1 0
+- mov 3 x2
+@ mov 30 p1
+- slx x0
+- mov x0 x2
+- mov x3 acc
+  mov x3 dat
+  tgt dat acc
++ mov dat acc
+- tlt x2 9
+- mov acc x1
+
+[chip] 
+[type] UC6
+[x] 15
+[y] 5
+[code] 
+@ mov 50 p0
+@ mov 50 p1
+  mov 73 x3
+  mov 74 x3
+  mov 75 x3
+  mov 6 x3
+  mov 7 x3
+@ mov 8 x3
+  slx x2
+  dst 2 x2
+  mov acc x1
+  mov x0 p1
+  mov x0 p0
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 6
+
+[chip] 
+[type] BANK
+[x] 12
+[y] 6
+[rom] 
+15,80,75,85,-999,-999,95,5,50,5,5,5,5,60
