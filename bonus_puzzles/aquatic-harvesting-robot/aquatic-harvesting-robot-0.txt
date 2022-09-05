@@ -1,0 +1,148 @@
+[name] 新●设●计1
+[puzzle] Sz042
+[production-cost] 2600
+[power-usage] 4584
+[lines-of-code] 60
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..955555554...........
+..A15555554.15554.1C..
+..B54.14.14.1C954..2..
+..A94.14.15556A14.1C..
+..AA.....15554A14..2..
+..A34.........A.......
+..354.14....156.......
+......................
+......................
+
+[chip] 
+[type] UC4X
+[x] 4
+[y] 2
+[code] 
+# Receive new task
+# Only enable
+# line 4 when
+# initialization
+@ teq 0 1
+  mov x2 x0
++ mov x2 x0
+- teq x0 x1
++ slp 1
+
+[chip] 
+[type] RADIO
+[x] 7
+[y] 2
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 2
+[code] 
+# Calculate dists
+# to given targets
+  slx x0
+  mov x0 acc
+  sub p0  # x-x0
+  dst 1 0 #|x-x0|
+  mov acc dat
+  mov x0 acc
+  sub p1  # y-y0
+  dst 1 0 #|y-y0|
+  tlt acc dat
+- mov acc x0
++ mov dat x0
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 4
+[code] 
+# Find best target
+  teq x1 0
++ mov dat x3
++ slp 1
++ mov 10 dat
+  mov x0 acc
+  teq acc -999
++ mov x0 null
+- mov acc x2
+- mov x0 x2
+- mov x2 acc
+- tcp acc dat
+- mov acc dat
+- mov x1 p1
+
+[chip] 
+[type] UC4
+[x] 16
+[y] 4
+[code] 
+  mov 50 p1 #mt-y
+  slx x0
+  nop
+  tcp x0 acc
++ gen p1 1 0
++ add 1
+- gen p1 0 1
+- sub 1
+  mov acc p0
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 5
+
+[chip] 
+[type] RAM
+[x] 4
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 6
+[code] 
+# Assign task
+@ teq x2 0
++ slx x2
++ mov x2 dat
++ tlt dat 10
++ mov p0 acc
++ sub 2
++ mov acc x0
++ mov x1 x3
++ mov x1 x3
++ tlt dat 2
+- mov x0 acc#check
+- tlt x1 0#harvest
++ mov acc x0
+
+[chip] 
+[type] UC4
+[x] 16
+[y] 6
+[code] 
+  mov 50 p1 #mt-x
+  slx x0
+  tcp x0 acc
++ mov 100 p1
+- mov 0 p1
+  slp 1
++ add 1
+- sub 1
+  mov acc p0
+
