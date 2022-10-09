@@ -1,8 +1,8 @@
-[name] fastest
+[name] power with fistbag
 [puzzle] Sz044
 [production-cost] 2200
-[power-usage] 391
-[lines-of-code] 48
+[power-usage] 383
+[lines-of-code] 47
 
 [traces] 
 ......................
@@ -14,9 +14,9 @@
 ......35C154..........
 ..155554A1549C........
 ..1555C.3555634.......
-....1435414...........
-....14.14.............
-..1554.154............
+....1435494...........
+....14.14A............
+..1554.156............
 ......................
 ......................
 
@@ -37,13 +37,8 @@
   teq p1 dat
 - mov p1 dat
 - mov dat x2
-- slp 3
+- slp 3 #A1
   slp 1
-
-[chip] 
-[type] BRIDGE
-[x] 9
-[y] 2
 
 [chip] 
 [type] LCDR
@@ -68,20 +63,20 @@
 [x] 10
 [y] 3
 [code] 
-  slx x1
+  slx x1 #temp
   mov x1 acc
-  tgt acc 19
-+ mov 21 x0
-- mov -21 x0
-+ tgt acc 39
-+ mov 22 x0
-- mov -22 x0
-+ tgt acc 59
-+ mov 23 x0
-- mov -23 x0
-+ tgt acc 79
-+ mov 24 x0
+  tgt acc 79
++ mov +24 x0
 - mov -24 x0
+- tgt acc 59
++ mov +23 x0
+- mov -23 x0
+- tgt acc 39
++ mov +22 x0
+- mov -22 x0
+- tgt acc 19
++ mov +21 x0
+- mov -21 x0
 
 [chip] 
 [type] UC6
@@ -93,13 +88,12 @@
 - mov p0 acc
 - mul 5
 - dgt 2
-- mul -1
 - mov acc x3
 - mov x2 x1
 - mov x2 x1
 - mov x2 x1
 - mov x2 x1
-- slp 4
+- slp 4 #A1
 + slp 1
 
 [chip] 
@@ -107,7 +101,7 @@
 [x] 11
 [y] 6
 [rom] 
--14,-13,-12,-11,0,0,0,0,0,11,14,13,12,11
+-11,-12,-13,-14,11,12,13,14,11,0,0,0,0,0
 
 [chip] 
 [type] UC4X
@@ -121,3 +115,14 @@
 @ mov 10 x3
   slx x0
   mov x0 x3
+
+[chip] 
+[type] NOTE
+[x] 11
+[y] 8
+[code] 
+1: sleep abuse
+
+N: Compare order
+   has been tuned
+   in temp MC
