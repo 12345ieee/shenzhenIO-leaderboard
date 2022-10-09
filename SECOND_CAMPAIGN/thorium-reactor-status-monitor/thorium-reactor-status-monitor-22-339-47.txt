@@ -1,0 +1,142 @@
+[name] Pointer table
+[puzzle] Sz044
+[production-cost] 2200
+[power-usage] 339
+[lines-of-code] 47
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..14.1C...............
+......35C154..........
+..155554A1549C........
+..1555C.3555634.......
+....1435494...........
+....14.14A............
+..1554.156............
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 10
+[y] 1
+[code] 
+CONTROL ROM MAP
+0 p0/v0  7
+1 v0     8 p50
+2 p100   9 v50
+3 v100  10 v50
+4 v100  11 v50
+5 v100  12 v50/v0
+6 v100  13 v0
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 2
+[code] 
+  teq p0 acc
+- mov p0 x1
+- mov x0 x1
+- mov p0 acc
+- mov x0 x3
+- mov x0 x3
+- mov x0 x3
+- mov x0 x3
+- jmp s #A1
+  teq p1 dat
+- mov p1 dat
+- mov dat x2
+s: - slp 4 #A1
++ slp 1
+
+[chip] 
+[type] LCDR
+[x] 14
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] BANK
+[x] 2
+[y] 3
+[rom] 
+-30,-31,3,30,31,-33,-34,0,9,-30,31,-34,33,34
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 3
+[code] 
+  slx x1 #temp
+  mov x1 acc
+  tgt acc 79
++ mov +24 x0
+- mov -24 x0
+- tgt acc 59
++ mov +23 x0
+- mov -23 x0
+- tgt acc 39
++ mov +22 x0
+- mov -22 x0
+- tgt acc 19
++ mov +21 x0
+- mov -21 x0
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 6
+[code] 
+  teq p0 dat
+- mov p0 dat
+- mov p0 acc
+- mul 5
+- dgt 2
+- mov acc x3
+- mov x2 x1
+- mov x2 x1
+- mov x2 x1
+- mov x2 x1
+- slp 4 #A1
++ slp 1
+
+[chip] 
+[type] BANK
+[x] 11
+[y] 6
+[rom] 
+-11,-12,-13,-14,11,12,13,14,11,0,0,0,0,0
+
+[chip] 
+[type] UC4X
+[x] 3
+[y] 7
+[code] 
+@ mov 32 x3
+@ mov 33 x3
+@ mov 34 x3
+@ mov 20 x3
+@ mov 10 x3
+  slx x0
+  mov x0 x3
+
+[chip] 
+[type] NOTE
+[x] 11
+[y] 8
+[code] 
+1: sleep abuse
+
+N: Compare order
+   has been tuned
+   in temp MC
