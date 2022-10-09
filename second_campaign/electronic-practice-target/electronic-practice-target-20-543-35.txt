@@ -1,8 +1,8 @@
-[name] New design 1
+[name] autoresetting and hyperactive
 [puzzle] Sz041
 [production-cost] 2000
-[power-usage] 575
-[lines-of-code] 38
+[power-usage] 543
+[lines-of-code] 35
 
 [traces] 
 ......................
@@ -30,20 +30,19 @@
 [x] 14
 [y] 3
 [code] 
-@ teq 0 0
-b:+ slx x0
-+ tgt x1 4
+@ teq 0 1
+- slx x0
++ slp 1
++ tcp p0 0
++ tgt x1 3
 + add x0
 - mov x0 dat
   mov dat x2
   mov acc x3
-  slp 1
-  teq x1 8
-+ slp 1
-+ teq x1 0
-+ sub acc
-+ jmp b
-- tcp p0 0
+  tlt x1 13
+- slp 2
+- tcp x1 13
+- mov 0 acc
 
 [chip] 
 [type] UC6
@@ -94,19 +93,17 @@ b:+ slx x0
 [y] 6
 [code] 
   slx x1
-  tgt x2 3
-+ mov x1 x0
-+ mov 0 acc
+  tgt x2 3 #+8
 - add x1
 - mov acc x0
-+ teq x3 8
-+ slp 7
-+ nop
-+ mov 0 x3
++ mov x1 x0
++ teq x2 7 #+4
++ slp x2 #+1
++ mov x2 acc #+1
 
 [chip] 
 [type] BANK
 [x] 15
 [y] 6
 [rom] 
-0,1,2,3,4,5,6,7,8,9,0,0,0,0
+0,1,2,3,4,4,5,5,6,6,7,7,7,0
