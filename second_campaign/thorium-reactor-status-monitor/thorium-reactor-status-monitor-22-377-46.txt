@@ -1,8 +1,8 @@
-[name] power with fistbag
+[name] Pointer table
 [puzzle] Sz044
 [production-cost] 2200
-[power-usage] 383
-[lines-of-code] 47
+[power-usage] 377
+[lines-of-code] 46
 
 [traces] 
 ......................
@@ -21,14 +21,28 @@
 ......................
 
 [chip] 
+[type] NOTE
+[x] 10
+[y] 1
+[code] 
+CONTROL ROM MAP
+0 p0/v0  7
+1 v0     8 p50
+2 p100   9 v50
+3 v100  10 v50
+4 v100  11 v50
+5 v100  12 v50/v0
+6 v100  13 v0
+
+
+[chip] 
 [type] UC6
 [x] 5
 [y] 2
 [code] 
   teq p0 acc
-- mov p0 acc
-- mul 4
-- mov acc x1
+- mov p0 x1
+- mov x0 x1
 - mov p0 acc
 - mov x0 x3
 - mov x0 x3
@@ -51,7 +65,7 @@
 [x] 2
 [y] 3
 [rom] 
--30,-31,33,34,-30,31,33,-34,30,31,-33,-34,0,0
+-30,-31,3,30,31,-33,-34,0,9,-30,31,-34,33,34
 
 [chip] 
 [type] BRIDGE
