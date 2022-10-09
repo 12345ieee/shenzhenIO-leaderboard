@@ -1,7 +1,7 @@
 [name] Pointer table
 [puzzle] Sz044
 [production-cost] 2200
-[power-usage] 377
+[power-usage] 374
 [lines-of-code] 46
 
 [traces] 
@@ -34,7 +34,6 @@ CONTROL ROM MAP
 5 v100  12 v50/v0
 6 v100  13 v0
 
-
 [chip] 
 [type] UC6
 [x] 5
@@ -51,8 +50,8 @@ CONTROL ROM MAP
   teq p1 dat
 - mov p1 dat
 - mov dat x2
-- slp 3 #A1
-  slp 1
+- slp 4 #A1
++ slp 1
 
 [chip] 
 [type] LCDR
