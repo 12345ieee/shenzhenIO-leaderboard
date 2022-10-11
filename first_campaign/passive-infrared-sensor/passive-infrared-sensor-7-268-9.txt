@@ -1,0 +1,66 @@
+[name] 2022-10-11  b
+[puzzle] Sz005
+[production-cost] 700
+[power-usage] 268
+[lines-of-code] 9
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+......14.14...........
+......14..............
+....1554.14155555C....
+.................2....
+...........14.........
+......................
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 10
+[y] 3
+
+[chip] 
+[type] NOT
+[x] 12
+[y] 3
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 5
+[code] 
+  teq p1 x1
++ slp x2
++ slp 999
+  teq p1 x0
++ not
+  tgt p0 19
++ mov acc x2
++ slp 1
+- slp x2
+
+[chip] 
+[type] DIAL2
+[x] 5
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] RTC
+[x] 10
+[y] 6
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL1
+[x] 5
+[y] 7
+[is-puzzle-provided] true
