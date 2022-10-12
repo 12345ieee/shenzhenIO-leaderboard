@@ -1,0 +1,174 @@
+[name] remove nop
+[puzzle] Sz045
+[production-cost] 2700
+[power-usage] 752
+[lines-of-code] 48
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..14....1495415C14....
+..14....1CA1494A14....
+..141C.14AA94A.B5554..
+.....35556AA834A14....
+..14155554AA215614....
+..14....14A3414.14....
+..14....1561554.14....
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 3
+[y] 2
+[rotated] true
+
+[chip] 
+[type] NOTE
+[x] 5
+[y] 2
+[code] 
+Lower:     Upper
+X0 3-5     3-5  
+X1 0-2     0-2
+X2 Send    CombRCV
+X3 CombSND Send
+P1 Switch  Switch
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 2
+[code] 
+  tgt x0 p0
+- mov 1 p0
+- tcp 0 x1 #empty
++ tgt x1 0
+- mov x0 acc
+- add x1
+- tgt acc 100
+- teq acc 11
+- mov acc x3
+- slp 1
+end:+ mov x1 x2
++ mov x0 x2
++ slp 1
+x: slp 1
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 2
+
+[chip] 
+[type] UC4X
+[x] 14
+[y] 2
+[code] 
+  slx x1
+  mov x1 x3
+  mov x2 x0
+  mov x1 x3
+  mov x2 x0
+
+[chip] 
+[type] BANK
+[x] 17
+[y] 2
+[rom] 
+1,11,7,8,0,0,0,0,0,0,2,0,5,3
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 13
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 4
+
+[chip] 
+[type] UC4X
+[x] 14
+[y] 4
+[code] 
+@ teq 1 2
+- slx x0
+- nop
+- mov x0 x3
+- slx x0
+- mov x0 acc
+- tgt x2 3
++ mov x2 x1
++ tgt x2 3
+
+[chip] 
+[type] BANK
+[x] 17
+[y] 4
+[rom] 
+999,3,999,4,3,9,4,999,5,3,999,5,3,3
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 5
+
+[chip] 
+[type] DX3
+[x] 3
+[y] 6
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 6
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 6
+[code] 
+b:  slx x2
+  mov x2 acc
+  slp 1
+  teq x0 0
++ teq x1 0
++ jmp b
+  teq p1 0
++ add x0
+- add x1
++ mov x1 x3
+  mov acc x3
+- mov x0 x3
+
+[chip] 
+[type] UC4X
+[x] 14
+[y] 7
+[code] 
+@ teq 1 2
+- slx x1
+- mov x1 x3
+- tgt x2 0
++ mov x2 x0
++ tgt x2 0
+- nop
+- mov 1 x1
+
+[chip] 
+[type] BANK
+[x] 17
+[y] 7
+[rom] 
+999,0,999,1,0,999,1,999,2,0,999,2,0,0
