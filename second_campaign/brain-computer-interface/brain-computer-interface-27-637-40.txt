@@ -1,8 +1,8 @@
-[name] remove nop pls
+[name] this pin is made for writinG
 [puzzle] Sz045
 [production-cost] 2700
-[power-usage] 712
-[lines-of-code] 47
+[power-usage] 637
+[lines-of-code] 40
 
 [traces] 
 ......................
@@ -12,10 +12,10 @@
 ......................
 ..14....1495415C14....
 ..14....1CA1494A14....
-..141C.14AA94A.B5554..
-.....35556AA834A14....
-..14155554AA215614....
-..14....14A3414.14....
+..141C.14AA94A.355D4..
+.....35556AA834.14A...
+..14155554AA294.156...
+..14....14A3434.14....
 ..14....1561554.14....
 ......................
 ......................
@@ -44,18 +44,18 @@ P1 Switch  Switch
 [y] 2
 [code] 
   tgt x0 p0
++ mov x0 acc
 - tcp 0 x1 #empty
 - mov 1 p0
+- mov x1 acc
 + tgt x1 0
-- mov x0 acc
-- add x1
 - tgt acc 100
 - teq acc 11
-- mov acc x3
 - slp 1
+- mov acc x3
 end:+ mov x1 x2
 + mov x0 x2
-+ slp 1
++ slp 1 #A
 x: slp 1
 
 [chip] 
@@ -79,16 +79,11 @@ x: slp 1
 [x] 17
 [y] 2
 [rom] 
-1,11,7,8,0,0,0,0,0,0,2,0,5,3
+2,12,8,9,0,0,0,0,0,0,3,1,6,4
 
 [chip] 
 [type] BRIDGE
 [x] 8
-[y] 3
-
-[chip] 
-[type] BRIDGE
-[x] 13
 [y] 3
 
 [chip] 
@@ -101,21 +96,19 @@ x: slp 1
 [x] 14
 [y] 4
 [code] 
-@ teq 1 2
-- slx x0
-- nop
-- mov x0 x3
-- slx x0
-- tgt x2 x0
-+ mov x2 x1
-+ tgt x2 3
+@ teq 1 2 #012
+- slx x1
+- mov x1 x3
+  tgt x2 0
++ mov x2 x2 #RW
+- mov x1 x0
 
 [chip] 
 [type] BANK
 [x] 17
 [y] 4
 [rom] 
-999,3,999,4,3,9,4,999,5,3,999,5,3,3
+0,999,0,999,1,0,999,1,999,2,0,999,2,0
 
 [chip] 
 [type] BRIDGE
@@ -140,7 +133,6 @@ x: slp 1
 [code] 
 b:  slx x2
   mov x2 acc
-  slp 1
   teq x0 0
 + teq x1 0
 + jmp b
@@ -152,22 +144,35 @@ b:  slx x2
 - mov x0 x3
 
 [chip] 
+[type] NOTE
+[x] 5
+[y] 7
+[code] 
+  I R1
+000  2
+001 12
+010  3
+011  1
+100  8
+101  9
+110  6
+111  4
+
+[chip] 
 [type] UC4X
 [x] 14
 [y] 7
 [code] 
-@ teq 1 2
+  tgt x2 3 #345
 - slx x1
 - mov x1 x3
-- tgt x2 0
 + mov x2 x0
-+ tgt x2 0
-- nop
-- mov 3 x1
+  
+  
 
 [chip] 
 [type] BANK
 [x] 17
 [y] 7
 [rom] 
-999,0,999,1,0,999,1,999,2,0,999,2,0,0
+3,999,3,999,4,3,9,4,999,5,3,999,5,3
