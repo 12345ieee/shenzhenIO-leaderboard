@@ -1,0 +1,118 @@
+[name] fix the last chip
+[puzzle] Sz045
+[production-cost] 2200
+[power-usage] 972
+[lines-of-code] 42
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..14...........1555C..
+..14....955C...14.16..
+..1415556..355C1C.14..
+.....9555C15C.A16.14..
+..1416.1CA14A.A94954..
+..14....A354A16A.A14..
+..14....35543556.354..
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 3
+[y] 2
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 2
+[code] 
+b:  slx x0
+  mov x0 acc
+  slp 1
+  teq x3 0
++ teq x1 0
++ jmp b
+  teq p0 0
++ add x3
+- add x1
+- mov x3 x2
+  mov acc x2
++ mov x1 x2
+
+[chip] 
+[type] BANK
+[x] 16
+[y] 2
+[rom] 
+0,4,1,5,0,0,0,0,0,0,2,6,3,7
+
+[chip] 
+[type] BRIDGE
+[x] 19
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 4
+[code] 
+  tgt x0 p0
+- mov 1 p0
+- tcp 0 x1 #empty
++ tgt x1 0
+- mov x0 acc
+- add x1
+- tgt acc 100
+- teq acc 11
+- mov acc x2
+- slp 1
+end:+ mov x0 x3
++ mov x1 x3
++ slp 1
+x: slp 1
+
+[chip] 
+[type] UC4X
+[x] 16
+[y] 4
+[code] 
+  slx x1
+  mov x1 x2
+  mov x3 acc
+  mul 8
+  mov x1 x2
+  add x3
+  mov acc x0
+
+[chip] 
+[type] DX3
+[x] 3
+[y] 6
+[rotated] true
+
+[chip] 
+[type] UC4X
+[x] 16
+[y] 6
+[code] 
+  slx x1
+  mov x1 acc
+b:  tgt acc 31
++ mov x0 x2
++ sub 32
+  tgt acc x3
++ mul 2
++ jmp b
+- mov 0 x0
+
+[chip] 
+[type] BANK
+[x] 13
+[y] 7
+[rom] 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0
