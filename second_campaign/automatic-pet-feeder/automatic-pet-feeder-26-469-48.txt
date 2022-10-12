@@ -1,8 +1,8 @@
 [name] fastest -sorted
 [puzzle] Sz040
 [production-cost] 2600
-[power-usage] 470
-[lines-of-code] 49
+[power-usage] 469
+[lines-of-code] 48
 
 [traces] 
 ......................
@@ -25,7 +25,7 @@
 [x] 4
 [y] 2
 [code] 
-@ mov p1 x1 #T2
+@ mov p1 x1 #T3
   slx x1
   mov 100 p0
   slp x0
@@ -106,9 +106,9 @@
 [x] 9
 [y] 5
 [code] 
-@ mov p0 x1 #T3
-  slx x0
+  slx x0 #T1
   teq x0 p1
+@ mov p0 x1
 + mov 1 x1
 
 [chip] 
@@ -116,8 +116,8 @@
 [x] 15
 [y] 5
 [code] 
-@ tcp x0 50
   slx x0
+@ tcp x0 50
 + mov x1 p1
 - mov x1 p0
   slp x0
@@ -134,8 +134,7 @@
 [x] 12
 [y] 6
 [code] 
-@ slp 1 #T3 xfer
-  slx x1
+  slx x1 #T1 xfer
   mov 100 p0
   slp x0
   mov 0 p0
@@ -145,7 +144,7 @@
 [x] 4
 [y] 7
 [code] 
-@ mov p1 x1 #T1
+@ mov p1 x1 #T2
   mov 2 p0
   slx x1
   mov 0 p0
