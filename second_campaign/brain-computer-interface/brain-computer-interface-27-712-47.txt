@@ -1,7 +1,7 @@
-[name] remove nop
+[name] remove nop pls
 [puzzle] Sz045
 [production-cost] 2700
-[power-usage] 732
+[power-usage] 712
 [lines-of-code] 47
 
 [traces] 
@@ -44,8 +44,8 @@ P1 Switch  Switch
 [y] 2
 [code] 
   tgt x0 p0
-- mov 1 p0
 - tcp 0 x1 #empty
+- mov 1 p0
 + tgt x1 0
 - mov x0 acc
 - add x1
@@ -106,7 +106,6 @@ x: slp 1
 - nop
 - mov x0 x3
 - slx x0
-#- mov x0 acc
 - tgt x2 x0
 + mov x2 x1
 + tgt x2 3
