@@ -1,0 +1,117 @@
+[name] Top solution Cost->Lines - 837951602
+[puzzle] Sz005
+[production-cost] 400
+[power-usage] 1144
+[lines-of-code] 9
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...........9554.......
+...........A..........
+...........A..........
+....8.155C16..........
+....35554A15554154....
+......1556............
+......................
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 4
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 5
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 2
+
+[chip] 
+[type] DIAL2
+[x] 8
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 8
+[y] 4
+[code] 
+s:teq x0 p1
+- teq x0 p1
++ add 505
+- add 20
+  tgt p0 19
++ mov acc x1
+  tgt acc 52
++ slp 1
++ dgt x1
+
+[chip] 
+[type] DX3
+[x] 14
+[y] 4
+
+[chip] 
+[type] DIAL1
+[x] 5
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] RTC
+[x] 14
+[y] 7
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 9
+[y] 11
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 12
+[y] 11
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 15
+[y] 11
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 11
+[code]
