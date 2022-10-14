@@ -1,7 +1,7 @@
 [name] this pin is made for writinG
 [puzzle] Sz045
 [production-cost] 2700
-[power-usage] 637
+[power-usage] 635
 [lines-of-code] 40
 
 [traces] 
@@ -133,13 +133,13 @@ x: slp 1
 [code] 
 b:  slx x2
   mov x2 acc
-  teq x0 0
+  teq x0 x1
 + teq x1 0
 + jmp b
   teq p1 0
++ mov x1 x3
 + add x0
 - add x1
-+ mov x1 x3
   mov acc x3
 - mov x0 x3
 
@@ -167,12 +167,10 @@ b:  slx x2
 - slx x1
 - mov x1 x3
 + mov x2 x0
-  
-  
 
 [chip] 
 [type] BANK
 [x] 17
 [y] 7
 [rom] 
-3,999,3,999,4,3,9,4,999,5,3,999,5,3
+3,999,3,999,4,3,999,4,999,5,3,999,5,3
