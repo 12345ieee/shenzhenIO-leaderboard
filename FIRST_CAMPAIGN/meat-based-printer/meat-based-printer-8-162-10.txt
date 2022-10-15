@@ -1,7 +1,7 @@
-[name] cost->lines
+[name] Cost
 [puzzle] Sz022
 [production-cost] 800
-[power-usage] 191
+[power-usage] 162
 [lines-of-code] 10
 
 [traces] 
@@ -25,16 +25,16 @@
 [x] 11
 [y] 3
 [code] 
+@ teq 0 1
 - slx x1
 - mov x1 x3
-- mov 7 acc
-+ mov 100 p1
+- mov 100 p1
 + mov x2 x0
 + mov x2 x3
 + slp 1
-  tgt acc p1
-+ sub 1
-- sub x0
+  tlt acc 7
++ add 1
+- dst x0 p1 #HH
 
 [chip] 
 [type] BANK
