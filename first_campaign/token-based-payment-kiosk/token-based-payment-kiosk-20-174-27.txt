@@ -1,8 +1,8 @@
-[name] Fastest
+[name] kinda fastish
 [puzzle] Sz009
-[production-cost] 2100
-[power-usage] 176
-[lines-of-code] 29
+[production-cost] 2000
+[power-usage] 174
+[lines-of-code] 27
 
 [traces] 
 ......................
@@ -10,13 +10,13 @@
 ......................
 ......................
 ......................
-....14.155C...........
-.......15C355541414...
+....14.155C.1C........
+.......15C34.355554...
 ...14941CA154.1555C...
-...1CA..AA954.14..A...
+...1CA..AA94..14..A...
 ...8A34162A15C14..2...
 ...A354..16..355554...
-...3554..154..........
+...3554..14...........
 ......................
 ......................
 
@@ -45,18 +45,17 @@
 [code] 
 x: slx x0
   mov x0 x3
-  mov x3 x1
   tlt x3 10
 + tgt x3 0
 + gen p1 1 1
 + tlt x3 5
 + gen p1 1 1
-  tgt x2 p1
-b: +mov 100 p0
-+ slp 1
-+ tgt x2 p0
-+ slp 1
-+ jmp b
+  teq x2 0
+b: -mov 100 p0
+- slp 1
+- teq x2 p0
+- slp 1
+- jmp b
 
 [chip] 
 [type] BANK
@@ -78,17 +77,16 @@ b: +mov 100 p0
 @ tgt 1 x0
 - mov p1 acc
 - slp x0
-x: - tgt x1 0
-- slp 1
 - tgt x1 0
-- slp 1
-s: + mov x1 x2
-+ sub x0
-+ tgt acc 0
+- slp 1 #A1
+  mov x1 x2
+  sub x0
+  tgt acc 0
 + slp 2
 - mov acc x3
 - mov 100 p1
 - slp 4
+- mov acc x2
 
 [chip] 
 [type] UC4
@@ -96,16 +94,10 @@ s: + mov x1 x2
 [y] 7
 [code] 
 @ mov x0 p1
-  
 
 [chip] 
-[type] NOT
-[x] 14
-[y] 7
-
-[chip] 
-[type] NOT
-[x] 16
+[type] OR
+[x] 11
 [y] 7
 
 [chip] 
@@ -113,3 +105,14 @@ s: + mov x1 x2
 [x] 3
 [y] 8
 [is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 8
+[code] 
+A1: Abuse that we
+never wait more
+than 1 extra
+cycle for input
+to avoid the jmp
