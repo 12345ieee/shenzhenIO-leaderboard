@@ -1,8 +1,8 @@
-[name] fastest2
+[name] Unrolling best used sparingly
 [puzzle] Sz038
 [production-cost] 2600
-[power-usage] 190
-[lines-of-code] 60
+[power-usage] 185
+[lines-of-code] 56
 
 [traces] 
 ......................
@@ -77,12 +77,10 @@ se:  slp x3
 @ slx x2
   mov x2 x0
   slx x2
+m:mov x1 acc
   teq x0 0
-- teq x0 0
-- teq x0 0
-+ mov x1 acc
-+ sub 1
-+ mov acc x1
+- jmp m
+  mov acc x1
 
 [chip] 
 [type] DX3
@@ -133,11 +131,9 @@ se:  slp x3
 [code] 
   slx x0
   mov x0 dat
+m:mov x3 acc
   teq x1 dat
-- teq x1 dat
-- teq x1 dat
-+ mov x3 acc
-+ sub 1
-+ mov acc x3
+- jmp m
+  mov acc x3
   mov 0 x1
   mov 100 x2
