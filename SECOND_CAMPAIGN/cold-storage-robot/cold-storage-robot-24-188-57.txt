@@ -1,0 +1,145 @@
+[name] Unrolling best used sparingly
+[puzzle] Sz038
+[production-cost] 2400
+[power-usage] 188
+[lines-of-code] 57
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....955554.14.........
+....A..954.15549555C..
+..14A..A1C9C154A1C16..
+..156..34B635496.A14..
+..14.1555695496..A14..
+..15C15555614A1556....
+....3555555556........
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 2
+[code] 
+  slx x0
+  mov 50 p0
+  mov 10 x3
+  slp 1
+  mov 1 x3
+  slp 1
+  mov 101 x3
+  slp x1
+  mov 11 x3
+  slp 1
+  mov 0 x3
+  slp 1
+  mov 0 p0
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 3
+[code] 
+  mov 50 p0
+e:  slp 1
+  tcp x1 1
+- slp 1
+- tcp x1 1
+- jmp e
+  mov p0 x3
++ mov x1 x0
++ slp 3
++ jmp se
+  mov x1 x2
+  slp 4
+se:  slp x3
+  slp  x3
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 2
+[y] 4
+
+[chip] 
+[type] UC4X
+[x] 8
+[y] 4
+[code] 
+@ slx x2
+  mov x2 x0
+  slx x2
+m:mov x1 acc
+  teq x0 0
+- jmp m
+  mov acc x1
+
+[chip] 
+[type] DX3
+[x] 17
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 13
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 14
+[y] 5
+[code] 
+  slx x1
+  mov x1 x3
+  slp x0
+  mov 50 p1
+  mov 10 x3
+  slp 1
+  mov 1 x3
+  slp 1
+  mov 0 p1
+  slp x0
+  mov 50 p1
+  mov 11 x3
+  slp 1
+  mov p1 x3
+
+[chip] 
+[type] RADIO
+[x] 3
+[y] 6
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] RAM
+[x] 6
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 6
+
+[chip] 
+[type] UC4X
+[x] 9
+[y] 7
+[code] 
+  slx x0
+  mov x0 acc
+m:teq x1 acc
+- jmp m
+  mov x2 acc
+  sub 1
+  mov acc x2
+  mov 0 x1
+  mov 100 x3
