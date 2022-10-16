@@ -1,0 +1,134 @@
+[name] Top solution Lines - 837951602
+[puzzle] Sz005
+[production-cost] 1300
+[power-usage] 988
+[lines-of-code] 5
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....94................
+....34.1555C..........
+....15C1C..A..........
+....14A.A..A15555C....
+......A1614A.....2....
+.....16..14354........
+......................
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 10
+[y] 1
+[code] 
+
+
+[chip] 
+[type] BANK
+[x] 3
+[y] 2
+[rom] 
+999,999,999,999,19,-999,900,999,999,999,999,19,-999,900
+
+[chip] 
+[type] DX3
+[x] 8
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 13
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 16
+[y] 2
+
+[chip] 
+[type] PGA
+[x] 10
+[y] 3
+[array-switch] False
+[array-data] 
+1,1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,1,1,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+
+[chip] 
+[type] BRIDGE
+[x] 17
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 5
+[code] 
+  tgt p0 x1
++ mov x1 x3
++ slp 1
+  teq x0 p1
++ mov 10 x3
+
+[chip] 
+[type] RTC
+[x] 8
+[y] 6
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 13
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 16
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 17
+[y] 6
+
+[chip] 
+[type] DIAL2
+[x] 3
+[y] 8
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL1
+[x] 5
+[y] 8
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 16
+[y] 9
+[code]
