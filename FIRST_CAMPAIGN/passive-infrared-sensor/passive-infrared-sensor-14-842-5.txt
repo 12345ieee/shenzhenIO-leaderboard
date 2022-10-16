@@ -1,0 +1,144 @@
+[name] Top solution Lines - 837951602
+[puzzle] Sz005
+[production-cost] 1400
+[power-usage] 842
+[lines-of-code] 5
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....94.95554155414....
+....34.34...949494....
+....15C15415E16168....
+....14A94.14354..2....
+......AA..15554154....
+.....16A1C1495C..8....
+......16.3556.3556....
+......................
+......................
+
+[chip] 
+[type] BANK
+[x] 3
+[y] 2
+[rom] 
+999,999,999,999,19,-909,900,999,999,999,999,19,-909,900
+
+[chip] 
+[type] DX3
+[x] 7
+[y] 2
+
+[chip] 
+[type] NOT
+[x] 9
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 3
+
+[chip] 
+[type] AND
+[x] 14
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 17
+[y] 3
+
+[chip] 
+[type] DX3
+[x] 9
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 5
+[code] 
+  teq x0 p1
++ mov x3 x2
+  tgt p0 x1
++ mov x1 x3
++ slp 1
+
+[chip] 
+[type] OR
+[x] 14
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 17
+[y] 6
+
+[chip] 
+[type] RTC
+[x] 8
+[y] 7
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] OR
+[x] 11
+[y] 7
+[rotated] true
+
+[chip] 
+[type] OR
+[x] 15
+[y] 7
+[rotated] true
+
+[chip] 
+[type] DIAL1
+[x] 3
+[y] 8
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL2
+[x] 5
+[y] 8
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 9
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 4
+[y] 9
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 7
+[y] 9
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 10
+[y] 9
+[code] 
+
+
+[chip] 
+[type] NOTE
+[x] 13
+[y] 9
+[code]
