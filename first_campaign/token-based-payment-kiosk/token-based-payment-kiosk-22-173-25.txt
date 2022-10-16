@@ -2,7 +2,7 @@
 [puzzle] Sz009
 [production-cost] 2200
 [power-usage] 173
-[lines-of-code] 26
+[lines-of-code] 25
 
 [traces] 
 ......................
@@ -60,7 +60,10 @@ to avoid the jmp
 [x] 9
 [y] 4
 [code] 
-@ teq 1 1
+  teq x3 0
+- mov 10 x2
+- slp 1
+- slp x2
 + slx x0
 + mov x0 x1
 + tlt x1 10
@@ -68,10 +71,6 @@ to avoid the jmp
 + gen p1 1 1
 + tlt x1 5
 + gen p1 1 1
-  teq x3 0
-b: -mov 10 x2
-- slp 1
-- slp x2
 
 [chip] 
 [type] BRIDGE
