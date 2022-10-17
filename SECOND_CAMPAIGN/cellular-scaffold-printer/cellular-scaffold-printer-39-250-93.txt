@@ -1,8 +1,8 @@
-[name] motor split  -1
+[name] 250
 [puzzle] Sz046
 [production-cost] 3900
-[power-usage] 263
-[lines-of-code] 95
+[power-usage] 250
+[lines-of-code] 93
 
 [traces] 
 ......................
@@ -10,13 +10,13 @@
 ......................
 ......................
 ......................
-.....9555554.155554...
-.....A14.....14.1554..
-....9614.14.955C..14..
-..156954.9556..A..14..
-.....A15568.954A..14..
-...94A14.16.A1435414..
-...34354.1556.........
+.....9555554.15D554...
+.....A14..95C..A1554..
+....9614956.A..A..14..
+..156954A94.A1569414..
+.....A156A1C35556.14..
+...94A14.34A.14...14..
+...34354.156..........
 ......................
 ......................
 
@@ -35,16 +35,15 @@ b:  slx x1
   mov x1 acc
   tgt acc 6
 - teq acc 3
-- mul 2
+  mul 10
 - mov acc x3
 - jmp b
-  mul 10
   sub 170
   mov acc x2
   teq p0 100
-+ mov -90 x2
-  mov -100 x2
 - mov -90 x2
+  mov -100 x2
++ mov -90 x2
 
 [chip] 
 [type] UC6
@@ -53,18 +52,18 @@ b:  slx x1
 [code] 
   slx x1
   mov x1 dat
-  mov x0 acc
-  mov acc x3
+  mov x1 acc
+  mov acc x0
   slp 1
-  mov dat x3
+  mov dat x0
   slp 1
-  mov acc x3
+  mov acc x0
   slp 1
-  mov dat x3
+  mov dat x0
   slp 1
-  mov acc x3
+  mov acc x0
   slp 1
-  mov dat x3
+  mov dat x0
 
 [chip] 
 [type] UC6
@@ -72,7 +71,6 @@ b:  slx x1
 [y] 3
 [code] 
   slx x0
-  mov p0 p1
   mov x0 dat
   tgt dat 2
 + mov dat x2
@@ -83,6 +81,7 @@ b:  slx x1
 + mov 10 x3
 - mov 100 x3
 b:  slp 6
+  mov p0 p1
   mov 0 x3
 
 [chip] 
@@ -90,18 +89,19 @@ b:  slp 6
 [x] 11
 [y] 3
 [code] 
-b:  slx x3
-  mov x3 acc
+b:  slx x1
+  mov x1 acc
   teq acc -140
-+ mov x3 x2
++ mov x1 x2
++ mov x1 x2
 + jmp b
-  teq x3 acc
-  mov x3 null
+  teq x1 acc
+  mov x1 null
 + slp 4
 - slp 1
-  mov acc x0
+  mov acc x3
   slp 1
-  mov 0 x0
+  mov 0 x3
 
 [chip] 
 [type] DX3
@@ -109,76 +109,69 @@ b:  slx x3
 [y] 3
 
 [chip] 
-[type] BRIDGE
-[x] 10
-[y] 4
-
-[chip] 
 [type] UC6
 [x] 7
 [y] 5
 [code] 
-b: slx x3
-  mov x3 x1
+b: slx x2
+  mov x2 x1
   mov x0 acc
   mov x0 dat
   mov p0 x1
-  mov dat x2
+  mov dat x3
   slp 1
-  mov acc x2
+  mov acc x3
   slp x0
-  mov dat x2
+  mov dat x3
   slp 1
-  mov acc x2
+  mov acc x3
   slp x0
-  mov dat x2
+  mov dat x3
 
 [chip] 
 [type] UC6
 [x] 14
 [y] 5
 [code] 
+b:  mov 50 p1
+  slp 1
+  mov 100 p1
+  slp 5
+  mov 50 p1
+  mov 100 p0
+  slp 1
+  mov p1 p0
+  slp 5
+@ jmp b
+@ jmp b
 @ mov 50 p1
-@ slx x0
-@ mov x0 p1
-  slp 5
-  mov 50 p1
-  slp 1
-  mov 0 p1
-  slp 5
-  mov 50 p1
-  slp 1
-@ jmp b
-@ jmp b
 @ slp 100
-b: mov 100 p1
 
 [chip] 
 [type] BANK
 [x] 4
 [y] 6
 [rom] 
-1,2,2,1,0,0,0,0,100,1,100,0,0,1
+2,1,1,2,0,1,0,0,100,0,100,0,100,1
 
 [chip] 
 [type] UC6
 [x] 11
 [y] 6
 [code] 
-  mov 50 p1
-  slx x0
-@ mov 100 x3
-b:  slp 5
-  gen p1 1 0
+b:  mov 50 p1
+@ slp 1
+  slp 6
   mov 50 p1
   slp 5
   mov 100 p1
   slp 1
-  mov 50 p1
 @ jmp b
 @ jmp b
+@ mov 50 p1
 @ slx x0
-@ gen p1 0 6
+@ mov 0 p1
+@ slp 6
 
 [chip] 
 [type] BRIDGE
