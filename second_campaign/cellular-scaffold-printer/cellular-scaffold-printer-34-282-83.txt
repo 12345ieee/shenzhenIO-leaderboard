@@ -1,0 +1,163 @@
+[name] (7,8) rolled open
+[puzzle] Sz046
+[production-cost] 3400
+[power-usage] 282
+[lines-of-code] 83
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....95555555C.9554...
+.....A14.....34A1554..
+....96149555C..A..14..
+..156954A94.A1569414..
+.....A156A1C35556.14..
+...94A14.34A.14...14..
+...34354.156..........
+......................
+......................
+
+[chip] 
+[type] NOT
+[x] 4
+[y] 2
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 2
+[code] 
+b:  slx x1
+  mov x1 acc
+  tgt acc 6
+- teq acc 3
+- mul 2
+- mov acc x3
+- jmp b
+  mul 10
+  sub 170
+  mov acc x2
+  teq p0 100
++ mov -90 x2
+  mov -100 x2
+- mov -90 x2
+
+[chip] 
+[type] UC6
+[x] 14
+[y] 2
+[code] 
+  slx x1
+  mov x1 dat
+  mov x1 acc
+  mov acc x0
+  slp 1
+  mov dat x0
+  slp 1
+  mov acc x0
+  slp 1
+  mov dat x0
+  slp 1
+  mov acc x0
+  slp 1
+  mov dat x0
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 3
+[code] 
+  slx x0
+  mov p0 p1
+  mov x0 dat
+  teq -1 dat
++ slp 100
+  tgt dat 2
++ mov dat x2
++ jmp b
+  tcp dat 0
++ teq dat 2
++ mov 10 x3
+- mov 100 x3
+b:  slp 6
+  mov 0 x3
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 3
+[code] 
+b:  slx x1
+  mov x1 acc
+  teq acc -140
++ mov x1 x2
++ mov x1 x2
++ jmp b
+  teq x1 acc
+  mov x1 null
++ slp 4
+- slp 1
+  mov acc x3
+  slp 1
+  mov 0 x3
+
+[chip] 
+[type] DX3
+[x] 17
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 5
+[code] 
+b: slx x2
+  mov x2 x1
+  mov x0 acc
+  mov x0 dat
+  mov p0 x1
+  mov dat x3
+  slp 1
+  mov acc x3
+  slp x0
+  mov dat x3
+  slp 1
+  mov acc x3
+  slp x0
+  mov dat x3
+
+[chip] 
+[type] UC6
+[x] 14
+[y] 5
+[code] 
+  mov 50 p1
+  mov 50 p0
+  teq acc 3
+- add 1
++ slx x0
++ gen p0 0 6
+- slx x0
+- gen p1 5 0
+- mov 50 p1
+- gen p0 1 0
+- mov 50 p0
+- gen p1 0 5
+- mov 50 p1
+- gen p0 1 0
+
+[chip] 
+[type] BANK
+[x] 4
+[y] 6
+[rom] 
+1,2,2,1,0,0,0,0,100,1,100,0,0,1
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 6
