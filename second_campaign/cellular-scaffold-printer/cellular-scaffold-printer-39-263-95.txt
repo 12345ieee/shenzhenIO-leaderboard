@@ -1,8 +1,8 @@
-[name] motor split
+[name] motor split  -1
 [puzzle] Sz046
 [production-cost] 3900
-[power-usage] 264
-[lines-of-code] 96
+[power-usage] 263
+[lines-of-code] 95
 
 [traces] 
 ......................
@@ -11,12 +11,12 @@
 ......................
 ......................
 .....9555554.155554...
-.....A14..95C14.1554..
-....9614956.A.....14..
-..156954A94.A...9414..
-.....A156A1C35556.14..
-...94A14.34A.14...14..
-...34354.156..........
+.....A14.....14.1554..
+....9614.14.955C..14..
+..156954.9556..A..14..
+.....A15568.954A..14..
+...94A14.16.A1435414..
+...34354.1556.........
 ......................
 ......................
 
@@ -53,18 +53,18 @@ b:  slx x1
 [code] 
   slx x1
   mov x1 dat
-  mov x1 acc
-  mov acc x0
+  mov x0 acc
+  mov acc x3
   slp 1
-  mov dat x0
+  mov dat x3
   slp 1
-  mov acc x0
+  mov acc x3
   slp 1
-  mov dat x0
+  mov dat x3
   slp 1
-  mov acc x0
+  mov acc x3
   slp 1
-  mov dat x0
+  mov dat x3
 
 [chip] 
 [type] UC6
@@ -90,19 +90,18 @@ b:  slp 6
 [x] 11
 [y] 3
 [code] 
-b:  slx x1
-  mov x1 acc
+b:  slx x3
+  mov x3 acc
   teq acc -140
-+ mov x1 x2
-+ mov x1 x2
++ mov x3 x2
 + jmp b
-  teq x1 acc
-  mov x1 null
+  teq x3 acc
+  mov x3 null
 + slp 4
 - slp 1
-  mov acc x3
+  mov acc x0
   slp 1
-  mov 0 x3
+  mov 0 x0
 
 [chip] 
 [type] DX3
@@ -110,24 +109,29 @@ b:  slx x1
 [y] 3
 
 [chip] 
+[type] BRIDGE
+[x] 10
+[y] 4
+
+[chip] 
 [type] UC6
 [x] 7
 [y] 5
 [code] 
-b: slx x2
-  mov x2 x1
+b: slx x3
+  mov x3 x1
   mov x0 acc
   mov x0 dat
   mov p0 x1
-  mov dat x3
+  mov dat x2
   slp 1
-  mov acc x3
+  mov acc x2
   slp x0
-  mov dat x3
+  mov dat x2
   slp 1
-  mov acc x3
+  mov acc x2
   slp x0
-  mov dat x3
+  mov dat x2
 
 [chip] 
 [type] UC6
