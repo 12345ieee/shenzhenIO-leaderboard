@@ -1,8 +1,8 @@
-[name] 250
+[name] SLP 33
 [puzzle] Sz046
-[production-cost] 3900
-[power-usage] 250
-[lines-of-code] 93
+[production-cost] 3700
+[power-usage] 239
+[lines-of-code] 88
 
 [traces] 
 ......................
@@ -10,11 +10,11 @@
 ......................
 ......................
 ......................
-.....9555554.15D554...
-.....A14..95C..A1554..
-....9614956.A..A..14..
-..156954A94.A1569414..
-.....A156A1C35556.14..
+...955555554.15D554...
+...A..14.......A1554..
+...A..149555C..A..14..
+..174954A94.A1569414..
+...14A156A1C35556.14..
 ...94A14.34A.14...14..
 ...34354.156..........
 ......................
@@ -35,9 +35,10 @@ b:  slx x1
   mov x1 acc
   tgt acc 6
 - teq acc 3
-  mul 10
+- mul 2
 - mov acc x3
 - jmp b
+  mul 10
   sub 170
   mov acc x2
   teq p0 100
@@ -133,18 +134,19 @@ b: slx x2
 [x] 14
 [y] 5
 [code] 
-b:  mov 50 p1
+  mov 50 p1
   slp 1
-  mov 100 p1
+b:  mov 100 p1
   slp 5
   mov 50 p1
   mov 100 p0
   slp 1
   mov p1 p0
   slp 5
+  mov 50 p1
+  gen p0 1 0
 @ jmp b
 @ jmp b
-@ mov 50 p1
 @ slp 100
 
 [chip] 
@@ -152,28 +154,21 @@ b:  mov 50 p1
 [x] 4
 [y] 6
 [rom] 
-2,1,1,2,0,1,0,0,100,0,100,0,100,1
-
-[chip] 
-[type] UC6
-[x] 11
-[y] 6
-[code] 
-b:  mov 50 p1
-@ slp 1
-  slp 6
-  mov 50 p1
-  slp 5
-  mov 100 p1
-  slp 1
-@ jmp b
-@ jmp b
-@ mov 50 p1
-@ slx x0
-@ mov 0 p1
-@ slp 6
+2,1,1,2,0,1,0,0,100,1,100,0,0,1
 
 [chip] 
 [type] BRIDGE
 [x] 18
 [y] 6
+
+[chip] 
+[type] UC4
+[x] 11
+[y] 7
+[code] 
+@ mov 50 p1
+@ slp 33
+@ slx x0
+@ mov 0 p1
+@ slp 6
+@ mov 50 p1
