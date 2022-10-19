@@ -1,0 +1,160 @@
+[name] ungen'd
+[puzzle] Sz047
+[production-cost] 3100
+[power-usage] 1270
+[lines-of-code] 68
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..8..155C.............
+..A...94A154..14155C..
+..A.1DE.A1C.......16..
+..A..A34A.B555554.....
+..349695616....94.....
+..15616..154..1E......
+.....155554....34.....
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 2
+[code] 
+b:  slx x2
+#  mov x3 acc
+  mov x1 acc
+  teq x2 x3
+- jmp b
+l:  mov x1 x0
+  teq acc 6
+- mov x3 x0
+- mov x1 x0
+- mov x3 x0
+- add 1
+- jmp l
+  mov x3 acc
+  teq x3 x1
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 2
+
+[chip] 
+[type] NP2
+[x] 11
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 16
+[y] 2
+[code] 
+  slp 1
+- mov 0 p0
+  teq p0 100
++ mov -1 acc
+- tlt acc 3
++ add 1
+- mov -1 acc
+- mov 100 p0
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 3
+[code] 
+b:mov x2 dat
++ tgt dat -999
++ mov dat x1
++ sub dat
+- mov 6 x3
+- mov acc x3
+- mov x1 acc
+- slp 21
++ mov x2 dat
+  tcp dat -999
++ mov dat x0
++ add dat
++ jmp b
+  slp 1
+
+[chip] 
+[type] UC6
+[x] 16
+[y] 4
+[code] 
+b:  slx x1
+  teq x1 3
+- mov 100 p0
+- slp 1
+- mov 0 p0
++ mov 4 acc
++ mov 100 p1
+l:+  slp 1
++ mov acc p1
++ sub 1
++ tgt acc 0
++ jmp l
+- mov 0 p1
+
+[chip] 
+[type] RAM
+[x] 2
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 6
+[code] 
+b:mov x3 dat
++ tgt dat -999
++ mov dat x0
++ sub dat
+- mov 3 x2
+- mov acc x2
+- mov x0 acc
+- slp 21
++ mov x3 dat
+  tcp dat -999
++ mov dat x1
++ add dat
++ jmp b
+  slp 1
+
+[chip] 
+[type] NP1
+[x] 11
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] RAM
+[x] 3
+[y] 7
+
+[chip] 
+[type] OR
+[x] 15
+[y] 7
+[rotated] true
+
+[chip] 
+[type] UC4
+[x] 17
+[y] 7
+[code] 
+  slp 4
+  teq p0 0
+#- nop
+- slp p0
+  mov 100 p0
+  slp 1
+  mov 0 p0
