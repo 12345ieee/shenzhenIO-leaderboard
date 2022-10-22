@@ -1,7 +1,7 @@
 [name] jmp bad
 [puzzle] Sz047
 [production-cost] 3100
-[power-usage] 1152
+[power-usage] 1150
 [lines-of-code] 69
 
 [traces] 
@@ -81,8 +81,8 @@ r:mov x2 dat
 + jmp r
 - mov 1 x3
 - mov acc x3
-- mov 0 acc
 - slp 21
+- mov 0 acc
   slp 1
 
 [chip] 
@@ -125,8 +125,8 @@ r:mov x3 dat
 + jmp r
 - mov 0 x2
 - mov acc x2
-- mov 0 acc
 - slp 21
+- mov 0 acc
   slp 1
 
 [chip] 
