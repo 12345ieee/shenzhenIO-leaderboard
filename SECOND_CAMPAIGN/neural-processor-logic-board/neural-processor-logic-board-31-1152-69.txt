@@ -1,8 +1,8 @@
-[name] p
+[name] jmp bad
 [puzzle] Sz047
 [production-cost] 3100
-[power-usage] 1171
-[lines-of-code] 70
+[power-usage] 1152
+[lines-of-code] 69
 
 [traces] 
 ......................
@@ -25,19 +25,20 @@
 [x] 3
 [y] 2
 [code] 
-s:slx x2
-  mov x1 acc
-  teq x2 x3
+@ teq 0 1
+s:- slx x2
+- dst x3 x1 #burn2
+- teq x2 x3 #0
 - jmp s
-l:mov x1 x0
-  teq acc 6
-- mov x3 x0
++ mov x1 x0
++ mov x3 x0
++ mov x1 x0
++ mov x3 x0
+  tlt acc 5
++ add 1
 - mov x1 x0
-- mov x3 x0
-- add 1
-- jmp l
-  mov x3 acc
-  mov x3 x1
+- dst x3 x1 #burn2
+- mov x3 acc #0
 
 [chip] 
 [type] BRIDGE
@@ -60,9 +61,8 @@ l:mov x1 x0
 - teq acc 4
 + mov 100 p0
 + slp 1
-+ mov 0 p0
-+ mov 1 acc
-- add 1
++ dst 0 p0
+  add 1
   slp 1
 
 [chip] 
@@ -71,18 +71,18 @@ l:mov x1 x0
 [y] 3
 [code] 
 r:mov x2 dat
-+ tgt dat -999
-+ mov dat x1
-+ add dat
-+ mov x2 dat
-- mov 1 x3
-- mov acc x3
-- mov x1 acc
-- slp 21
   tcp dat -999
 + mov dat x0
++ add dat
++ mov x2 dat
++ tgt dat -999
++ mov dat x1
 + sub dat
 + jmp r
+- mov 1 x3
+- mov acc x3
+- mov 0 acc
+- slp 21
   slp 1
 
 [chip] 
@@ -95,13 +95,13 @@ r:mov x2 dat
 - mov 100 p0
 + mov 100 p1
   slp 1
++ mov 4 p1
++ slp 1
 + mov 3 p1
 + slp 1
 + mov 2 p1
 + slp 1
 + mov 1 p1
-+ slp 1
-+ mov 0 p1
 - mov 0 p0
 
 [chip] 
@@ -114,19 +114,19 @@ r:mov x2 dat
 [x] 7
 [y] 6
 [code] 
-r:mov x3 dat
-+ tgt dat -999
-+ mov dat x0
-+ add dat
-+ mov x3 dat
-- mov 0 x2
-- mov acc x2
-- mov x0 acc
-- slp 21
+r:mov x3 dat 
   tcp dat -999
 + mov dat x1
++ add dat
++ mov x3 dat
++ tgt dat -999
++ mov dat x0
 + sub dat
 + jmp r
+- mov 0 x2
+- mov acc x2
+- mov 0 acc
+- slp 21
   slp 1
 
 [chip] 
@@ -152,9 +152,8 @@ r:mov x3 dat
 [y] 7
 [code] 
   slp 4
-  teq p0 0
-- slp p0
-- slp 1
+  tgt p0 1
++ slp p0
   mov 100 p0
   slp 1
   mov 0 p0
