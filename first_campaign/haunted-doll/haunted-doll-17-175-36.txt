@@ -1,0 +1,100 @@
+[name] min power
+[puzzle] Sz008
+[production-cost] 1700
+[power-usage] 175
+[lines-of-code] 36
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+.....9555554.14.......
+.....A....94.14.......
+.....A..1CB555554.....
+.....34.162...........
+.....94.1554.14.......
+.....3555554.14.......
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 2
+[code] 
+1:@ teq 0 0
+2:+ slx x1
+3:+ mov x1 null
+4:  mov x2 p0
+5:  slp 1
+6:  mov x2 p0
+7:  slp 1
+8:  mov x2 p0
+9:  slp 1
+a:  mov x2 p0
+b:  teq x3 0
+c:- slp 1
+d:- mov x2 p0
+e:- slp 1
+
+[chip] 
+[type] BANK
+[x] 14
+[y] 2
+[rom] 
+16,36,42,14,10,58,100,76,26,28,70,80,42,0
+
+[chip] 
+[type] UC4
+[x] 6
+[y] 3
+[code] 
+1:  mov 50 p0
+2:  slp 1
+3:  tcp p1 2
+4:+ jmp 2
+5:  teq p1 2
+6:- mov p0 x0
+7:+ mov p0 x1
+8:  slp 13
+
+[chip] 
+[type] RND
+[x] 7
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 6
+[code] 
+1:@ teq 0 0
+2:+ slx x1
+3:+ mov x1 null
+4:  mov x2 p0
+5:  slp 1
+6:  mov x2 p0
+7:  slp 1
+8:  mov x2 p0
+9:  slp 1
+a:  mov x2 p0
+b:  teq x3 0
+c:- slp 1
+d:- mov x2 p0
+e:- slp 1
+
+[chip] 
+[type] BANK
+[x] 14
+[y] 6
+[rom] 
+100,80,41,14,14,41,69,74,54,27,19,40,75,0
