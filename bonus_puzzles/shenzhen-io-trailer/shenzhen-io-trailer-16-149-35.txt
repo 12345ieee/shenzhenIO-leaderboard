@@ -1,0 +1,91 @@
+[name] min power
+[puzzle] Sz036
+[production-cost] 1600
+[power-usage] 149
+[lines-of-code] 35
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..9555D55C............
+..2...3C96............
+..8..156354.1C........
+..34.15555555F4.......
+..15555DDC...A........
+..8...8AAA..16........
+..34.162374...........
+......................
+......................
+
+[chip] 
+[type] UC4
+[x] 3
+[y] 2
+[code] 
+1:@ slp 46
+2:  mov 15 x1
+3:  slp 1
+4:  mov -15 x1
+5:  slp 1
+6:  teq p0 0
+7:+ slp 999
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 2
+[code] 
+1:@ slp 35
+2:@ mov 12 acc
+3:  tgt p0 dat
+4:- slp 1
+5:+ mov p0 dat
+6:+ mov acc x3
+7:+ slp 2
+8:+ add 1
+9:+ teq acc 15
+a:+ slp 999
+
+[chip] 
+[type] LCDT
+[x] 14
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 3
+
+[chip] 
+[type] UC4
+[x] 3
+[y] 5
+[code] 
+1:@ slp 14
+2:@ mov 3 acc
+3:  tcp p0 50
+4:- slp 1
+5:+ mov acc x1
+6:+ slp 2
+7:+ add 1
+8:+ teq acc 12
+9:+ slp 999
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 6
+[code] 
+1:  slp 1
+2:  tcp p0 dat
+3:+ mov p0 dat
+4:+ add 1
+5:+ mov acc x2
+6:+ slp 4
+7:- mov -1 x2
+8:- mov -2 x2
+9:- slp 999
