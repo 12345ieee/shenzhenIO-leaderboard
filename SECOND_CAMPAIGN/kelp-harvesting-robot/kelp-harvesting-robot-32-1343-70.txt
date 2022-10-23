@@ -1,0 +1,156 @@
+[name] 1343 power
+[puzzle] Sz042EZ
+[production-cost] 3200
+[power-usage] 1343
+[lines-of-code] 70
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..95555C.....154.1C...
+..34954A.....154..3C..
+..94A1CA155495549542..
+..34A.AB5414A14.A154..
+..94A16A155CA1556..8..
+..A.354A154A3554..96..
+..34...354.35555556...
+......................
+......................
+
+[chip] 
+[type] RADIO
+[x] 3
+[y] 2
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 2
+[code] 
+@ teq 1 1
+S:+slx x3
++ mov x0 dat
++ mov x3 acc
++ teq x0 x2
++ jmp S
+- teq x1 acc
++ mov x0 acc
++ sub 1
++ mov acc x0
++ mov 0 x1
++ gen p1 1 0
+- teq x0 x2
++ mov dat x0
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 15
+[y] 3
+[code] 
+  mov 50 p1
+S:slx x1
+  tcp p0 x1
++ mov 10 x1
++ mov 100 p1
++ slx x1
++ tcp p0 x1
++ mov 10 x1
++ jmp S
+- mov -10 x1
+- mov 0 p1
+- jmp S
+  mov 0 x1
+
+[chip] 
+[type] UC4X
+[x] 3
+[y] 4
+[code] 
+@ slp 1
+  mov x1 acc
+  teq acc -999
+- dst 1 x1
+- mov acc x0
+- slp 2
++ slp 1
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 4
+[code] 
+S:slp 1
+@ teq 0 0
++ mov acc x0
++ mov x0 dat
++ mov dat p1
++ teq acc dat
+  dst 0 dat
+  mov acc x2
+  add x2
+  dst p0 x3
++ jmp S
+  teq acc dat
++ mov 100 p0
+- mov acc x1
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 5
+[code] 
+@ slx x3
+@ teq 0 x3
+@ mov x0 x3
+S:+slx x3
++ mov x3 acc
++ teq x1 x2
++ teq x1 x2
+- mov x0 acc
+- tgt acc 0
++ mov acc x3
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 5
+
+[chip] 
+[type] RAM
+[x] 3
+[y] 6
+
+[chip] 
+[type] UC6
+[x] 15
+[y] 6
+[code] 
+  mov 50 p1
+  slx x2
+  dst p1 p0
+  tcp acc x1
+J:+ mov x0 p1
+- mov x0 x1
+- slp 1
++ slp 1
+- tcp acc x1
++ tcp acc x1
+- jmp J
++ jmp J
+
+[chip] 
+[type] BANK
+[x] 11
+[y] 7
+[rom] 
+700,700,701,702,703,704,705,706,707,708,709,0,0,0
