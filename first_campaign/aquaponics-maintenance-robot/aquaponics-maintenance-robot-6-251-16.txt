@@ -1,0 +1,56 @@
+[name] min cost & lines
+[puzzle] Sz023
+[production-cost] 600
+[power-usage] 251
+[lines-of-code] 16
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+...........94.155554..
+...........A...9555C..
+...........34.16...A..
+...........94.154..2..
+...........355555554..
+......................
+......................
+......................
+
+[chip] 
+[type] UC4
+[x] 12
+[y] 4
+[code] 
+1:  gen p0 x1 1
+2:  mov x1 acc
+3:  tcp -999 acc
+4:- mov acc x0
+5:- teq acc x0
+6:- slp 2
+7:- jmp 4
+8:+ gen p1 x1 0
+
+[chip] 
+[type] RADIO
+[x] 16
+[y] 4
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 12
+[y] 6
+[code] 
+1:  mov 50 p1
+2:  slx x0
+3:  tcp x0 acc
+4:  mov acc x0
+5:- gen p1 0 1
+6:- sub 1
+7:+ gen p1 1 0
+8:+ add 1
