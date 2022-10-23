@@ -1,0 +1,92 @@
+[name] min cost & lines
+[puzzle] Sz044
+[production-cost] 1600
+[power-usage] 1529
+[lines-of-code] 41
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..14.1555C............
+.........B555C........
+..155C..16...A........
+..15C34.....1F4.......
+....3555554..A........
+.........95556........
+..15554.16............
+......................
+......................
+
+[chip] 
+[type] UC4
+[x] 6
+[y] 2
+[code] 
+1:  tcp p0 50
+2:  mov +31 x1
+3:  mov +33 x1
+4:  mov -34 x1
+5:- mov -31 x1
+6:- mov +34 x1
+7:+ mov -33 x1
+8:+ mov +30 x1
+9:  slp 1
+
+[chip] 
+[type] LCDR
+[x] 14
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 4
+[code] 
+1:  tlt p0 80
+2:- mov +24 x3
+3:+ mov -24 x3
+4:+ tlt p0 60
+5:- mov +23 x3
+6:+ mov -23 x3
+7:+ tlt p0 40
+8:- mov +22 x3
+9:+ mov -22 x3
+a:+ tlt p0 20
+b:- mov +21 x3
+c:+ mov -21 x3
+d:  slp 1
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 5
+[code] 
+1:  mov -30 x3
+2:  tlt p0 80
+3:- mov +14 x3
+4:+ mov -14 x3
+5:+ tlt p0 60
+6:- mov +13 x3
+7:+ mov -13 x3
+8:+ tlt p0 40
+9:- mov +12 x3
+a:+ mov -12 x3
+b:+ tlt p0 20
+c:- mov +11 x3
+d:+ mov -11 x3
+e:  slp 1
+
+[chip] 
+[type] UC4X
+[x] 3
+[y] 7
+[code] 
+1:@ mov 32 x3
+2:@ mov 20 x3
+3:@ mov 10 x3
+4:  slx x0
+5:  mov x0 x3
