@@ -1,0 +1,74 @@
+[name] min cost
+[puzzle] Sz027
+[production-cost] 1000
+[power-usage] 365
+[lines-of-code] 28
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+..15555C..............
+..8...16..............
+..A...155554.1555554..
+..B54....154.154......
+..3555555554.154......
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 3
+[code] 
+1:  tcp p0 0
+2:+ mov p0 x0
+3:+ mov x0 dat
+4:  tcp acc 0
+5:+ mov x2 p1
+6:+ sub 1
+7:+ jmp e
+8:  teq x2 1
+9:+ mov x2 acc
+a:+ jmp 5
+b:  mov 50 p1
+c:  teq x2 x1
+d:+ mov dat x3
+e:  slp 1
+
+[chip] 
+[type] RADIO
+[x] 15
+[y] 3
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 4
+[code] 
+1:  slx x3
+2:  tcp x3 79
+3:+ mov 100 x3
+4:+ jmp 1
+5:  teq p1 0
+6:+ mov 600 x3
+7:+ jmp 1
+8:  tlt p0 51
+9:+ mov 700 x3
+a:- mov p1 acc
+b:- mul 5
+c:- dgt 2
+d:- add 199
+e:- mov acc x3
+
+[chip] 
+[type] ID
+[x] 8
+[y] 4
+[is-puzzle-provided] true
