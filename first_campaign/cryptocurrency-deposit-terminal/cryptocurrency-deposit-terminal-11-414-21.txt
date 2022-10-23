@@ -1,0 +1,65 @@
+[name] min cost & power
+[puzzle] Sz013
+[production-cost] 1100
+[power-usage] 414
+[lines-of-code] 21
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+..8...................
+..35555554............
+..15541554.15555C..8..
+..1554.....1C...A..A..
+..1554.....174.16..A..
+...........154.15556..
+......................
+......................
+
+[chip] 
+[type] RAM
+[x] 9
+[y] 2
+
+[chip] 
+[type] UC4X
+[x] 13
+[y] 2
+[code] 
+1:@ teq 0 0
+2:+ slx x3
+3:+ mov 0 x1
+4:  mov x0 x2
+5:  mov x0 x2
+6:  teq x1 8
+7:- mov x0 x2
+8:+ mov x3 x2
+9:+ mov 0 x1
+
+[chip] 
+[type] DX3
+[x] 5
+[y] 3
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 4
+[code] 
+1:  slp 1
+2:- sub acc
+3:  tcp x1 0
+4:+ add 50
+5:+ tcp x1 10
+6:- sub 30
+7:+ add 50
+8:  mov x0 dat
+9:  tgt dat -1
+a:+ mov dat x2
+b:- tlt dat -1
+c:- mov acc x3
