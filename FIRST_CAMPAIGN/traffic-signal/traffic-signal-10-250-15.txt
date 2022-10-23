@@ -1,0 +1,82 @@
+[name] min power
+[puzzle] Sz026
+[production-cost] 1000
+[power-usage] 250
+[lines-of-code] 15
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+......9DDC........8...
+...95577775541C.156...
+...2.....154.16.154...
+......94.154.15415C...
+......A.1554.154..2...
+......355554.154......
+......................
+......................
+
+[chip] 
+[type] UC4X
+[x] 11
+[y] 2
+[code] 
+1:@ mov 100 x1
+2:@ mov x0 x1
+3:@ mov 10 x1
+4:@ mov x2 x1
+5:@ mov 1 x1
+6:@ mov x3 x1
+
+[chip] 
+[type] DIAL5
+[x] 15
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL4
+[x] 7
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL6
+[x] 15
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] RAM
+[x] 7
+[y] 4
+
+[chip] 
+[type] UC4X
+[x] 11
+[y] 4
+[code] 
+1:  tcp x3 50
+2:+ mov x2 acc
+3:- teq x1 6
+4:+ mov 0 x1
+5:- tgt acc 1
+6:+ sub 1
+7:- mov x0 x2
+8:- mov x0 acc
+9:  slp 1
+
+[chip] 
+[type] DX3
+[x] 15
+[y] 4
+
+[chip] 
+[type] DX3
+[x] 12
+[y] 6
+[rotated] true
