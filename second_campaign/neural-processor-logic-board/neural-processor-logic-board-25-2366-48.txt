@@ -1,0 +1,129 @@
+[name] 新●设●计1
+[puzzle] Sz047
+[production-cost] 2500
+[power-usage] 2366
+[lines-of-code] 48
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..8..1C15C............
+..A...A94A14..14.1C...
+..34..AA.A........A...
+..94.16A.B55555555E...
+..A..1574A........A...
+..A....15614..14.16...
+..34..................
+......................
+......................
+
+[chip] 
+[type] RAM
+[x] 3
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 2
+[code] 
+# Send TELOS-data
+# packet to left
+1:  mov x3 dat
+2:  mov dat x1#pmp
+3:  tcp dat -999
+4:+ mov dat x0
+5:+ tgt dat -999
+6:+ mul -1
+7:+ add dat
+8:+ mov x3 dat
+9:+ jmp 4
+a:- mov acc x0#CRC
+b:- sub acc
+c:  slp 1
+
+[chip] 
+[type] NP2
+[x] 11
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 15
+[y] 3
+[code] 
+# Ctrl TELOS-pump
+1:  tgt x1 -999
+2:- teq acc 4
+3:- add 1
+4:+ mov 100 p0
+5:  slp 1
+6:+ mov p0 acc
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 4
+[code] 
+# Receive Packet
+1:  slx x2
+2:  mov x2 x1
+3:  mov x2 acc
+4:  mov acc x3
+5:  teq acc -999
+# Verify & Send
+6:+ teq x2 0
+7:+ mov x1 x3#init
+8:+ mov x1 x0
+9:+ mov x3 acc
+a:+ tcp acc -999
+b:+ mov acc x0
+c:+ jmp 8
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 6
+[code] 
+# Send LOGOS-data
+# packet to left
+1:  mov x3 dat
+2:  tcp dat -999
+3:  mov dat x0#pmp
+4:+ mov dat x1
+5:+ tgt dat -999
+6:+ mul -1
+7:+ add dat
+8:+ mov x3 dat
+9:+ jmp 4
+a:- mov acc x1#CRC
+b:- sub acc
+c:  slp 1
+
+[chip] 
+[type] NP1
+[x] 11
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] RAM
+[x] 3
+[y] 7
+
+[chip] 
+[type] UC4
+[x] 15
+[y] 7
+[code] 
+# Ctrl LOGOS-pump
+1:  slx x1
+2:+ mov p0 acc
+3:  tgt x1 -999
+4:- teq acc 4
+5:- add 1
+6:+ mov 100 p0
