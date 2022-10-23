@@ -1,0 +1,152 @@
+[name] min cost
+[puzzle] Sz040
+[production-cost] 1700
+[power-usage] 541
+[lines-of-code] 30
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..94.1C14.14.949C1D4..
+..2...B54.14.A.BE.A...
+..95556155C..3422.2...
+..A.14.14.A..14.155C..
+..B554.155F5554.14.2..
+..A.14.14.A..94.14.8..
+..3554.1556..3555556..
+......................
+......................
+
+[chip] 
+[type] UC4
+[x] 5
+[y] 2
+[code] 
+# Check whether
+# it's time to
+# feed cat 3
+1:  teq p0 3
+2:+ mov p0 x1
+3:+ mov p1 x1
+4:+ slp x0
+5:- slp 1
+6:  nop
+
+[chip] 
+[type] DIAL10
+[x] 3
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] SWITCH16
+[x] 8
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 14
+[y] 3
+[code] 
+# Feed cat if feed
+# signal received
+1:  slx x1
+2:  mov x2 acc
+3:  tcp x1 2
+4:- mov x0 acc
+5:+ mov x3 acc
+6:  tcp x1 50
+7:- mov acc p0
+8:+ mov acc p1
+9:  slp 1
+a:  mov p0 p1
+
+[chip] 
+[type] DIAL12
+[x] 17
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 5
+[y] 4
+[code] 
+# Check whether
+# it's time to
+# feed cat 2
+1:  teq p0 2
+2:+ mov p0 x1
+3:+ mov p1 x1
+4:+ slp x0
+5:- slp 1
+6:  nop
+
+[chip] 
+[type] DIAL13
+[x] 17
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL9
+[x] 3
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] SWITCH15
+[x] 8
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL11
+[x] 12
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 6
+
+[chip] 
+[type] UC4
+[x] 3
+[y] 7
+[code] 
+# Broadcast
+1:  slp 1
+2:  mov x0 p1
+
+[chip] 
+[type] UC4
+[x] 8
+[y] 7
+[code] 
+# Check whether
+# it's time to
+# feed cat 1
+1:  teq p0 1
+2:+ mov p0 x0
+3:+ mov p1 x0
+4:+ slp x1
+5:- slp 1
+6:  nop
+
+[chip] 
+[type] DIAL8
+[x] 11
+[y] 7
+[is-puzzle-provided] true
+
+[chip] 
+[type] SWITCH14
+[x] 11
+[y] 8
+[is-puzzle-provided] true
