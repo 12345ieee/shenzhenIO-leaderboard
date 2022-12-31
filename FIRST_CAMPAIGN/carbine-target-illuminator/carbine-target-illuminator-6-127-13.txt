@@ -1,7 +1,7 @@
 [name] low power toggle state plus sleep
 [puzzle] Sz014
 [production-cost] 600
-[power-usage] 128
+[power-usage] 127
 [lines-of-code] 13
 
 [traces] 
@@ -37,7 +37,6 @@
 [code] 
   slp 1
   tcp p0 0
-+ mov 0 acc
 wait:
 + slp 1
 + teq p0 0
@@ -49,3 +48,4 @@ wait:
 - sub 100
 - mov acc x3
 - slp 1
+- mov 0 acc
