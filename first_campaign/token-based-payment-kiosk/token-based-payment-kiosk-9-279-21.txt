@@ -1,7 +1,7 @@
-[name] New design 1
+[name] low cost/power
 [puzzle] Sz009
 [production-cost] 900
-[power-usage] 280
+[power-usage] 279
 [lines-of-code] 21
 
 [traces] 
@@ -11,11 +11,11 @@
 ......................
 ......................
 ......................
-.........14.1555554...
+........154.1555554...
 ...15554154...........
-...14954....154.1C....
-...15694.....94..34...
-....156......355554...
+...14954....1554.1C...
+...15694......94..2...
+....156.......35554...
 ......................
 ......................
 ......................
@@ -33,18 +33,18 @@
 
 [chip] 
 [type] UC4
-[x] 14
+[x] 15
 [y] 4
 [code] 
-1:tlt acc 0
-+ gen p0  1 1
-+ add 1
-- slx x0
-- mov x0  acc
-5:- tgt acc -5
-- add 5
-- gen p1  1 1
-- jmp 5
++ slx x0
++ mov x0 acc
+five: + tlt acc -4
++ gen p1 1 1
++ add 5
++ jmp five
+  tgt acc -1
+- gen p0 1 1
+- add 1
 
 [chip] 
 [type] UC6
@@ -52,21 +52,20 @@
 [y] 5
 [code] 
 @ mov x0 acc
-  
-s:slp 1
-  teq x1 000
-+ jmp s
-  tcp x1 010
-+ add 7
+wait: - slp 1
+  tgt x1 0
+- jmp wait
++ sub 12
+  tcp x1 10
 - add 11
-  sub 12
-  tgt acc 0
-- mov acc x2  
-- gen p1  4 2
-- mov x0  acc
++ add 7
+  tlt acc 1
++ mov acc x2
++ gen p1 4 3
++ mov x0 acc
 
 [chip] 
 [type] DIAL3
-[x] 8
+[x] 7
 [y] 7
 [is-puzzle-provided] true
