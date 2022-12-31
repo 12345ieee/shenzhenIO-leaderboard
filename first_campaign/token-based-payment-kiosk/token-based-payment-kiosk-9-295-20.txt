@@ -1,7 +1,7 @@
-[name] Top solution Cost->Lines
+[name] low cost/code
 [puzzle] Sz009
 [production-cost] 900
-[power-usage] 296
+[power-usage] 295
 [lines-of-code] 20
 
 [traces] 
@@ -11,11 +11,11 @@
 ......................
 ......................
 ......................
-.........14.1555554...
-...15554154...........
-...14954....154.1C....
-...15694.....94..34...
-....156......355554...
+.........154.155554...
+...155554154..........
+...149554....154.1C...
+...156954.....94..2...
+....156.......35554...
 ......................
 ......................
 ......................
@@ -27,40 +27,40 @@
 
 [chip] 
 [type] DX3
-[x] 7
+[x] 8
 [y] 4
 [rotated] true
 
 [chip] 
 [type] UC4
-[x] 14
+[x] 15
 [y] 4
 [code] 
   teq acc 0
 + slx x0
-+ mov x0  acc
++ mov x0 acc
   tlt acc -4
++ gen p1 1 1
 + add 5
-+ gen p1  1 1
+- gen p0 1 1
 - add 1
-- gen p0  1 1
 
 [chip] 
 [type] UC6
-[x] 10
+[x] 11
 [y] 5
 [code] 
   mov x0 acc
-s:slp 1
-  teq x1 000
-+ jmp s
-  tcp x1 010
-+ add 7
+wait: slp 1
+  teq x1 0
++ jmp wait
+- sub 12
+  tcp x1 10
 - add 11
-  sub 12
++ add 7
   tcp acc 0
-+ jmp s
-- mov acc x2  
+- mov acc x2
++ jmp wait
   gen p1 4 2
 
 [chip] 
