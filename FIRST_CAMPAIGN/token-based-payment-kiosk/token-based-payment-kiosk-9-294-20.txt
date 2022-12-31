@@ -1,7 +1,7 @@
-[name] low cost/code
+[name] low cost/balanced
 [puzzle] Sz009
 [production-cost] 900
-[power-usage] 295
+[power-usage] 294
 [lines-of-code] 20
 
 [traces] 
@@ -11,10 +11,10 @@
 ......................
 ......................
 ......................
-.........154.155554...
-...155554154..........
-...149554....154.1C...
-...156954.....94..2...
+........154.1555554...
+...15554154...........
+...14954....1554.1C...
+...15694......94..2...
 ....156.......35554...
 ......................
 ......................
@@ -27,7 +27,7 @@
 
 [chip] 
 [type] DX3
-[x] 8
+[x] 7
 [y] 4
 [rotated] true
 
@@ -47,11 +47,11 @@
 
 [chip] 
 [type] UC6
-[x] 11
+[x] 10
 [y] 5
 [code] 
   mov x0 acc
-wait: slp 1
+wait: + slp 1
   teq x1 0
 + jmp wait
 - sub 12
@@ -61,10 +61,10 @@ wait: slp 1
   tcp acc 0
 - mov acc x2
 + jmp wait
-  gen p1 4 2
+  gen p1 4 3
 
 [chip] 
 [type] DIAL3
-[x] 8
+[x] 7
 [y] 7
 [is-puzzle-provided] true
