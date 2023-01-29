@@ -1,7 +1,7 @@
 [name] Four chip O6 bot-mid-top less code
 [puzzle] Sz024
 [production-cost] 2000
-[power-usage] 131
+[power-usage] 130
 [lines-of-code] 43
 
 [traces] 
@@ -62,7 +62,7 @@ next: slx x1
 + mov acc x0
   teq acc dat
 + mov acc x3
-  slp 1
+  slp 7
 
 [chip] 
 [type] UC6
