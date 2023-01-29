@@ -1,0 +1,74 @@
+[name] three chip o1
+[puzzle] Sz024
+[production-cost] 1100
+[power-usage] 179
+[lines-of-code] 29
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......9555554.........
+.....1E955554.154.....
+......A34..94.........
+.....1F54.1755554.....
+......A...154.........
+.....17555554.154.....
+......................
+......................
+......................
+
+[chip] 
+[type] UC4X
+[x] 12
+[y] 3
+[code] 
+  tgt acc 1
+- slx x0
+- mov x0 x2
+- mov x1 acc
+- mov acc x2
+  mov x1 x2
++ sub 1
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 4
+[code] 
+  slx x1
+  mov x1 acc
+  tcp acc x3
+- mov acc x2
++ mov acc x0
+  teq acc x3
+- slp 1
++ mov acc x3
++ mov x1 acc
++ mov acc x3
+here: + mov x1 x3
++ tgt acc 1
++ sub 1
++ jmp here
+
+[chip] 
+[type] ID
+[x] 12
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4X
+[x] 12
+[y] 7
+[code] 
+  tgt acc 2
+- slx x1
+- mov x1 x2
+- mov x0 acc
+- mov acc x2
+- mov x0 x2
+  mov x0 x2
++ sub 1
