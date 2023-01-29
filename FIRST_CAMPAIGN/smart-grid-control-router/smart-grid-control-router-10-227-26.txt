@@ -1,0 +1,65 @@
+[name] two chip
+[puzzle] Sz024
+[production-cost] 1000
+[power-usage] 227
+[lines-of-code] 26
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+.....1D555554...8.....
+......A....94.156.....
+.....1F54..A..1D4.....
+......A...169416......
+.....16...1575554.....
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 3
+[code] 
+  slx x0
+  mov x0 dat
+  tlt dat x2
+- mov dat x3
+- slp 1
++ mov dat x2
++ mov x0 acc
++ mov acc x2
+loop: + mov x0 x2
++ tgt acc 1
++ sub 1
++ jmp loop
+
+[chip] 
+[type] ID
+[x] 13
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 5
+[code] 
+  slx x1
+  mov x1 dat
+  tgt dat x2
++ mov dat x3
+- mov dat x2
+  mov x0 acc
++ mov acc x3
+- mov acc x2
+loop: + tgt dat x2
++ mov x0 x3
+- mov x0 x2
+  tgt acc 1
++ sub 1
++ jmp loop
