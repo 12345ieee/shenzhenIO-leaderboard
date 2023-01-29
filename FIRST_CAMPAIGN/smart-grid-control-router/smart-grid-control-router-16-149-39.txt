@@ -1,0 +1,95 @@
+[name] Four chip O6 bot less code
+[puzzle] Sz024
+[production-cost] 1600
+[power-usage] 149
+[lines-of-code] 39
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......9555554.........
+.....1E955554.154.....
+......A34..14.........
+.....1F54.154.154.....
+......A...154.........
+.....17555554.154.....
+..............14......
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 2
+[code] 
+@ mov x2 x0
+next: slx x0
+  mov x0 x3
+  mov x1 acc
+  mov acc x3
+  mov x1 x3
+  mov x1 x3
+  mov x1 x3
+  tcp acc 4
+- jmp next
+  mov x1 x3 
++ mov x1 x3
+
+[chip] 
+[type] ID
+[x] 15
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 4
+[code] 
+@ mov x2 dat
+  slx x1
+  mov x1 acc
+  tcp acc dat
+- mov acc x2
++ mov acc x0
+  teq acc dat
++ mov acc x3
+  slp 1
+
+[chip] 
+[type] UC4X
+[x] 12
+[y] 5
+[code] 
+  tgt acc 3
+- slx x1
+- mov x1 x2
+- mov x0 acc
+- mov acc x2
+- mov x0 x2
+- mov x0 x2
+  mov x0 x2
++ sub 1
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 6
+
+[chip] 
+[type] UC4X
+[x] 12
+[y] 7
+[code] 
+  tgt acc 3
+- slx x1
+- mov x1 x2
+- mov x0 acc
+- mov acc x2
+- mov x0 x2
+- mov x0 x2
+  mov x0 x2
++ sub 1
