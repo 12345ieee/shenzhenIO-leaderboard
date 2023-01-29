@@ -1,7 +1,7 @@
-[name] New design 1
+[name] three chip o6
 [puzzle] Sz024
 [production-cost] 1500
-[power-usage] 153
+[power-usage] 152
 [lines-of-code] 36
 
 [traces] 
@@ -10,72 +10,72 @@
 ......................
 ......................
 ......................
-......95555554........
-.....8A.955554.14.....
-.....A34A.94..........
-.....B55617555554.....
-.....A...15554........
-.....355555554.14.....
+......955554..........
+.....1E95554.1554.....
+......A34......1C.....
+.....1F54.1555556.....
+......A...154.........
+.....17555554.154.....
 ......................
 ......................
 ......................
 
 [chip] 
 [type] UC6
-[x] 13
+[x] 12
 [y] 2
 [code] 
-  slx x0
+next: slx x0
   mov x0 x3
   mov x1 acc
   mov acc x3
+  mov x1 x3
+  mov x1 x3
+  mov x1 x3
   tcp acc 4
-- jmp 3
+- jmp next
+  mov x1 x3
 + mov x1 x3
-  mov x1 x3
-3:mov x1 x3
-  mov x1 x3
-  mov x1 x3
 
 [chip] 
 [type] UC6
-[x] 7
+[x] 8
 [y] 4
 [code] 
   slx x1
   mov x1 acc
   tcp acc x3
-+ mov acc x0
 - mov acc x2
++ mov acc x0
   teq acc x3
-- slp 1
+- slp 7
 + mov acc x3
 + mov x1 acc
 + mov acc x3
-l:+ mov x1 x3
+here: + mov x1 x3
 + tgt acc 1
 + sub 1
-+ jmp l
-
-[chip] 
-[type] ID
-[x] 11
-[y] 6
-[is-puzzle-provided] true
++ jmp here
 
 [chip] 
 [type] UC6
-[x] 13
+[x] 11
 [y] 6
 [code] 
-  slx x0
-  mov x0 x3
-  mov x1 acc
+next: slx x1
+  mov x1 x3
+  mov x0 acc
   mov acc x3
+  mov x0 x3
+  mov x0 x3
+  mov x0 x3
   tcp acc 4
-- jmp 3
-+ mov x1 x3
-  mov x1 x3
-3:mov x1 x3
-  mov x1 x3
-  mov x1 x3
+- jmp next
+  mov x0 x3
++ mov x0 x3
+
+[chip] 
+[type] ID
+[x] 14
+[y] 6
+[is-puzzle-provided] true
