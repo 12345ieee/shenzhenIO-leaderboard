@@ -1,0 +1,111 @@
+[name] Four chip O9
+[puzzle] Sz024
+[production-cost] 2000
+[power-usage] 124
+[lines-of-code] 50
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....954..955555C.....
+.....A94.16154..2.....
+.....AA...9554.1C.....
+.....A34..A8....2.....
+.....B54.1634.........
+.....A...1554.154.....
+.....3555554..14......
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 2
+[code] 
+@ mov x2 x1
+  slx x1
+  mov x1 x3
+  tcp x0 4
+- mov 3 x3
+- jmp less
++ mov 5 x3
++ mov x0 x3
++ jmp more
+  mov 4 x3
+more: mov x0 x3
+less: mov x0 x3
+  mov x0 x3 
+  mov x0 x3
+
+[chip] 
+[type] ID
+[x] 15
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 3
+[code] 
+@ mov x2 dat
+  slx x1
+  mov x1 acc
+  tcp acc dat
+- mov acc x2
+- jmp next
++ mov acc x0
++ jmp next
+  mov acc x3
+next: slp 7
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 5
+[code] 
+  slx x1
+  mov x1 x3
+  tcp x0 4
+- mov 3 x3
+- jmp less
++ mov 5 x3
++ mov x0 x3
++ jmp more
+  mov 4 x3
+more: mov x0 x3
+less: mov x0 x3
+  mov x0 x3 
+  mov x0 x3
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 6
+[code] 
+  slx x1
+  mov x1 x3
+  tcp x0 4
+- mov 3 x3
+- jmp less
++ mov 5 x3
++ mov x0 x3
++ jmp more
+  mov 4 x3
+more: mov x0 x3
+less: mov x0 x3
+  mov x0 x3 
+  mov x0 x3
