@@ -1,0 +1,100 @@
+[name] Four chip O6 bot-mid-top
+[puzzle] Sz024
+[production-cost] 2000
+[power-usage] 127
+[lines-of-code] 44
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....954..955555C.....
+.....A94.16954..2.....
+.....AA...9694.1C.....
+.....A34..A.A...2.....
+.....B54.1616.........
+.....A...1554.154.....
+.....3555554..14......
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 2
+[code] 
+@ mov x2 x1
+next: slx x1
+  mov x1 x3
+  mov x0 acc
+  mov acc x3
+  mov x0 x3
+  mov x0 x3
+  mov x0 x3
+  tcp acc 4
+- jmp next
+  mov x0 x3 
++ mov x0 x3
+
+[chip] 
+[type] ID
+[x] 15
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 3
+[code] 
+@ mov x2 dat
+  slx x1
+  mov x1 acc
+  tcp acc dat
+- mov acc x2
+- jmp next
++ mov acc x0
++ jmp next
+  mov acc x3
+next: slp 7
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 5
+[code] 
+next: slx x0
+  mov x0 x3
+  mov x1 acc
+  mov acc x3
+  mov x1 x3
+  mov x1 x3
+  mov x1 x3
+  tcp acc 4
+- jmp next
+  mov x1 x3 
++ mov x1 x3
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 6
+[code] 
+next: slx x1
+  mov x1 x3
+  mov x0 acc
+  mov acc x3
+  mov x0 x3
+  mov x0 x3
+  mov x0 x3
+  tcp acc 4
+- jmp next
+  mov x0 x3 
++ mov x0 x3
