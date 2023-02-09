@@ -1,0 +1,94 @@
+[name] min cost & lines
+[puzzle] Sz045
+[production-cost] 1700
+[power-usage] 1347
+[lines-of-code] 31
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..14..................
+..14....954...95555C..
+..141555E14.1C34...2..
+........354..A94.15C..
+..141555554.16A..1CA..
+..14........156..16A..
+..14.............156..
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 3
+[y] 2
+[rotated] true
+
+[chip] 
+[type] BANK
+[x] 15
+[y] 2
+[rom] 
+1,2,0,1,2,0,0,0,0,0,0,0,0,0
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 3
+[code] 
+1:  tcp x3 0
+2:+ mov x0 x2
+3:+ mov x1 x2
+4:- mov x0 acc
+5:- mov x1 dat
+6:- slp 1
+7:- teq x3 0
+8:- add x0
+9:- mov acc x2
+a:- mov x1 acc
+b:- add dat
+c:- mov acc x2
+d:  slp 1
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 15
+[y] 4
+[code] 
+1:@ teq 0 0
+2:+ slx x1
+3:+ mov -1 x3
+4:- teq x3 2
+5:+ mov x1 dat
+6:  mov dat acc
+7:  dgt x2
+8:  tcp acc 0
+9:+ mov x3 x0
+a:  teq x3 5
+
+[chip] 
+[type] DX3
+[x] 3
+[y] 6
+[rotated] true
+
+[chip] 
+[type] UC4X
+[x] 10
+[y] 6
+[code] 
+1:  mov x0 acc
+2:  add x1
+3:  teq acc 1
+4:- teq acc 10
+5:- teq acc 100
+6:- mov acc x2
+7:+ mov -1 x2
+8:  slp 1
