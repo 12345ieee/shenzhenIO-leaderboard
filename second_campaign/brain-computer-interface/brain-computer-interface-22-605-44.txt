@@ -1,8 +1,8 @@
 [name] min power
 [puzzle] Sz045
 [production-cost] 2200
-[power-usage] 712
-[lines-of-code] 46
+[power-usage] 605
+[lines-of-code] 44
 
 [traces] 
 ......................
@@ -10,13 +10,13 @@
 ......................
 ......................
 ......................
-..14....954......15C..
-..14....A94......14A..
-..141555E2..1C94.15E..
-........354..AA..1CA..
-..141555554.1634..AA..
-..14........1554.16A..
-..14.............156..
+..14....14954....15C..
+..14....1CA15C...14A..
+..141555CAA1CA94.15E..
+........2AA.AAA..1CA..
+..14155556A.AA34..AA..
+..14....14A16B54.16A..
+..14....156156...156..
 ......................
 ......................
 
@@ -25,6 +25,38 @@
 [x] 3
 [y] 2
 [rotated] true
+
+[chip] 
+[type] NOTE
+[x] 5
+[y] 2
+[code] 
+Lower:     Upper
+X0 3-5     0-2
+X1 0-2     3-5
+X2 Send    CombRCV
+X3 CombSND Send
+P1 Switch  Switch
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 2
+[code] 
+1:  tgt x0 p0
+2:+ mov x0 acc
+3:- tcp 0 x1
+4:- mov 1 p0
+5:- mov x1 acc
+6:+ tgt x1 0
+7:- tgt acc 100
+8:- teq acc 11
+9:- slp 1
+a:- mov acc x3
+b:+ mov x1 x2
+c:+ mov x0 x2
+d:+ slp 1
+e:  slp 1
 
 [chip] 
 [type] UC6
@@ -43,28 +75,9 @@
 a:  mov x1 x0
 
 [chip] 
-[type] UC6
-[x] 10
-[y] 3
-[code] 
-1:  tcp x3 0
-2:+ mov x0 x2
-3:+ mov x1 x2
-4:- mov x0 acc
-5:- mov x1 dat
-6:- slp 1
-7:- teq x3 0
-8:- add x0
-9:- mov acc x2
-a:- mov x1 acc
-b:- add dat
-c:- mov acc x2
-d:  slx x3
-
-[chip] 
 [type] BRIDGE
-[x] 9
-[y] 4
+[x] 8
+[y] 3
 
 [chip] 
 [type] UC4X
@@ -93,24 +106,26 @@ d:  slx x3
 [rotated] true
 
 [chip] 
+[type] BRIDGE
+[x] 8
+[y] 6
+
+[chip] 
 [type] UC6
-[x] 10
+[x] 9
 [y] 6
 [code] 
-1:  teq x0 x1
-2:+ jmp b
-3:  mov x0 acc
-4:  add x1
-5:  teq acc 100
-6:- teq acc 10
-7:- teq acc 1
-8:+ mov -1 x2
-9:+ slp 1
-a:+ teq x0 x1
-b:+ mov x0 x2
-c:+ slp 1
-d:- mov acc x2
-e:- slp 2
+1:  slx x2
+2:  mov x2 acc
+3:  tgt x0 0
+4:- tcp x1 0
+5:+ teq p1 0
+6:+ mov x0 x3
+7:+ add x1
+8:+ mov acc x3
+9:- add x0
+a:- mov acc x3
+b:- mov x1 x3
 
 [chip] 
 [type] BANK
