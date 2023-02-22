@@ -1,7 +1,7 @@
-[name] New design 1
+[name] 
 [puzzle] Sz009
 [production-cost] 1300
-[power-usage] 256
+[power-usage] 252
 [lines-of-code] 20
 
 [traces] 
@@ -31,15 +31,15 @@
 [x] 9
 [y] 4
 [code] 
-@ mov x3 dat
+@ sub x3
+@ mov acc dat
   tcp x2 0
 + mov x2 x1
 + add x0
-+ tlt acc dat
-- sub dat
++ tlt acc 0
 - mov acc x3
 - gen p1 4 2
-- mov 0 acc
+- mov dat acc
   slp 1
 
 [chip] 
