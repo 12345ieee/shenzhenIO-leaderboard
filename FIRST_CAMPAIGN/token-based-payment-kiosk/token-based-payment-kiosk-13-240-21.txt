@@ -1,0 +1,73 @@
+[name] New design 1
+[puzzle] Sz009
+[production-cost] 1300
+[power-usage] 240
+[lines-of-code] 21
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+............9555554...
+...14...14.16.14.1C...
+...14...14.15554..A...
+...141C....15C94..2...
+......A......A35554...
+......35555556........
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 4
+[y] 4
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 4
+[code] 
+@ mov x3 dat
+@ mov dat acc
+  slp 1
++ mov dat acc
+  tcp x2 0
++ mov x2 x1
++ sub x0
++ tlt acc 1
+- slp 1
++ mov acc x3
++ gen p1 4 2
+
+[chip] 
+[type] UC6
+[x] 15
+[y] 4
+[code] 
+@ mov x0 x1
+  teq acc 0
+- gen p0 1 1
+- sub -1
++ slx x1
++ mov x1 acc
+5:+ tlt acc -4
++ gen p1 1 1
++ sub -5
++ jmp 5
+
+[chip] 
+[type] BANK
+[x] 6
+[y] 5
+[rom] 
+0,1,12,13,0,0,0,0,0,0,5,6,17,18
+
+[chip] 
+[type] DIAL3
+[x] 13
+[y] 6
+[is-puzzle-provided] true
