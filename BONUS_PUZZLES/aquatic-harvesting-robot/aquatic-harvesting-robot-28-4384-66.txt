@@ -1,8 +1,8 @@
 [name] 新●设●计1
 [puzzle] Sz042
-[production-cost] 3000
+[production-cost] 2800
 [power-usage] 4384
-[lines-of-code] 72
+[lines-of-code] 66
 
 [traces] 
 ......................
@@ -13,32 +13,26 @@
 ..95555554............
 ..A.955D54.155555C1C..
 ..34A14A14954..14A.2..
-..95614A156954...354..
-..34...A155614....14..
-.......3555555554.14..
-.....14.....15554.....
+..15E14A156954...354..
+..8.A..A155614....14..
+..34A..3555555554.14..
+..15614.....15554.....
 ......................
 ......................
 
 [chip] 
-[type] UC6
+[type] UC4X
 [x] 3
 [y] 2
 [code] 
-@ mov x0 x0
-@ mov -999 x0
-@ mov -999 x0
-@ mov -999 x0
-@ mov -999 x0
-@ mov -999 x0
-@ mov -999 x0
-@ mov -999 x0
-@ mov -999 x0
-@ mov -999 x0
-@ mov -999 x0
-  mov x2 x0
-  mov x2 x0
-  slp 1
+@ mov 2 x0
+@ mov -999 x1
+@ teq x1 x0
+- mov -999 x1
+- teq x1 x0
++ slp 1
++ mov x2 x1
++ mov x2 x1
 
 [chip] 
 [type] RADIO
@@ -76,11 +70,15 @@
 [y] 3
 
 [chip] 
+[type] BRIDGE
+[x] 2
+[y] 4
+
+[chip] 
 [type] UC6
 [x] 6
 [y] 4
 [code] 
-# Find best target
   teq x1 0
 + mov dat x3
 + slp 1
