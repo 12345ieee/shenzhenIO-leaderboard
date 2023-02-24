@@ -1,4 +1,4 @@
-[name] New design 2
+[name] pareto frontier.
 [puzzle] Sz009
 [production-cost] 1500
 [power-usage] 230
