@@ -1,8 +1,8 @@
 [name] 新●设●计1
 [puzzle] Sz042
 [production-cost] 2800
-[power-usage] 4466
-[lines-of-code] 70
+[power-usage] 4465
+[lines-of-code] 69
 
 [traces] 
 ......................
@@ -25,7 +25,7 @@
 [x] 4
 [y] 2
 [code] 
-@ mov -999 x0
+@ mov x0 x0
 @ mov -999 x0
 @ mov -999 x0
 @ mov -999 x0
@@ -146,7 +146,6 @@
 [x] 10
 [y] 6
 [code] 
-@ mov -999 x1
 @ teq x2 0
 + slx x2
 + mov x2 dat
@@ -160,3 +159,11 @@
 - mov x0 acc#vest
 - tlt x1 0  #when
 + mov acc x0#d<2
+
+[chip] 
+[type] NOTE
+[x] 4
+[y] 7
+[code] 
+Abuse there's
+input at tick 1
