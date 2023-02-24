@@ -1,8 +1,8 @@
 [name] 新●设●计1
 [puzzle] Sz042
-[production-cost] 3200
-[power-usage] 4404
-[lines-of-code] 76
+[production-cost] 3000
+[power-usage] 4384
+[lines-of-code] 72
 
 [traces] 
 ......................
@@ -10,19 +10,19 @@
 ......................
 ......................
 ......................
-...95555554...95C.....
-...A.955554.156.A15C..
-...34A14.149554.A..2..
-...95614.1561554B54...
-...34....154..14A154..
-.........1C.....A.....
-......14..355554354...
+..95555554............
+..A.955D54.155555C1C..
+..34A14A14954..14A.2..
+..95614A156954...354..
+..34...A155614....14..
+.......3555555554.14..
+.....14.....15554.....
 ......................
 ......................
 
 [chip] 
 [type] UC6
-[x] 4
+[x] 3
 [y] 2
 [code] 
 @ mov x0 x0
@@ -42,19 +42,24 @@
 
 [chip] 
 [type] RADIO
-[x] 7
+[x] 6
 [y] 2
 [rotated] true
 [is-puzzle-provided] true
 
 [chip] 
+[type] BRIDGE
+[x] 12
+[y] 2
+
+[chip] 
 [type] UC6
-[x] 15
+[x] 16
 [y] 2
 [code] 
 @ mov 50 p1
-  slx x2
-  tcp x0 acc
+  slx x3
+  tcp x1 acc
 + mov 100 p1
 - mov 0 p1
   slp 1
@@ -66,27 +71,13 @@
 - mov acc p0
 
 [chip] 
-[type] UC6
-[x] 10
+[type] BRIDGE
+[x] 19
 [y] 3
-[code] 
-# Calculate dists
-# to given targets
-  slx x1
-  mov x1 acc
-  sub p1  # x-x0
-  dst 1 0 #|x-x0|
-  mov acc dat
-  mov x1 acc
-  sub p0  # y-y0
-  dst 1 0 #|y-y0|
-  tlt acc dat
-- mov acc x1
-+ mov dat x1
 
 [chip] 
 [type] UC6
-[x] 7
+[x] 6
 [y] 4
 [code] 
 # Find best target
@@ -105,36 +96,32 @@
 - mov x1 p1
 
 [chip] 
-[type] BRIDGE
-[x] 14
+[type] UC6
+[x] 13
 [y] 4
+[code] 
+# Calculate dists
+# to given targets
+  slx x1
+  mov x1 acc
+  sub p1  # x-x0
+  dst 1 0 #|x-x0|
+  mov acc dat
+  mov x1 acc
+  sub p0  # y-y0
+  dst 1 0 #|y-y0|
+  tlt acc dat
+- mov acc x1
++ mov dat x1
 
 [chip] 
 [type] RAM
-[x] 4
+[x] 3
 [y] 5
 
 [chip] 
 [type] UC6
-[x] 15
-[y] 5
-[code] 
-@ mov 50 p1
-  slx x2
-  tcp x2 acc
-+ mov 100 p1
-- mov 0 p1
-  slp 1
-+ add 1
-- sub 1
-+ mov 50 p1
-- mov 50 p1
-+ mov acc p0
-- mov acc p0
-
-[chip] 
-[type] UC6
-[x] 10
+[x] 9
 [y] 6
 [code] 
 @ teq x2 0
@@ -145,12 +132,26 @@
 + sub 2
 + mov acc x0
 + mov x1 x3 #x
-+ mov x1 x2 #y
 + tlt dat 2 #har-
 - mov x0 acc#vest
 - tlt x1 0  #when
 - mov x1 null
 + mov acc x0#d<2
+
+[chip] 
+[type] UC4
+[x] 16
+[y] 6
+[code] 
+  mov 50 p1
+  slx x0
+  tcp x0 acc
++ mov 100 p1
+- mov 0 p1
+  slp 1
++ add 1
+- sub 1
+  mov acc p0
 
 [chip] 
 [type] NOTE
