@@ -1,0 +1,101 @@
+[name] New design 2
+[puzzle] Sz009
+[production-cost] 1500
+[power-usage] 230
+[lines-of-code] 22
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....154.1555C........
+.....154.154.355554...
+...14.94.94..15555C...
+...14.2..A14954.94A...
+...141555694A14.2.2...
+......1555616..1554...
+...............14.....
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 14
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 16
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 3
+
+[chip] 
+[type] DIAL3
+[x] 12
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] DX3
+[x] 4
+[y] 4
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 4
+[code] 
+@ mov x3 p0
+  teq acc 0
+- mov 999 x2
+- slp 1
+- add x2
+- slp 1
++ slx x1
++ mov x1 acc
+0:
++ tlt acc -4  
++ gen p1 1 1
++ sub -5
++ jmp 0
+  
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 5
+
+[chip] 
+[type] NOT
+[x] 15
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 6
+[code] 
+  slp 1
+@ mov p0 acc
++ mov p0 acc
+  tcp x2 0
++ mov x2 x1
++ sub x0
++ tlt acc 1
+- slp 1
++ mov acc x3
++ gen p1 4 2
+
+[chip] 
+[type] BANK
+[x] 3
+[y] 7
+[rom] 
+0,1,12,13,0,0,0,0,0,0,5,6,17,18
