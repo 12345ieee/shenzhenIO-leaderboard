@@ -1,0 +1,104 @@
+[name] 13/97/16 (Copy)
+[puzzle] Sz017
+[production-cost] 1100
+[power-usage] 99
+[lines-of-code] 17
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+........15555414......
+.....14154954.14......
+....155C14A14.14......
+.......294A15414......
+.....15574A.8.14......
+.....1C1556.A.14......
+......3554156.........
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 1
+[code] 
+If DX300.p2=0 then
+x3<=11<50, and
+simple pin
+outpputting it
+is regarded as 0
+
+[chip] 
+[type] DX3
+[x] 9
+[y] 2
+[rotated] true
+
+[chip] 
+[type] ORACLE
+[x] 3
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 3
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 3
+
+[chip] 
+[type] LCDH
+[x] 15
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 4
+
+[chip] 
+[type] UC4
+[x] 2
+[y] 5
+[code] 
+@ mov 1 p1
+@ slp 51
+@ mov 40 p1
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 5
+[code] 
++ mov x3 p1
++ slp 1
++ mov x3 dat
++ slp 1
++ mov x3 p0
++ slp 1
++ mov x3 p1
++ slp 1
++ mov x3 x1
++ mov dat x2
++ slp 4
+  tgt p0 50
++ mov x3 p0
+  slp p1
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 6
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 6
