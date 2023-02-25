@@ -1,0 +1,171 @@
+[name] (Copy)
+[puzzle] Sz042
+[production-cost] 3300
+[power-usage] 4295
+[lines-of-code] 68
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..95555554..155C......
+..A.9555549555C35C1C..
+..34A15C14A14.A143C2..
+..15E1CA156954355C34..
+..14A.AA155614954A14..
+..156163555555615614..
+.....14.....15554.....
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 2
+[code] 
+  slp 1
+  mov x2 x1
+  mov x2 acc
+  tlt acc 0
++ teq x0 1
+- mov acc x1
++ mov 0 x1
+
+[chip] 
+[type] RADIO
+[x] 6
+[y] 2
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 16
+[y] 2
+[code] 
+  mov 50 p1
+  mov acc p0
+  slx x3
+  tcp x1 acc
++ mov 100 p1
+- mov 0 p1
+  slp 1
++ add 1
+- sub 1
+
+[chip] 
+[type] BRIDGE
+[x] 19
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 2
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 4
+[code] 
+@ teq x1 0
++ mov dat x3
++ slp 1
++ mov 10 dat
+  mov x0 acc
+  tlt acc 0
++ tcp x0 -999
+- mov acc x2
+- mov x2 acc
+- tcp acc dat
+- mov acc dat
+- mov x1 p1
+- teq x1 2
++ teq x1 2
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 4
+[code] 
+  slx x1
+  mov x1 acc
+  sub p1  # x-x0
+  dst 1 0 #|x-x0|
+  mov acc dat
+  mov x2 acc
+  sub p0  # y-y0
+  dst 1 0 #|y-y0|
+  tlt acc dat
+- mov acc x1
++ mov dat x1
+
+[chip] 
+[type] RAM
+[x] 3
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 6
+[code] 
+@ teq x3 0
++ slx x3
++ mov x3 dat
++ tlt dat 10
++ mov p0 acc
++ sub 2
++ mov acc x0
++ mov x1 x2 #x
++ mov x1 x3 #x
++ tlt dat 2 #har-
+- mov x0 acc#vest
+- tlt x1 0  #when
+- mov x1 null
++ mov acc x0#d<2
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 6
+
+[chip] 
+[type] UC4
+[x] 16
+[y] 6
+[code] 
+  mov 50 p1
+  slx x0
+  tcp x0 acc
++ mov 100 p1
+- mov 0 p1
+  slp 1
++ add 1
+- sub 1
+  mov acc p0
+
+[chip] 
+[type] UC4X
+[x] 2
+[y] 7
+[code] 
+@ teq 0 0
++ mov -999 x2
++ mov -999 x2
++ tgt x3 0
+
+[chip] 
+[type] NOTE
+[x] 6
+[y] 7
+[code] 
+Abuse there's
+input at tick 1
