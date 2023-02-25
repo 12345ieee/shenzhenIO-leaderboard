@@ -1,7 +1,7 @@
-[name] 新●设●计1
+[name] (Copy)
 [puzzle] Sz042
 [production-cost] 3300
-[power-usage] 4283
+[power-usage] 4274
 [lines-of-code] 79
 
 [traces] 
@@ -13,9 +13,9 @@
 ..95555554..155C......
 ..A.9555549555C35C1C..
 ..34A15C14A14.A143C2..
-..15E14A156954355C34..
-..14A..A155614954A14..
-..156..3555555615614..
+..15E1CA156954355C34..
+..14A.AA155614954A14..
+..156163555555615614..
 .....14.....15554.....
 ......................
 ......................
@@ -30,6 +30,7 @@
 @ mov -999 x1
 @ mov -999 x1
 @ mov -999 x1
+@ mov 12 x3
   slp 1
   mov x2 x1
   mov x2 acc
@@ -65,8 +66,7 @@
 - sub 1
 + mov 50 p1
 - mov 50 p1
-+ mov acc p0
-- mov acc p0
+  mov acc p0
 
 [chip] 
 [type] BRIDGE
