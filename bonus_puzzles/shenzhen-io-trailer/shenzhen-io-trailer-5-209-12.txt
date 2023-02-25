@@ -1,7 +1,7 @@
-[name] Top solution Cost
+[name] 5/219/12
 [puzzle] Sz036
 [production-cost] 500
-[power-usage] 219
+[power-usage] 209
 [lines-of-code] 12
 
 [traces] 
@@ -32,15 +32,14 @@
 [y] 4
 [code] 
   slp 1
++ mov -15 x3
   tcp p0 dat
 - mov -1 x3
 - mov -2 x3
 + add 1
 + mov acc x3
 + slp 1
-  mov p0 dat
++ mov p0 dat
+- mov p0 dat
   teq p1 100
 + mov 15 x3
-+ slp 1
-+ mov -15 x3
-
