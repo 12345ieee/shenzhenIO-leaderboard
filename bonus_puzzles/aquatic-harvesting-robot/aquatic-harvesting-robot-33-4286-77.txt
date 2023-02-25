@@ -1,4 +1,4 @@
-[name] (Copy) (Copy) (Co(Copy) py)
+[name] (Copy)
 [puzzle] Sz042
 [production-cost] 3300
 [power-usage] 4286
@@ -65,7 +65,6 @@
   slp 1
 + add 1
 - sub 1
-  
 
 [chip] 
 [type] BRIDGE
