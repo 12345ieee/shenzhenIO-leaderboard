@@ -1,0 +1,157 @@
+[name] 26/5920/52 (Copy)
+[puzzle] Sz042
+[production-cost] 2800
+[power-usage] 5874
+[lines-of-code] 51
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..15C......1554.......
+..14A149554155554.....
+..15E15615C14.1C..14..
+..94A14.143555434.14..
+..34A14.15554954.154..
+..15615555555614.954..
+.....1555555555556....
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 2
+[code] 
+  tgt dat 1
++ mov x1 acc
++ tgt x0 -999
+- slp 1
+- mov acc x1
+- mov x3 dat
+- tgt dat 9
+- mov p1 acc
+- sub 2
+- mov acc x1
+- mov x0 x2
+- mov x0 x3
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 3
+
+[chip] 
+[type] UC4
+[x] 15
+[y] 3
+[code] 
+  tcp acc x0
+- add 1
++ sub 1
+  mov acc p0
+- gen p1 1 0
++ gen p1 0 1
+  mov 50 p1
+  slx x1
+
+[chip] 
+[type] BRIDGE
+[x] 19
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 4
+[code] 
+  teq x1 0
++ mov dat x3
++ slp 1
+  mov x2 acc
+- tlt acc dat
++ mov x1 p0
++ mov acc dat
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 2
+[y] 5
+
+[chip] 
+[type] RAM
+[x] 3
+[y] 5
+
+[chip] 
+[type] UC4
+[x] 16
+[y] 5
+[code] 
+  mov 50 p1
+  slx x1
+  tcp acc x1
+- add 1
++ sub 1
+  mov acc p0
+- gen p1 1 0
++ gen p1 0 1
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 6
+[code] 
+  slp x3
+  mov p1 acc
+  sub x1
+  dst 2 0
+  mov acc dat
+  mov x1 acc
+  sub p0
+  dst 2 0
+  tgt acc dat
++ mov acc x2
+- mov dat x2
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 6
+
+[chip] 
+[type] UC4X
+[x] 3
+[y] 7
+[code] 
+@ teq 0 42
+  mov x2 x1
+  mov x2 x1
+- teq x0 0
++ slp 1
+
+[chip] 
+[type] RADIO
+[x] 6
+[y] 7
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] BANK
+[x] 16
+[y] 7
+[rom] 
+1,0,0,0,0,0,0,1,0,0,0,0,0,0
