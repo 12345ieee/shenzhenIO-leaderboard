@@ -1,7 +1,7 @@
-[name] 26/5920/52 (Copy)
+[name] 26/5920/52 (Copy) (Copy)
 [puzzle] Sz042
 [production-cost] 2800
-[power-usage] 5874
+[power-usage] 5873
 [lines-of-code] 51
 
 [traces] 
@@ -136,11 +136,11 @@
 [x] 3
 [y] 7
 [code] 
-@ teq 0 42
-  mov x2 x1
+@ teq x1 42
   mov x2 x1
 - teq x0 0
 + slp 1
+  mov x2 x1
 
 [chip] 
 [type] RADIO
