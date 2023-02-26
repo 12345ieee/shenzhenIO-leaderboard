@@ -1,0 +1,84 @@
+[name] Why this consumes more power than last line record?
+[puzzle] Sz036
+[production-cost] 1600
+[power-usage] 1206
+[lines-of-code] 8
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....955555C..1C.......
+..156...15E...A.......
+..155C14..3554A.......
+..954A..154.156.......
+..214A14.94.1C........
+..1556...A...34.......
+...1555556............
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 2
+
+[chip] 
+[type] BANK
+[x] 11
+[y] 2
+[rom] 
+15,-15,15,-15,15,-15,15,-15,15,-15,15,-15,15,-15
+
+[chip] 
+[type] LCDT
+[x] 14
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] DX3
+[x] 7
+[y] 3
+[rotated] true
+
+[chip] 
+[type] PGA
+[x] 4
+[y] 4
+[array-switch] False
+[array-data] 
+0,0,0,0,0,1,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,0
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 4
+[code] 
+  gen p0 0 1
+  tcp p1 dat
++ mov x3 x3
+- mov -1 x3
+- mov -2 x3
+  mov p1 dat
+  teq x1 10
++ mov x2 x3
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 5
+
+[chip] 
+[type] OR
+[x] 7
+[y] 6
+
+[chip] 
+[type] BANK
+[x] 11
+[y] 7
+[rom] 
+1,2,3,4,5,6,7,8,9,10,11,12,13,14
