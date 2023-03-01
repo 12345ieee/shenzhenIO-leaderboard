@@ -1,7 +1,7 @@
 [name] min power
 [puzzle] Sz045
 [production-cost] 2200
-[power-usage] 605
+[power-usage] 598
 [lines-of-code] 44
 
 [traces] 
@@ -43,12 +43,12 @@ P1 Switch  Switch
 [x] 9
 [y] 2
 [code] 
-1:  tgt x0 p0
-2:+ mov x0 acc
-3:- tcp 0 x1
+1:  tgt x1 p0
+2:+ mov x1 acc
+3:- tcp 0 x0
 4:- mov 1 p0
-5:- mov x1 acc
-6:+ tgt x1 0
+5:- mov x0 acc
+6:+ tgt x0 0
 7:- tgt acc 100
 8:- teq acc 11
 9:- slp 1
@@ -117,15 +117,15 @@ a:  mov x1 x0
 [code] 
 1:  slx x2
 2:  mov x2 acc
-3:  tgt x0 0
-4:- tcp x1 0
+3:  tgt x1 0
+4:- tcp x0 0
 5:+ teq p1 0
-6:+ mov x0 x3
-7:+ add x1
-8:+ mov acc x3
-9:- add x0
-a:- mov acc x3
-b:- mov x1 x3
+6:+ add x0
+7:+ mov acc x3
+8:+ mov x1 x3
+9:- mov x0 x3
+a:- add x1
+b:- mov acc x3
 
 [chip] 
 [type] BANK
