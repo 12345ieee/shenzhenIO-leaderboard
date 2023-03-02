@@ -1,0 +1,77 @@
+[name] New design 1
+[puzzle] Sz010
+[production-cost] 900
+[power-usage] 167
+[lines-of-code] 16
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....94................
+....A.954.15C.........
+....A.A...143554......
+....34A155555554......
+...954354..89554......
+...A15555556A.........
+...3555555556.........
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 4
+[y] 3
+
+[chip] 
+[type] UC4
+[x] 5
+[y] 4
+[code] 
+  slx x1
+  mov x0 p1
+  mov x0 p0
+  mov x0 acc
+  tlt acc 999
++ slp acc
++ mov p0 x1
++ add p1
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 4
+
+[chip] 
+[type] LEDRGBV
+[x] 15
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 8
+[y] 6
+[code] 
+  slx x0
+  mov x0 p1
+
+[chip] 
+[type] RADIO
+[x] 2
+[y] 7
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4X
+[x] 5
+[y] 7
+[code] 
+@ slp 1
+  mov x0 acc
+  teq acc -999
++ slp 1
+- mov acc x2
+- slp 6
