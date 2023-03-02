@@ -1,0 +1,62 @@
+[name] 6/198/18
+[puzzle] Sz010
+[production-cost] 600
+[power-usage] 222
+[lines-of-code] 17
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+.........1C155C.......
+..........A95434......
+.........16A1554......
+.........1C35494......
+..........35556.......
+......................
+......................
+......................
+
+[chip] 
+[type] UC4
+[x] 10
+[y] 4
+[code] 
+  slx x1
+  mov x1 p1     #g
+  mov x0 p0     #b
+  mov x0 acc  #cnt
+  teq acc 999
++ slp 5   #minimum
+- slp acc
+- mov p0 p1   #off
+  mov acc x1
+
+[chip] 
+[type] LEDRGBV
+[x] 15
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] RADIO
+[x] 7
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 10
+[y] 6
+[code] 
+  mov x0 acc    #r
+  tgt acc -999
++ mov acc p1    #r
++ mov x0 x1     #g
++ slx x1
++ tcp 999 x1
++ mov 0 p1    #off
+  slp 1
