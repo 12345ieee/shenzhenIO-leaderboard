@@ -1,0 +1,86 @@
+[name] 13/231/28 (Copy)
+[puzzle] Sz009
+[production-cost] 1300
+[power-usage] 233
+[lines-of-code] 26
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+.......14.155555554...
+...155414....95C......
+...1C14...94.A.355C...
+...8354..16.16.15C2...
+...354......1541C34...
+...............16.....
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 2
+[code] 
+1:tlt acc 0
++ mov 010 x3
++ slp 1
++ slp x3
++ add 1
+- slx x0
+- mov x0  acc
+- tgt acc -5
+5:- gen p1 1 1
+- add 5
+- tgt acc -5
+- jmp 5
+
+[chip] 
+[type] NOT
+[x] 14
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 5
+[y] 3
+
+[chip] 
+[type] DX3
+[x] 14
+[y] 3
+
+[chip] 
+[type] DX3
+[x] 6
+[y] 4
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 5
+[code] 
+@ mov x0 acc
+@ slp 1
+s:teq x1 000
++ slp 1
++ jmp s
+  tcp x1 010
++ add 7
+- add 11
+  sub 12
+  tgt acc 0
++ slp 2
+- mov acc x2  
+- gen p1 4 3
+- mov x0 acc
+
+[chip] 
+[type] DIAL3
+[x] 6
+[y] 7
+[is-puzzle-provided] true
