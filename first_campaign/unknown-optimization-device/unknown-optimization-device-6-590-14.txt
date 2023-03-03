@@ -1,7 +1,7 @@
-[name] Top solution Cost->Power
+[name] 6/621/14
 [puzzle] Sz015
 [production-cost] 600
-[power-usage] 621
+[power-usage] 590
 [lines-of-code] 14
 
 [traces] 
@@ -45,9 +45,8 @@
 [code] 
   tgt p0 59
 - tlt p0 20
-+ mov x0 acc
-+ add 30
-+ mov acc p1
 - mov x0 p1
-  slp 1
-
++ mov 80 p1
++ teq x0 0
++ mov 30 p1
+0:slp 1
