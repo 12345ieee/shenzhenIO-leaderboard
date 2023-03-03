@@ -1,0 +1,110 @@
+[name] 20/485/14
+[puzzle] Sz009
+[production-cost] 1800
+[power-usage] 456
+[lines-of-code] 15
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....14.15555C........
+.....14954...B41554...
+...14..A954.16........
+...14156215C14........
+...14.....9E1415554...
+........14B6..15554...
+........156...14......
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 2
+[code] 
+000 = 0  0
+001 = 1  1
+010 = 10 12
+011 = 11 
+100 = 2    
+101 = 3  5
+110 = 12 
+111 = 13
+
+[chip] 
+[type] BANK
+[x] 9
+[y] 2
+[rom] 
+0,0,0,100,400,401,500,501,600,601,70,11,12,13
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 2
+
+[chip] 
+[type] NOT
+[x] 15
+[y] 2
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 3
+
+[chip] 
+[type] DX3
+[x] 4
+[y] 4
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 4
+[code] 
+  mov x3 p1
+  teq 0 x0
+- mov x1 x2
+  slp 1
+- slp x2
+  mov x1 x0
++ mov x2 x2
+
+[chip] 
+[type] DIAL3
+[x] 13
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 6
+[code] 
+  sub x0
+@ mov p1 acc
+  tgt acc 0
+- mov acc x2  
+- gen p1 4 3
+- mov p1 acc
++ slp 1
+  mov x3 x1
+  
+
+[chip] 
+[type] OR
+[x] 14
+[y] 6
+
+[chip] 
+[type] BANK
+[x] 3
+[y] 7
+[rom] 
+0,1,12,0,0,0,0,0,0,0,5,0,0,0
