@@ -1,7 +1,7 @@
-[name] Top solution Lines->Cost - 837951602
+[name] 14/2027/4
 [puzzle] Sz005
 [production-cost] 1400
-[power-usage] 2027
+[power-usage] 2021
 [lines-of-code] 4
 
 [traces] 
@@ -91,3 +91,22 @@ optimizing points:
 * Amount of notes
 * Rotation of ROM
 
+[chip] 
+[type] NOTE
+[x] 4
+[y] 9
+[code] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+[REDACTED]
