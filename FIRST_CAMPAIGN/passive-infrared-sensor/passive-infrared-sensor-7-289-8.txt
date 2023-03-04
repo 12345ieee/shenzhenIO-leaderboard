@@ -1,0 +1,64 @@
+[name] 6/301/7
+[puzzle] Sz005
+[production-cost] 700
+[power-usage] 289
+[lines-of-code] 8
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+......154.14..........
+......154......15C....
+....15554.155541CA....
+...............162....
+......................
+......................
+......................
+......................
+
+[chip] 
+[type] NOT
+[x] 14
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 5
+[code] 
+@ mov 138 acc
+  teq p1 x0
+- teq p1 x1
++ sub 119
+  tgt p0 acc
++ mov acc x2
+- slp x2
++ slp 1
+
+[chip] 
+[type] DX3
+[x] 14
+[y] 5
+
+[chip] 
+[type] DIAL1
+[x] 5
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] RTC
+[x] 11
+[y] 6
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL2
+[x] 5
+[y] 7
+[is-puzzle-provided] true
