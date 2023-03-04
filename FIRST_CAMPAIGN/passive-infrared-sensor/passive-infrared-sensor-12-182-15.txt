@@ -1,0 +1,77 @@
+[name] 9/192/14
+[puzzle] Sz005
+[production-cost] 1200
+[power-usage] 182
+[lines-of-code] 15
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+......................
+...........1C.........
+....155554..34155C....
+...........154...2....
+...........154........
+.......154.154........
+......................
+......................
+
+[chip] 
+[type] RTC
+[x] 5
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 2
+[code] 
+1:  mov x2 acc
+2:  sub p0
+3:  tcp acc 0
+4:- add 96
+5:  slp acc
+6:  mov x3 acc
+7:  sub p0
+8:  tcp acc 0
+9:- add 96
+a:  gen p1 acc 999
+
+[chip] 
+[type] DIAL1
+[x] 13
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL2
+[x] 13
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] AND
+[x] 13
+[y] 4
+
+[chip] 
+[type] UC4
+[x] 9
+[y] 5
+[code] 
+0: @nop
+1:  tlt p0 p1
+2:- mov 100 p1
+4:  slp 1
+
+[chip] 
+[type] UC4
+[x] 12
+[y] 6
+[code] 
+@ mov 20 p0
