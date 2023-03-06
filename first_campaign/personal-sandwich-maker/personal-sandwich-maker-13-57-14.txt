@@ -1,7 +1,7 @@
-[name] power
+[name] New design 3
 [puzzle] Sz007EZ
 [production-cost] 1300
-[power-usage] 61
+[power-usage] 57
 [lines-of-code] 14
 
 [traces] 
@@ -10,12 +10,12 @@
 ......................
 ......................
 ......................
-.....1555414141555C...
-.....15555C954.14.34..
-...1C1C.142A94154154..
-..14A175555634155554..
-..156....8155C154154..
-..94.....35543554.94..
+........15541D4155C...
+.....1555C1416.14.34..
+...1C1D54B5C15554154..
+..14A16..28355549554..
+..156154157541556154..
+..94....14.14.154.94..
 ..35555555555555556...
 ......................
 ......................
@@ -25,45 +25,55 @@
 [x] 3
 [y] 3
 [code] 
-  slx x0
+@ slx x0
   tcp x0 2
   mov 100 p1
   slp 1
-  mov 100 x1
+  mov 990 x3
   slp 1
-  mov 110 x1
+  mov 990 x1
 + slp 1
 - slp 1
-  mov 10 x1
-  slp 1
+  slp x3
 + slp 1
   slp x1
-  gen p0 3 p1
+  add p1
+  gen p0 3 4
 
 [chip] 
-[type] BRIDGE
-[x] 12
-[y] 3
-
-[chip] 
-[type] AND
-[x] 16
+[type] DX3
+[x] 7
 [y] 3
 
 [chip] 
 [type] BRIDGE
 [x] 9
-[y] 4
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 3
+
+[chip] 
+[type] AND
+[x] 12
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 3
+
+[chip] 
+[type] XOR
+[x] 16
+[y] 3
 
 [chip] 
 [type] BRIDGE
 [x] 10
-[y] 4
-
-[chip] 
-[type] AND
-[x] 13
-[y] 4
+[y] 5
 
 [chip] 
 [type] BRIDGE
@@ -81,26 +91,21 @@
 [y] 6
 
 [chip] 
-[type] NOT
-[x] 13
+[type] OR
+[x] 11
 [y] 6
 
 [chip] 
-[type] OR
+[type] XOR
 [x] 16
 [y] 6
 
 [chip] 
-[type] OR
-[x] 9
-[y] 7
-
-[chip] 
-[type] AND
-[x] 13
-[y] 7
+[type] NOT
+[x] 11
+[y] 8
 
 [chip] 
 [type] NOT
-[x] 11
+[x] 14
 [y] 8
