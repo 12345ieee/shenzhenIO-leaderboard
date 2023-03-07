@@ -1,7 +1,7 @@
 [name] 5/491/7
 [puzzle] Sz012
 [production-cost] 300
-[power-usage] 257
+[power-usage] 255
 [lines-of-code] 9
 
 [traces] 
@@ -32,11 +32,11 @@
 [y] 5
 [code] 
 @ sub 999
+  slp 1
+  add p1
+  teq p0 100
 + not
 + mul -999
   mov acc x1
 + slp 2
   sub p1
-  slp 1
-  add p1
-  teq p0 100
