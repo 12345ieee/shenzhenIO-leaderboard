@@ -1,7 +1,7 @@
 [name] 5/491/7
 [puzzle] Sz012
-[production-cost] 500
-[power-usage] 292
+[production-cost] 300
+[power-usage] 257
 [lines-of-code] 9
 
 [traces] 
@@ -27,27 +27,16 @@
 [is-puzzle-provided] true
 
 [chip] 
-[type] OR
-[x] 3
-[y] 3
-
-[chip] 
-[type] OR
-[x] 3
-[y] 5
-[rotated] true
-
-[chip] 
 [type] UC4
 [x] 7
 [y] 5
 [code] 
-  teq p0 100
+@ sub 999
 + not
 + mul -999
   mov acc x1
-+ mov 100 p1
-+ slp 1
++ slp 2
   sub p1
   slp 1
   add p1
+  teq p0 100
