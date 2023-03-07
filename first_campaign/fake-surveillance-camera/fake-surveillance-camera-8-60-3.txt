@@ -47,4 +47,3 @@
 [is-puzzle-provided] true
 [code] 
   gen p0 6 6
-
