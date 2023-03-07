@@ -1,8 +1,8 @@
 [name] 7/172/8
 [puzzle] Sz001
 [production-cost] 700
-[power-usage] 193
-[lines-of-code] 6
+[power-usage] 170
+[lines-of-code] 5
 
 [traces] 
 ......................
@@ -26,7 +26,6 @@
 [y] 4
 [code] 
   mov 100 p0
-  mov 0 p1
   slp 1
   gen p1 1 p0
 
