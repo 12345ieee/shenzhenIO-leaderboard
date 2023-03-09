@@ -1,7 +1,7 @@
-[name] Ugu's Victory
+[name] New design 1
 [puzzle] Sz004
 [production-cost] 1300
-[power-usage] 2670
+[power-usage] 2073
 [lines-of-code] 6
 
 [traces] 
@@ -11,61 +11,56 @@
 ......................
 ......................
 ......................
-......154.155D415C....
-.......14954.341CA....
-....15554A14.94.A2....
-......14.A...A.16.....
-......1556..174.......
+......14.155D554......
+......14954.341C1C....
+....1554A14.94.A.2....
+......156...A.16......
+...........174........
 ......................
 ......................
 ......................
-
-[chip] 
-[type] BANK
-[x] 4
-[y] 3
-[rom] 
-999,999,999,999,999,-999,0,0,0,0,-350,0,0,0
-
-[chip] 
-[type] DX3
-[x] 11
-[y] 3
-
-[chip] 
-[type] OR
-[x] 14
-[y] 3
-[rotated] true
-
-[chip] 
-[type] BRIDGE
-[x] 7
-[y] 4
-
-[chip] 
-[type] UC6
-[x] 8
-[y] 5
-[code] 
-  teq x3 0
-+ slp x2
-+ mov p0 x0
-  add x0
-  add x1
-  mov acc p1
-
-[chip] 
-[type] OR
-[x] 14
-[y] 5
 
 [chip] 
 [type] RAM
 [x] 4
-[y] 6
+[y] 3
 
 [chip] 
-[type] NOT
-[x] 14
-[y] 7
+[type] DX3
+[x] 10
+[y] 3
+
+[chip] 
+[type] OR
+[x] 13
+[y] 3
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 5
+[code] 
+  teq x1 0
++ mov acc p1
++ slp x2
++ mov p0 x3
+  sub x3
+  sub x0
+
+[chip] 
+[type] OR
+[x] 13
+[y] 5
+
+[chip] 
+[type] BANK
+[x] 4
+[y] 6
+[rom] 
+999,999,999,999,999,-999,0,0,0,0,-449,0,0,0
+
+[chip] 
+[type] XOR
+[x] 15
+[y] 6
