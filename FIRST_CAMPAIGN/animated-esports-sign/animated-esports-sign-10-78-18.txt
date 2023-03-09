@@ -1,0 +1,80 @@
+[name] 11/78/18
+[puzzle] Sz001
+[production-cost] 1000
+[power-usage] 78
+[lines-of-code] 18
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....95554...15C......
+.....A......954A......
+.....A1414156..A......
+.....35C155555434.....
+......8A..94155C......
+......AA..A.954A......
+......234.342156......
+......................
+......................
+
+[chip] 
+[type] OR
+[x] 11
+[y] 3
+[rotated] true
+
+[chip] 
+[type] DX3
+[x] 14
+[y] 3
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 4
+
+[chip] 
+[type] XOR
+[x] 7
+[y] 5
+[rotated] true
+
+[chip] 
+[type] DX3
+[x] 9
+[y] 6
+[rotated] true
+
+[chip] 
+[type] UC4X
+[x] 11
+[y] 7
+[code] 
+@slp 1
+mov 100 x2
+slp 1
+slp x2
+mov 100 x2
+slp 1
+slp x2
+mov 100 x2
+slp 6
+
+[chip] 
+[type] UC4X
+[x] 14
+[y] 7
+[code] 
+slp 6
+mov 101 x0
+slp 1
+mov 010 x0
+slp 1
+slp x1
+mov 101 x0
+slp 1
+mov 000 x0
