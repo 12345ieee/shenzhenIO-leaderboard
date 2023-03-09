@@ -1,7 +1,7 @@
 [name] Recomputing's Victory
 [puzzle] Sz004
 [production-cost] 1200
-[power-usage] 3266
+[power-usage] 3220
 [lines-of-code] 6
 
 [traces] 
@@ -48,7 +48,7 @@
 + mov p0 x0
   add x0
   add x1
-  mov acc p1
+- mov acc p1
   slp x3
 
 [chip] 
