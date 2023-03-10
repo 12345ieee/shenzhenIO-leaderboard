@@ -1,0 +1,91 @@
+[name] 15/267/28
+[puzzle] Sz021
+[production-cost] 1200
+[power-usage] 278
+[lines-of-code] 26
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...955555555C.........
+...2..9554956.....1C..
+.....16.14A1555555CA..
+.....1C954A15C14.16A..
+...8..A214354B54.156..
+...A.17554.1568.......
+...3555554.1556.......
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 2
+[code] 
+@ mov x1 x0
+  slx x0
+  teq x0 1
+  mov x2 acc
++ add -5
++ mov acc x2
+  mov x3 x1
+  mov x3 x1
+  mov x3 x1
+  mov x3 x1
+  mov x3 x1
++ mov p1 x1
+- mov p0 x1
+- mov acc x2
+
+[chip] 
+[type] ID
+[x] 4
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 4
+
+[chip] 
+[type] RAM
+[x] 15
+[y] 4
+
+[chip] 
+[type] RADIO
+[x] 3
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 5
+[code] 
+@ mov x3 x3
+@ mov x3 x3
+@ mov x1 dat
+@ mov p1 x2
+@ mov p0 x3
+@ gen p0 x3 1
+  mov p1 x2
+  mov p0 x3
+  slp 1
+  teq x0 dat
++ mov x0 x1
++ slp 2
