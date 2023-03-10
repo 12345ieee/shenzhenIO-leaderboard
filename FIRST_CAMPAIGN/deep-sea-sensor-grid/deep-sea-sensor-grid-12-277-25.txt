@@ -1,8 +1,8 @@
 [name] 15/267/28
 [puzzle] Sz021
 [production-cost] 1200
-[power-usage] 278
-[lines-of-code] 26
+[power-usage] 277
+[lines-of-code] 25
 
 [traces] 
 ......................
@@ -79,13 +79,12 @@
 [code] 
 @ mov x3 x3
 @ mov x3 x3
+@ mov 0 x3
 @ mov x1 dat
 @ mov p1 x2
-@ mov p0 x3
-@ gen p0 x3 1
-  mov p1 x2
   mov p0 x3
   slp 1
   teq x0 dat
 + mov x0 x1
 + slp 2
+  mov p1 x2
