@@ -1,0 +1,39 @@
+[name] AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+[puzzle] Sz031
+[production-cost] 500
+[power-usage] 114
+[lines-of-code] 12
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+......................
+..15555554.15555555C..
+...................A..
+..15555554.........2..
+......................
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 4
+[code] 
+  slx x0
+  dst 0 x0
+  dst 1 x0
+  dst 2 x0
+  teq acc dat
++ gen p1 6 0
+- tlt acc 999
+- mov 100 p1
+- slp 3
+  teq p1 x0
+  tgt p0 x0
++ mov acc dat
