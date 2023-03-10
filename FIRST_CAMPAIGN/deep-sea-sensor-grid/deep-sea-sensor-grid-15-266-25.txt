@@ -1,8 +1,8 @@
-[name] Top solution Power - 837951602
+[name] 15/267/28
 [puzzle] Sz021
 [production-cost] 1500
-[power-usage] 267
-[lines-of-code] 28
+[power-usage] 266
+[lines-of-code] 25
 
 [traces] 
 ......................
@@ -78,11 +78,6 @@
 [y] 5
 [code] 
 @ mov x1 dat
-@ mov p1 x2
-@ mov p0 x3
-@ slp 1
-  mov p1 x2
-  mov p0 x3
   slp 1
   teq x0 dat
 + mov x0 x1
@@ -90,10 +85,12 @@
 + mov p1 x2
 + mov p0 x3
 + slp 1
+  mov p1 x2
+  mov p0 x3
 
 [chip] 
-[type] UC4X
+[type] UC4
 [x] 16
 [y] 7
 [code] 
-@ mov 5 x2
+@ mov 5 x1
