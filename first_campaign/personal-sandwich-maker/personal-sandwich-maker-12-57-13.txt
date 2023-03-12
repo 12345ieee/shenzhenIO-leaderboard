@@ -2,7 +2,7 @@
 [puzzle] Sz007EZ
 [production-cost] 1200
 [power-usage] 57
-[lines-of-code] 14
+[lines-of-code] 13
 
 [traces] 
 ......................
@@ -25,7 +25,7 @@
 [x] 3
 [y] 3
 [code] 
-@ slx x0
+  slx x0
   tcp x0 2
   mov 100 p1
   slp 1
@@ -37,8 +37,7 @@
   slp x3
 + slp 1
   slp x1
-  add p1
-  gen p0 3 4
+  gen p0 3 p1
 
 [chip] 
 [type] DX3
