@@ -1,7 +1,7 @@
-[name] Top solution Cost - 837951602
+[name] 新●设●计1
 [puzzle] Sz039
 [production-cost] 500
-[power-usage] 193
+[power-usage] 188
 [lines-of-code] 12
 
 [traces] 
@@ -11,10 +11,10 @@
 ......................
 ......................
 ......................
-......................
-....954...............
-....A155555555554.....
-..94A.................
+..95555555C...........
+..A......16...........
+..A......1555554......
+..A.9554..............
 ..A.A.................
 ..2.2.................
 ......................
@@ -28,19 +28,20 @@
 
 [chip] 
 [type] UC6
-[x] 3
+[x] 7
 [y] 4
 [code] 
-@ mov -999 acc
-  tcp p0 p1
-- not
-- mul -1
-+ tgt acc -1
-- mul p1
-running:
-+ add 1
-+ slp 2
-  mov acc x3
-+ teq p0 0
-+ jmp running
-  slp 1
+# Standby
+1:@ mov -999 acc
+2:  tcp p0 p1
+3:+ sub 999
+4:+ tcp acc -999
+5:- teq acc -999
+6:+ sub acc
+# Timing
+7:- slp 2
+8:- add 1
+9:  mov acc x3
+a:- tcp p1 100
+b:- jmp 7
+c:  slp 1
