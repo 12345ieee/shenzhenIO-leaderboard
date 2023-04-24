@@ -1,0 +1,64 @@
+[name] min cost & lines
+[puzzle] Sz009
+[production-cost] 900
+[power-usage] 309
+[lines-of-code] 19
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+........94........8...
+...1554.34.15555556...
+...1554154.154.155C...
+...1555554..94....2...
+............3555554...
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 4
+[code] 
+1:  mov x0 acc
+2:  slp 1
+3:  tcp x1 p0
+4:+ sub 1
+5:+ tcp x1 10
+6:+ sub 4
+7:- sub 12
+8:  tcp acc 0
+9:+ jmp 2
+a:- mov acc x3
+b:  gen p1 4 2
+
+[chip] 
+[type] UC4
+[x] 13
+[y] 4
+[code] 
+1:  teq acc 0
+2:+ slx x0
+3:+ mov x0 acc
+4:  tlt acc -4
+5:+ gen p1 1 1
+6:+ add 5
+7:- gen p0 1 1
+8:- add 1
+
+[chip] 
+[type] DX3
+[x] 6
+[y] 5
+[rotated] true
+
+[chip] 
+[type] DIAL3
+[x] 9
+[y] 7
+[is-puzzle-provided] true
