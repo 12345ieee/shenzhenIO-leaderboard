@@ -1,7 +1,7 @@
 [name] min lines & power
 [puzzle] Sz027
 [production-cost] 1200
-[power-usage] 343
+[power-usage] 339
 [lines-of-code] 21
 
 [traces] 
@@ -35,8 +35,8 @@
 8:  teq x2 1
 9:+ mov x2 acc
 a:+ jmp 5
-b:  mov 50 p1
-c:  teq x2 x1
+b:  teq x2 x1
+c:- mov 50 p1
 d:+ mov dat x3
 e:  slp 1
 
