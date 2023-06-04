@@ -1,0 +1,110 @@
+[name] min power
+[puzzle] Sz044
+[production-cost] 1900
+[power-usage] 697
+[lines-of-code] 53
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..155554..............
+.........1555C........
+..14.1C......A........
+..8...B5554.1F4.......
+..34.16......A........
+.........15556........
+..155554..............
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 2
+[code] 
+1:  tcp p0 acc
+2:- mov p0 acc
+3:- mov -30 x3
+4:- mov +33 x3
+5:- tcp acc 50
+6:- mov -31 x3
+7:- mov +34 x3
+8:+ mov p0 acc
+9:+ mov +31 x3
+a:+ mov -34 x3
+b:+ tcp acc 50
+c:+ mov +30 x3
+d:+ mov -33 x3
+e:  slp 1
+
+[chip] 
+[type] LCDR
+[x] 14
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 3
+[y] 4
+[code] 
+1:  teq p0 acc
+2:- mov p0 acc
+3:- mul 5
+4:- dgt 2
+5:- add 21
+6:- mov acc x1
+7:- mov -25 x1
+8:- mov p0 acc
+9:  slp 1
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 4
+[code] 
+1:  slx x1
+2:  mov x1 dat
+3:  mov dat acc
+4:  dst 0 1
+5:  tcp dat acc
+6:+ mov acc x3
+7:+ add 1
+8:+ jmp 5
+9:  mul -1
+a:  mov x1 dat
+b:  tcp dat acc
+c:- mov acc x3
+d:- sub 1
+e:- jmp b
+
+[chip] 
+[type] UC4
+[x] 3
+[y] 6
+[code] 
+1:  teq p0 acc
+2:- mov p0 acc
+3:- mul 5
+4:- dgt 2
+5:- add 11
+6:- mov acc x1
+7:- mov -15 x1
+8:- mov p0 acc
+9:  slp 1
+
+[chip] 
+[type] UC4
+[x] 7
+[y] 7
+[code] 
+1:@ mov 34 x1
+2:@ mov 33 x1
+3:@ mov 32 x1
+4:@ mov 20 x1
+5:@ mov 10 x1
+6:  slx x0
+7:  mov x0 x1
