@@ -1,8 +1,8 @@
 [name] min cost & lines
 [puzzle] Sz044
 [production-cost] 1300
-[power-usage] 2495
-[lines-of-code] 26
+[power-usage] 2436
+[lines-of-code] 25
 
 [traces] 
 ......................
@@ -45,16 +45,15 @@
 7:+ dst 1 2
 8:  mov acc x2
 9:  teq x1 12
-a:+ slp 1
-b:+ mov -30 x2
-c:+ mov 0 x1
+a:+ slp x0    #1
+b:+ mov x0 x2 #-30
 
 [chip] 
 [type] BANK
 [x] 3
 [y] 4
 [rom] 
--14,79,79,-13,59,59,-12,39,39,-11,19,19,0,0
+-14,79,79,-13,59,59,-12,39,39,-11,19,19,1,-30
 
 [chip] 
 [type] UC4
