@@ -1,0 +1,157 @@
+[name] 新●设●计1
+[puzzle] Sz042
+[production-cost] 2600
+[power-usage] 3924
+[lines-of-code] 65
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..9555555554..........
+..A155555554.155554...
+..B54.14.154954..154..
+..A94.1495556154.1C...
+..AA....A154..8...28..
+..A34.156.94..34.156..
+..354.14..355554.14...
+......................
+......................
+
+[chip] 
+[type] UC4X
+[x] 4
+[y] 2
+[code] 
+@ teq 0 1 #Receive
+  mov x2 x0 #Tasks
++ mov x2 acc
++ mov acc x0
++ add 500
++ add 500
++ mov acc x3
+- teq x1 0
++ slp 1
+
+[chip] 
+[type] RADIO
+[x] 7
+[y] 2
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 15
+[y] 2
+[code] 
+  mov 50 p1#motory
+  slx x1
+  tcp x0 acc
++ mov 100 p1
+- mov 0 p1
+  slp 1
++ add 1
+- sub 1
+  mov acc p0
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 3
+[code] 
+# Calculate dists
+# to given targets
+  slx x1
+  mov x1 acc
+  sub p1  # x-x0
+  dst 1 0 #|x-x0|
+  mov acc dat
+  mov x1 acc
+  sub p0  # y-y0
+  dst 1 0 #|y-y0|
+  tlt acc dat
+- mov acc x1
++ mov dat x1
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 4
+[code] 
+  tgt x1 0 #Target
+- mov acc x3 #Scan
+- slp 1
+- sub x3
+- tlt acc 1
++ mov x0 dat
++ tcp dat -999
++ mov dat x2
++ mov x0 x2
++ mov x2 dat
++ tlt dat acc
+- tlt acc 1
++ mov dat acc
++ mov x1 p1
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 5
+
+[chip] 
+[type] RAM
+[x] 4
+[y] 5
+
+[chip] 
+[type] UC4
+[x] 15
+[y] 5
+[code] 
+  mov 50 p1#motorx
+  slx x1
+  tcp x1 acc
++ mov 100 p1
+- mov 0 p1
+  slp 1
++ add 1
+- sub 1
+  mov acc p0
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 6
+[code] 
+# Assign task
+@ teq x2 0
++ slx x2
++ mov x2 dat
++ tgt dat 0
++ mov p0 acc
++ sub 2
++ mov acc x0
++ mov x1 x3 #x
++ mov x1 x2 #y
++ tlt dat 2 #har-
+- mov x0 acc#vest
+- tlt x1 0  #when
++ mov acc x0#d<2
