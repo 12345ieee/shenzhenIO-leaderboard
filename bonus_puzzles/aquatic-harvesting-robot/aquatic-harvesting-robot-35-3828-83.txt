@@ -1,0 +1,161 @@
+[name] 新●设●计1
+[puzzle] Sz042
+[production-cost] 3500
+[power-usage] 3828
+[lines-of-code] 83
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..95555554............
+..A.955554.155C...1C..
+..34A14.1495C.355C.2..
+..956149556.A1554A....
+..A....A155435554A14..
+..3554.34.94.15556....
+.......14.3555554.....
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 2
+[y] 2
+[code] 
+@ mov -999 x3
+@ mov -999 x3
+@ mov -999 x3
+@ mov -999 x3
+@ mov -999 x3
+@ mov -999 x3
+@ mov -999 x3
+@ mov -999 x3
+@ mov -999 x3
+@ mov -999 x3
+@ mov -999 x3
+@ mov -999 x3
+@ mov -999 x3
+@ mov -999 x3
+
+[chip] 
+[type] UC4X
+[x] 5
+[y] 2
+[code] 
+  slp 1
+  mov x2 x0 #Tasks
+  mov x2 acc
+  mov acc x0
+  teq acc -999
++ mov 1 x3
+- mov 999 x3
+
+[chip] 
+[type] RADIO
+[x] 8
+[y] 2
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 16
+[y] 2
+[code] 
+@ mov 50 p1#motory
+  slx x1
+  tcp x0 acc
++ mov 100 p1
+- mov 0 p1
+  slp 1
++ add 1
+- sub 1
++ mov 50 p1
+- mov 50 p1
++ mov acc p0
+- mov acc p0
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 3
+[code] 
+# Calculate dists
+# to given targets
+  slx x1
+  mov x1 acc
+  sub p1  # x-x0
+  dst 1 0 #|x-x0|
+  mov acc dat
+  mov x1 acc
+  sub p0  # y-y0
+  dst 1 0 #|y-y0|
+  tlt acc dat
+- mov acc x1
++ mov dat x1
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 4
+[code] 
+  tgt x1 0 #Target
+- mov acc x3 #Scan
+- slp 1
+- sub x3
+- tlt acc 1
++ mov x0 dat
++ tcp dat -999
++ mov dat x2
++ mov x0 x2
++ mov x2 dat
++ tlt dat acc
+- tlt acc 1
++ mov dat acc
++ mov x1 p1
+
+[chip] 
+[type] RAM
+[x] 3
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 16
+[y] 5
+[code] 
+@ mov 50 p1#motory
+  slx x1
+  tcp x1 acc
++ mov 100 p1
+- mov 0 p1
+  slp 1
++ add 1
+- sub 1
++ mov 50 p1
+- mov 50 p1
++ mov acc p0
+- mov acc p0
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 6
+[code] 
+# Assign task
+@ teq x2 0
++ slx x2
++ mov x2 dat
++ tgt dat 0
++ mov p0 acc
++ sub 2
++ mov acc x0
++ mov x1 x3 #x
++ mov x1 x2 #y
++ tlt dat 2 #har-
+- mov x0 acc#vest
+- tlt x1 0  #when
++ mov acc x0#d<2
