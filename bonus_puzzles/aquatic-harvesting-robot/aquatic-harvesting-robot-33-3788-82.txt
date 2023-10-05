@@ -1,6 +1,6 @@
 [name] 新●设●计1
 [puzzle] Sz042
-[production-cost] 3500
+[production-cost] 3300
 [power-usage] 3788
 [lines-of-code] 82
 
@@ -10,47 +10,29 @@
 ......................
 ......................
 ......................
-..9555555554..........
-..A.95555D54155C..1C..
-..34A1554A1495C35C.2..
-..1561554A156.A14A....
-......8..A1554354A14..
-......A14A141C.156....
-....156..354.3554.....
+..95555554............
+..A.955D54.1555C..1C..
+..34A14A149555C35C.2..
+..15694A156154A14A....
+....96.A155554354A14..
+....A14A14.81C.156....
+....35435556.3554.....
 ......................
 ......................
-
-[chip] 
-[type] UC6
-[x] 2
-[y] 2
-[code] 
-@ mov -999 x2
-@ mov -999 x2
-@ mov -999 x2
-@ mov -999 x2
-@ mov -999 x2
-@ mov -999 x2
-@ mov -999 x2
-@ mov -999 x2
-@ mov -999 x2
-@ mov -999 x2
-@ mov -999 x2
-@ mov -999 x2
-  
 
 [chip] 
 [type] RADIO
-[x] 5
+[x] 3
 [y] 2
 [is-puzzle-provided] true
 
 [chip] 
 [type] UC4X
-[x] 8
+[x] 6
 [y] 2
 [code] 
   slp 1
+@ mov 12 x1
   mov x0 x2 #Tasks
   mov x0 acc
   mov acc x2
@@ -78,6 +60,11 @@
 
 [chip] 
 [type] BRIDGE
+[x] 9
+[y] 3
+
+[chip] 
+[type] BRIDGE
 [x] 11
 [y] 3
 
@@ -86,6 +73,9 @@
 [x] 13
 [y] 3
 [code] 
+@ mov -999 x0
+@ mov -999 x0
+@ mov -999 x0
   slx x1
   mov x1 acc
   sub p1  # x-x0
@@ -99,13 +89,8 @@
 + mov dat x1
 
 [chip] 
-[type] BRIDGE
-[x] 6
-[y] 4
-
-[chip] 
 [type] UC6
-[x] 8
+[x] 6
 [y] 4
 [code] 
   tgt x1 0 #Target
@@ -148,10 +133,10 @@
 
 [chip] 
 [type] UC6
-[x] 11
+[x] 9
 [y] 6
 [code] 
-@ mov 12 x0
+@ mov -999 x1
 @ teq x2 0
 + slx x2
 + mov x2 dat
@@ -165,3 +150,17 @@
 - mov x0 acc#vest
 - tlt x1 0  #when
 + mov acc x0#d<2
+
+[chip] 
+[type] UC4X
+[x] 2
+[y] 7
+[code] 
+@ mov -999 x2
+@ mov -999 x2
+@ mov -999 x2
+@ mov -999 x2
+@ mov -999 x2
+@ mov -999 x2
+@ mov -999 x2
+@ mov -999 x2
