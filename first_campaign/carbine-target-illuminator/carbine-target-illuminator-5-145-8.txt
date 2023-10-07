@@ -1,6 +1,6 @@
-[name] 6/666/6666666
+[name] aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 [puzzle] Sz014
-[production-cost] 600
+[production-cost] 500
 [power-usage] 145
 [lines-of-code] 8
 
@@ -14,16 +14,11 @@
 ....2..354954A...8....
 ....8...8.A..35556....
 ....A...A161554..8....
-....A...A..1555556....
-....34156..15C1414....
-.............354......
+....A...A....95556....
+....34156..1561554....
 ......................
 ......................
-
-[chip] 
-[type] XOR
-[x] 15
-[y] 2
+......................
 
 [chip] 
 [type] DX3
@@ -55,7 +50,7 @@
   teq x0 p0
 + slp 1
   tcp p0 x0
-+ mov -60 acc
-- mov acc p1
 - mov acc x1
-  add 55
+  add 105
+- mov acc p1
++ mov -160 acc
