@@ -1,0 +1,57 @@
+[name] aaaaaaaaaaaaaaaaaaaaaaaaa
+[puzzle] Sz014
+[production-cost] 500
+[power-usage] 151
+[lines-of-code] 9
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....955C14.15C........
+....2..354954A...8....
+....8...8.A..35556....
+....A...A161554..8....
+....A...A..1555556....
+....34156..15C1554....
+.............354......
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 5
+[y] 3
+[rotated] true
+
+[chip] 
+[type] DX3
+[x] 10
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 6
+
+[chip] 
+[type] UC4
+[x] 9
+[y] 7
+[code] 
+  slp 1
+  teq x0 p0
++ slp 1
+  tcp p0 x0
++ mov -50 acc
+- mov acc p1
+- sub 100
+- mov acc x1
+  add 50
