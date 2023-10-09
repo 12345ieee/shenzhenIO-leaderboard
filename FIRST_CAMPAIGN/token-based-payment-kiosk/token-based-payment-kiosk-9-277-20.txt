@@ -1,7 +1,7 @@
-[name] low cost/balanced
+[name] 9/310/19
 [puzzle] Sz009
 [production-cost] 900
-[power-usage] 294
+[power-usage] 277
 [lines-of-code] 20
 
 [traces] 
@@ -11,19 +11,14 @@
 ......................
 ......................
 ......................
-........154.1555554...
+.........14.1555554...
 ...15554154...........
-...14954....1554.1C...
-...15694......94..2...
-....156.......35554...
+...15554.94.154.1C....
+...15C...A...94..34...
+.....35556...355554...
 ......................
 ......................
 ......................
-
-[chip] 
-[type] BRIDGE
-[x] 4
-[y] 3
 
 [chip] 
 [type] DX3
@@ -33,16 +28,17 @@
 
 [chip] 
 [type] UC4
-[x] 15
+[x] 14
 [y] 4
 [code] 
   teq acc 0
 + slx x0
-+ mov x0 acc
-  tlt acc -4
-+ gen p1 1 1
++ mov x0  acc
++ tcp acc 0
+- tlt acc -4
++ gen p1  1 1
 + add 5
-- gen p0 1 1
+- gen p0  1 1
 - add 1
 
 [chip] 
@@ -50,21 +46,20 @@
 [x] 10
 [y] 5
 [code] 
-  mov x0 acc
-wait: + slp 1
-  teq x1 0
-+ jmp wait
+@ mov x0 acc
+s:slp 1
+  tcp x1 p0
 - sub 12
-  tcp x1 10
-- add 11
-+ add 7
-  tcp acc 0
-- mov acc x2
-+ jmp wait
-  gen p1 4 3
++ sub 1
++ teq x1 10
++ sub 4
+  tgt acc 0
+- mov acc x2  
+- gen p1 4 2
+- mov x0 acc
 
 [chip] 
 [type] DIAL3
-[x] 7
+[x] 8
 [y] 7
 [is-puzzle-provided] true
