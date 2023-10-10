@@ -1,0 +1,181 @@
+[name] 1337
+[puzzle] Sz042EZ
+[production-cost] 3300
+[power-usage] 1337
+[lines-of-code] 81
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..15C154.....955554...
+..94A15555C..A14.15C..
+..2.A1414.A14A15C.82..
+..15E15554354A14A.34..
+..94A15C15C14A156.94..
+..34A14A..A156....A...
+..15615614355555556...
+......................
+......................
+
+[chip] 
+[type] RAM
+[x] 3
+[y] 2
+
+[chip] 
+[type] UC4X
+[x] 6
+[y] 2
+[code] 
+@ slp 1
+  mov x2 acc
+  teq acc -999
+- dst 2 x2
+- mov acc x0
+- slp 2
++ slp 1
+
+[chip] 
+[type] RADIO
+[x] 9
+[y] 2
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 3
+[code] 
+@ teq acc dat
++ slx x1
++ mov x1 dat
++ mov dat x3
++ sub x3
+- mov acc x0
+- slp 1
+- sub 1
+  add p1
+  tcp p0 50
++ add 100
+- sub 100
+  teq acc dat
++ mov 100 x1
+
+[chip] 
+[type] BRIDGE
+[x] 2
+[y] 4
+
+[chip] 
+[type] UC4X
+[x] 3
+[y] 4
+[code] 
+  slx x3
+  mov x3 acc
+  teq x1 x2
++ teq x1 x2
+l:- mov x0 acc
+- tgt acc 0
+- jmp l
++ mov acc x3
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 4
+[code] 
+@ slp 1
+@ mov 0 x1
+@ mov x1 acc
+  mov acc x2
+  dgt 2
+  mov acc p1
+  slx x2
+  mov x2 p0
+x:  slp 1
+  mov p0 x1
+  mov x1 acc
+  tgt acc 0
+- jmp x
+
+[chip] 
+[type] UC6
+[x] 15
+[y] 5
+[code] 
+  mov 1 p0
+  mov 50 p1
+  slx x1
+  dst p0 x1
+  mov acc x0
+  sub dat
+  tcp acc p1
++ mov 100 p1
++ mov 2 p0
+- mul -1
+  mov x0 dat
++ slp acc  
+- slp acc
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 6
+[code] 
+@ teq 0 0
+b:+  slx x3
++ mov x3 acc
++ mov x1 dat
++ teq x1 x2  
++ jmp b
+- teq x0 acc
++ mov x1 acc
++ sub 1
++ mov acc x1
++ mov 0 x0
++ gen p1 1 0
+- teq x1 x2
++ mov dat x1
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 6
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 6
+[code] 
+  mov 50 p1
+  slx x2
+  mov p0 acc
+  sub dat
+  tcp acc p1
++ mov 100 p1
+- mul -1
+  mov p0 dat
+  mov x3 x3
+  mov 1 x2
++ slp acc
+- slp acc
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 6
