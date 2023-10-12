@@ -1,8 +1,8 @@
-[name] 8/91/14
+[name] fistbag
 [puzzle] Sz001
 [production-cost] 800
-[power-usage] 96
-[lines-of-code] 12
+[power-usage] 92
+[lines-of-code] 11
 
 [traces] 
 ......................
@@ -10,19 +10,29 @@
 ......................
 ......................
 ......................
-......................
 ..........155555C.....
 ..........15D55CA.....
-.....15C14942..AA.....
-.......B55695416A.....
-......9694.A8.15E.....
-......2.2..221556.....
+.....15C141CA..AA.....
+.....14349562..AA.....
+....9541C2155416A.....
+....A15C3555C.15E.....
+....3543541421556.....
 ......................
 ......................
 
 [chip] 
-[type] NOT
-[x] 7
+[type] BRIDGE
+[x] 9
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 5
 [y] 3
 
 [chip] 
@@ -37,24 +47,29 @@
 [rotated] true
 
 [chip] 
+[type] XOR
+[x] 6
+[y] 4
+[rotated] true
+
+[chip] 
 [type] UC6
 [x] 6
-[y] 5
+[y] 6
 [code] 
+  gen p0 1 x2
   gen p0 1 1
   gen p0 1 1
-  gen p0 1 1
-  mov 11 x2
+  mov 10 x2
   slp 1
   mov 100 x2
   slp 1
-  mov 101 x2
+  mov 100 p0
   slp 1
   mov 10 x2
   slp 1
-  mov 0 x2
 
 [chip] 
 [type] DX3
 [x] 9
-[y] 5
+[y] 6
