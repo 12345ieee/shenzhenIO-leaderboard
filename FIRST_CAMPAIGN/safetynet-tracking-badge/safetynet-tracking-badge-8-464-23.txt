@@ -1,7 +1,7 @@
-[name] Top solution Cost
+[name] 8/475/23
 [puzzle] Sz027
 [production-cost] 800
-[power-usage] 475
+[power-usage] 464
 [lines-of-code] 23
 
 [traces] 
@@ -45,15 +45,15 @@
 [x] 12
 [y] 5
 [code] 
-  mov x1 null
-  mov x1 x0
+@ mov 0 x0
++ mov x1 null
++ mov x1 x0
 x:mov x1 acc
   teq acc -999
 - mov acc p0
 + mov 50 p0
   slp 1
 - mov -999 x0
-- jmp x
 
 [chip] 
 [type] ID
@@ -67,4 +67,3 @@ x:mov x1 acc
 [y] 6
 [rotated] true
 [is-puzzle-provided] true
-
