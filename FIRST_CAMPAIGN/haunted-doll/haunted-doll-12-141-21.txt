@@ -1,7 +1,7 @@
 [name] 统统杀光光
 [puzzle] Sz008
 [production-cost] 1200
-[power-usage] 143
+[power-usage] 141
 [lines-of-code] 21
 
 [traces] 
@@ -55,8 +55,8 @@
   tgt acc 0
 - slx x2
 - mov x2 x3
-- mov 4 acc
-  sub 1
+- mov 3 acc
+  + sub 1
 + mov x0 p1
 + slp 1
 + mov x1 p1
