@@ -1,0 +1,100 @@
+[name] 消息君
+[puzzle] Sz008
+[production-cost] 1800
+[power-usage] 131
+[lines-of-code] 20
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....15C94954155C.....
+.....94AA.214.94A.....
+.....A16A1554.A.A.....
+.....A..A148156.A.....
+.....A15E1CA1D556.....
+.....A..A16A16........
+.....3543556154.......
+......................
+......................
+
+[chip] 
+[type] RND
+[x] 5
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 10
+[y] 2
+[code] 
+@ slx x0
+@ add x0
+  mov x1 p1
+  slp p0
+
+[chip] 
+[type] BANK
+[x] 14
+[y] 2
+[rom] 
+16,36,42,14,10,58,100,76,26,28,70,80,42,0
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 4
+[code] 
+  mov 50 p1
+  slx x0
+  teq x0 p0
++ mov p1 x3
+- mov p1 x2
+  slp 13
+  mov 999 p0
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 5
+
+[chip] 
+[type] BANK
+[x] 13
+[y] 5
+[rom] 
+100,80,41,14,14,41,69,74,54,27,19,40,75,0
+
+[chip] 
+[type] UC4
+[x] 6
+[y] 7
+[code] 
+@ mov 1 p1
+  tgt p0 2
++ slp 1
+- mov p0 x0
+- slp 18
+
+[chip] 
+[type] UC4
+[x] 12
+[y] 7
+[code] 
+@ slx x0
+@ add x0
+  mov x1 p1
+  slp p0
