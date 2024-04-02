@@ -1,0 +1,123 @@
+[name] the god solution v3
+[puzzle] Sz036
+[production-cost] 2500
+[power-usage] 101
+[lines-of-code] 42
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......155C............
+..14...14A15C.........
+..1555554A..A.........
+...8..154A..B54.......
+..1E...156..A.........
+..8355554.156.........
+..3555554154..........
+......................
+......................
+
+[chip] 
+[type] NOT
+[x] 8
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 2
+[code] 
+@ slp 52 #52 exact
+  mov 15 x1
+  slp 1
+  mov -15 x1
+  slp 1
+  mov 15 x1
+  slp 1
+  mov -15 x1
+  slp 1
+  mov 15 x1
+  slp 1
+  mov -15 x1
+  slp 1
+  slp p0
+
+[chip] 
+[type] LCDT
+[x] 14
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 3
+[code] 
+  slp 1
+  tcp p0 dat
+- mov -1 x2
+- mov -2 x2
+- slp 22 #22 max
+- tgt p0 0
+- mov 0 dat
++ mov x1 x2
++ slp x0
++ mov p0 dat
+
+[chip] 
+[type] BANK
+[x] 4
+[y] 4
+[rom] 
+4,4,2,2,2,2,2,2,2,2,999,1,1,999
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 6
+[code] 
+@ slp 14 #14 max
+@ teq p0 0
++ slp 1
++ teq p0 0
+- mov x0 x3
+- slp x1
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 6
+[code] 
+@ slp 46 #46 exact
+@ mov 15 x1
+@ slp 1
+@ mov -15 x1
+@ slp 1
+@ mov 15 x1
+@ slp 1
+@ mov -15 x1
+@ slp 1
+@ mov 15 x1
+@ slp 1
+@ mov -15 x1
+
+[chip] 
+[type] BANK
+[x] 4
+[y] 7
+[rom] 
+1,2,3,4,5,6,7,8,9,10,11,12,13,14
+

@@ -1,8 +1,8 @@
-[name] Top solution Power - Snowball
+[name] the god solution v4
 [puzzle] Sz036
-[production-cost] 2800
-[power-usage] 96
-[lines-of-code] 49
+[production-cost] 2400
+[power-usage] 99
+[lines-of-code] 47
 
 [traces] 
 ......................
@@ -11,34 +11,34 @@
 ......................
 ......................
 ......155C............
-..14.....A15C.........
-..1555554A94A.........
-...8..154AA.B54.......
-..1E95C15634A.........
-..836.354.956.........
-..3414.1556...........
+..14...94A15C.........
+..155556.A..A.........
+..9555C156..B54.......
+..2...3549556.........
+..8....156............
+..3555414.............
 ......................
 ......................
 
 [chip] 
 [type] NOT
-[x] 3
+[x] 6
 [y] 2
 
 [chip] 
 [type] UC4
-[x] 5
+[x] 8
 [y] 2
 [code] 
 @ slp 56 #56 exact
-@ mov 15 x1
+@ mov 15 x0
 @ slp 1
-@ mov -15 x1
+@ mov -15 x0
 @ slp 1
 @ slp p0
-@ mov 15 x1
+@ mov 15 x0
 @ slp 1
-@ mov -15 x1
+@ mov -15 x0
 
 [chip] 
 [type] UC6
@@ -46,17 +46,17 @@
 [y] 2
 [code] 
 @ slp 50 #50 exact
-@ mov 15 x1
+@ mov 15 x0
 @ slp 1
-@ mov -15 x1
+@ mov -15 x0
 @ slp 1
-@ mov 15 x1
+@ mov 15 x0
 @ slp 1
-@ mov -15 x1
+@ mov -15 x0
 @ slp 1
-@ mov 15 x1
+@ mov 15 x0
 @ slp 1
-@ mov -15 x1
+@ mov -15 x0
 
 [chip] 
 [type] LCDT
@@ -67,28 +67,20 @@
 [chip] 
 [type] UC6
 [x] 8
-[y] 3
+[y] 4
 [code] 
   slp 1
   tcp p0 acc
 q:+ mov x1 x2
-+ slp x2
 + mov p0 acc
-+ tcp p0 x0
++ slp x2
++ tcp p0 acc
 - mov -1 x2
 - mov -2 x2
-- mov 2 x3 #2 max
 - slp 22 #22 max
 - tgt p0 0
 - mov 0 acc
 + jmp q
-
-[chip] 
-[type] BANK
-[x] 4
-[y] 4
-[rom] 
-50,100,33,67,0,0,0,0,0,0,0,0,0,0
 
 [chip] 
 [type] BRIDGE
@@ -110,19 +102,6 @@ q:+ mov x1 x2
 @ mov -15 x1
 
 [chip] 
-[type] UC6
-[x] 8
-[y] 6
-[code] 
-@ slx x2
-@ slp x2
-@ teq p0 0
-+ slp 1
-+ teq p0 0
-- mov x0 x3
-- slp x3
-
-[chip] 
 [type] BANK
 [x] 4
 [y] 7
@@ -130,8 +109,21 @@ q:+ mov x1 x2
 1,2,3,4,5,6,7,8,9,10,11,12,13,14
 
 [chip] 
+[type] UC4
+[x] 8
+[y] 7
+[code] 
+@ slp 14 #14 max
+@ teq p0 0
++ slp 1
++ teq p0 0
+- mov x0 x1
+- slp x1
+
+[chip] 
 [type] BANK
 [x] 11
 [y] 7
 [rom] 
 5,5,2,2,2,2,2,2,2,2,999,2,2,999
+
