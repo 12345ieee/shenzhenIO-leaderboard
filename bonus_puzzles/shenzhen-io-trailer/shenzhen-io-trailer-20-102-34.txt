@@ -1,0 +1,109 @@
+[name] the god solution v2
+[puzzle] Sz036
+[production-cost] 2000
+[power-usage] 102
+[lines-of-code] 34
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..95D54...............
+..2.A9549554..........
+..8.AA14A15C..........
+..34A354A..B554.......
+..156...354A..........
+..8155554156..........
+..355555414...........
+......................
+......................
+
+[chip] 
+[type] NOT
+[x] 8
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 2
+[code] 
+@ slp 46 #46 exact
+  mov 15 x1
+  slp 1
+  mov -15 x1
+  slp 1
+  mov 15 x1
+  slp 1
+  mov -15 x1
+  slp 1
+  mov 15 x1
+  slp 1
+  mov -15 x1
+  slp 1
+  slp p0
+
+[chip] 
+[type] LCDT
+[x] 14
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 3
+[code] 
+@ slp 14 #14 max
+@ teq p0 0
++ slp 1
++ teq p0 0
+- mov x3 x2
+- slp x0
+
+[chip] 
+[type] BANK
+[x] 3
+[y] 6
+[rom] 
+4,4,2,2,2,2,2,2,2,2,999,1,1,999
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 6
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 6
+[code] 
+  slp 1
+  tcp p0 dat
+- mov -1 x2
+- mov -2 x2
+- slp 22 #22 max
+- tgt p0 0
+- slp 1
+- tgt p0 0
+- slp 1
+- tgt p0 0
+- mov p0 dat
++ mov x3 x2
++ slp x1
++ mov p0 dat
+
+[chip] 
+[type] BANK
+[x] 10
+[y] 7
+[rom] 
+1,2,3,4,5,6,7,8,9,10,11,12,13,14
+
