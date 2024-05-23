@@ -1,0 +1,87 @@
+[name] New design 10
+[puzzle] Sz044
+[production-cost] 1800
+[power-usage] 14188
+[lines-of-code] 12
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..815555C.............
+..3555C16.............
+..14..A15554..........
+..1554A155555D4.......
+....14A......34.......
+......A14.............
+..1554354.............
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 2
+[code] 
+  mov x0 x2
+  teq x3 p0
++ slp 1
+  
+# Power should
+# be golfable
+
+[chip] 
+[type] LCDR
+[x] 14
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] BANK
+[x] 2
+[y] 3
+[rom] 
+0,0,30,31,-33,-34,0,0,-30,33,0,0,-31,34
+
+[chip] 
+[type] BANK
+[x] 8
+[y] 3
+[rom] 
+1,1,1,1,1,100,1,1,1,50,1,1,1,0
+
+[chip] 
+[type] BANK
+[x] 11
+[y] 3
+[rom] 
+10,11,12,13,14,20,21,22,23,24,32,0,0,0
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 5
+[code] 
+  mov x2 acc
+  tlt acc 20
++ mov p1 dat
+- slx x0
+- mov x0 x2
+- mov p0 dat
+  tlt dat x3
++ mul -1
+  mov acc x2
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 6
+
+[chip] 
+[type] BANK
+[x] 11
+[y] 6
+[rom] 
+0,20,40,60,80,0,20,40,60,80,0,0,0,0
