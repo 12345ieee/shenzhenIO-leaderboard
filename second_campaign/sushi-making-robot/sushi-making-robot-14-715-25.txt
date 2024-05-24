@@ -1,0 +1,115 @@
+[name] Subject: 寿司机器人！n发信人：德里克·保罗 <d.paul@mech.avalon>nCC: K. Haruo <k.haruo@elec.avalon>nn嘿，要不要给我的一个有趣的小项目帮帮忙？我正在做一个做寿司的机器人，叫做Omakase 9000。虽然吃寿司不是什么要紧的事情，但是海洋赏金项目完成了，我想阿瓦隆市也需要一些高端餐饮项目嘛。我大概已经解决了机械方面，现在需要你的天才逻辑让它运行啦！nn德里克nn又及，不要告诉丽萨。nn----------- (完成)nn发信人：德里克·保罗 <d.paul@mech.avalon>nn呼~ 这比我预期的还要顺利！丽萨很惊讶，她还很喜欢做出来的食物呢！我永远不会忘记她吃第一口的那种表情。她高兴，我也高兴。nn谢谢你！！
+[puzzle] Sz043
+[production-cost] 1400
+[power-usage] 715
+[lines-of-code] 25
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..95555555555554.154..
+..A1555555555554.154..
+..A15C155555555D555C..
+..A14A141415C156.142..
+..354A155C14A.955C94..
+...15614.35574A1C368..
+..........15556.3556..
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 1
+[code] 
+  mov 50 p0
++ gen p1 2 0
++ mov x0 p0
++ mov x0 x2
+  slp 1
+  teq p1 100
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 2
+
+[chip] 
+[type] UC4
+[x] 13
+[y] 2
+[code] 
+  mov 50 p1
+- slp 2
+- mov acc p1
+  teq p0 50
+- mov x0 acc
+  slp 1
+
+[chip] 
+[type] BANK
+[x] 4
+[y] 3
+[rom] 
+-1,100,100,704,700,-9,-13,-10,0,-13,-1,-1,-1,-1
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 3
+
+[chip] 
+[type] UC4
+[x] 11
+[y] 4
+[code] 
+  mov 50 p0
+- slp 2
+- mov x0 p0
+  slp 1
+  teq p1 50
+
+[chip] 
+[type] RADIO
+[x] 15
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 5
+
+[chip] 
+[type] UC4
+[x] 4
+[y] 5
+[code] 
+  mov 50 p1
++ gen p0 2 0
++ mov x0 p1
++ mov x0 x1
+  slp 1
+  teq p0 100
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 5
+
+[chip] 
+[type] UC4
+[x] 15
+[y] 7
+[code] 
+  mov x1 acc
+  teq acc -999
+- gen p1 1 0
+- mov 30 p1
+- mov acc x1
+  slp 1
+- gen p0 1 p1
+- mov x1 x0
