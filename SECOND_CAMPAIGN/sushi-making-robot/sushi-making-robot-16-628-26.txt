@@ -1,6 +1,6 @@
-[name] Top solution Lines - saroj1am
+[name] saroj1am
 [puzzle] Sz043
-[production-cost] 2400
+[production-cost] 1600
 [power-usage] 628
 [lines-of-code] 26
 
@@ -10,13 +10,13 @@
 ......................
 ......................
 ......................
-....14954...94.15554..
-...954A155556..15554..
-...A..A.1555555555C...
-..16.1695554.1555C34..
-.....156.....14..A14..
-..15C14...94.14..354..
-....355555755555554...
+...9555C...15554.154..
+..16.14A1555C....154..
+..1C.14A155435D5555C..
+...A...35414.16..142..
+...A.....154..955C94..
+...35555555554A1C368..
+.........155556.3556..
 ......................
 ......................
 
@@ -36,51 +36,47 @@
 
 [chip] 
 [type] BRIDGE
-[x] 18
+[x] 9
 [y] 2
 
 [chip] 
-[type] UC6
-[x] 3
-[y] 3
+[type] UC4
+[x] 13
+[y] 2
 [code] 
-- mov x0 x3
-  mov 50 p0
-- slp 2
-- mov x2 p0
-  slp 1
-  teq p1 50
-
-[chip] 
-[type] BANK
-[x] 6
-[y] 3
-[rom] 
--1,-1,100,100,0,0,100,100,0,0,-1,-1,-1,-1
-
-[chip] 
-[type] UC6
-[x] 11
-[y] 3
-[code] 
-- mov x0 x3
+- mov x0 acc
   mov 50 p1
 - slp 2
-- mov x2 p1
+- mov acc p1
   teq p0 50
   slp 1
 
 [chip] 
-[type] BANK
-[x] 14
+[type] BRIDGE
+[x] 10
 [y] 3
-[rom] 
--1,-1,-1,100,0,100,0,100,0,100,0,-1,-1,-1
+
+[chip] 
+[type] UC4
+[x] 11
+[y] 4
+[code] 
+  mov 50 p0
+- slp 2
+- mov x0 p0
+  slp 1
+  teq p1 50
+
+[chip] 
+[type] RADIO
+[x] 15
+[y] 4
+[is-puzzle-provided] true
 
 [chip] 
 [type] UC6
-[x] 5
-[y] 6
+[x] 6
+[y] 5
 [code] 
   mov 50 p1
   slx x3
@@ -88,28 +84,28 @@
   slp 2
   mov x0 p1
   slp 1
+  mov x0 x2
 
 [chip] 
 [type] BRIDGE
-[x] 8
-[y] 6
-
-[chip] 
-[type] RADIO
-[x] 16
-[y] 6
-[is-puzzle-provided] true
+[x] 18
+[y] 5
 
 [chip] 
 [type] BANK
-[x] 2
-[y] 7
+[x] 3
+[y] 6
 [rom] 
--1,100,100,100,100,0,0,0,0,-1,-1,-1,-1,-1
+-1,100,100,704,700,-9,-13,-10,0,-13,-1,-1,-1,-1
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 6
 
 [chip] 
 [type] UC4
-[x] 13
+[x] 15
 [y] 7
 [code] 
   mov x1 acc
@@ -120,4 +116,3 @@
   slp 1
 - gen p1 0 1
 - mov x1 x0
-
