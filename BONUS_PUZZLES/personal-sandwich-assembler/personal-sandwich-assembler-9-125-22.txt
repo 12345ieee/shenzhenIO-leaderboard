@@ -1,0 +1,60 @@
+[name] no, I'd like the lb to be more uniform than "whatever the game runs" otherwise you could add overlapped components, the game just removes them and the file could be a terabyte big (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy) (Copy)
+[puzzle] Sz007
+[production-cost] 900
+[power-usage] 125
+[lines-of-code] 22
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+......95555555555414..
+......34..........14..
+..155554.15495495414..
+..........1CA156.954..
+...........A35555694..
+...........35555556...
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 4
+[code] 
++ mov 110 acc
+  teq dat 3
++ mov 100 x0
++ slp 1
++ mov 010 x0
++ slp 1
++ mov 001 x0
++ mov acc x3
++ dgt 1
++ mov acc x3
+- tlt dat 1
+- dst dat x0
+  slx x1
+  mov x1  dat
+
+[chip] 
+[type] UC4
+[x] 11
+[y] 4
+[code] 
+  slx x0
+  tlt x0 100
+  slp x0
++ gen p1 2 x1
+- gen p1 1 x1
+  mov 100 x1
+  slp 1
+  gen p0 3 x1
+
+[chip] 
+[type] DX3
+[x] 17
+[y] 5
