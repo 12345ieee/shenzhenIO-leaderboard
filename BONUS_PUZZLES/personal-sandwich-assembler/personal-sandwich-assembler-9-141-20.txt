@@ -1,0 +1,63 @@
+[name] no, I'd like the lb to be more uniform than "whatever the game runs" otherwise you could add overlapped components, the game just removes them and the file could be a terabyte big
+[puzzle] Sz007
+[production-cost] 900
+[power-usage] 141
+[lines-of-code] 20
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.........9555555554...
+.........A.9555D5554..
+.........A16...A..14..
+..1555554A154.16.154..
+.......156.15C154154..
+.............3555554..
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 4
+[code] 
++ mov 110 acc
+  teq dat 3
++ gen p1 1 0
++ gen p0 1 p1
++ mov acc x3
++ dgt 1
++ mov acc x3
+- tlt dat 1
+- dst dat 0
+  slx x1
+  mov x1  dat
+
+[chip] 
+[type] UC4
+[x] 12
+[y] 4
+[code] 
+  slx x0
+  tlt x0 100
+  mov 010 x1
+  slp x0
+  mov 001 x1
++ slp 2
+- slp 1
+  gen p1 1 x1
+  gen p0 3 6
+
+[chip] 
+[type] DX3
+[x] 16
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 6
