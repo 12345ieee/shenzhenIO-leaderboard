@@ -1,6 +1,6 @@
-[name] Top solution Power
+[name] 24/546/28
 [puzzle] Sz043
-[production-cost] 2600
+[production-cost] 2000
 [power-usage] 486
 [lines-of-code] 30
 
@@ -10,13 +10,13 @@
 ......................
 ......................
 ......................
-....14.155554..14.14..
-....14.1555555554.14..
-.......14...155555C...
-....14.1555555555C34..
-....14.14..15555C354..
-.......154.14...3554..
-...........14.........
+..15C14.155494.15554..
+..94A14.15556..15554..
+..A.A...14.8..........
+..A.354.15C355555554..
+..35554.143555555554..
+........1554.1555554..
+......................
 ......................
 ......................
 
@@ -35,52 +35,38 @@
 8 000
 
 [chip] 
-[type] UC6
-[x] 9
+[type] UC4
+[x] 11
 [y] 2
 [code] 
   mov 50 p1
-  slx x1
-  mov x1 x3
+  slx x0
+  mov x0 acc
   slp 2
-  mov x2 p1
+  mov acc p1
   slp 1
 
 [chip] 
-[type] BANK
-[x] 12
-[y] 2
-[rom] 
--1,-1,-1,100,0,100,0,100,0,100,0,-1,-1,-1
-
-[chip] 
 [type] UC6
-[x] 5
+[x] 6
 [y] 3
 [code] 
   mov 50 p1
   slx x3
-  mov x3 x1
+  mov x3 x0
   slp 2
-  mov x0 p1
+  mov x1 p1
   slp 1
   mov x1 x2
 
 [chip] 
-[type] BANK
-[x] 2
-[y] 4
-[rom] 
--1,-1,100,100,0,0,100,100,0,0,-1,-1,-1,-1
-
-[chip] 
 [type] BRIDGE
-[x] 8
+[x] 9
 [y] 4
 
 [chip] 
 [type] UC6
-[x] 5
+[x] 6
 [y] 6
 [code] 
   mov 50 p1
@@ -89,39 +75,38 @@
   slp 2
   mov x0 p1
   slp 1
-  mov x1 x2
+  mov x0 x2
 
 [chip] 
 [type] BRIDGE
-[x] 12
+[x] 11
 [y] 6
 
 [chip] 
 [type] UC6
-[x] 16
+[x] 13
 [y] 6
 [code] 
-  mov x0 dat
-  teq dat -999
+  mov x3 acc
+  teq acc -999
 - mov 100 p1
 - slp 1
 - mov 30 p1
-- mov dat x3
-- slp 1
-- mov 0 p1
+- mov acc x3
   slp 1
-- mov x0 x1
-
-[chip] 
-[type] BANK
-[x] 2
-[y] 7
-[rom] 
--1,100,100,100,100,0,0,0,0,-1,-1,-1,-1,-1
+- mov 0 p1
+- slp 1
+- mov x3 x0
 
 [chip] 
 [type] RADIO
-[x] 13
-[y] 7
+[x] 16
+[y] 6
 [is-puzzle-provided] true
 
+[chip] 
+[type] BANK
+[x] 3
+[y] 7
+[rom] 
+-1,100,100,704,700,-9,-13,-10,0,-13,-1,-1,-1,-1
