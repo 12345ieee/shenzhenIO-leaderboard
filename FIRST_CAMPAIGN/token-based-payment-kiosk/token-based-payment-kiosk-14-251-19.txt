@@ -1,7 +1,7 @@
-[name] New design 1
+[name] 14/255-4/19
 [puzzle] Sz009
 [production-cost] 1400
-[power-usage] 255
+[power-usage] 251
 [lines-of-code] 19
 
 [traces] 
@@ -46,12 +46,12 @@
 [code] 
   tcp x2 0
 + mov x2 x1
-+ add x0
-+ tlt acc p0
-- sub p0
+@ mov p0 acc
++ sub x0
++ tlt 0 acc
 - mov acc x3
 - gen p1 4 2
-- mov 0 acc
+- mov p0 acc
   slp 1
 
 [chip] 
@@ -60,12 +60,12 @@
 [y] 4
 [code] 
   teq acc 0
-- sub 1
+- add 1
 - gen p0 1 1
 + slx x0
 + mov x0 acc
-5:+ tcp acc 4
-+ sub 5
+5:+ tcp -4 acc
++ add 5
 + gen p1 1 1
 + jmp 5
 
