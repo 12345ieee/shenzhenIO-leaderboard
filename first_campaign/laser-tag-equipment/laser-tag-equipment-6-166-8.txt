@@ -1,7 +1,7 @@
 [name] You bad bad
 [puzzle] Sz048
 [production-cost] 600
-[power-usage] 180
+[power-usage] 166
 [lines-of-code] 8
 
 [traces] 
@@ -55,10 +55,10 @@
 @ nop
   tcp x0 p0
 + mov x1 acc
-- teq acc 0
-- mov 10 x0
-- sub 1
++ add 9
+- mov acc x0
   slp 1
+- sub 1
 
 [chip] 
 [type] DIAL7
