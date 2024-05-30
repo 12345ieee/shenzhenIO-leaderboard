@@ -1,0 +1,93 @@
+[name] Why do I need an extra nop?
+[puzzle] Sz048
+[production-cost] 600
+[power-usage] 161
+[lines-of-code] 9
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...9555554155555554...
+...A.15555555D55555C..
+..1741414814.2....82..
+..1555494A14154...34..
+..8155568354.14.14....
+..3555556.8........8..
+..........3555555556..
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 4
+
+[chip] 
+[type] DX3
+[x] 11
+[y] 4
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 13
+[y] 4
+
+[chip] 
+[type] UC4
+[x] 14
+[y] 4
+[code] 
+@ mov 100 x0
+@ nop
+  tcp x0 p0
++ slp 1
++ mov x1 acc
++ add 9
+- mov acc x0
+  slp 1
+- sub 1
+
+[chip] 
+[type] DIAL7
+[x] 17
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] OR
+[x] 6
+[y] 5
+
+[chip] 
+[type] OR
+[x] 4
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 6
