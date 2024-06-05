@@ -1,0 +1,200 @@
+[name] finetuned-2
+[puzzle] Sz046
+[production-cost] 3700
+[power-usage] 221
+[lines-of-code] 85
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...95555554.1555554...
+...A..14..955555C154..
+...A..14956...8.A.14..
+..174954A9495434A.14..
+.....A156A.A14..A154..
+...94A14.34A...16148..
+...34354.156.....156..
+......................
+......................
+
+[chip] 
+[type] NOT
+[x] 4
+[y] 2
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 2
+[code] 
+b:  slx x1
+  dst 1 x1
+  tcp acc 30
++ tlt acc 70
++ mov acc x3#->456
++ jmp b
+  mov acc x2#->378
+  teq p0 100
+- mov 90 x2
++ mov 100 x2
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 2
+[code] 
+  slx x0 #3
+  teq x0 90
++ slp 1
++ mov 100 x3
+  slp 1
+  mov 10 x3
+  slp 1
+  mov 100 x3
+  slp 1
+  mov 10 x3
+  slp 1
+  mov 100 x3
+- slp 1
+- mov 10 x3
+
+[chip] 
+[type] DX3
+[x] 16
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 4
+[y] 3
+[code] 
+  slx x0
+  mov x0 dat
+  tgt dat 2
++ mov dat x2
+- tcp 0 dat
+- dst dat 1
+- mov acc x3
+  slp 6
+  mov p0 p1
+- mov x3 acc
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 4
+[code] 
+b:  slx x3 #78,->3
+  mov x3 acc
+  mov x3 dat
+  teq acc 30
++ mov dat x2 #->3
++ mov dat x0 #->3
++ jmp b
+  add 20
+  teq dat acc
+- slp 4
++ slp 1
+  mov acc x0
+  slp 1
+  mov x0 dat
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 5
+[code] 
+b: slx x2 #456
+  mov x2 x1
+  mov x0 acc
+  mov x0 dat
+  mov p0 x1
+  mov dat x3
+  slp 1
+  mov acc x3
+  slp x0
+  mov dat x3
+  slp 1
+  mov acc x3
+  slp x0
+  mov dat x3
+
+[chip] 
+[type] UC6
+[x] 15
+[y] 5
+[code] 
+@ mov 50 p1
+  slp 1
+  teq p0 x0
++ slp 100
+  mov 100 p1
+  slp 5
+  mov 50 p1
+  mov 100 p0
+  slp 1
+  mov x0 acc
+  mov p1 p0
+  slp 5
+  mov 50 p1
+  mov 100 p0
+
+[chip] 
+[type] BANK
+[x] 4
+[y] 6
+[rom] 
+2,1,1,2,0,-1,0,0,10,0,0,0,10,1
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 6
+
+[chip] 
+[type] UC4
+[x] 10
+[y] 7
+[code] 
+@ mov 50 p1
+@ slp 36
+@ mov 0 p1
+@ slp 1
+@ mov 50 p1
+@ slx x0
+@ mov 0 p1
+@ slp 6
+@ mov 50 p1
+
+[chip] 
+[type] NOTE
+[x] 9
+[y] 10
+[code] 
+378:
+move p0->90/100 
+logic from 
+3-8 chip
+
+[chip] 
+[type] NOTE
+[x] 12
+[y] 10
+[code] 
+TODO: add - to
+mvo x3 acc
+on first chip
