@@ -1,0 +1,65 @@
+[name] "power"
+[puzzle] Sz005
+[production-cost] 600
+[power-usage] 300
+[lines-of-code] 9
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+........14.1C.........
+........14..2.........
+......1554.155415C....
+....155555554....A....
+.................2....
+......................
+......................
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 14
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 5
+
+[chip] 
+[type] RTC
+[x] 4
+[y] 6
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 6
+[code] 
+  teq x0 p0
++ not
+  teq x1 p0
++ mov 0 x2
++ slp 999
+  tgt p1 19
++ mov acc x2
+- mov 0 x2
+  slp 1
+
+[chip] 
+[type] DIAL2
+[x] 7
+[y] 7
+[is-puzzle-provided] true
+
+[chip] 
+[type] DIAL1
+[x] 7
+[y] 8
+[is-puzzle-provided] true
+
