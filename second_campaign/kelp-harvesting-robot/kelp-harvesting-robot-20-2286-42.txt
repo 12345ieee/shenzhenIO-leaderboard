@@ -1,7 +1,7 @@
 [name] pareto 5
 [puzzle] Sz042EZ
 [production-cost] 2000
-[power-usage] 2358
+[power-usage] 2286
 [lines-of-code] 42
 
 [traces] 
@@ -12,7 +12,7 @@
 ......................
 ................15C...
 .............94...3C..
-..954.154..0.A.....2..
+..954.154....A.....2..
 ..A14.155555C34.1554..
 ..A...94155C354....8..
 ..A14.34...A......96..
@@ -57,13 +57,13 @@
   slx x1
   mov x1 dat
   mov dat x0
-  dst 0 dat
+  dst p1 dat
   tcp acc dat
 + sub 10
 - add 10
   dst 0 x0
   mov acc x1
-+ gen p1 0 1
++ slp 1
 - gen p1 1 0
 
 [chip] 
@@ -72,8 +72,8 @@
 [y] 4
 [code] 
 st:slp 1 
-  mov 0 p1
-  mov 0 x1
+  nop
+  mov p1 x1
   mov x0 acc
   tlt acc 1
 + jmp st
@@ -98,12 +98,12 @@ scan:teq acc dat
 [code] 
   mov 50 p1
   slx x1
-  dst 0 x1
+  dst p1 x1
   tcp dat acc
   mov dat acc
 + sub 1
 - add 1
   mov acc x1
-+ gen p1 0 1
++ slp 1
 - gen p1 1 0
   mov acc dat
