@@ -1,7 +1,7 @@
-[name] pareto
+[name] cp 2151
 [puzzle] Sz042EZ
 [production-cost] 1800
-[power-usage] 2317
+[power-usage] 2151
 [lines-of-code] 45
 
 [traces] 
@@ -11,9 +11,9 @@
 ......................
 ......................
 ....154.15555555C.....
-.....15C1555C...A15C..
-...9554A1C..A...A142..
-...A954A16..B554A154..
+.....15C15C.....A15C..
+...9554A1CA.....A142..
+...A954A1635D554A154..
 ...AA15614.16954A148..
 ...A355554.15694A.96..
 ...355555555556.356...
@@ -51,7 +51,8 @@
   dst 0 x3
   mov acc p0
   mov 0 x0
-- gen p1 1 0
+- mov 100 p1
+- slp 1
 + slp 1
 
 [chip] 
@@ -69,20 +70,19 @@
 [x] 6
 [y] 6
 [code] 
-st:slp 1
-  dst p1 x0
-  dst 1 x0
-  mov acc x1
-  mov x2 acc
-  mov acc x3
-  tlt acc x3
+  tlt acc 1
+st: + slp 1
++ dst p1 x0
++ dst 1 x0
++ mov acc x1
++ mov x2 acc
++ mov acc x3
++ tlt acc x3
 + jmp st
 lp:teq acc p0
 + mov 100 p1
 - mov acc x1
   mov x2 acc
-  tlt acc 1
-- jmp lp
 
 [chip] 
 [type] UC4
