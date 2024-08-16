@@ -1,0 +1,165 @@
+[name] lines
+[puzzle] Sz046
+[production-cost] 2800
+[power-usage] 347
+[lines-of-code] 68
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..1C95555C....95555C..
+...AA1554354..A155C2..
+...AA.154.1554A...34..
+..16B5415C.8156.9554..
+....A.14.34355556954..
+....A154.15555554A14..
+....3554..15555556....
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 1
+[code] 
+0: 000000
+1: 111111
+2: 222222
+3: 121212
+4: 311313
+5: 011010
+6: 300303
+7: 010000
+8: 000020
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 2
+[code] 
+s: slx x0 #!012x8
+  mov x0 dat
+  dst 0 dat
+  teq acc 6 #x6
+- mov dat x1
+- teq acc 4 #x4
++ mov dat x3
+  teq dat 3
++ slp 1
+- teq dat 13
++ gen p1 1 1
++ gen p1 1 0
++ gen p0 1 0
++ gen p1 1 0
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 2
+
+[chip] 
+[type] UC4
+[x] 16
+[y] 2
+[code] 
+  slx x0 #x4 x6
+  tgt x0 8
++ gen p1 1 1
+  gen p1 1 2
+- gen p1 1 1
+  gen p1 1 0
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 3
+[code] 
+s:slx x2 #x3x4x5x7
+  mov x2 acc
+  teq acc 3
++ gen p1 1 1 #3
+- slp 1 #!3
+- tcp acc 7 #!3
+- gen p1 2 1 #45
++ teq acc 17 #!457
++ slp 3 #17
+  gen p1 1 1
+- tlt acc 14 #!x7
+- gen p1 2 0 #1415
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 5
+[code] 
+s:slx x0 #in/in+10
+  mov x0 dat
+  mov dat x3
+  teq dat 8
++ slp 3
+- teq dat 18 #!8
++ slp 1 #x8
++ gen p0 1 0
+- tcp 2 dat #!x8
+- mov dat x1
++ teq dat 1 #<2 x8
++ gen p1 6 0 #1
+  teq dat 2 #all
++ gen p0 6 0
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 5
+[code] 
+@ mov 50 p0
+  mov 50 p1
+  slx x1
+  teq x1 -1
+- not
+- mov acc p0
+- slp 5
+- mov 50 p0
+- gen p1 1 0
++ gen p1 0 6
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 6
+[code] 
+  slx x0 #input
+  mov x0 x3
+  slx x0 #end
+  slp 6
+  mov x0 acc
+  tgt acc 2
++ add 10
+  mov acc x3
++ teq acc 13
++ slp 5
++ gen p1 1 0
+- slp 6
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 8
+[code] 
+TR 68: 144335: 328
+TR 20: 444577: 321
+TR 78: 443666: 324
+
