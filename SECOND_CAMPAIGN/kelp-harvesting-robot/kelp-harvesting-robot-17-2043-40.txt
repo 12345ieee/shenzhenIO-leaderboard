@@ -2,7 +2,7 @@
 [puzzle] Sz042EZ
 [production-cost] 1700
 [power-usage] 2043
-[lines-of-code] 41
+[lines-of-code] 40
 
 [traces] 
 ......................
@@ -31,10 +31,9 @@
   slp 1
   mov x0 dat
   mov 0 x1
-  teq dat -99
-+ mov acc dat
-- dst 0 dat
-  tcp acc dat
+  tcp dat -99
++ dst 0 dat
++ tcp acc dat
 + sub 10
 - add 10
   dst 0 x3
