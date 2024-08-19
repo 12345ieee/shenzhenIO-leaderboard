@@ -1,7 +1,7 @@
-[name] 1337
+[name] 1325
 [puzzle] Sz042EZ
 [production-cost] 3300
-[power-usage] 1337
+[power-usage] 1325
 [lines-of-code] 81
 
 [traces] 
@@ -10,40 +10,40 @@
 ......................
 ......................
 ......................
-..15C154.....955554...
-..94A15555C..A14.15C..
-..2.A1414.A14A15C.82..
-..15E15554354A14A.34..
-..94A15C15C14A156.94..
-..34A14A..A156....A...
-..15615614355555556...
+..15C14......955554...
+..94A9C.1C...A14.15C..
+..A16A3416.14A15C.82..
+..B54A1554.14A14A.34..
+..A14A1554954A156.94..
+..354A15556156....A...
+.....35415555555556...
 ......................
 ......................
 
 [chip] 
-[type] RAM
-[x] 3
-[y] 2
-
-[chip] 
-[type] UC4X
-[x] 6
+[type] UC6
+[x] 4
 [y] 2
 [code] 
-@ slp 1
-  mov x2 acc
-  teq acc -999
-- dst 2 x2
-- mov acc x0
-- slp 2
-+ slp 1
+@ teq 0 0
+b:+  slx x3
++ mov x3 acc
++ mov x0 dat
++ teq x0 x2
++ jmp b
+- teq x1 acc
++ mov x0 acc
++ sub 1
++ mov acc x0
++ mov 0 x1
++ gen p1 1 0
+- teq x0 x2
++ mov dat x0
 
 [chip] 
-[type] RADIO
-[x] 9
+[type] BRIDGE
+[x] 8
 [y] 2
-[rotated] true
-[is-puzzle-provided] true
 
 [chip] 
 [type] UC6
@@ -51,11 +51,11 @@
 [y] 3
 [code] 
 @ teq acc dat
-+ slx x1
-+ mov x1 dat
++ slx x0
++ mov x0 dat
 + mov dat x3
 + sub x3
-- mov acc x0
+- mov acc x1
 - slp 1
 - sub 1
   add p1
@@ -63,35 +63,11 @@
 + add 100
 - sub 100
   teq acc dat
-+ mov 100 x1
++ mov 100 x0
 
 [chip] 
 [type] BRIDGE
-[x] 2
-[y] 4
-
-[chip] 
-[type] UC4X
 [x] 3
-[y] 4
-[code] 
-  slx x3
-  mov x3 acc
-  teq x1 x2
-+ teq x1 x2
-l:- mov x0 acc
-- tgt acc 0
-- jmp l
-+ mov acc x3
-
-[chip] 
-[type] BRIDGE
-[x] 6
-[y] 4
-
-[chip] 
-[type] BRIDGE
-[x] 8
 [y] 4
 
 [chip] 
@@ -100,18 +76,32 @@ l:- mov x0 acc
 [y] 4
 [code] 
 @ slp 1
-@ mov 0 x1
-@ mov x1 acc
-  mov acc x2
+@ mov x0 acc
+@ dst 2 x0
+  mov acc x3
   dgt 2
   mov acc p1
-  slx x2
-  mov x2 p0
+  slx x3
+  mov x3 p0
 x:  slp 1
   mov p0 x1
   mov x1 acc
   tgt acc 0
 - jmp x
+
+[chip] 
+[type] UC4X
+[x] 4
+[y] 5
+[code] 
+  slx x2
+  mov x2 acc
+  teq x0 x3
++ teq x0 x3
+l:- mov x1 acc
+- tgt acc 0
+- jmp l
++ mov acc x2
 
 [chip] 
 [type] UC6
@@ -131,31 +121,6 @@ x:  slp 1
   mov x0 dat
 + slp acc  
 - slp acc
-
-[chip] 
-[type] UC6
-[x] 3
-[y] 6
-[code] 
-@ teq 0 0
-b:+  slx x3
-+ mov x3 acc
-+ mov x1 dat
-+ teq x1 x2  
-+ jmp b
-- teq x0 acc
-+ mov x1 acc
-+ sub 1
-+ mov acc x1
-+ mov 0 x0
-+ gen p1 1 0
-- teq x1 x2
-+ mov dat x1
-
-[chip] 
-[type] BRIDGE
-[x] 7
-[y] 6
 
 [chip] 
 [type] UC6
@@ -179,3 +144,28 @@ b:+  slx x3
 [type] BRIDGE
 [x] 18
 [y] 6
+
+[chip] 
+[type] RAM
+[x] 3
+[y] 7
+
+[chip] 
+[type] UC4X
+[x] 6
+[y] 7
+[code] 
+@ slp 3
+  mov x2 acc
+  teq acc -999
+- dst 2 x2
+- mov acc x0
+- slp 2
++ slp 1
+
+[chip] 
+[type] RADIO
+[x] 9
+[y] 7
+[rotated] true
+[is-puzzle-provided] true
