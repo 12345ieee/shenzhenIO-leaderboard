@@ -1,0 +1,151 @@
+[name] REFACTORED 180
+[puzzle] Sz038
+[production-cost] 2800
+[power-usage] 180
+[lines-of-code] 58
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..955555C154..........
+..A954..35D54.........
+..AA949548A14...9554..
+..2AA.A156A15C14A.14..
+..16A.A9543543556.14..
+..156176..954.15541C..
+.....155556.....1556..
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 2
+[code] 
+  slx x2
+  mov x2 x1
+  mov x3 dat
+m:  mov x1 acc
+  teq x0 dat
+- jmp m
+  mov acc x1
+  mov 0 x0
+  mov x1 x2
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 2
+[code] 
+  slx x1
+  mov 1 x3
+  slp x1
+  mov 50 p1
+  mov 100 x3
+  slp 1
+  mov 10 x3
+  slp 1
+  mov 0 p1
+  slp x0
+  mov 50 p1
+  mov 110 x3
+  slp 1
+  mov p1 x3
+
+[chip] 
+[type] BRIDGE
+[x] 16
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 2
+[y] 3
+
+[chip] 
+[type] RADIO
+[x] 6
+[y] 3
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 3
+[code] 
+  mov 50 p1
+e:  slp 1
+  tcp x1 1
+- slp 1
+- tcp x1 1
+- slp 1
+- tcp x1 1
++ mov p1 x2
++ slp 3
++ jmp se
+  mov p1 x0
+  slp 4
+se:  slp x3
+  slp x3
+
+[chip] 
+[type] BRIDGE
+[x] 15
+[y] 3
+
+[chip] 
+[type] DX3
+[x] 17
+[y] 3
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 5
+[code] 
+@ slx x2
+@ mov x2 x1
+  mov x3 x0
+  slx x2
+  mov x2 x1
+m:mov x1 acc
+  teq x0 0
+- jmp m
+  mov acc x1
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 5
+[code] 
+  slx x1
+  mov 50 p0
+  mov 100 x2
+  slp 1
+  mov 10 x2
+  slp 1
+  mov 11 x2
+  slp x0
+  mov 110 x2
+  slp 1
+  slp x2
+  mov 0 p0
+
+[chip] 
+[type] RAM
+[x] 2
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 6
