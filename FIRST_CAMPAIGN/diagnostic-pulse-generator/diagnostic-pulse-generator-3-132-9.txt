@@ -1,7 +1,7 @@
-[name] New design 3
+[name] cp
 [puzzle] Sz002
 [production-cost] 300
-[power-usage] 133
+[power-usage] 132
 [lines-of-code] 9
 
 [traces] 
@@ -25,6 +25,7 @@
 [x] 8
 [y] 5
 [code] 
+  slp 1
   teq p0 0
 - mov 100 p1
 - slp 1
@@ -33,4 +34,3 @@
 - mov p0 p1
 - slp 1
 - mov 0 p1
-  slp 1
