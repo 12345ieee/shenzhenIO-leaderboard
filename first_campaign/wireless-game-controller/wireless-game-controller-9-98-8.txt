@@ -1,0 +1,69 @@
+[name] slp 999
+[puzzle] Sz011
+[production-cost] 900
+[power-usage] 98
+[lines-of-code] 8
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.............14.......
+.......15555554.......
+......154954.8........
+......154A1556........
+.....9554A141555C.....
+.....A...A..141CA.....
+.....21556.....22.....
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 11
+[y] 2
+
+[chip] 
+[type] NOT
+[x] 13
+[y] 3
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 4
+[code] 
+  slp x1 # Abuse
+- mov x0 null #AA
+  teq x0 -1
+- slp 1 #AA
+  mov p0 x1
+  mov p1 x1
+  mov x2 x3
+  mov x1 x1 #ROWO
+
+[chip] 
+[type] RADIO
+[x] 4
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 13
+[y] 6
+
+[chip] 
+[type] BANK
+[x] 14
+[y] 7
+[rom] 
+1,4,3,4,0,0,0,0,0,0,0,4,2,4
