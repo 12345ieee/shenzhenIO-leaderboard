@@ -1,0 +1,192 @@
+[name] reworked
+[puzzle] Sz046
+[production-cost] 3400
+[power-usage] 207
+[lines-of-code] 80
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...955555554.155D54...
+...2...15C..9554A154..
+...15C.1CA14A154A.14..
+..154A14AA14BC156.14..
+...14B54235563C..154..
+...15615554.14354148..
+...14.154........156..
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 2
+
+[chip] 
+[type] UC4X
+[x] 4
+[y] 2
+[code] 
+b:  slx x1 #3-8
+  dst 1 x1
+  tgt acc 30
++ tlt acc 70
++ mov acc x2#->456
++ mov x0 x2
+- mov acc x3
+- mov x0 x3
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 2
+[code] 
+b:  slx x1 #78,->3
+  mov x1 acc
+  teq acc 30
++ mov x1 acc
++ mov acc x0 #->3
++ mov acc x3 #->3
++ jmp b
+  add 20
+  teq x1 acc
+- slp 4
++ slp 1
+  mov acc x0
+  slp 1
+  mov x0 dat
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 2
+[code] 
+  slx x1 #3
+  teq x1 90
++ slp 1
++ mov 100 x3
+  slp 1
+  mov 10 x3
+  slp 1
+  mov 100 x3
+  slp 1
+  mov 10 x3
+  slp 1
+  mov 100 x3
+- slp 1
+- mov 10 x3
+
+[chip] 
+[type] DX3
+[x] 16
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 3
+
+[chip] 
+[type] UC4X
+[x] 4
+[y] 4
+[code] 
+  slx x0 
+  mov x0 acc
+  tgt acc 2
++ mov acc x1#->3-8
+- mul 50
+- mov acc x3#0-2
+  slp x2
+- mov x2 null
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 5
+[code] 
+b: slx x1 #456
+  mov x1 x3
+  mov x2 acc
+  mov x2 dat
+  mov x1 x3
+  mov dat x0
+  slp 1
+  mov acc x0
+  slp x2
+  mov dat x0
+  slp 1
+  mov acc x0
+  slp x2
+  mov dat x0
+
+[chip] 
+[type] BANK
+[x] 11
+[y] 5
+[rom] 
+1,1,1,2,0,9,2,1,10,0,0,0,10,9
+
+[chip] 
+[type] UC6
+[x] 15
+[y] 5
+[code] 
+  mov 50 p1
+  slp 1
+  teq p0 x0
++ slp 100
+  mov 100 p1
+  slp 5
+  mov 100 p0
+  mov 50 p1
+  slp 1
+  mov x0 acc
+  mov p1 p0
+  slp 5
+  mov 100 p0
+
+[chip] 
+[type] BANK
+[x] 4
+[y] 6
+[rom] 
+6,90,6,100,6,90,6,100,6,90,99,100,0,0
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 6
+
+[chip] 
+[type] UC4
+[x] 11
+[y] 7
+[code] 
+@ mov 50 p1 #motor
+@ slp 36
+@ mov 0 p1
+@ slp 1
+@ mov 50 p1
+@ slx x0
+@ mov 0 p1
+@ slp 6
+@ mov 50 p1
