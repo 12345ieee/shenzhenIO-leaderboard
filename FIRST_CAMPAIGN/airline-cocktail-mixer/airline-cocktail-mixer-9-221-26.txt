@@ -1,8 +1,8 @@
-[name] Top solution Cost - pseudonym404
+[name] Top Power Cost - Zombie2333
 [puzzle] Sz020
 [production-cost] 900
-[power-usage] 236
-[lines-of-code] 27
+[power-usage] 221
+[lines-of-code] 26
 
 [traces] 
 ......................
@@ -12,8 +12,8 @@
 ......................
 .................954..
 ...........955554A14..
-......95554A15C156.8..
-..8...A..14354355556..
+......95555615C156.8..
+..8...A..14...355556..
 ..3554A1555555555554..
 ....9435415555555554..
 ....3555555555555554..
@@ -28,11 +28,11 @@
   slx x0
   mov x0 acc
   mov acc x1
-  teq acc 5
-- teq acc 7
-+ gen p0 2 0
-  teq acc 3
+  mov acc x1
+  tcp 4 acc
 - teq acc 6
+- gen p0 2 0
++ tgt acc 2
 + gen p1 2 0
 
 [chip] 
@@ -47,7 +47,6 @@
 [code] 
   slx x0
   mov x0 acc
-  mov acc x1
   teq acc 3
 + gen p0 2 0
   teq acc 4
@@ -69,4 +68,3 @@
   tgt acc 6
 - gen p0 acc 0
 + gen p1 6 0
-
