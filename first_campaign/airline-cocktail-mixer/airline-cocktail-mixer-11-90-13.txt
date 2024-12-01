@@ -1,7 +1,7 @@
 [name] Bottom solution Lines - Community
 [puzzle] Sz020
 [production-cost] 1100
-[power-usage] 92
+[power-usage] 90
 [lines-of-code] 13
 
 [traces] 
@@ -35,7 +35,7 @@
 [x] 4
 [y] 3
 [rom] 
-1,4,110,2,100,4,11,4,1,4,0,1,10,4
+1,4,110,2,100,4,11,4,1,4,0,3,10,4
 
 [chip] 
 [type] AND
@@ -79,7 +79,7 @@
   tlt acc 60
 + mov 100 p0
 - mov 100 p1
-+ teq acc 40
++ tgt x1 10
 - slp 2
 - mov 0 x3
   slp x2
