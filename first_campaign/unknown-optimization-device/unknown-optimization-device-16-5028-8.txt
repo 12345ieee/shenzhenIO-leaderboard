@@ -1,0 +1,91 @@
+[name] In Axiom VirtualNetwork+, virtual networks are configured using a proprietary scripting language called JavaScript.
+[puzzle] Sz015
+[production-cost] 1600
+[power-usage] 5028
+[lines-of-code] 8
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......15554.15555C....
+...........954...A....
+....15555D4A1555C2....
+.........A.A....A.....
+....1554.A.354..A.....
+......1543540...34....
+.......14.15554.......
+......................
+......................
+
+[chip] 
+[type] BANK
+[x] 4
+[y] 2
+[rom] 
+100,100,100,80,80,80,80,80,40,40,40,0,0,0
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 2
+
+[chip] 
+[type] UC4
+[x] 8
+[y] 2
+[code] 
+# Empty for
+# special purpose
+                                                                                                                                                                      tgt x0 p0
+                                                                                                                                                                    - mov 100 p1
+                                                                                                                                                                    + mov 0 p1
+                                                                                                                                                                      slp x1
+
+[chip] 
+[type] BANK
+[x] 14
+[y] 2
+[rom] 
+0,0,0,0,0,0,0,0,0,0,0,1,0,0
+
+[chip] 
+[type] BANK
+[x] 13
+[y] 4
+[rom] 
+0,100,60,20,100,80,60,40,20,100,60,20,0,0
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 6
+[code] 
+                                                                                                                                                                    tlt p0 x3
+                                                                                                                                                                  + mov x0 p1
+                                                                                                                                                                  - mov x0 null
+                                                                                                                                                                    slp x2
+
+[chip] 
+[type] NOTE
+[x] -4
+[y] 7
+[code] 
+  
+                                                                                                                                                                  a = int(input())
+                                                                                                                                                                  b = int(input())
+                                                                                                                                                                  c = int(input())
+                                                                                                                                                                  if a < b:
+                                                                                                                                                                    a = b
+                                                                                                                                                                  if a < c:
+                                                                                                                                                                    a = c
+                                                                                                                                                                  print(a)
+
+[chip] 
+[type] BANK
+[x] 4
+[y] 7
+[rom] 
+42,30,0,30,30,80,50,0,30,30,0,30,42,42
