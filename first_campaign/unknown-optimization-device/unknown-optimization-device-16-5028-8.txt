@@ -1,4 +1,4 @@
-[name] In Axiom VirtualNetwork+, virtual networks are configured using a proprietary scripting language called JavaScript.
+[name] https://github.com/837951602/shenzhenIO-leaderboard/blob/image-1/e0c468dc7bdea36923ed67384c92cc9b5df1f2f5883366cb9b5f177adf0449598a85dde913926e332f309a026d7a9619f5af8d6415b221ec128cacfc5096d3ec/f5850befa26de251327583b60be9aa970f1c1790c2b942d95d2b7e475e5937a5ca9d8e4ea4e4b9b5978edf8475b7cf16124a68d83178ebc89d8030ab08f5f0ed/e46094afebdf757e107b9dd4bddfba27e1d2d0cd7b42c14400f66ccf58678da018285bc08ac151302fe5712aada9f063c5caa0c45e60bdd4232e34dfb8f1f8e5/UOD.16.5028.8.png
 [puzzle] Sz015
 [production-cost] 1600
 [power-usage] 5028
@@ -37,12 +37,10 @@
 [x] 8
 [y] 2
 [code] 
-# Empty for
-# special purpose
-                                                                                                                                                                      tgt x0 p0
-                                                                                                                                                                    - mov 100 p1
-                                                                                                                                                                    + mov 0 p1
-                                                                                                                                                                      slp x1
+  tgt x0 p0
+- mov 100 p1
++ mov 0 p1
+  slp x1
 
 [chip] 
 [type] BANK
@@ -63,25 +61,10 @@
 [x] 10
 [y] 6
 [code] 
-                                                                                                                                                                    tlt p0 x3
-                                                                                                                                                                  + mov x0 p1
-                                                                                                                                                                  - mov x0 null
-                                                                                                                                                                    slp x2
-
-[chip] 
-[type] NOTE
-[x] -4
-[y] 7
-[code] 
-  
-                                                                                                                                                                  a = int(input())
-                                                                                                                                                                  b = int(input())
-                                                                                                                                                                  c = int(input())
-                                                                                                                                                                  if a < b:
-                                                                                                                                                                    a = b
-                                                                                                                                                                  if a < c:
-                                                                                                                                                                    a = c
-                                                                                                                                                                  print(a)
+  tlt p0 x3
++ mov x0 p1
+- mov x0 null
+  slp x2
 
 [chip] 
 [type] BANK
