@@ -1,0 +1,72 @@
+[name] At the Sunnyvale Institute for Audio Engineering, we have done decades of advanced audio research. But even we know that a truly breakthrough audio device only comes around once in a generation. So it was with no small amount of trepidation when our scientists in the lab introduced us to something they’d been working on for the last few years. Would this be just another piece of “audio gear” destined to gather dust on the shelves of your local electronics store? Our minds changed once we took a listen. Everything sounded more alive, more present, more real to us than anything we’d heard before. Whereas before the harmonies would float through the air listlessly towards our ears, with this technology the sound was heightened, improved... maximized.
+[puzzle] Sz011
+[production-cost] 1000
+[power-usage] 107
+[lines-of-code] 6
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....95554155554.......
+....29555555554.......
+....16954894155C......
+....14A156A95416......
+....1CA1556A15C.......
+.....AA....35435C.....
+.....22.......142.....
+......................
+......................
+
+[chip] 
+[type] XOR
+[x] 13
+[y] 2
+[rotated] true
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 4
+[code] 
+  slp x0
+  teq x1 -1
++ mov p0 x0
++ mov p1 x0
++ mov x2 x3
++ mov x0 x0 #ROWO
+
+[chip] 
+[type] DX3
+[x] 11
+[y] 4
+
+[chip] 
+[type] XOR
+[x] 13
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 4
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 6
+
+[chip] 
+[type] RADIO
+[x] 5
+[y] 7
+[is-puzzle-provided] true
+
+[chip] 
+[type] BANK
+[x] 14
+[y] 7
+[rom] 
+1,4,1,2,4,1,0,0,0,0,0,3,0,4
