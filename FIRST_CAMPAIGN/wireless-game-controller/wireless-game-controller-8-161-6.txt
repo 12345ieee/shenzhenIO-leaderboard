@@ -1,0 +1,87 @@
+[name] Bro is a winrar, a true winrar of the chips
+[puzzle] Sz011
+[production-cost] 800
+[power-usage] 161
+[lines-of-code] 6
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.............14.......
+.......15555554.......
+......154954.8........
+......154A1556........
+.....9554A154155C.....
+.....A...A...15CA.....
+.....21556.....22.....
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 12
+[y] 2
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 4
+[code] 
+  slp x1 # Abuse
+  teq x0 -1
++ mov p0 x1
++ mov p1 x1
++ mov x2 x3
++ mov x1 x1 #ROWO
+
+[chip] 
+[type] RADIO
+[x] 4
+[y] 5
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 13
+[y] 6
+
+[chip] 
+[type] NOTE
+[x] 4
+[y] 7
+[code] 
+Uses fact that
+ROM data is RO
+and tx is WO
+to combine 2
+xbuses in
+`mov x1 x1`
+
+[chip] 
+[type] BANK
+[x] 14
+[y] 7
+[rom] 
+0,1,2,1,1,2,1,1,0,0,1,1,3,1
+
+[chip] 
+[type] NOTE
+[x] 8
+[y] 8
+[code] 
+Abuses fact that
+calls are spaced
+> 4 cycles
+
+Delay -1 cleanup.
+abusing that there
+is at most 1 cycle
+of delay
