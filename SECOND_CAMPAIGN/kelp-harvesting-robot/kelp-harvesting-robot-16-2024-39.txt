@@ -1,7 +1,7 @@
 [name] c16 l
 [puzzle] Sz042EZ
 [production-cost] 1600
-[power-usage] 2096
+[power-usage] 2024
 [lines-of-code] 39
 
 [traces] 
@@ -10,35 +10,15 @@
 ......................
 ......................
 ......................
-....14.15555555554....
-....15C15C......955C..
-..9554A1CA......A142..
-..A954A16A9555C16954..
-..AA15614A3414A..A14..
-..A35555435554A156....
-..355555555554354.....
+....14.1555555C.......
+....15C1415554A1555C..
+..9554A155C.15E14..2..
+..A954A148B554A15554..
+..AA1561563415694..8..
+..A355554.1555569556..
+..355555555555556.....
 ......................
 ......................
-
-[chip] 
-[type] BRIDGE
-[x] 12
-[y] 2
-
-[chip] 
-[type] UC4
-[x] 13
-[y] 2
-[code] 
-  mov 50 p1
-  slx x1
-  dst 0 p0
-  tcp acc p0
-+ sub 10
-- add 10
-  mov acc x0
-+ gen p1 0 1
-- gen p1 1 0
 
 [chip] 
 [type] UC4X
@@ -48,11 +28,10 @@
   slp 1
   mov 0 x1
 + mov 0 x0
-  dst 0 x2
+  dst 0 x3
   teq acc -9
-+ mov 0 x2
-- mov acc x3
-  mov 0 x0
++ mov 0 x3
+- mov acc x2
 
 [chip] 
 [type] RAM
@@ -65,18 +44,29 @@
 [y] 4
 [code] 
   mov 50 p1
-  slx x0
-  tcp acc x0
-+ sub 1
-- add 1
-  mov acc p0
-+ gen p1 0 1
+  slx x1
+  dst p1 p0
+  tcp acc p0
++ sub 10
+- add 10
+  mov acc x0
++ slp 1
 - gen p1 1 0
 
 [chip] 
 [type] BRIDGE
-[x] 18
+[x] 16
 [y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 5
 
 [chip] 
 [type] UC6
@@ -85,23 +75,33 @@
 [code] 
   tgt dat 0
 - slp 1
-- dst p1 x0
+- dst p0 x0
 - dst 1 x0
-- mov acc x2
+- mov acc x3
 - mov x1 dat
-- mov dat p0
-- mov dat x3
-- mov x3 acc
-- dst 0 p0
-  teq acc dat
-+ mov 100 p1
+- mov dat p1
 - mov dat x2
+- mov x2 acc
+- dst 0 p1
+  teq acc dat
++ mov 100 p0
+- mov dat x3
   mov x1 dat
 
 [chip] 
-[type] BRIDGE
-[x] 17
+[type] UC4
+[x] 13
 [y] 6
+[code] 
+  mov 50 p1
+  slx x1
+  tcp acc x1
++ sub 1
+- add 1
+  mov acc p0
+  mov p1 x0
++ slp 1
+- gen p1 1 0
 
 [chip] 
 [type] RADIO
