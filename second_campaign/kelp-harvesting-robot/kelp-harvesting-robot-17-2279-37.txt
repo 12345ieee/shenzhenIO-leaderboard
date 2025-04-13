@@ -1,0 +1,112 @@
+[name] l37
+[puzzle] Sz042EZ
+[production-cost] 1700
+[power-usage] 2279
+[lines-of-code] 37
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....154.1555555554....
+.....15C155555C1555C..
+...9554A1C9554A..142..
+...A954A162154A14954..
+...AA156155554A15614..
+...A3555554815614.....
+...35555555754........
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 2
+[code] 
+  mov 50 p1
+- mov 100 p1
++ mov 0 p1
+  slx x3
+  mov 0 x0
+  dst 0 p0
+  tcp acc p0
++ tcp p0 0
++ sub 10
+- add 10
+  dst 0 x3
+  mov acc x1
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 16
+[y] 3
+
+[chip] 
+[type] RAM
+[x] 6
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 5
+[code] 
+  mov 50 p1
++ mov 0 p1
+- mov 100 p1
+  gen p0 1 0
+  mov 0 x1
+  dst 0 x0
+  tcp dat acc
++ tcp acc -9
+  mov dat acc
++ sub 1
+- add 1
+  mov acc x2
+  mov acc dat
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 6
+[code] 
+  tgt acc 0
+- slp 1
+- dst p1 x0
+- dst 1 x0
++ teq acc dat
++ mov 100 p1
+- mov acc x2
+  mov x1 acc
+- teq p0 100
+- mov acc x3
+- mov acc p0
+- mov x3 dat
+
+[chip] 
+[type] BRIDGE
+[x] 17
+[y] 6
+
+[chip] 
+[type] RADIO
+[x] 2
+[y] 7
+[is-puzzle-provided] true
