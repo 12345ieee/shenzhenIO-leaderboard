@@ -1,0 +1,154 @@
+[name] fastest (197p)
+[puzzle] Sz027
+[production-cost] 2900
+[power-usage] 197
+[lines-of-code] 45
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....155555D55554.14..
+.....94....354954.94..
+..8..3554..154A15568..
+..A..15549548.A14956..
+..A.14.14A1C34A1568...
+..A.14.156.354A154A...
+..3554.14...1561556...
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 2
+[code] 
+  tgt p0 x0
+- slp x0
++ mov p0 p1
++ mov x1 x3
++ slp x2
++ mov 0 x1
+
+[chip] 
+[type] BANK
+[x] 8
+[y] 2
+[rom] 
+0,6,0,5,0,4,0,3,0,2,0,1,0,0
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 2
+[code] 
+@ mov 1 p0
+@ slx x2
+@ slp x2
+@ mov 50 p0
+@ mov 50 p1
+@ slp 1
+  tgt x0 -999
+- slp 1
+- tgt x0 -999
++ teq x0 x3
++ mov 79 x1
++ slp 3
+- slp 3
+
+[chip] 
+[type] BANK
+[x] 2
+[y] 3
+[rom] 
+0,1,0,1,0,1,0,1,0,1,0,1,0,1
+
+[chip] 
+[type] BRIDGE
+[x] 16
+[y] 3
+
+[chip] 
+[type] ID
+[x] 17
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 4
+[code] 
+  slx x2
+  tgt p0 x2
++ mov 100 x0
++ slx x2
++ tgt p0 x2
++ mov 0 x1
+- mov x3 x1
+- tgt 51 p0
+- mov x0 null
+  mov x0 x0
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 4
+
+[chip] 
+[type] BANK
+[x] 3
+[y] 5
+[rom] 
+100,2,600,600,700,200,700,201,700,202,700,203,700,204
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 13
+[y] 5
+[code] 
+  slp 1
+b:  tcp x0 1
+- slp 1
+- tcp x0 1
++ teq x0 x2
++ mov 79 x1
++ slp 3
++ jmp b
+- slp 3
+- jmp b
+  mov x0 x3
+  slp 100
+
+[chip] 
+[type] BRIDGE
+[x] 19
+[y] 6
+
+[chip] 
+[type] RADIO
+[x] 3
+[y] 7
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 16
+[y] 7
+[code] 
+@ mov 50 p1
+@ slx x1
+b:  mov x0 p1
+  slp p0
