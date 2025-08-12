@@ -1,0 +1,106 @@
+[name] triple invoke
+[puzzle] Sz008
+[production-cost] 2400
+[power-usage] 119
+[lines-of-code] 29
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.......1554.1555C.....
+........954954..A.....
+........A8.A15C.A.....
+........A343C.A.A.....
+.....94.B54.34A.A.....
+.....A..A15C156.A.....
+.....354354355556.....
+......................
+......................
+
+[chip] 
+[type] RND
+[x] 5
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 7
+[y] 2
+[code] 
+@ slp 30
+@ slx x1
+@ slp 13
+@ mov 50 p1
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 3
+[code] 
+@ mov 50 p0
+@ slx x1
+@ teq x1 1
++ mov x2 p0
+- mov x3 p0
+  slp x0
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 4
+[code] 
+@ slp 1
+  tgt p0 2
++ slp 1
+- mov p0 x2
+- slp 18
+- tlt p0 3
+- slp 1
+- tlt p0 3
+- slp 2
+- tlt p0 3
+- slp 2
+
+[chip] 
+[type] BANK
+[x] 13
+[y] 4
+[rom] 
+16,36,42,14,10,58,100,76,26,28,70,80,42,0
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 6
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 6
+[code] 
+@ slx x1
+@ slp 13
+@ mov 50 p1
+@ slx x1
+@ teq x1 1
++ mov x2 p1
+- mov x3 p1
+  slp x0
+
+[chip] 
+[type] BANK
+[x] 14
+[y] 6
+[rom] 
+100,80,41,14,14,41,69,74,54,27,19,40,75,0
+
+[chip] 
+[type] BANK
+[x] 5
+[y] 7
+[rom] 
+1,1,1,1,1,1,1,1,1,1,1,1,1,99
