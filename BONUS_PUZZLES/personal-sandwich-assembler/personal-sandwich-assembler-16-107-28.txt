@@ -1,4 +1,4 @@
-[name] Top solution Power - hersmunch
+[name] Top solution Power - Hersmunch
 [puzzle] Sz007
 [production-cost] 1600
 [power-usage] 107
@@ -93,4 +93,3 @@
 [type] OR
 [x] 9
 [y] 7
-

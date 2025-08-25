@@ -1,4 +1,4 @@
-[name] Top solution Power - hersmunch
+[name] Top solution Power - Hersmunch
 [puzzle] Sz040
 [production-cost] 2400
 [power-usage] 473
@@ -166,4 +166,3 @@ b:teq p0 1
 [x] 12
 [y] 8
 [is-puzzle-provided] true
-

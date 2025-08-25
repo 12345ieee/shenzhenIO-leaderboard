@@ -1,4 +1,4 @@
-[name] Top solution Power - hersmunch
+[name] Top solution Power - Hersmunch
 [puzzle] Sz024
 [production-cost] 2000
 [power-usage] 122
@@ -117,4 +117,3 @@ Abuse that
 packets are long:
 
 3<=L<=5
-

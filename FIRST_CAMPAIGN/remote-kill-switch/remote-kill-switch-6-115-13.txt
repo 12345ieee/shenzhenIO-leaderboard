@@ -1,4 +1,4 @@
-[name] Top solution Cost - hersmunch
+[name] Top solution Cost - Hersmunch
 [puzzle] Sz016
 [production-cost] 600
 [power-usage] 115
@@ -49,4 +49,3 @@ s:mov x0 dat
 [x] 9
 [y] 5
 [is-puzzle-provided] true
-

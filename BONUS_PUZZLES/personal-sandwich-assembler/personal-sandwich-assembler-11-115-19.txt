@@ -1,4 +1,4 @@
-[name] Sorry hersmunch
+[name] Sorry Hersmunch
 [puzzle] Sz007
 [production-cost] 1100
 [power-usage] 115

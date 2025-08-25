@@ -1,4 +1,4 @@
-[name] hersmunch
+[name] Hersmunch
 [puzzle] Sz009
 [production-cost] 1700
 [power-usage] 259

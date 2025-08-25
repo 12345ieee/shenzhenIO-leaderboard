@@ -1,4 +1,4 @@
-[name] Top solution Power - hersmunch
+[name] Top solution Power - Hersmunch
 [puzzle] Sz010
 [production-cost] 1300
 [power-usage] 156
@@ -89,4 +89,3 @@ l:- mov dat p1
 + slp p1
 @ slp acc
 @ mov p1 x1
-

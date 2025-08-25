@@ -1,4 +1,4 @@
-[name] Top solution Power - hersmunch/837951602
+[name] Top solution Power - Hersmunch/837951602
 [puzzle] Sz018
 [production-cost] 2400
 [power-usage] 549
