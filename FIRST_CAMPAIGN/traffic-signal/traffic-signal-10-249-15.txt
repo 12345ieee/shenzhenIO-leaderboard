@@ -1,7 +1,7 @@
 [name] min power
 [puzzle] Sz026
 [production-cost] 1000
-[power-usage] 250
+[power-usage] 249
 [lines-of-code] 15
 
 [traces] 
@@ -65,10 +65,10 @@
 3:- teq x1 6
 4:+ mov 0 x1
 5:- tgt acc 1
-6:+ sub 1
-7:- mov x0 x2
+6:- mov x0 x2
+7:  slp 1
 8:- mov x0 acc
-9:  slp 1
+9:+ sub 1
 
 [chip] 
 [type] DX3
