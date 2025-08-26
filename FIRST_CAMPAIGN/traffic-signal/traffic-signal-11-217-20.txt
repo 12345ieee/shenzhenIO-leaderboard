@@ -1,0 +1,86 @@
+[name] hehe
+[puzzle] Sz026
+[production-cost] 1100
+[power-usage] 217
+[lines-of-code] 20
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......14..............
+...94.14..........8...
+...29554.1555555416...
+...16.....888888.14...
+...154.14.BEABEA.1C...
+....14.14.222222..2...
+......................
+......................
+......................
+
+[chip] 
+[type] DIAL4
+[x] 3
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4X
+[x] 5
+[y] 3
+[code] 
+@ mov x1 x0
+@ mov 100 x0
+@ mov x3 x0
+@ mov 10 x0
+@ mov x2 x0
+@ mov 1 x0
+
+[chip] 
+[type] DIAL6
+[x] 8
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 4
+
+[chip] 
+[type] DIAL5
+[x] 8
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] DX3
+[x] 16
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 6
+[code] 
+  tgt p0 0
++ mov x2 x1
++ mul 0
++ slp 1
++ tgt p0 0
++ slp 1
++ tgt p0 0
+- tgt acc 1
++ sub 1
+- mov x0 acc
+- mov x0 x2
+- tlt x1 6
+- mov 0 x1
+  slp 1
+
+[chip] 
+[type] RAM
+[x] 4
+[y] 7
