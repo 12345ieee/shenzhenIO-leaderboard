@@ -1,0 +1,134 @@
+[name] power 246
+[puzzle] Sz038
+[production-cost] 1900
+[power-usage] 246
+[lines-of-code] 43
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....9555555C.........
+..954A154.14A155555C..
+..A156154.14354....2..
+..3555555C...15C.154..
+...155554A.95556.154..
+.......143574.154.....
+..........154.........
+......................
+......................
+
+[chip] 
+[type] RADIO
+[x] 5
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 2
+[code] 
+t: mov x1 acc
+  tgt acc 0
+- slp 1
+- jmp t
+  teq acc 1 #+1 -2
+- mov x1 x0 #out2
+- slx x3 #s-out2
+- mov 0 x0 #wr2
+  mov 1 x2 #x/g
+  slp 2
++ mov 0 x0 #out1
++ slx x3 #s-out1
++ mov x1 x0 #wr1
+  slp 4
+
+[chip] 
+[type] UC4X
+[x] 12
+[y] 2
+[code] 
+  slx x1 #1 x/g
+  mov 100 x3 #x/g
+  slp x1 #1
+  mov 10 x3
+  slx x0 #s-o1/b2
+  mov 110 x3 #x/d
+  slp 1
+  mov 0 x3
+
+[chip] 
+[type] DX3
+[x] 16
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 3
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 5
+[code] 
+  mov 50 p1
+  slx x3 #out
+  mov x3 acc #goal
+  mov 100 p1 #out
+t: teq x0 acc
+  slp 1
+- jmp t
+  mov x1 x2 #s-out
+  mov 50 p1
+  slp 2
+  mov 0 p1 #bk
+  slp x1
+  mov 0 x1
+  mov 999 x2 #s-bk
+
+[chip] 
+[type] UC4X
+[x] 4
+[y] 6
+[code] 
+  slx x0 #s-out
+  mov x0 acc #a+1
+  sub 1
+  mov acc x3 #a
+  mov x1 x2 #wr
+  slx x0 #s-bk
+  mov x0 null
+
+[chip] 
+[type] RAM
+[x] 8
+[y] 6
+
+[chip] 
+[type] NOTE
+[x] 8
+[y] 8
+[code] 
+poll, dispatch
+1: x/g, out
+x/d, back
+2: out, x/g
+back, x/d
+
+extend/grab (x/g)
+extend/drop (x/d)
+
+[chip] 
+[type] NOTE
+[x] 12
+[y] 8
+[code] 
+move out
+signal s-out
+move back
+signal s-bk
+

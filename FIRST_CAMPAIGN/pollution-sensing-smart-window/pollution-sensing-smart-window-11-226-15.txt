@@ -1,0 +1,77 @@
+[name] power  226 peel 3
+[puzzle] Sz004
+[production-cost] 1100
+[power-usage] 226
+[lines-of-code] 15
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+....15C.954.15C.......
+....94A1694...2.......
+....A.35574.155414....
+....A.........8.......
+....3555554.156.......
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 3
+[code] 
+@ mov -350 acc
+@ add p0 #skip sav
+@ slp 1
+@ mov p0 x0 #save
+@ add p0
+@ slp 1
+@ mov p0 x0 #save
+@ add p0
+  slp 1
+  mov p0 x0 #save
+  add p0
+  sub x2 # roll
+  mov acc p1
+
+[chip] 
+[type] BRIDGE
+[x] 14
+[y] 4
+
+[chip] 
+[type] NOT
+[x] 15
+[y] 5
+
+[chip] 
+[type] NOTE
+[x] 1
+[y] 6
+[code] 
+acc has rolling
+sum;
+sum >= 400
+   ==> avg >= 50
+sum > 399
+-sum < -399
+449-sum < 50
+
+[chip] 
+[type] UC4
+[x] 5
+[y] 6
+[code] 
+@ mov 5 x1
+@ mov p0 x0 #save
+
+[chip] 
+[type] RAM
+[x] 10
+[y] 6
+

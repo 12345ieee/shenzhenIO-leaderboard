@@ -1,0 +1,100 @@
+[name] junk
+[puzzle] Sz021
+[production-cost] 1200
+[power-usage] 421
+[lines-of-code] 18
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+........15554...94....
+...8.14.155D4.1574....
+...3555C.14A..1554....
+.....14354.A..........
+...8....14.A..........
+...3554.1556..........
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 3
+[code] 
+@ mov 8 x2
+  mov p0 x3 #mgn2
+  mov p1 x0 #snr1
+  slp 1
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 4
+
+[chip] 
+[type] NOTE
+[x] 15
+[y] 4
+[code] 
+a0 = 6 + a1 m14
+a1 = 8 + a0 m14
+
+d0 is sonar(1)
+@a0(-6..-1)
+=a1(0..5)
+
+d1 is magnetic(2)
+@a1(-6..-1)
+
+[chip] 
+[type] BRIDGE
+[x] 5
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 6
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 6
+[code] 
+  teq x2 x3
+- jmp s
+  teq x2 1
+  mov x1 acc
+- sub 6
+- mov acc x1
+  mov x0 x3
+  mov x0 x3
+  mov x0 x3
+  mov x0 x3
+  mov x0 x3
+  mov x0 x3
++ mov acc x1
+s: slp 1
+
+[chip] 
+[type] RADIO
+[x] 17
+[y] 6
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] RAM
+[x] 6
+[y] 7
+
+[chip] 
+[type] ID
+[x] 17
+[y] 8
+[is-puzzle-provided] true
+

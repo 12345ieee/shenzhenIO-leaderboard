@@ -1,7 +1,7 @@
-[name] more improvement
+[name] lines 21  power 189
 [puzzle] Sz023
 [production-cost] 800
-[power-usage] 206
+[power-usage] 189
 [lines-of-code] 21
 
 [traces] 
@@ -10,58 +10,65 @@
 ......................
 ......................
 ......................
-..........955554.15C..
-........156.1494...2..
-.........94.156.......
-.........A...155555C..
-.........A.........2..
-.........35555555554..
+.............954.15C..
+.............A.....2..
+.....15554.14A........
+........94.156........
+........A...15555554..
+........355555555554..
 ......................
 ......................
 ......................
 
 [chip] 
 [type] BRIDGE
-[x] 13
-[y] 5
+[x] 12
+[y] 4
 
 [chip] 
 [type] RADIO
-[x] 6
-[y] 6
+[x] 3
+[y] 5
 [is-puzzle-provided] true
 
 [chip] 
 [type] UC4
-[x] 10
-[y] 6
+[x] 9
+[y] 5
 [code] 
-  
+@ slp 1
+@ mov x1 null
   mov x0 acc
   tgt acc -999
-- slp 1
 + mov acc x1
 + slx x1
-+ gen p1 x1 0
-+ gen p0 x0 1
++ gen p1 x0 x1
+  gen p0 x0 1
 
 [chip] 
 [type] UC6
 [x] 15
 [y] 6
 [code] 
-@ mov 50 p1
-st: slx x1
-  mov x1 dat
-loop: teq acc dat
-+ mov x0 x1
-+ jmp st
-  tcp acc dat
-- gen p1 1 0
-+ gen p1 0 1
-+ sub 1
-- add 1
   mov 50 p1
   slp 1
-  jmp loop
+t:  teq acc dat
++ mov 0 x0
++ slx x0
++ mov x0 dat
++ jmp t
+  tcp acc dat
+- mov 100 p1
+- add 1
++ mov 0 p1
++ sub 1
+  slp 1
+
+[chip] 
+[type] NOTE
+[x] 9
+[y] 7
+[code] 
+acc holds position
+dat is destination
 

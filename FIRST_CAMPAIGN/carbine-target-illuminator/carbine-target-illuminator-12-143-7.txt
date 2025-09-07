@@ -1,0 +1,100 @@
+[name] power  143 lines 7 latch rom
+[puzzle] Sz014
+[production-cost] 1200
+[power-usage] 143
+[lines-of-code] 7
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+....9555C14.15555C....
+....2..1615C14...A....
+....8941C8.A14..96....
+....A341E3C3C..968....
+....A94.3434341696....
+....A35C.14...1568....
+....341754....1556....
+......................
+......................
+
+[chip] 
+[type] NOT
+[x] 5
+[y] 2
+
+[chip] 
+[type] DX3
+[x] 9
+[y] 2
+[rotated] true
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 2
+
+[chip] 
+[type] AND
+[x] 6
+[y] 4
+
+[chip] 
+[type] OR
+[x] 6
+[y] 6
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 6
+
+[chip] 
+[type] UC6
+[x] 10
+[y] 6
+[code] 
+s:  slp 1
+  tcp x0 100
++ add 2
+- mov acc x3
+- mov 0 acc
+- mov x2 x1
+- mov x2 p1
+
+[chip] 
+[type] BANK
+[x] 13
+[y] 6
+[rom] 
+0,0,1,0,1,0,10,50,10,50,100,0,100,0
+
+[chip] 
+[type] NOTE
+[x] 9
+[y] 9
+[code] 
+latch 
+  high 1
+  low 0
+radar-in
+  high 0
+  low 100
+100 nothing
+101 add
+1 send
+
+[chip] 
+[type] NOTE
+[x] 12
+[y] 9
+[code] 
+need to mov 0 p1 
+in 1,2 case
+
+really just add a 
+rom
+

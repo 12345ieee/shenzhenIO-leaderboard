@@ -1,0 +1,124 @@
+[name] cost 18 lines 42 power 1458
+[puzzle] Sz044
+[production-cost] 1800
+[power-usage] 1458
+[lines-of-code] 42
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..14..................
+...9C155C.955C........
+..163554A.A..A........
+..1555C.356..B4.......
+......355554.A........
+.........95556........
+..14.15556............
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 11
+[y] 1
+[code] 
+rods 30-34
+0   -30,-31,33, 34
+50  -30, 31,33,-34
+100  30,31 -33,-34
+
+32 always on
+30  31  32  33  34
+10 10,5 -- 0,5  0
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 2
+[code] 
+  tgt p0 50
++ mov 30 x2
++ mov -33 x2
+- mov -30 x2
+- mov 33 x2  
+- teq p0 50
+- mov -31 x2
+- mov 34 x2
++ mov 31 x2
++ mov -34 x2
+  
+s: slp 1
+
+[chip] 
+[type] LCDR
+[x] 14
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 4
+[code] 
+  tgt p0 19
++ mov 21 x3
+- mov -21 x3
++ tgt p0 39
++ mov 22 x3
+- mov -22 x3
++ tgt p0 59
++ mov 23 x3
+- mov -23 x3
++ tgt p0 79
++ mov 24 x3
+- mov -24 x3
+  slp 1
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 6
+[code] 
+  tgt p0 19
++ mov 11 x1
+- mov -11 x1
++ tgt p0 39
++ mov 12 x1
+- mov -12 x1
++ tgt p0 59
++ mov 13 x1
+- mov -13 x1
++ tgt p0 79
++ mov 14 x1
+- mov -14 x1
+  slp 1
+
+[chip] 
+[type] UC4
+[x] 3
+[y] 7
+[code] 
+@ mov 10 x1
+@ mov 20 x1
+@ mov 32 x1
+  slx x0
+  mov x0 x1
+
+[chip] 
+[type] NOTE
+[x] 11
+[y] 8
+[code] 
+     power  temp
+     10-14 20-24
+0-19   +10   +20
+20-39  +11   +21
+40-59  +12   +22
+60-79  +13   +23
+80-100 +14   +24
+
+10,20 always on
+

@@ -1,0 +1,107 @@
+[name] power 325 one ram one poll
+[puzzle] Sz021
+[production-cost] 1200
+[power-usage] 325
+[lines-of-code] 20
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+........15554...94....
+...8.14.15554.15E.....
+...3555C.14..9543C....
+.....143549556..96....
+...8.14.14A.95556.....
+...3554.156.34........
+...15555555554........
+......................
+......................
+
+[chip] 
+[type] BRIDGE
+[x] 5
+[y] 2
+
+[chip] 
+[type] RADIO
+[x] 13
+[y] 2
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 3
+[code] 
+@ mov x2 dat
+  mov p1 x0 #snr1
+  mov p0 x3 #mgn2
+  teq x1 dat#rx=id
++ mov x1 x2 #code
+  slp 1
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 4
+
+[chip] 
+[type] NOTE
+[x] 15
+[y] 4
+[code] 
+a0 = 6 + a1 m14
+a1 = 8 + a0 m14
+
+d0 is sonar(1)
+@a0(-6..-1)
+=a1(0..5)
+
+d1 is magnetic(2)
+@a1(-6..-1)
+
+[chip] 
+[type] BRIDGE
+[x] 5
+[y] 5
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 6
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 6
+[code] 
+@ mov x3 x2
+@ mov 8 x1
+  slx x2
+  mov x1 acc
+  teq x2 1
+- sub 6
+- mov acc x1
+  mov x0 x3
+  mov x0 x3
+  mov x0 x3
+  mov x0 x3
+  mov x0 x3
+  mov x0 x3
++ mov acc x1
+
+[chip] 
+[type] RAM
+[x] 6
+[y] 7
+
+[chip] 
+[type] ID
+[x] 17
+[y] 8
+[is-puzzle-provided] true
+
