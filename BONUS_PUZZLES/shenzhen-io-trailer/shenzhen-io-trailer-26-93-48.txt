@@ -1,8 +1,8 @@
-[name] Top solution Power - Snowball
+[name] 6/8/6
 [puzzle] Sz036
-[production-cost] 2800
-[power-usage] 96
-[lines-of-code] 49
+[production-cost] 2600
+[power-usage] 93
+[lines-of-code] 48
 
 [traces] 
 ......................
@@ -10,11 +10,11 @@
 ......................
 ......................
 ......................
-......155C............
-..14.....A15C.........
-..1555554A94A.........
-...8..154AA.B54.......
-..1E95C15634A.........
+..9414154.14..........
+..A....1C.15C.........
+..A.....A...A.........
+..A...1C3C..B54.......
+..3C95C34354A.........
 ..836.354.956.........
 ..3414.1556...........
 ......................
@@ -74,7 +74,7 @@
 q:+ mov x1 x2
 + slp x2
 + mov p0 acc
-+ tcp p0 x0
++ tcp p0 x1
 - mov -1 x2
 - mov -2 x2
 - mov 2 x3 #2 max
@@ -88,19 +88,14 @@ q:+ mov x1 x2
 [x] 4
 [y] 4
 [rom] 
-50,100,33,67,0,0,0,0,0,0,0,0,0,0
-
-[chip] 
-[type] BRIDGE
-[x] 3
-[y] 5
+1,50,2,100,12,33,13,67,14,0,0,0,0,0
 
 [chip] 
 [type] UC4
 [x] 11
 [y] 5
 [code] 
-@ slp 46 #46 exact
+@ slp x1 #46 exact
 @ mov 15 x1
 @ slp 1
 @ mov -15 x1
@@ -110,28 +105,31 @@ q:+ mov x1 x2
 @ mov -15 x1
 
 [chip] 
-[type] UC6
-[x] 8
+[type] DX3
+[x] 5
 [y] 6
-[code] 
-@ slx x2
-@ slp x2
-@ teq p0 0
-+ slp 1
-+ teq p0 0
-- mov x0 x3
-- slp x3
+[rotated] true
 
 [chip] 
-[type] BANK
-[x] 4
+[type] UC4X
+[x] 8
 [y] 7
-[rom] 
-1,2,3,4,5,6,7,8,9,10,11,12,13,14
+[code] 
+@ slx x1
+@ slp x1
+@ slp x0
+@ slp x0
+  mov x3 x2
+  slp x2
 
 [chip] 
 [type] BANK
 [x] 11
 [y] 7
 [rom] 
-5,5,2,2,2,2,2,2,2,2,999,2,2,999
+46,5,5,2,2,2,2,2,2,2,2,99,2,2
+
+[chip] 
+[type] NOT
+[x] 3
+[y] 8
