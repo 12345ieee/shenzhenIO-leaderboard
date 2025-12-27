@@ -1,7 +1,7 @@
 [name] Top Solution Power - 雨醉青花
 [puzzle] Sz015
 [production-cost] 1000
-[power-usage] 596
+[power-usage] 547
 [lines-of-code] 11
 
 [traces] 
@@ -34,11 +34,11 @@
 [y] 6
 [code] 
   mov p0 acc
-  dgt 1
   tgt p1 39
 + tlt p1 80
++ dgt 1
 - mul -5
-- dgt 1
+- dgt 2
   mov acc x1
   mov x0 x2
   slp 1
