@@ -1,0 +1,59 @@
+[name] Most ridiculous solution - 旅行灯
+[puzzle] Sz021
+[production-cost] 700
+[power-usage] 405
+[lines-of-code] 14
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+......................
+...1555C..............
+.....1435494..........
+.....14.156...........
+...1554.14............
+......................
+......................
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 6
+[y] 4
+[code] 
+s:slp 1
+  mov p0 x0
+  teq x2 x3
+- mov p1 x0
+- jmp s
+  teq x2 1
++ mov p1 x0
+  mov -999 x0
+  mov x0 x0
+l:mov x0 x3
+  teq x0 -999
+  mov x0 x3
+  teq x0 -999
+- jmp l
+
+[chip] 
+[type] RADIO
+[x] 9
+[y] 4
+[rotated] true
+[is-puzzle-provided] true
+
+[chip] 
+[type] RAM
+[x] 3
+[y] 5
+
+[chip] 
+[type] ID
+[x] 11
+[y] 6
+[is-puzzle-provided] true
