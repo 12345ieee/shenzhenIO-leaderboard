@@ -1,0 +1,106 @@
+[name] A patsu apa tsu
+[puzzle] Sz021
+[production-cost] 1200
+[power-usage] 368
+[lines-of-code] 15
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...9555555C...........
+...2.154.16...........
+......14.155555D54....
+...95554.1554..A......
+...2..8.......16......
+.....16.......1C......
+.....15555555556......
+......................
+......................
+
+[chip] 
+[type] RADIO
+[x] 3
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 12
+[y] 3
+[code] 
+  slx x0
+  teq x0 2
++ mov x3 null
+  mov x3 x2
+  mov x3 null
+  mov x3 x2
+  mov x3 null
+  mov x3 x2
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 7
+[y] 5
+[code] 
+  slp 1
+  mov p1 x3
+  mov p0 x3
+  teq x1 x0 #A3
++ mov x3 x3 #Burn2
++ mov x1 x2
++ mov 2 x2
+
+[chip] 
+[type] RAM
+[x] 17
+[y] 6
+
+[chip] 
+[type] ID
+[x] 4
+[y] 7
+[is-puzzle-provided] true
+
+[chip] 
+[type] NOTE
+[x] 11
+[y] 8
+[code] 
+Usual work-sleep
+abuse.
+
+Heavy sleep abuse.
+
+Also use fact that
+ID is never 1 or 2
+
+[chip] 
+[type] NOTE
+[x] 14
+[y] 8
+[code] 
+Correct address
+to check is
+A+1+rx
+I burn 2 and then
+check to burn
+the last
+
+[chip] 
+[type] NOTE
+[x] 17
+[y] 8
+[code] 
+Destroy pointer
+position at query,
+next query won't
+need values that
+old anyway
