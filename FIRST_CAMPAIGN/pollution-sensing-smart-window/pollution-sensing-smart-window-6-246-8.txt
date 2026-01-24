@@ -1,7 +1,7 @@
-[name] Most qwqa solution - pk5ls20
+[name] Most qwqa solution - pk5ls20 (Copy) (Copy)
 [puzzle] Sz004
 [production-cost] 600
-[power-usage] 252
+[power-usage] 246
 [lines-of-code] 8
 
 [traces] 
@@ -35,11 +35,11 @@
 [x] 10
 [y] 5
 [code] 
-@ teq 0 0
-+ add -50
+@ teq 0 x1
++ add -70
 - add p0
-- mov acc p1
   sub x1
+- mov acc p1
 - mov p0 x0
 - slp 1
 + tgt acc -350
