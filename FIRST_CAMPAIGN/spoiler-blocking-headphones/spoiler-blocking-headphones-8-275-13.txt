@@ -1,0 +1,65 @@
+[name] Ultra-wideband (UWB) can be seen as a disruptive technology for business and home wireless networkin...
+[puzzle] Sz019
+[production-cost] 800
+[power-usage] 275
+[lines-of-code] 13
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.....15554.1555C......
+.....1C154.14..A......
+......3554.14..A......
+.....154.......A......
+...14..........354....
+......................
+......................
+......................
+......................
+
+[chip] 
+[type] DX3
+[x] 4
+[y] 3
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 5
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 6
+[code] 
+  mov x0 acc
+  tcp -999 acc
+- mov acc x3
+- sub x0
+- teq acc x2
+- teq acc -282 #h
++ mov 50 p1
++ slp 6
+9:
++ teq x1 0
++ slp 1
++ jmp 9
+  mov p0 p1
+  slp 1
+
+[chip] 
+[type] BANK
+[x] 12
+[y] 6
+[rom] 
+-999,-70,-999,-999,-999,335,-5,-999,-999,-999,-999,138,-205,-999
+
+[chip] 
+[type] NLP
+[x] 3
+[y] 7
+[is-puzzle-provided] true
