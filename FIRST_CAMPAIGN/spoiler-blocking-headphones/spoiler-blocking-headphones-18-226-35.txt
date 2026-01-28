@@ -1,7 +1,7 @@
-[name] Top solution Power - dominic.baggott
+[name] 不是，你们别批话了可以吗
 [puzzle] Sz019
-[production-cost] 2000
-[power-usage] 228
+[production-cost] 1800
+[power-usage] 226
 [lines-of-code] 35
 
 [traces] 
@@ -10,19 +10,19 @@
 ......................
 ......................
 ......................
-....954.....155C......
-....A.9555555C.A......
-....34A1555543435C....
-....15615C...94..A....
-...154.94B554A1556....
-.....15616954A14......
-........15615614......
+...955555555555C......
+...A.9555C1555C2......
+...34A15C3554.354.....
+...156143541C..154....
+...149549554A15554....
+...156156954A14.14....
+......155615614.......
 ......................
 ......................
 
 [chip] 
 [type] UC4X
-[x] 6
+[x] 4
 [y] 2
 [code] 
 @ slx x0
@@ -32,21 +32,21 @@
 
 [chip] 
 [type] NLP
-[x] 9
+[x] 8
 [y] 2
 [is-puzzle-provided] true
 
 [chip] 
 [type] UC6
-[x] 12
+[x] 11
 [y] 2
 [code] 
   mov x1 acc
   tcp acc -999
-+ mov x1 dat
-+ mov dat x3
-+ sub dat
++ mov acc x3
++ sub x1
 + teq acc x2
+- teq acc -205
 + mov 0 p1
 + mov 6 x0
 + slx x0
@@ -58,14 +58,24 @@
 
 [chip] 
 [type] BANK
-[x] 15
+[x] 14
 [y] 2
 [rom] 
--282,-70,0,0,0,0,335,-205,0,0,0,-5,0,138
+-999,-70,0,-999,-999,335,-5,-999,-999,-999,-999,138,-282,-999
+
+[chip] 
+[type] BRIDGE
+[x] 7
+[y] 3
+
+[chip] 
+[type] BRIDGE
+[x] 17
+[y] 3
 
 [chip] 
 [type] UC6
-[x] 5
+[x] 4
 [y] 4
 [code] 
 @ slx x3
@@ -75,15 +85,25 @@
 - mov 50 p1
 - slp x3
   tcp p0 0
-+ tgt x0 p1
++ teq x0 p1
 + mov 1 x1
 + slp 999
 - mov 1 x2
   slp 1
 
 [chip] 
+[type] BRIDGE
+[x] 16
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 5
+
+[chip] 
 [type] UC4
-[x] 14
+[x] 12
 [y] 5
 [code] 
 @ slx x0
@@ -94,15 +114,8 @@
 
 [chip] 
 [type] BRIDGE
-[x] 12
-[y] 6
-
-[chip] 
-[type] BANK
-[x] 3
-[y] 7
-[rom] 
-0,0,1,0,0,0,0,0,0,0,0,0,0,0
+[x] 15
+[y] 5
 
 [chip] 
 [type] NOTE
@@ -115,4 +128,3 @@
 712 917
 356 361
 138 420
-
