@@ -1,0 +1,83 @@
+[name] 998/244/853 - mc_dudu233
+[puzzle] Sz010
+[production-cost] 1200
+[power-usage] 156
+[lines-of-code] 21
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+...95555554...........
+...A....955555C.......
+...A14.16.14..34......
+...354.14.155554......
+......954.149554......
+.....1694...A.........
+.......355556.........
+......................
+......................
+
+[chip] 
+[type] RADIO
+[x] 3
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC6
+[x] 8
+[y] 3
+[code] 
+  slx x0
+  mov x1 p0
+  mov x1 x3
+  mov x0 p1
+  teq x3 5
+- slp x3
+- teq p0 p1
+
+[chip] 
+[type] UC6
+[x] 5
+[y] 4
+[code] 
+@ slp 1
+@ mov x2 p1
+- mov x2 x3
+@ mov x2 x3
+- slp x1
+@ slp x1
+- teq x1 5
+@ teq x1 5
+- mov p1 acc
+- slp x0
++ slp 1
+  mov x2  dat
+  teq -999 dat
+- mov dat p1
+
+[chip] 
+[type] BRIDGE
+[x] 11
+[y] 4
+
+[chip] 
+[type] LEDRGBV
+[x] 15
+[y] 4
+[is-puzzle-provided] true
+
+[chip] 
+[type] BANK
+[x] 2
+[y] 5
+[rom] 
+0,0,4,3,2,0,0,0,0,0,0,0,0,0
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 6
