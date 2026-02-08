@@ -1,0 +1,95 @@
+[name] 我知道。我的意思是博客园也有类似机制啊 - PinkRabbit
+[puzzle] Sz017
+[production-cost] 1000
+[power-usage] 117
+[lines-of-code] 12
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+........15555414......
+.....14154954.14......
+........14A14.14......
+.....14.94A15414......
+........A1614.14......
+........354...14......
+........154...........
+......................
+......................
+
+[chip] 
+[type] NOTE
+[x] 3
+[y] 2
+[code] 
+If DX300.p2=0 then
+x3<=11<50, and
+simple pin
+outpputting it
+is regarded as 0
+
+[chip] 
+[type] ORACLE
+[x] 6
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] DX3
+[x] 10
+[y] 2
+[rotated] true
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 3
+
+[chip] 
+[type] LCDH
+[x] 15
+[y] 3
+[is-puzzle-provided] true
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 9
+[y] 5
+[code] 
+  slp 1
++ mov x3 p0
++ slp 1
++ teq x0 0
++ mov x3 dat
++ slp 1
++ jmp 0
+- mov dat x2
+- mov x3 x1
+- slp 4  
+  tcp p0 0
+0:+ mov x3 p1
+
+[chip] 
+[type] BANK
+[x] 5
+[y] 6
+[rom] 
+0,1,0,1,0,1,0,1,0,1,0,1,0,1
+
+[chip] 
+[type] BRIDGE
+[x] 8
+[y] 6
+
+[chip] 
+[type] DX3
+[x] 13
+[y] 6
