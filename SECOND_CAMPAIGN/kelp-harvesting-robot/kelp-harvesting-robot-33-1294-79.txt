@@ -1,8 +1,8 @@
-[name] 1325
+[name] sub-1300
 [puzzle] Sz042EZ
 [production-cost] 3300
-[power-usage] 1325
-[lines-of-code] 81
+[power-usage] 1294
+[lines-of-code] 79
 
 [traces] 
 ......................
@@ -14,8 +14,8 @@
 ..94A9C.1C...A14.15C..
 ..A16A3416.14A15C.82..
 ..B54A1554.14A14A.34..
-..A14A1554954A156.94..
-..354A15556156....A...
+..A14A1554954A156..8..
+..354A15556156....96..
 .....35415555555556...
 ......................
 ......................
@@ -31,12 +31,12 @@ b:+  slx x3
 + mov x0 dat
 + teq x0 x2
 + jmp b
-- teq x1 acc
+  teq x1 acc
 + mov x0 acc
 + sub 1
 + mov acc x0
-+ mov 0 x1
 + gen p1 1 0
++ mov 0 x1
 - teq x0 x2
 + mov dat x0
 
@@ -54,16 +54,16 @@ b:+  slx x3
 + slx x0
 + mov x0 dat
 + mov dat x3
-+ sub x3
++ mov x3 x3
 - mov acc x1
 - slp 1
-- sub 1
+  sub 1
   add p1
   tcp p0 50
 + add 100
 - sub 100
   teq acc dat
-+ mov 100 x0
++ mov 1 x0
 
 [chip] 
 [type] BRIDGE
@@ -82,11 +82,12 @@ b:+  slx x3
   dgt 2
   mov acc p1
   slx x3
-  mov x3 p0
-x:  slp 1
-  mov p0 x1
+  mov 100 p0
+  slp x3
+x:  mov p0 x1
   mov x1 acc
   tgt acc 0
+- slp 1
 - jmp x
 
 [chip] 
@@ -112,13 +113,13 @@ l:- mov x1 acc
   mov 50 p1
   slx x1
   dst p0 x1
-  mov acc x0
+  mov acc x1
   sub dat
   tcp acc p1
 + mov 100 p1
 + mov 2 p0
 - mul -1
-  mov x0 dat
+  mov x1 dat
 + slp acc  
 - slp acc
 
@@ -128,15 +129,12 @@ l:- mov x1 acc
 [y] 6
 [code] 
   mov 50 p1
-  slx x2
   mov p0 acc
-  sub dat
+  slx x2
+  sub p0
   tcp acc p1
-+ mov 100 p1
+- mov 100 p1
 - mul -1
-  mov p0 dat
-  mov x3 x3
-  mov 1 x2
 + slp acc
 - slp acc
 
