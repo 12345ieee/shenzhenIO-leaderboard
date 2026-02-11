@@ -1,6 +1,6 @@
 [name] sub-1300
 [puzzle] Sz042EZ
-[production-cost] 3300
+[production-cost] 3100
 [power-usage] 1294
 [lines-of-code] 79
 
@@ -11,8 +11,8 @@
 ......................
 ......................
 ..15C14......955554...
-..94A9C.1C...A14.15C..
-..A16A3416.14A15C.82..
+..94A9C.1C.94A15C15C..
+..A16A3416.34A..A.82..
 ..B54A1554.14A14A.34..
 ..A14A1554954A156..8..
 ..354A15556156....96..
@@ -111,31 +111,16 @@ l:- mov x1 acc
 [code] 
   mov 1 p0
   mov 50 p1
-  slx x1
-  dst p0 x1
-  mov acc x1
+  slx x0
+  dst p0 x0
+  mov acc x0
   sub dat
   tcp acc p1
 + mov 100 p1
 + mov 2 p0
 - mul -1
-  mov x1 dat
+  mov x0 dat
 + slp acc  
-- slp acc
-
-[chip] 
-[type] UC6
-[x] 12
-[y] 6
-[code] 
-  mov 50 p1
-  mov p0 acc
-  slx x2
-  sub p0
-  tcp acc p1
-- mov 100 p1
-- mul -1
-+ slp acc
 - slp acc
 
 [chip] 
@@ -167,3 +152,18 @@ l:- mov x1 acc
 [y] 7
 [rotated] true
 [is-puzzle-provided] true
+
+[chip] 
+[type] UC4
+[x] 12
+[y] 7
+[code] 
+  mov 50 p1
+  mov p0 acc
+  slx x1
+  sub p0
+  tcp acc p1
+- mov 100 p1
+- mul -1
++ slp acc
+- slp acc
