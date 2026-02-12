@@ -1,8 +1,8 @@
-[name] Why? Why? - Vfleaking
+[name] The Power Blackhole Mini - Mihoyo
 [puzzle] Sz019
 [production-cost] 1400
-[power-usage] 15978
-[lines-of-code] 9
+[power-usage] 12646
+[lines-of-code] 8
 
 [traces] 
 ......................
@@ -10,115 +10,63 @@
 ......................
 ......................
 ......................
-........15C1555C......
-........14A14..A......
-........14A154.A......
-...94141D4348..A......
-...2.94.A...34.A.8....
-.....A.16......356....
-.....34...............
+.....95554.1555C......
+.....A..14.14..A......
+.....34.14.154.A......
+.........9414..A......
+...155D41E.....B54....
+......3416.....A......
+........15555556......
 ......................
 ......................
 
 [chip] 
 [type] NOTE
-[x] 2
-[y] 1
-[code] 
-    ADVERTISING
-       SPACE
-     FOR RENT
-
-[chip] 
-[type] NOTE
-[x] 8
-[y] 1
-[code] 
-    ADVERTISING
-       SPACE
-     FOR RENT
-
-[chip] 
-[type] NOTE
-[x] 15
-[y] 1
-[code] 
-    ADVERTISING
-       SPACE
-     FOR RENT
-
-[chip] 
-[type] NOTE
-[x] 18
-[y] 1
-[code] 
-    ADVERTISING
-       SPACE
-     FOR RENT
-
-[chip] 
-[type] BRIDGE
-[x] 5
+[x] 3
 [y] 2
-
-[chip] 
-[type] OR
-[x] 6
-[y] 2
-[rotated] true
-
-[chip] 
-[type] DX3
-[x] 11
-[y] 2
-[rotated] true
-
-[chip] 
-[type] BRIDGE
-[x] 8
-[y] 3
-
-[chip] 
-[type] DX3
-[x] 9
-[y] 3
-[rotated] true
-
-[chip] 
-[type] BRIDGE
-[x] 17
-[y] 3
-
-[chip] 
-[type] NOTE
-[x] 18
-[y] 3
 [code] 
-    ADVERTISING
-       SPACE
-     FOR RENT
+Sleep delayed 'til
+lines 0,1 hit
+-1 in top ROM then
+ 1 in lower ROM.
+This gives time to
+loop through data
+ROM comparisons.
+
+('RNG' reliant)
 
 [chip] 
 [type] AND
-[x] 6
+[x] 7
+[y] 2
+[rotated] true
+
+[chip] 
+[type] DX3
+[x] 10
+[y] 3
+[rotated] true
+
+[chip] 
+[type] NOTE
+[x] 18
+[y] 3
+[code] 
+    ADVERTISING
+       SPACE
+     FOR RENT
+
+[chip] 
+[type] OR
+[x] 7
 [y] 4
 
 [chip] 
 [type] BANK
-[x] 13
-[y] 4
-[rom] 
-1,0,0,0,0,0,0,0,0,0,0,0,0,1
-
-[chip] 
-[type] BRIDGE
-[x] 16
-[y] 4
-
-[chip] 
-[type] NOT
-[x] 4
+[x] 3
 [y] 5
+[rom] 
+0,0,0,0,1,1,1,1,1,1,1,1,1,1
 
 [chip] 
 [type] BRIDGE
@@ -133,21 +81,6 @@
     ADVERTISING
        SPACE
      FOR RENT
-
-[chip] 
-[type] BRIDGE
-[x] 3
-[y] 6
-
-[chip] 
-[type] BRIDGE
-[x] 4
-[y] 6
-
-[chip] 
-[type] BRIDGE
-[x] 5
-[y] 6
 
 [chip] 
 [type] NLP
@@ -160,27 +93,28 @@
 [x] 9
 [y] 6
 [code] 
-  teq x3 1
-+ slp x3
+  tcp x3 x0
++ slp x0
 + mov x1 dat
+- mov p0 p1
   teq x2 dat
 + teq x2 x1
-+ mov x2 x0
-- teq x0 1
++ mov 1 x3
 + mov 50 p1
-- mov p0 p1
-  
-# I also don't
-# really
-# understand
-# this design
 
 [chip] 
 [type] BANK
 [x] 13
 [y] 6
 [rom] 
-711,573,495,160,575,645,712,917,356,361,138,420,-999,0
+711,573,495,160,575,645,712,917,356,361,138,420,0,0
+
+[chip] 
+[type] BANK
+[x] 3
+[y] 7
+[rom] 
+-1,0,1,1,1,1,1,1,1,1,1,1,1,1
 
 [chip] 
 [type] NOTE
@@ -193,8 +127,17 @@
 
 [chip] 
 [type] NOTE
-[x] 3
+[x] 18
 [y] 9
+[code] 
+    ADVERTISING
+       SPACE
+     FOR RENT
+
+[chip] 
+[type] NOTE
+[x] 3
+[y] 11
 [code] 
     ADVERTISING
        SPACE
@@ -203,7 +146,7 @@
 [chip] 
 [type] NOTE
 [x] 6
-[y] 9
+[y] 11
 [code] 
     ADVERTISING
        SPACE
@@ -212,7 +155,7 @@
 [chip] 
 [type] NOTE
 [x] 9
-[y] 9
+[y] 11
 [code] 
     ADVERTISING
        SPACE
@@ -221,7 +164,7 @@
 [chip] 
 [type] NOTE
 [x] 12
-[y] 9
+[y] 11
 [code] 
     ADVERTISING
        SPACE
@@ -230,7 +173,7 @@
 [chip] 
 [type] NOTE
 [x] 15
-[y] 9
+[y] 11
 [code] 
     ADVERTISING
        SPACE
@@ -239,7 +182,7 @@
 [chip] 
 [type] NOTE
 [x] 18
-[y] 9
+[y] 11
 [code] 
     ADVERTISING
        SPACE
