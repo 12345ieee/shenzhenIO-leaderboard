@@ -1,8 +1,8 @@
 [name] master-slaves (abuse 1 tare)
 [puzzle] Sz012
 [production-cost] 1500
-[power-usage] 162
-[lines-of-code] 42
+[power-usage] 161
+[lines-of-code] 41
 
 [traces] 
 ......................
@@ -32,7 +32,6 @@ tare is set only
 ONCE per run and
 reset to 0 only
 ONCE
-(avoid `- jmp wm`)
 
 [chip] 
 [type] BRIDGE
@@ -77,17 +76,16 @@ ONCE
 [code] 
 @ slx x3
 @ mov x3 dat
+@ mov 0 x1
 @ slp 4 #A4
-@ mov p1 acc
-@ sub dat
-@ mov acc x1
-@ slp 1
   mov p1 acc
   sub dat
   mov acc x1
   slp 1
   teq p0 100
-+ mov 0 x3
++ mov 0 x1 #A4
++ slp 3 #A4
++ mov 50 x3 #H
 + slp 999 #A6
 
 [chip] 
@@ -95,19 +93,19 @@ ONCE
 [x] 9
 [y] 5
 [code] 
-@ teq 1 1
+@ slx x3
+@ slp x3
 + slx x3
-+ slp x3 #A5
++ slp x3 #A5 
   mov p1 x2
   slp 1
-start: tcp p0 0
+  tcp p0 0
 + teq p1 0  #A2
-- mov 0 x2
 - mov p1 x1
 - slx x1
-- mov x1 x2 #A4
-- slp 3 #A4
-- tcp p0 0 #A6
+- tcp p0 x1 #HA6
+- slp 1
+- tcp p0 50 #HA6
 + mov -999 x3
 
 [chip] 
@@ -147,7 +145,7 @@ always taken after
 [code] 
 4: Abuse '0'
 after tare set
-(4-6 cycles, then
+(4 cycles, then
 need to compute)
 
 4: Abuse `0` after
