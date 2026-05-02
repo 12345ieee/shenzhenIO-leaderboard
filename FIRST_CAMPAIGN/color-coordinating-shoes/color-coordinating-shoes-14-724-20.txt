@@ -1,7 +1,7 @@
 [name] Top solution Cost->Lines - 837951602
 [puzzle] Sz018
 [production-cost] 1400
-[power-usage] 735
+[power-usage] 724
 [lines-of-code] 20
 
 [traces] 
@@ -60,8 +60,8 @@ init ->  x  -> 12*
   tcp p1 x3
 - mov dat x0
 - mov 0 x1
-  mov p0 acc
-+ sub 30
+  mov -30 acc
++ add p0
 + dst 0 8
 + mov acc x3
 + mov x2 acc
@@ -118,4 +118,3 @@ init  -> 50,50
 60-69 ->  5,60
 70-79 -> 15,80
 80-89 -> 75,85
-
