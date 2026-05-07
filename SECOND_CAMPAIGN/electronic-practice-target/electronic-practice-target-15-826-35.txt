@@ -1,7 +1,7 @@
-[name] Top solution Cost
+[name] 15/826/35
 [puzzle] Sz041
 [production-cost] 1500
-[power-usage] 851
+[power-usage] 826
 [lines-of-code] 35
 
 [traces] 
@@ -80,8 +80,7 @@ s:slp 1
 - slp x1
   teq x3 100
 + mov x1 x0
++ teq x2 4
   mov x2 x3
   slp 1
-  teq x2 4
 + mov 6 x2
-
