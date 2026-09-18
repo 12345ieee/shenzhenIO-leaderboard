@@ -1,0 +1,119 @@
+[name] FASTEST  P-compare
+[puzzle] Sz048
+[production-cost] 1900
+[power-usage] 119
+[lines-of-code] 10
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+..941C..95555555541C..
+..A..3496955555555CA..
+..29494A.215C1555C22..
+..9616161554A154.35C..
+..2......154A94...82..
+...........16A..1434..
+........14.156....14..
+......................
+......................
+
+[chip] 
+[type] DIAL7
+[x] 7
+[y] 2
+[is-puzzle-provided] true
+
+[chip] 
+[type] UC4X
+[x] 9
+[y] 2
+[code] 
+@ mov x1 x3
+@ mov x1 x2
+  
+
+[chip] 
+[type] RAM
+[x] 12
+[y] 2
+
+[chip] 
+[type] OR
+[x] 17
+[y] 2
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 19
+[y] 2
+
+[chip] 
+[type] DX3
+[x] 7
+[y] 3
+[rotated] true
+
+[chip] 
+[type] DX3
+[x] 15
+[y] 3
+
+[chip] 
+[type] OR
+[x] 3
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 11
+[y] 4
+[code] 
+@ mov 1 x1
+  tcp p0 p1
++ mov x2 x1
++ slp 2
+- mov 0 x0
+- slp 2
+- mov 0 x1
+  slp x3
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 4
+
+[chip] 
+[type] NOT
+[x] 5
+[y] 5
+
+[chip] 
+[type] AND
+[x] 4
+[y] 6
+[rotated] true
+
+[chip] 
+[type] NOT
+[x] 8
+[y] 7
+
+[chip] 
+[type] NOT
+[x] 3
+[y] 8
+
+[chip] 
+[type] NOT
+[x] 17
+[y] 8
+[rotated] true
