@@ -1,7 +1,7 @@
-[name] 191
+[name] 190
 [puzzle] Sz013
 [production-cost] 2300
-[power-usage] 191
+[power-usage] 190
 [lines-of-code] 37
 
 [traces] 
@@ -36,12 +36,10 @@
 [x] 11
 [y] 2
 [code] 
+@ slp 2
 @ teq 0 0
-l: + slp x0
-+ slp x0
 + teq x0 1
 + jmp l
-+ mov x2 acc
 - mov x2 acc
   teq p1 100
 + add 20
@@ -50,6 +48,8 @@ l: + slp x0
   tcp x0 0
 + mov acc x3
 + slp 5
+l: + slp x0
++ slp x0
 
 [chip] 
 [type] UC4X
