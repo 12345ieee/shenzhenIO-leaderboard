@@ -1,0 +1,164 @@
+[name] fastest
+[puzzle] Sz022
+[production-cost] 2400
+[power-usage] 55
+[lines-of-code] 28
+
+[traces] 
+......................
+......................
+......................
+......................
+......................
+.......14.141415C.....
+..15C..154..15C.3554..
+..1CA1C15549C.3414....
+...AA.29C15635541554..
+..16A156A1415415C814..
+..14A14.3541554.3754..
+....3555414.1541414...
+......................
+......................
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 2
+[code] 
+b:  slx x1
+  tcp x1 2
++ mov 10 x3
++ slp 7
++ jmp l
+- mov 1 x0
+- jmp b
+  mov 0 x3
+  slp x2
+  gen p1 2 1
+  mov 10 x2
+  slp 2
+  slp x2
+l:  mov x2 x3
+
+[chip] 
+[type] DX3
+[x] 8
+[y] 2
+
+[chip] 
+[type] NOT
+[x] 10
+[y] 2
+[rotated] true
+
+[chip] 
+[type] BRIDGE
+[x] 12
+[y] 2
+
+[chip] 
+[type] XOR
+[x] 14
+[y] 2
+
+[chip] 
+[type] NOT
+[x] 16
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 18
+[y] 2
+
+[chip] 
+[type] BRIDGE
+[x] 6
+[y] 3
+
+[chip] 
+[type] NOT
+[x] 10
+[y] 3
+
+[chip] 
+[type] OR
+[x] 10
+[y] 4
+
+[chip] 
+[type] NOT
+[x] 13
+[y] 4
+
+[chip] 
+[type] XOR
+[x] 15
+[y] 4
+
+[chip] 
+[type] BRIDGE
+[x] 17
+[y] 4
+
+[chip] 
+[type] UC6
+[x] 3
+[y] 5
+[code] 
+@ mov 1 x3
+  slx x1
+  mov x3 x0
+  slp x1
+  slp x0
+  mov 110 x0
+  slp 1
+  slp x0
+  mov 110 x0
+  slp 1
+  slp x0
+  mov 100 x0
+  slp 1
+  mov x0 x3
+
+[chip] 
+[type] BRIDGE
+[x] 9
+[y] 5
+
+[chip] 
+[type] DX3
+[x] 6
+[y] 6
+
+[chip] 
+[type] BRIDGE
+[x] 10
+[y] 6
+
+[chip] 
+[type] OR
+[x] 15
+[y] 6
+[rotated] true
+
+[chip] 
+[type] NOT
+[x] 11
+[y] 7
+
+[chip] 
+[type] AND
+[x] 13
+[y] 7
+
+[chip] 
+[type] NOT
+[x] 8
+[y] 8
+[rotated] true
+
+[chip] 
+[type] NOT
+[x] 11
+[y] 8
